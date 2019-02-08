@@ -1,0 +1,1008 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』Telegram 专用的轻量化代理工具 —— MTProxy Go版 一键脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1961] -->
+<meta name="description"  content="前段时间，我写了个 MTProxy 的一键脚本，那个脚本用的是 MTProto Proxy 官方项目的，而前几天我又发现一个用 Go 语言实现的 MTProto Proxy，并且功能更完善，所以我又写了个 Go 语言版一键脚本。 注意：MTProxy 仅支持 Telegram" />
+
+<meta name="keywords"  content="go,mtproxy,shell,telegram,脚本" />
+
+<link rel="canonical" href="es5fj9se.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本' href='aybh4ww5.html' />
+<link rel='next' title='网页管理 Brook、SS、Socks5 代理账号 —— Brook-Web 使用教程' href='k71l4klb.html' />
+<link rel='shortlink' href='https://doub.io/?p=2931' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fshell-jc9%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fshell-jc9%2F&amp;format=xml" />
+<style>
+.yk6fd2b{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.yk6fd2b-hide{
+    display: none;
+}
+.yk6fd2b-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.yk6fd2b-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.yk6fd2b-2 .yk6fd2b-body,.yk6fd2b-3 .yk6fd2b-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.yk6fd2b-2 .close-btn,.yk6fd2b-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.yk6fd2b-3 .yk6fd2b-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.yk6fd2b').html(kill_adBlock_message);
+            jQuery('.yk6fd2b-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.yk6fd2b-container').fadeOut('yk6fd2b-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Go, MTProxy, shell, Telegram, 脚本, Shell脚本">
+<meta name="description" content="前段时间，我写了个 MTProxy 的一键脚本，那个脚本用的是 MTProto Proxy 官方项目的，而前几天我又发现一个用 Go 语言实现的 MTProto Proxy，并且功能更完善，所以我又写了个 Go 语言版一键脚本。 注意：MTProxy 仅支持 Telegram 客户端使用，无法用于代理其他网站和软件！ 逗比根据地 交流群组：https://t.me/doubi  逗比根据地 公告频道：https://t.me/doubi">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2931 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="1jg9z3mv.html"> Shell脚本</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 3周前 (10-29)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 928℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="es5fj9se.html#comments">40评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="es5fj9se.html#为什么要用 MTProxy ？为何不直接用代理软件？" title="为什么要用 MTProxy ？为何不直接用代理软件？"><span>为什么要用 MTProxy ？为何不直接用代理软件？</span></a></li><li class="content-index-level-1"><a href="es5fj9se.html#该版本相比官方版有什么区别？" title="该版本相比官方版有什么区别？"><span>该版本相比官方版有什么区别？</span></a></li><li class="content-index-level-1"><a href="es5fj9se.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="es5fj9se.html#脚本版本" title="脚本版本"><span>脚本版本</span></a></li></ul></li><li class="content-index-level-1"><a href="es5fj9se.html#安装步骤" title="安装步骤"><span>安装步骤</span></a></li><li class="content-index-level-1"><a href="es5fj9se.html#使用说明" title="使用说明"><span>使用说明</span></a><ul class="children"><li class="content-index-level-2"><a href="es5fj9se.html#其他操作" title="其他操作"><span>其他操作</span></a></li></ul></li><li class="content-index-level-1"><a href="es5fj9se.html#Telegram 使用方法说明：" title="Telegram 使用方法说明："><span>Telegram 使用方法说明：</span></a></li><li class="content-index-level-1"><a href="es5fj9se.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="es5fj9se.html#Telegram一直无法连接代理的可能原因之一" title="Telegram一直无法连接代理的可能原因之一"><span>Telegram一直无法连接代理的可能原因之一</span></a></li><li class="content-index-level-2"><a href="es5fj9se.html#启动失败，日志提示 'S' option requires exactly 32 hex digits 错误" title="启动失败，日志提示 'S' option requires exactly 32 hex digits 错误"><span>启动失败，日志提示 'S' option requires exactly 32 hex digits 错误</span></a></li><li class="content-index-level-2"><a href="es5fj9se.html#提示wget: unknown host “raw.githubusercontent.com” 之类的错误" title="提示wget: unknown host “raw.githubusercontent.com” 之类的错误"><span>提示wget: unknown host “raw.githubusercontent.com” 之类的错误</span></a></li><li class="content-index-level-2"><a href="es5fj9se.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li><li class="content-index-level-2"><a href="es5fj9se.html#升级脚本" title="升级脚本"><span>升级脚本</span></a></li></ul></li><li class="content-index-level-1"><a href="es5fj9se.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="es5fj9se.html#2018年11月10日，版本 v1.0.1" title="2018年11月10日，版本 v1.0.1"><span>2018年11月10日，版本 v1.0.1</span></a></li><li class="content-index-level-2"><a href="es5fj9se.html#2018年10月29日，版本 v1.0.0" title="2018年10月29日，版本 v1.0.0"><span>2018年10月29日，版本 v1.0.0</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月10日 16:01</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前段时间，我写了个 MTProxy 的一键脚本，那个脚本用的是 MTProto Proxy 官方项目的，而前几天我又发现一个用 Go 语言实现的 MTProto Proxy，并且功能更完善，所以我又写了个 Go 语言版一键脚本。</p>
+<blockquote><p><em>注意：</em>MTProxy <strong>仅支持 Telegram 客户端使用</strong>，无法用于代理其他网站和软件！</p></blockquote>
+<p><strong>逗比根据地 交流群组：<a href="https://t.me/doubi" target="_blank" rel="noopener">https://t.me/doubi</a></strong></p>
+<p><strong>逗比根据地 公告频道：<a href="https://t.me/doubi_a" target="_blank" rel="noopener">https://t.me/doubi_a</a></strong></p>
+<p><strong>Telegram 使用教程：<a href="ma7f_p6p.html" target="_blank" rel="noopener">https://doub.io/telegram-jc1/</a></strong></p>
+<hr />
+<p><strong>Github 项目地址：<a href="https://github.com/9seconds/mtg" target="_blank" rel="noopener">https://github.com/9seconds/mtg</a></strong></p>
+<p><strong>该项目为 Go 语言编写，官方项目为 C 语言编写的：<a title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本" href="939koj07-2.html" target="_blank" rel="noopener">『原创』MTProxy 一键脚本</a></strong></p>
+<hr />
+<h2 id="为什么要用 MTProxy ？为何不直接用代理软件？">为什么要用 MTProxy ？为何不直接用代理软件？</h2>
+<p>可能有人会疑问：MTProxy 是一个只能 Telegram 客户端使用的代理，那么为什么不直接用其他代理软件呢？</p>
+<p>我就特地来回答一下大家的疑问。</p>
+<p><strong>1. 移动设备便捷性：</strong>对于电脑用户来说， MTProxy 相对鸡肋，因为很多人都是代理软件开机启动并且全天不关。但是对于手机用户来说，每次要查看 Telegram 客户端，都需要先开启代理软件，而如果你在手机上不是经常要挂代理，但是你会经常去 Telegram 里吹比打屁，那么你就很适合使用 MTProxy 了，<strong>它可以让你使用 Telegram 客户端像使用国内的 QQ、微信一样方便，打开即用。</strong></p>
+<p><strong>2. 适合分享给朋友：</strong>当你觉得 TG很好用，想要劝身边的朋友抛弃 QQ、微信 转投 Telegram 时，你却发现你还需要给他配置一套代理软件、代理账号，指导他如何使用代理软件，巴拉巴拉的。但是如果你有 MTProxy 代理账号，那么<strong>只需要填写代理配置后，即可直接使用！</strong></p>
+<hr />
+<h2 id="该版本相比官方版有什么区别？">该版本相比官方版有什么区别？</h2>
+<ol>
+<li>支持 IPv6 。</li>
+<li>支持 CentOS6。</li>
+<li>资源占用更少，并发更强。</li>
+<li>无需任何依赖，安装快速。</li>
+<li>更少错误出现，不用担心编译出错。</li>
+<li>NAT 服务器无需填写内网IP，只需脚本自动识别公网IP（支持自定义）。</li>
+<li>支持强制安全模式（只有密匙头部包含 dd 的客户端才能链接，降低被墙几率）。</li>
+</ol>
+<hr />
+<h2 id="系统要求">系统要求</h2>
+<p>CentOS 6+ / Debian 7+ / Ubuntu 14.04 +</p>
+<hr />
+<h3 id="脚本版本">脚本版本</h3>
+<p><strong>Ver:</strong> 1.0.1</p>
+<hr />
+<h2 id="安装步骤">安装步骤</h2>
+<p>执行下面的代码下载并运行脚本。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/mtproxy_go.sh &amp;&amp; chmod +x mtproxy_go.sh &amp;&amp; bash mtproxy_go.sh
+</pre>
+<p>运行脚本后会出现脚本操作菜单，选择并输入<code> 1 </code>就会开始安装。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">请输入 MTProxy 端口 [1-65535]
+(默认: 443):
+
+========================
+	端口 :  443 
+========================
+
+请输入 MTProxy 密匙（手动输入必须为32位，[0-9][a-z][A-Z]，建议随机生成）
+(避免出错，强烈推荐随机生成，直接回车):
+
+========================
+	密码 :  xxxxx 
+========================
+
+请输入 MTProxy 的 TAG标签（TAG标签必须是32位，TAG标签只有在通过官方机器人 @MTProxybot 分享代理账号后才会获得，不清楚请留空回车）
+(默认：回车跳过):
+
+如果本机是NAT服务器（谷歌云、微软云、阿里云等，网卡绑定的IP为 10.xx.xx.xx 开头的），则需要指定公网 IPv4。
+(默认：自动检测 IPv4 地址):
+
+========================
+	NAT-IPv4 :  X.X.X.X 
+========================
+
+如果本机是NAT服务器（谷歌云、微软云、阿里云等），则需要指定公网 IPv6。
+(默认：自动检测 IPv6 地址):
+
+========================
+	NAT-IPv6 :  XXXXX 
+========================
+
+是否启用强制安全模式？[Y/n]
+只有启用[安全混淆模式]的客户端才能链接(即密匙头部有 dd 字符)，降低服务器被墙几率，建议开启。
+(默认：Y 启用):
+
+========================
+	强制安全模式 :  YES 
+========================
+
+[信息] MTProxy 停止成功 !
+[信息] MTProxy 启动中...
+[信息] MTProxy 启动成功 !
+
+Mtproto Proxy 用户配置：
+————————————————
+ 地址	: X.X.X.X
+ 地址	: XXXXX
+ 端口	: 443
+ 密匙	: xxxxx
+ 链接	: tg://proxy?server=X.X.X.X&amp;port=443&amp;secret=xxxxx
+ 链接	: https://t.me/proxy?server=X.X.X.X&amp;port=443&amp;secret=xxxxx
+ 链接	: tg://proxy?server=XXXXX&amp;port=443&amp;secret=xxxxx
+ 链接	: https://t.me/proxy?server=XXXXX&amp;port=443&amp;secret=xxxxx
+</pre>
+<p></p></div>
+<hr />
+<h2 id="使用说明">使用说明</h2>
+<p>进入下载脚本的目录并运行脚本：</p>
+<pre class="prettyprint linenums">./mtproxy_go.sh
+</pre>
+<p>然后选择你要执行的选项即可。</p>
+<pre class="prettyprint linenums">  MTProxy-Go 一键管理脚本 [vX.X.X]
+  ---- Toyo | doub.io/shell-jc9 ----
+  
+  0. 升级脚本
+————————————
+  1. 安装 MTProxy
+  2. 更新 MTProxy
+  3. 卸载 MTProxy
+————————————
+  4. 启动 MTProxy
+  5. 停止 MTProxy
+  6. 重启 MTProxy
+————————————
+  7. 设置 账号配置
+  8. 查看 账号信息
+  9. 查看 日志信息
+ 10. 查看 链接信息
+————————————
+
+ 当前状态: 已安装 并 已启动
+
+ 请输入数字 [0-10]:
+</pre>
+<hr />
+<h3 id="其他操作">其他操作</h3>
+<p><strong>启动：</strong>/etc/init.d/mtproxy-go start</p>
+<p><strong>停止：</strong>/etc/init.d/mtproxy-go stop</p>
+<p><strong>重启：</strong>/etc/init.d/mtproxy-go restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/mtproxy-go status</p>
+<p><strong>安装目录：</strong>/usr/local/mtproxy-go</p>
+<p><strong>配置文件：</strong>/usr/local/mtproxy-go/mtproxy.conf</p>
+<p><strong>日志文件：</strong>/usr/local/mtproxy-go/mtproxy.log</p>
+<hr />
+<h2 id="Telegram 使用方法说明：">Telegram 使用方法说明：</h2>
+<p>另一个教程写了，这里就不再重复了：<a href="939koj07-2.html#Telegram 使用方法说明：" target="_blank" rel="noopener">https://doub.io/shell-jc7/#Telegram 使用方法说明：</a></p>
+<hr />
+<h2 id="其他说明">其他说明</h2>
+<blockquote><p><em>注意：</em>MTProxy <strong>仅支持 Telegram 客户端使用</strong>，无法用于其他软件！</p></blockquote>
+<hr />
+<h3 id="Telegram一直无法连接代理的可能原因之一">Telegram一直无法连接代理的可能原因之一</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>MTProxy 对时间差要求严格，如果服务器与本地的系统时间相差过大(不清楚具体多少，但是差几分钟就不行)就会无法建立连接。</p>
+<p>脚本一开始安装时，就已经将系统时区改为北京时区，不过时间可能还不够准确。</p>
+<p>你可以安装 ntp 来定时校准时间，或者手动校准时间：</p>
+<pre class="prettyprint linenums">date -s "08:05:00"
+# 修改时间为 08:05:00
+# 当然也要记得校准本地设备系统时间偶~
+</pre>
+<p></p></div>
+<hr />
+<h3 id="启动失败，日志提示 'S' option requires exactly 32 hex digits 错误">启动失败，日志提示 'S' option requires exactly 32 hex digits 错误</h3>
+<p>该问题只出现于自定义密码时，因为 MTProxy 为了安全性而要求<strong>密码必须是 32位</strong>（多了少了都不行），如果数量不对就会提示这个，<strong>建议用脚本随机生成！</strong></p>
+<hr />
+<h3 id="提示wget: unknown host “raw.githubusercontent.com” 之类的错误">提示wget: unknown host “raw.githubusercontent.com” 之类的错误</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS(以下两行一起复制 一起执行)。</p>
+<pre class="prettyprint linenums">echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" &gt; /etc/resolv.conf
+</pre>
+<p></p></div>
+<hr />
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<pre class="prettyprint linenums"># CentOS系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<p></p></div>
+<hr />
+<h3 id="升级脚本">升级脚本</h3>
+<p>升级脚本只需要重新下载脚本文件就可以了，会自动覆盖原文件。</p>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="2018年11月10日，版本 v1.0.1">2018年11月10日，版本 v1.0.1</h3>
+<p><strong>1. 新增</strong> 监测外网IP变更功能(位于 7. 设置 账号配置 中)。</p>
+<p>—— 该功能适合于IP经常变更的服务器，不需要每次都手动修改了。</p>
+<h3 id="2018年10月29日，版本 v1.0.0">2018年10月29日，版本 v1.0.0</h3>
+<p><strong>1. 推出</strong> 正式版。</p>
+<hr />
+<p><strong>逗比根据地 交流群组：<a href="https://t.me/doubi" target="_blank" rel="noopener">https://t.me/doubi</a></strong></p>
+<p><strong>逗比根据地 公告频道：<a href="https://t.me/doubi_a" target="_blank" rel="noopener">https://t.me/doubi_a</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2931" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">91</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="https://doub.io/tag/go/" rel="tag">Go</a><a href="6r0r84ue.html" rel="tag">MTProxy</a><a href="8jt8-s05.html" rel="tag">shell</a><a href="5_6avy-g.html" rel="tag">Telegram</a><a href="meyy1poe.html" rel="tag">脚本</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="aybh4ww5.html" rel="prev">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></span>
+			<span class="article-nav-next"><a href="k71l4klb.html" rel="next">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" />	<br><span class="r_title">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xcwybsz2.html" title="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" />	<br><span class="r_title">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="939koj07-2.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本" />	<br><span class="r_title">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="939koj07-2.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="qjfhz_ch.html">『原创』Go语言轻量化 网络混淆代理工具 —— Lightsocks 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-2.html">『原创』Shadowsocks tinyPortMapper 中继(中转/端口转发) 便捷管理脚本</a></li><li><i class="fa fa-minus"></i><a href="0_88_gut.html">『原创』Debian/Ubuntu SSH端口一键修改脚本 修改默认端口 避免暴力破解</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2931' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (40)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-45839"><div class="c-avatar"><div class="c-main" id="div-comment-45839">希望增加自动更新ip功能，方便自动更换ip的机器使用<div class="c-meta"><span class="c-author">hhh</span>2018-11-10 00:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45839#respond' onclick='return addComment.moveForm( "div-comment-45839", "45839", "respond", "2931" )' aria-label='回复给hhh'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45816"><div class="c-avatar"><div class="c-main" id="div-comment-45816">查看链接信息提示
+Cannot open netlink socket: Protocol not supported
+看了一下网上的解决方法都是nginx和php的问题，但是我服务器这两个都没有Apache也没有就装了rclone同步网盘用<div class="c-meta"><span class="c-author">lll</span>2018-11-09 17:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45816#respond' onclick='return addComment.moveForm( "div-comment-45816", "45816", "respond", "2931" )' aria-label='回复给lll'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45824"><div class="c-avatar"><div class="c-main" id="div-comment-45824"><pre class="prettyprint linenums" ># 手动执行一下，然后告诉我输出内容（如果有敏感IP信息请打码）。
+ss state connected sport = :端口 -tn
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-09 20:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45824#respond' onclick='return addComment.moveForm( "div-comment-45824", "45824", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45656"><div class="c-avatar"><div class="c-main" id="div-comment-45656">正确的服务器时间应该是GMT+8吗<div class="c-meta"><span class="c-author">Yang</span>2018-11-06 22:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45656#respond' onclick='return addComment.moveForm( "div-comment-45656", "45656", "respond", "2931" )' aria-label='回复给Yang'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45658"><div class="c-avatar"><div class="c-main" id="div-comment-45658">是的，北京时区。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-07 00:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45658#respond' onclick='return addComment.moveForm( "div-comment-45658", "45658", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45578"><div class="c-avatar"><div class="c-main" id="div-comment-45578"><pre class="prettyprint linenums" >{
+  "ipv4": {
+    "tg_url": "tg://proxy?port=8946&amp;secret=dd5524ee2e3a7015045f12934417b947f0&amp;server=x.x.x.x",
+    "tme_url": "https://t.me/proxy?port=8946&amp;secret=dd5524ee2e3a7015045f12934417b947f0&amp;server=x.x.x.x",
+    "tg_qrcode": "https://api.qrserver.com/v1/create-qr-code?data=tg%3A%2F%2Fproxy%3Fport%3D8946%26secret%3Ddd5524ee2e3a7015045f12934417b947f0%26server%3Dx.x.x.x&amp;format=svg&amp;qzone=4",
+    "tme_qrcode": "https://api.qrserver.com/v1/create-qr-code?data=tg%3A%2F%2Fproxy%3Fport%3D8946%26secret%3Ddd5524ee2e3a7015045f12934417b947f0%26server%3Dx.x.x.x&amp;format=svg&amp;qzone=4"
+  },
+  "ipv6": {
+    "tg_url": "",
+    "tme_url": "",
+    "tg_qrcode": "",
+    "tme_qrcode": ""
+  },
+  "secret_for_mtproxybot": "5524ee2e3a7015045f12934417b947f0"
+}
+{"level":"error","ts":1541425163.1271372,"logger":"main","msg":"Cannot initialize client connection","connection_id":"e6e5d5e4-bff4-4e9d-a494-524308aebd48","error":"Cannot extract frame: Cannot extract obfuscated header: read tcp x.x.x.x:8946-&gt;x.x.x.x:22870: i/o timeout","errorVerbose":"read tcp x.x.x.x:8946-&gt;x.x.x.x:22870: i/o timeout\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/obfuscated2/frame.go:87: Cannot extract obfuscated header\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/client/direct.go:36: Cannot extract frame"}
+{"level":"error","ts":1541425163.77422,"logger":"main","msg":"Cannot initialize client connection","connection_id":"61db5fa5-50fc-4f6f-b261-347e5381df68","error":"Cannot extract frame: Cannot extract obfuscated header: read tcp x.x.x.x:8946-&gt;x.x.x.x:22879: i/o timeout","errorVerbose":"read tcp x.x.x.x:8946-&gt;x.x.x.x:22879: i/o timeout\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/obfuscated2/frame.go:87: Cannot extract obfuscated header\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/client/direct.go:36: Cannot extract frame"}
+{"level":"error","ts":1541425163.7894843,"logger":"main","msg":"Cannot initialize client connection","connection_id":"5a8ab790-681f-4e6b-b8ff-02a844a6b4d0","error":"Cannot extract frame: Cannot extract obfuscated header: read tcp x.x.x.x:8946-&gt;x.x.x.x:22880: i/o timeout","errorVerbose":"read tcp x.x.x.x:8946-&gt;x.x.x.x:22880: i/o timeout\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/obfuscated2/frame.go:87: Cannot extract obfuscated header\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/client/direct.go:36: Cannot extract frame"}
+
+
+这是什么错误啊？？？
+</pre><div class="c-meta"><span class="c-author">温暖他人</span>2018-11-05 21:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45578#respond' onclick='return addComment.moveForm( "div-comment-45578", "45578", "respond", "2931" )' aria-label='回复给温暖他人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45587"><div class="c-avatar"><div class="c-main" id="div-comment-45587">你的TG客户端代理处的密匙头部填写 dd 字符没有？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-05 22:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45587#respond' onclick='return addComment.moveForm( "div-comment-45587", "45587", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-45614"><div class="c-avatar"><div class="c-main" id="div-comment-45614">秘钥那里是这个：dd5524ee2e3a7015045f12934417b947f0<div class="c-meta"><span class="c-author">温暖他人</span>2018-11-06 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45614#respond' onclick='return addComment.moveForm( "div-comment-45614", "45614", "respond", "2931" )' aria-label='回复给温暖他人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-45621"><div class="c-avatar"><div class="c-main" id="div-comment-45621">你的TG客户端是不是最新的？<br />
+这个错误似乎是客户端发送给服务端的消息，服务端无法识别。<br />
+你关掉强制安全模式，然后客户端处去掉密匙开头的 dd 字符再试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-06 13:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45621#respond' onclick='return addComment.moveForm( "div-comment-45621", "45621", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-45622"><div class="c-avatar"><div class="c-main" id="div-comment-45622">不行哇。<div class="c-meta"><span class="c-author">温暖他人</span>2018-11-06 13:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45622#respond' onclick='return addComment.moveForm( "div-comment-45622", "45622", "respond", "2931" )' aria-label='回复给温暖他人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-45623"><div class="c-avatar"><div class="c-main" id="div-comment-45623">[你关掉强制安全模式，然后客户端处去掉密匙开头的 dd 字符再试试。] 这样不行？<br />
+那抱歉了，该问题我无法解决了，请去 Github 联系作者解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-06 13:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45623#respond' onclick='return addComment.moveForm( "div-comment-45623", "45623", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-7" id="comment-45625"><div class="c-avatar"><div class="c-main" id="div-comment-45625">我提了一个issue，看能不能解决吧。我用你的另一个官方的那个C语言的脚本也用不了，日志好像也没报错，就是连不上。。。<div class="c-meta"><span class="c-author">温暖他人</span>2018-11-06 14:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45625#respond' onclick='return addComment.moveForm( "div-comment-45625", "45625", "respond", "2931" )' aria-label='回复给温暖他人'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-45620"><div class="c-avatar"><div class="c-main" id="div-comment-45620">客户端使用上应该没问题啊，我另一个服务器也是用这个配置的能用。这个服务器用v2ray,ssr什么的也都正常，端口也没问题。就是这个日志报错说的到底是什么啊？<div class="c-meta"><span class="c-author">温暖他人</span>2018-11-06 13:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45620#respond' onclick='return addComment.moveForm( "div-comment-45620", "45620", "respond", "2931" )' aria-label='回复给温暖他人'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45545"><div class="c-avatar"><div class="c-main" id="div-comment-45545">想请教下，博主是否有了解到存在 V2R + TLS + WebSocket 被 Ban 的先例，因为想使用这个方案自用，担心被 Ban 的问题，所以了解下。还有博主的博客只是 DNS 被污染了，所以可以推荐大家使用 https://github.com/chengr28/pcap_dnsproxy 或者 https://github.com/jedisct1/dnscrypt-proxy 来解决这个问题，或者使用可以启用 DoH 或 DoT 支持的浏览器来访问，比如 Firefox 的桌面版和移动版都支持。<div class="c-meta"><span class="c-author"><a href='https://blog.gazer.win/' rel='external nofollow' class='url'>清雨</a></span>2018-11-05 09:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45545#respond' onclick='return addComment.moveForm( "div-comment-45545", "45545", "respond", "2931" )' aria-label='回复给清雨'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45541"><div class="c-avatar"><div class="c-main" id="div-comment-45541">[错误] MTProxy 最新版本获取失败！<div class="c-meta"><span class="c-author">逗比一号</span>2018-11-05 00:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45541#respond' onclick='return addComment.moveForm( "div-comment-45541", "45541", "respond", "2931" )' aria-label='回复给逗比一号'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45553"><div class="c-avatar"><div class="c-main" id="div-comment-45553">你的服务器与 Github 直接连接有问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-05 12:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45553#respond' onclick='return addComment.moveForm( "div-comment-45553", "45553", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45508"><div class="c-avatar"><div class="c-main" id="div-comment-45508">果然是被占用了，换了个端口能用了<div class="c-meta"><span class="c-author">xd</span>2018-11-03 23:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45508#respond' onclick='return addComment.moveForm( "div-comment-45508", "45508", "respond", "2931" )' aria-label='回复给xd'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45507"><div class="c-avatar"><div class="c-main" id="div-comment-45507"><pre class="prettyprint linenums" >启动失败，这是因为我的端口被占用了吗
+
+  },
+  "ipv6": {
+    "tg_url": "",
+    "tme_url": "",
+    "tg_qrcode": "",
+    "tme_qrcode": ""
+  },
+  "secret_for_mtproxybot": "393d17acb14efc4031e943f8a0c03940"
+}
+{"level":"fatal","ts":1541258633.2504404,"msg":"Server stopped","error":"Cannot create listen socket: listen tcp 0.0.0.0:443: bind: address already in use","errorVerbose":"listen tcp 0.0.0.0:443: bind: address already in use\n/home/vagrant/safe/go/src/github.com/9seconds/mtg/proxy/proxy.go:32: Cannot create listen socket"}
+</pre><div class="c-meta"><span class="c-author">xd</span>2018-11-03 23:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45507#respond' onclick='return addComment.moveForm( "div-comment-45507", "45507", "respond", "2931" )' aria-label='回复给xd'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45487"><div class="c-avatar"><div class="c-main" id="div-comment-45487">为什么用了这个ping比Shadowrocket延迟要高<div class="c-meta"><span class="c-author">PDD</span>2018-11-03 21:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45487#respond' onclick='return addComment.moveForm( "div-comment-45487", "45487", "respond", "2931" )' aria-label='回复给PDD'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45494"><div class="c-avatar"><div class="c-main" id="div-comment-45494">我不清楚TG客户端的 延迟 是怎么算的，我的服务器TCPing延迟只有40ms左右。可能测试的是通过代理连接至TG服务器的延迟吧。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-03 22:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45494#respond' onclick='return addComment.moveForm( "div-comment-45494", "45494", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45433"><div class="c-avatar"><div class="c-main" id="div-comment-45433">老大，请问mtproxy使用bbr有加速效果吗？<div class="c-meta"><span class="c-author">OkOk</span>2018-11-02 20:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45433#respond' onclick='return addComment.moveForm( "div-comment-45433", "45433", "respond", "2931" )' aria-label='回复给OkOk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45437"><div class="c-avatar"><div class="c-main" id="div-comment-45437">MTProxy 是TCP传输，所以BBR会对其起到加速作用的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-02 23:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45437#respond' onclick='return addComment.moveForm( "div-comment-45437", "45437", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-45420"><div class="c-avatar"><div class="c-main" id="div-comment-45420">是否能与v2ray共存呢<div class="c-meta"><span class="c-author">洗澡交朋友</span>2018-11-02 14:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45420#respond' onclick='return addComment.moveForm( "div-comment-45420", "45420", "respond", "2931" )' aria-label='回复给洗澡交朋友'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45421"><div class="c-avatar"><div class="c-main" id="div-comment-45421">只要端口不一样，那么就不会冲突。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-02 14:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45421#respond' onclick='return addComment.moveForm( "div-comment-45421", "45421", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45399"><div class="c-avatar"><div class="c-main" id="div-comment-45399">为什么我的自动生成的密钥居然是34位的？不是32位的？<div class="c-meta"><span class="c-author">fhbtothe</span>2018-11-02 08:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45399#respond' onclick='return addComment.moveForm( "div-comment-45399", "45399", "respond", "2931" )' aria-label='回复给fhbtothe'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-45412"><div class="c-avatar"><div class="c-main" id="div-comment-45412">密匙前面的 dd 字符代表客户端通过随即混淆安全模式链接服务端，推荐使用，因为一些人发现在伊朗不使用该模式活不过多长时间。如果你要去官方机器人处分享账号并获取TAG，那么你需要去掉这个 dd 字符，分享给他人时再加上。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-11-02 12:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45412#respond' onclick='return addComment.moveForm( "div-comment-45412", "45412", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-45419"><div class="c-avatar"><div class="c-main" id="div-comment-45419">这样啊，明白了，谢谢！<div class="c-meta"><span class="c-author">fhbtothe</span>2018-11-02 13:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45419#respond' onclick='return addComment.moveForm( "div-comment-45419", "45419", "respond", "2931" )' aria-label='回复给fhbtothe'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45375"><div class="c-avatar"><div class="c-main" id="div-comment-45375">ipv6无效<div class="c-meta"><span class="c-author">居然</span>2018-11-01 18:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45375#respond' onclick='return addComment.moveForm( "div-comment-45375", "45375", "respond", "2931" )' aria-label='回复给居然'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45337"><div class="c-avatar"><div class="c-main" id="div-comment-45337">大佬，为什么逗比云进不去啊，我已经挂代理了<div class="c-meta"><span class="c-author">液体可怕</span>2018-10-31 22:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45337#respond' onclick='return addComment.moveForm( "div-comment-45337", "45337", "respond", "2931" )' aria-label='回复给液体可怕'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45334"><div class="c-avatar"><div class="c-main" id="div-comment-45334">终于可以用telegram了，可以用，谢了。<div class="c-meta"><span class="c-author">yaoGG</span>2018-10-31 18:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45334#respond' onclick='return addComment.moveForm( "div-comment-45334", "45334", "respond", "2931" )' aria-label='回复给yaoGG'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45312"><div class="c-avatar"><div class="c-main" id="div-comment-45312">确实IPV6无法使用，IPV4正常。<div class="c-meta"><span class="c-author">xie</span>2018-10-31 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45312#respond' onclick='return addComment.moveForm( "div-comment-45312", "45312", "respond", "2931" )' aria-label='回复给xie'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45270"><div class="c-avatar"><div class="c-main" id="div-comment-45270">gce安装没问题，搬瓦工下载脚本后就不动了<div class="c-meta"><span class="c-author">小高</span>2018-10-30 11:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45270#respond' onclick='return addComment.moveForm( "div-comment-45270", "45270", "respond", "2931" )' aria-label='回复给小高'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45272"><div class="c-avatar"><div class="c-main" id="div-comment-45272">不动是什么意思？贴出完整信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-30 11:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45272#respond' onclick='return addComment.moveForm( "div-comment-45272", "45272", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45254"><div class="c-avatar"><div class="c-main" id="div-comment-45254">逗比，我用你的GO语言MTProto Proxy脚本安装后报错无法启动<div class="c-meta"><span class="c-author">hjh</span>2018-10-29 22:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45254#respond' onclick='return addComment.moveForm( "div-comment-45254", "45254", "respond", "2931" )' aria-label='回复给hjh'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45256"><div class="c-avatar"><div class="c-main" id="div-comment-45256">请贴出日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-29 23:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45256#respond' onclick='return addComment.moveForm( "div-comment-45256", "45256", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45250"><div class="c-avatar"><div class="c-main" id="div-comment-45250">安装后ipv4可以用，ipv6不行。但是服务器是可以用ipv6访问SSH的<div class="c-meta"><span class="c-author">Reyn</span>2018-10-29 20:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45250#respond' onclick='return addComment.moveForm( "div-comment-45250", "45250", "respond", "2931" )' aria-label='回复给Reyn'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45258"><div class="c-avatar"><div class="c-main" id="div-comment-45258">我本地没有 IPv6 所以没有测试过到底行不行，反正作者说是可以的，而我脚本默认也开放 IPv6 防火墙端口规则了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-29 23:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45258#respond' onclick='return addComment.moveForm( "div-comment-45258", "45258", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-45237"><div class="c-avatar"><div class="c-main" id="div-comment-45237">更新日志的时间是不是错了<div class="c-meta"><span class="c-author"><a href='http://joyace.xyx/' rel='external nofollow' class='url'>Joyace</a></span>2018-10-29 15:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45237#respond' onclick='return addComment.moveForm( "div-comment-45237", "45237", "respond", "2931" )' aria-label='回复给Joyace'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-45238"><div class="c-avatar"><div class="c-main" id="div-comment-45238">忘记改了。。已修复。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-29 15:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45238#respond' onclick='return addComment.moveForm( "div-comment-45238", "45238", "respond", "2931" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-45235"><div class="c-avatar"><div class="c-main" id="div-comment-45235">ipv6戳到大学狗的内心了！<div class="c-meta"><span class="c-author">elf</span>2018-10-29 14:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc9/?replytocom=45235#respond' onclick='return addComment.moveForm( "div-comment-45235", "45235", "respond", "2931" )' aria-label='回复给elf'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="yk6fd2b-container yk6fd2b-1 yk6fd2b-hide">
+    <div class="yk6fd2b-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="yk6fd2b"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

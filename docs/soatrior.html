@@ -1,0 +1,1068 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1952] -->
+<meta name="description"  content="前段时间有个人说让我写写 Caddy WebDAV插件的教程，然而我都没听过这玩意，研究了一下还有点意思。 简单介绍 WebDAV 是 一种基于 HTTP 1.1协议的通信协议。它扩展了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对Web" />
+
+<meta name="keywords"  content="vps,webdav,网盘,网络硬盘" />
+
+<link rel="canonical" href="soatrior.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月' href='5qxx762w.html' />
+<link rel='next' title='『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用' href='tp_-ic2f-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=2680' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fjzzy-4%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fjzzy-4%2F&amp;format=xml" />
+<style>
+.wk9c6a8{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.wk9c6a8-hide{
+    display: none;
+}
+.wk9c6a8-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.wk9c6a8-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.wk9c6a8-2 .wk9c6a8-body,.wk9c6a8-3 .wk9c6a8-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.wk9c6a8-2 .close-btn,.wk9c6a8-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.wk9c6a8-3 .wk9c6a8-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.wk9c6a8').html(kill_adBlock_message);
+            jQuery('.wk9c6a8-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.wk9c6a8-container').fadeOut('wk9c6a8-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="VPS, WebDAV, 网盘, 网络硬盘, 建站资源">
+<meta name="description" content="前段时间有个人说让我写写 Caddy WebDAV插件的教程，然而我都没听过这玩意，研究了一下还有点意思。 简单介绍 WebDAV 是 一种基于 HTTP 1.1协议的通信协议。它扩展了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对Web Server直接读写、重命名等操作，相当于一个简单的网盘功能。    一些软件支持 WebDAV ，可以直接把某些文件放在 WebDAV 服">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2680 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="soatrior.html">通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="f3dg9hl6.html"> 建站资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 7个月前 (04-11)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 2798℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="soatrior.html#comments">64评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="soatrior.html#简单介绍" title="简单介绍"><span>简单介绍</span></a></li><li class="content-index-level-1"><a href="soatrior.html#安装 Caddy(创建 WebDAV 服务)" title="安装 Caddy(创建 WebDAV 服务)"><span>安装 Caddy(创建 WebDAV 服务)</span></a></li><li class="content-index-level-1"><a href="soatrior.html#配置 Caddy(配置 WebDAV 服务)" title="配置 Caddy(配置 WebDAV 服务)"><span>配置 Caddy(配置 WebDAV 服务)</span></a><ul class="children"><li class="content-index-level-2"><a href="soatrior.html#配置示例" title="配置示例"><span>配置示例</span></a></li><li class="content-index-level-2"><a href="soatrior.html#IP HTTP" title="IP HTTP"><span>IP HTTP</span></a></li><li class="content-index-level-2"><a href="soatrior.html#域名 HTTP" title="域名 HTTP"><span>域名 HTTP</span></a></li><li class="content-index-level-2"><a href="soatrior.html#域名 HTTPS" title="域名 HTTPS"><span>域名 HTTPS</span></a></li><li class="content-index-level-2"><a href="soatrior.html#域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)" title="域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)"><span>域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)</span></a></li></ul></li><li class="content-index-level-1"><a href="soatrior.html#Caddy 使用说明" title="Caddy 使用说明"><span>Caddy 使用说明</span></a></li><li class="content-index-level-1"><a href="soatrior.html#Windows 映射网络驱动器" title="Windows 映射网络驱动器"><span>Windows 映射网络驱动器</span></a></li><li class="content-index-level-1"><a href="soatrior.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="soatrior.html#修改注册表以支持连接 HTTP协议 的 WebDAV" title="修改注册表以支持连接 HTTP协议 的 WebDAV"><span>修改注册表以支持连接 HTTP协议 的 WebDAV</span></a></li><li class="content-index-level-2"><a href="soatrior.html#重新连接时的用户名密码说明" title="重新连接时的用户名密码说明"><span>重新连接时的用户名密码说明</span></a></li><li class="content-index-level-2"><a href="soatrior.html#手动启动 WebClient 服务方法" title="手动启动 WebClient 服务方法"><span>手动启动 WebClient 服务方法</span></a></li><li class="content-index-level-2"><a href="soatrior.html#删除网络驱动器" title="删除网络驱动器"><span>删除网络驱动器</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月5日 14:23</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前段时间有个人说让我写写 Caddy WebDAV插件的教程，然而我都没听过这玩意，研究了一下还有点意思。</p>
+<h2 id="简单介绍">简单介绍</h2>
+<p>WebDAV 是 一种基于 HTTP 1.1协议的通信协议。它扩展了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对Web Server直接读写、重命名等操作，相当于一个简单的网盘功能。</p>
+<hr />
+<p>一些软件支持 WebDAV ，可以直接把某些文件放在 WebDAV 服务器内或者从 WebDAV 服务器内读取文件，而今天我就来介绍一下<strong>将 WebDAV 服务器映射成 Windows 的网络驱动器（网络硬盘/网盘）</strong>，其他系统也支持这种操作，但是我没有相应系统所以只介绍 Windows 系统。</p>
+<p>玩法的话，比如你的服务器上面安装的有 Aria2 之类的BT下载软件，那么可以直接<strong>把 BT下载文件夹映射到 Windows本地</strong>，这样的话 <strong>BT文件 下载后，直接就能读取或者播放</strong>了，当然传输速度取决于你与服务器之间的连接速度。</p>
+<hr />
+<p>很多HTTP服务程序都支持 WebDAV，比如Nginx ，而我们用更简单的方式去创建 WebDAV 服务。</p>
+<h2 id="安装 Caddy(创建 WebDAV 服务)">安装 Caddy(创建 WebDAV 服务)</h2>
+<p>如果你要同时安装多个 Caddy 插件，那么请修改下面的命令格式为：<code>bash caddy_install.sh install http.webdav,xxx,xxx</code>（逗号分隔多个插件名称）。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh install http.webdav
+</pre>
+<p>安装Caddy成功后，继续新建一个用于使用的虚拟主机文件夹，例如 <strong>file</strong>（可以自己改）：</p>
+<pre class="prettyprint linenums">mkdir /usr/local/caddy/www
+mkdir /usr/local/caddy/www/file
+<strong># 这个文件夹就是你要映射到本地电脑的文件夹，你可以创建一个新的，或者跳过该步骤直接使用其他文件夹。</strong></pre>
+<h2 id="配置 Caddy(配置 WebDAV 服务)">配置 Caddy(配置 WebDAV 服务)</h2>
+<p>首先，我们先讲一下，WebDAV扩展各个参数（<a href="https://github.com/hacdias/caddy-webdav/blob/master/README.md" target="_blank" rel="noopener">WebDAV插件官方说明</a>）。</p>
+<pre class="prettyprint linenums">webdav [url] {
+    scope       path
+    modify      [true|false]
+    allow       path
+    allow_r     regex
+    block       path
+    block_r     regex
+}
+</pre>
+<ol>
+<li><strong>url</strong> 是要设置的网站URL。默认是 <code>/</code> (比如 <code>/doubi</code> 那么访问地址就是 <code>http://xxxx.xxx/doubi</code> )。</li>
+<li><strong>scope </strong>是要浏览的服务器文件目录路径，可以使相对或绝对路径。默认是 <code>./</code> 。</li>
+<li><strong>modify</strong> 表示是否允许编辑/修改文件. 默认为允许 <code>true</code>。</li>
+<li><strong>allow</strong> 和 <strong>block</strong> 用于允许或拒绝访问指定文件或目录，可以是相对路径。可以使用 <code>dotfiles</code> 来允许或拒绝以 . (点)开头的每个文件的访问权限（以 . 开头的文件往往都是隐藏文件）。</li>
+<li><strong>allow_r</strong> 和 <strong>block_r</strong> 是上面选项的变体，区别是可以使用正则表达式。</li>
+</ol>
+<h3 id="配置示例">配置示例</h3>
+<p>以下示例中，<strong>虚拟主机文件夹</strong>为：<code>/usr/local/caddy/www/file</code>，配置时请自行根据需求修改。</p>
+<p><strong>示例域名</strong>为：<code>toyoo.pw</code> (注意修改)。</p>
+<p><strong>示例用户名</strong>为：<code>admin</code> (注意修改)。</p>
+<p><strong>示例密码</strong>为：<code>password</code> (注意修改)。</p>
+<blockquote><p><em>注意：</em>以下示例中都是用的标准端口 <strong>HTTP(80) HTTPS(443)</strong> ，端口是可以修改的，只需要在域名后面加上 <strong>:8888</strong> 这样的端口号即可（例如 <strong>http://toyoo.pw:8888</strong>）。</p></blockquote>
+<h3 id="IP HTTP">IP HTTP</h3>
+<p>本示例是，<strong>绑定虚拟主机为IP</strong>（即通过IP访问），HTTP协议（<strong>80端口，端口可以改</strong>）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制并修改后粘贴到SSH软件中并一起执行！</strong>
+echo ":80 {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www/file
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTP">域名 HTTP</h3>
+<p>本示例是，<strong>绑定虚拟主机为域名</strong>（即通过域名访问），HTTP协议（<strong>80端口，端口可以改</strong>）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制并修改后粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "http://toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www/file
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTPS">域名 HTTPS</h3>
+<p>本示例是，<strong>绑定虚拟主机为域名</strong>（即通过域名访问），HTTPS协议（<strong>443端口，端口可以改</strong>）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>如果你有 SSL证书和密匙的话，把 <strong>SSL证书(xxx.crt)和密匙(xxx.key)文件</strong>放到 <code>/root</code> 文件夹下（可以是其他文件夹，自己改代码），然后这样做：</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制并修改后粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls /root/xxx.crt /root/xxx.key
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www/file
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p>如果你没有 SSL证书和密匙，那么你可以这样做：</p>
+<p>下面的 <code><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="b5cdcdcdcdf5cdcdcd9bcdcd">[email&#160;protected]</a></code> 改成你的邮箱，同时需要注意的是，申请 SSL证书前，<strong>请务必提前解析好域名记录(解析后最好等一会，以全球生效)，否则 Caddy会申请并配置失败！</strong></p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制并修改后粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls <a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="4d353535350d353535633535">[email&#160;protected]</a>
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www/file
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<h3 id="域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)">域名 HTTP重定向 HTTPS(仅手动指定SSL证书和密匙)</h3>
+<p>本示例是，域名HTTP重定向为HTTPS。</p>
+<p>当你是手动指定 SSL证书和密匙 来配置的话，Caddy只会监听 443端口(https)，并不会自动设置 80端口(http)的重定向，如果要做重定向的话，可以这样做：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看内容</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>下面的示例代码中，是把 <strong>http://toyoo.pw 重定向到了 https://toyoo.pw</strong> 。</p>
+<pre class="prettyprint linenums"><strong># 以下全部内容是一个整体，是一个命令，全部复制并修改后粘贴到SSH软件中并一起执行（注意替换示例域名）！</strong>
+echo "http://toyoo.pw {
+ timeouts none
+ redir https://toyoo.pw{url}
+}
+toyoo.pw {
+ root /usr/local/caddy/www/file
+ timeouts none
+ tls /root/xxx.crt /root/xxx.key
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www/file
+ }
+}" &gt; /usr/local/caddy/Caddyfile
+</pre>
+<p></p></div>
+<hr />
+<p>当你已经配置完上面步骤后，那就要启动 Caddy 了。</p>
+<pre class="prettyprint linenums">/etc/init.d/caddy start
+# 如果启动失败可以看Caddy日志： tail -f /tmp/caddy.log</pre>
+<p>启动成功后，我们访问 WebDAV 地址看看，这里我是按照示例中的 <a href="#IP HTTP">IP HTTP</a> 做的，访问后会提示输入用户名和密码，最后看到的就是如下图所示。</p>
+<p><img class="aligncenter size-medium" style="border-color: #dddddd; background-color: #fbfbfb;" src="kl17qd30.png" width="613" height="398" /></p>
+<h2 id="Caddy 使用说明">Caddy 使用说明</h2>
+<p><strong>启动：</strong>/etc/init.d/caddy start</p>
+<p><strong>停止：</strong>/etc/init.d/caddy stop</p>
+<p><strong>重启：</strong>/etc/init.d/caddy restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/caddy status</p>
+<p><strong>查看Caddy启动日志：</strong> cat /tmp/caddy.log</p>
+<p><strong>Caddy配置文件位置：</strong>/usr/local/caddy/Caddyfile</p>
+<p><strong>Caddy自动申请SSL证书位置：</strong>/.caddy/acme/acme-v02.api.letsencrypt.org/sites/xxx.xxx(域名)/</p>
+<h2 id="Windows 映射网络驱动器">Windows 映射网络驱动器</h2>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>右键桌面上的电脑图标，点击<strong>右键菜单 - 映射网络驱动器...</strong></p>
+<p><img class="aligncenter size-medium" src="6ne871uv-3.png" width="346" height="308" /></p>
+<p>选择一个<strong>驱动器号</strong>（就是 C盘、D盘 这种）。</p>
+<p>然后文件夹输入你的 <strong>WebDAV 地址</strong>，我的是以上面配置示例中的 <a href="#IP HTTP" target="_blank" rel="noopener">IP HTTP</a> 为例。</p>
+<blockquote><p><em>注意：</em>如果你的 <strong>WebDAV 地址为 HTTP协议</strong>，那么还需要修改下注册表：<a href="#修改注册表以支持连接 HTTP协议 的 WebDAV">#修改注册表以支持连接 HTTP协议</a></p></blockquote>
+<p>然后勾选 <strong>登陆时重新连接</strong> 和 <strong>使用其他凭据连接</strong> 。</p>
+<p>最后点击 <span style="color: #3366ff;"><strong>完成</strong></span> 按钮即可。</p>
+<p><img class="aligncenter size-medium" src="9i86mcft.png" width="653" height="527" /></p>
+<p>然后就会提示你输入访问用户名和密码，输入后勾选 <strong>记住我的凭据</strong>，并点击 <span style="color: #3366ff;"><strong>确定</strong></span> 按钮。</p>
+<p><img class="size-medium aligncenter" src="bca3qob4.png" width="660" height="536" /></p>
+<p>几秒后，就会连接成功并弹出新建的 <strong>Z盘(网络驱动器)</strong>，然后我们就可以像平时操作本地硬盘一样的<strong>添加、删除、重命名</strong>这些文件了。</p>
+<p><img class="aligncenter size-medium" src="ew507p_3-2.png" width="791" height="354" /></p>
+<p><img class="aligncenter size-medium" src="hrx9l261-2.png" width="790" height="359" /></p>
+<p></p></div>
+<h2 id="其他说明">其他说明</h2>
+<h3 id="修改注册表以支持连接 HTTP协议 的 WebDAV">修改注册表以支持连接 HTTP协议 的 WebDAV</h3>
+<p>因为考虑到安全性的问题，所以 Windows 默认是不能通过 HTTP协议 连接 WebDAV 服务器的，但是注册表中可以修改这个。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>按 <strong>Win键+R键</strong> (Win键可能是个微软图标的按键)，弹出运行窗口，输入 <strong>regedit</strong> 后回车，就会看到注册表编辑器了。</p>
+<p>如下图所示，我们访问路径：<strong>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters</strong> （直接复制并粘贴到注册表编辑器的地址栏中回车即可）。</p>
+<p>把 <strong>BasicAuthLevel</strong> 的值改为 <strong>2</strong> ( 1 代表只支持 HTTPS，2 代表支持 HTTP 和 HTTPS)</p>
+<p><img class="aligncenter size-medium" src="o6t46pzz.png" width="914" height="467" /></p>
+<p></p></div>
+<h3 id="重新连接时的用户名密码说明">重新连接时的用户名密码说明</h3>
+<p>重新连接时，可以看到 Windows 记住的密码长度不对，这实际上是正常的，<strong>不需要修改也不需要勾选 记住我的凭据</strong>，直接点击 <span style="color: #3366ff;"><strong>确定</strong></span> 按钮即可。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><img class="size-medium aligncenter" src="bca3qob4-2.png" width="733" height="368" /></p>
+<p></p></div>
+<h3 id="手动启动 WebClient 服务方法">手动启动 WebClient 服务方法</h3>
+<p>一般情况下，WebClient(WebDAV) 服务都是关闭的，当你使用 网络驱动器 功能时，系统会自动启动该服务，但是如果因为未知原因为启动失败，那么可以这样手动启动服务。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>按 <strong>Win键+R键</strong> (Win键可能是个微软图标的按键)，弹出运行窗口，输入 <strong>services.msc</strong> 后回车，就会看到服务管理窗口了。</p>
+<p>我们找到 WebClient 服务，<strong>右键弹出菜单 - 点击<span style="color: #3366ff;">属性</span>选项</strong>，然后如下图所示把<strong>启动类型改为 <span style="color: #3366ff;">自动</span></strong>，并点击 <span style="color: #3366ff;"><strong>启动</strong></span> 按钮(下图是点击后的状态)。</p>
+<p><img class="aligncenter size-medium" src="uup-qdsw.png" width="963" height="603" /></p>
+<p></p></div>
+<h3 id="删除网络驱动器">删除网络驱动器</h3>
+<p>删除网络驱动器也很简单，不要在 资源管理器 中直接右键断开连接，这样可能会导致网络驱动器残留，请按这个方法删除(断开)。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>右键桌面上的电脑图标，点击<strong>右键菜单 - 断开映射网络驱动器的连接...</strong></p>
+<p><img class="size-medium aligncenter" src="6ne871uv-4.png" width="340" height="307" /></p>
+<p>然后选择你打算 删除(断开) 的网络驱动器，并点击 <span style="color: #3366ff;"><strong>确定</strong></span> 按钮。</p>
+<p><img class="aligncenter size-medium" src="9i86mcft-2.png" width="581" height="436" /></p>
+<p></p></div>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="soatrior.html">通过 WebDAV 将服务器全部或某个文件夹挂载到电脑上当 网络硬盘</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2680" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">52</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="tjolx2iu.html" rel="tag">VPS</a><a href="jgpktgrd-2.html" rel="tag">WebDAV</a><a href="yl7jysj6.html" rel="tag">网盘</a><a href="qj08ump5-2.html" rel="tag">网络硬盘</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="5qxx762w.html" rel="prev">『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月</a></span>
+			<span class="article-nav-next"><a href="tp_-ic2f-2.html" rel="next">『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="5av9kbaz.html" title="新手购买服务器<strong>必读知识点</strong> —— 少走弯路 少踩坑" target="_blank">
+<img src="e-_nhhl8.png?src=https://doub.io/wp-content/uploads/web-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="新手购买服务器<strong>必读知识点</strong> —— 少走弯路 少踩坑" />	<br><span class="r_title">新手购买服务器<strong>必读知识点</strong> —— 少走弯路 少踩坑</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="8lp6-hyu.html" title="『买一送一』GigsGigsCloud – 购买 HKBN 香港即送 GIA CN2 美国洛杉矶" target="_blank">
+<img src="3t9txzxa.png?src=https://doub.io/wp-content/uploads/gigsgigscloud.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『买一送一』GigsGigsCloud – 购买 HKBN 香港即送 GIA CN2 美国洛杉矶" />	<br><span class="r_title">『买一送一』GigsGigsCloud – 购买 HKBN 香港即送 GIA CN2 美国洛杉矶</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="5qxx762w.html" title="『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月" target="_blank">
+<img src="3t9txzxa.png?src=https://doub.io/wp-content/uploads/gigsgigscloud.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月" />	<br><span class="r_title">『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="2w40qt5x-2.html" title="『晃眼』Bandwagon Host 搬瓦工 — 上线中国电信 联通直连 香港线路" target="_blank">
+<img src="kn6uc646.png?src=https://doub.io/wp-content/uploads/bwg-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『晃眼』Bandwagon Host 搬瓦工 — 上线中国电信 联通直连 香港线路" />	<br><span class="r_title">『晃眼』Bandwagon Host 搬瓦工 — 上线中国电信 联通直连 香港线路</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="5av9kbaz.html">新手购买服务器<strong>必读知识点</strong> —— 少走弯路 少踩坑</a></li><li><i class="fa fa-minus"></i><a href="8lp6-hyu.html">『买一送一』GigsGigsCloud – 购买 HKBN 香港即送 GIA CN2 美国洛杉矶</a></li><li><i class="fa fa-minus"></i><a href="5qxx762w.html">『预售』GigsGigsCloud – PCCW+HKBN 香港 KVM 1Gbps 限量预售 7美元/月</a></li><li><i class="fa fa-minus"></i><a href="2w40qt5x-2.html">『晃眼』Bandwagon Host 搬瓦工 — 上线中国电信 联通直连 香港线路</a></li><li><i class="fa fa-minus"></i><a href="vh8576m0.html">『优惠』Bandwagon Host 搬瓦工 — 高性价比 套餐合集 (支持支付宝)</a></li><li><i class="fa fa-minus"></i><a href="ouiwm7ss.html">利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器</a></li><li><i class="fa fa-minus"></i><a href="79rciax6.html">『优惠』Vultr推出 2.5美元/月 高性价比套餐，5美元用 10个月！</a></li><li><i class="fa fa-minus"></i><a href="q7gcd25g.html">Linux TCP加速工具 —— LotServer(锐速母公司) 一键安装脚本</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2680' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (64)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-43362"><div class="c-avatar"><div class="c-main" id="div-comment-43362">怎么用Caddy自带的HTTPS加Cloudflare呢
+IOS上Documents 和 nPlayer 都可连上。
+Infuse连不上，Linux上的Kodi也连不上。
+把Cloudflare DNS 那设置成DNS only 就可连上。
+那请问有没有其他方法能让用Caddy自带的HTTPS同时Cloudflare的CDN可用呢？<div class="c-meta"><span class="c-author">embryo</span>2018-09-19 11:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43362#respond' onclick='return addComment.moveForm( "div-comment-43362", "43362", "respond", "2680" )' aria-label='回复给embryo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-43369"><div class="c-avatar"><div class="c-main" id="div-comment-43369">本身就没有冲突啊。<br />
+Caddy配置HTTPS套CDN 和 Nginx配置HTTPS套CDN 有什么区别吗？<br />
+Caddy 只是会自动帮你申请和配置SSL证书，证书依然是你的，和 Nginx 配置 HTTPS 没区别。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-19 13:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43369#respond' onclick='return addComment.moveForm( "div-comment-43369", "43369", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43376"><div class="c-avatar"><div class="c-main" id="div-comment-43376">问题是连不上啊，有的可以连上有的不行。
+
+因为我看到别的地方的一句，不要开启任何的CDN，因为CDN会使得Caddy自动申请域名证书的时候失效。
+
+不知道是不是这个原因<div class="c-meta"><span class="c-author">embryo</span>2018-09-19 16:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43376#respond' onclick='return addComment.moveForm( "div-comment-43376", "43376", "respond", "2680" )' aria-label='回复给embryo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-43385"><div class="c-avatar"><div class="c-main" id="div-comment-43385">这是对的，任何自动申请SSL的软件或脚本，都是需要DNS解析验证的（申请证书的域名解析IP与发起证书申请的服务器IP一致），你套了CDN，IP不一样就会审核不通过，自然无法自动申请SSL证书。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-19 21:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43385#respond' onclick='return addComment.moveForm( "div-comment-43385", "43385", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-43050"><div class="c-avatar"><div class="c-main" id="div-comment-43050">按 没有SSL证书和密匙 的配置设置好后，无法启动caddy <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> ，日志显示：  
+Activating privacy features... 2018/09/11 06:14:36 get directory at 'https://acme-v02.api.letsencrypt.org/directory': failed to get json "https://acme-v02.api.letsencrypt.org/directory": Get https://acme-v02.api.letsencrypt.org/directory: x509: failed to load system roots and no roots provided<div class="c-meta"><span class="c-author">king</span>2018-09-11 06:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43050#respond' onclick='return addComment.moveForm( "div-comment-43050", "43050", "respond", "2680" )' aria-label='回复给king'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-43057"><div class="c-avatar"><div class="c-main" id="div-comment-43057">你看一下这个评论：<a href="zg0m_-0l.html#comment-42968" target="_blank">https://doub.io/jzzy-2/comment-page-1/#comment-42968</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-11 07:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43057#respond' onclick='return addComment.moveForm( "div-comment-43057", "43057", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43174"><div class="c-avatar"><div class="c-main" id="div-comment-43174">已经配置成功。感谢大佬  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_biggrin.gif" alt=":grin:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">king</span>2018-09-14 01:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43174#respond' onclick='return addComment.moveForm( "div-comment-43174", "43174", "respond", "2680" )' aria-label='回复给king'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-40289"><div class="c-avatar"><div class="c-main" id="div-comment-40289">大佬请问如果服务器（VPS）上安装了Nextcloud、seafile等云端系统，是否还可以同时在此服务器（VPS）上安装翻墙服务（shadowrocks、v2ray）呢？小白上路，望解答(/ω＼)～<div class="c-meta"><span class="c-author">樂小音</span>2018-07-18 08:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=40289#respond' onclick='return addComment.moveForm( "div-comment-40289", "40289", "respond", "2680" )' aria-label='回复给樂小音'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-40294"><div class="c-avatar"><div class="c-main" id="div-comment-40294">可以，只要互相之间端口不冲突就行了（比如 80 443，还有这些云盘系统的同步端口）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-18 10:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=40294#respond' onclick='return addComment.moveForm( "div-comment-40294", "40294", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-40312"><div class="c-avatar"><div class="c-main" id="div-comment-40312">谢谢大佬指教★彡<div class="c-meta"><span class="c-author">樂小音</span>2018-07-18 19:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=40312#respond' onclick='return addComment.moveForm( "div-comment-40312", "40312", "respond", "2680" )' aria-label='回复给樂小音'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38088"><div class="c-avatar"><div class="c-main" id="div-comment-38088">WebDAV 貌似会限制分享的文件大小<div class="c-meta"><span class="c-author">feng</span>2018-05-19 21:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=38088#respond' onclick='return addComment.moveForm( "div-comment-38088", "38088", "respond", "2680" )' aria-label='回复给feng'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-38151"><div class="c-avatar"><div class="c-main" id="div-comment-38151">windows下不建议直接映射驱动器来管理文件，会有各种限制且拖慢资源管理器。支持webdav的客户端很多，同步类的有GoodSync（前几天在限免），SyncBackPro等，支持直接上传下载的有Cyberduck（免费）、CarotDAV（免费）、Air Explorer等，安卓下有大名鼎鼎的es管理器和solid explorer。用这些客户端管理webdav及传输大文件都要稳定得多。<div class="c-meta"><span class="c-author">aliotsky</span>2018-05-21 11:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=38151#respond' onclick='return addComment.moveForm( "div-comment-38151", "38151", "respond", "2680" )' aria-label='回复给aliotsky'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-40799"><div class="c-avatar"><div class="c-main" id="div-comment-40799">Windows自带的WebClient服务不太好用，有文件大小限制而且重启后经常连不上（需要断开重新映射），可以考虑用Raidrive之类的第三方软件管理WebDAV<div class="c-meta"><span class="c-author">lalala</span>2018-07-31 16:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=40799#respond' onclick='return addComment.moveForm( "div-comment-40799", "40799", "respond", "2680" )' aria-label='回复给lalala'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-37897"><div class="c-avatar"><div class="c-main" id="div-comment-37897">能不能写一个用nginx原生的webdav支持的教程呢？<div class="c-meta"><span class="c-author"><a href='https://www.17huiwei.com/' rel='external nofollow' class='url'>loren</a></span>2018-05-17 14:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37897#respond' onclick='return addComment.moveForm( "div-comment-37897", "37897", "respond", "2680" )' aria-label='回复给loren'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37697"><div class="c-avatar"><div class="c-main" id="div-comment-37697">从Windows拷贝大文件的时候经常会出现如下错误：
+
+错误 0x80070079: 信号灯超时时间已到<div class="c-meta"><span class="c-author">lalala</span>2018-05-12 14:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37697#respond' onclick='return addComment.moveForm( "div-comment-37697", "37697", "respond", "2680" )' aria-label='回复给lalala'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-37544"><div class="c-avatar"><div class="c-main" id="div-comment-37544">拉文件的时候windows提示 文件大小超过允许的限制 如何解决？<div class="c-meta"><span class="c-author">Roach</span>2018-05-09 18:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37544#respond' onclick='return addComment.moveForm( "div-comment-37544", "37544", "respond", "2680" )' aria-label='回复给Roach'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37359"><div class="c-avatar"><div class="c-main" id="div-comment-37359">为什么我服务器已经运行了，外网访问ip什么都没有呢<div class="c-meta"><span class="c-author">marara</span>2018-05-06 22:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37359#respond' onclick='return addComment.moveForm( "div-comment-37359", "37359", "respond", "2680" )' aria-label='回复给marara'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37396"><div class="c-avatar"><div class="c-main" id="div-comment-37396">浏览器访问提示什么错误？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-07 14:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37396#respond' onclick='return addComment.moveForm( "div-comment-37396", "37396", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-37331"><div class="c-avatar"><div class="c-main" id="div-comment-37331">可以用auth加密码<div class="c-meta"><span class="c-author">zhzh</span>2018-05-05 11:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37331#respond' onclick='return addComment.moveForm( "div-comment-37331", "37331", "respond", "2680" )' aria-label='回复给zhzh'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-37290"><div class="c-avatar"><div class="c-main" id="div-comment-37290">我的256M的VPS，不敢上NextCloud怕内存不够。看了大佬的教程茅塞顿开，部署了Caddy和php环境，且在同一目录启用webdav和filebrowser。前者在PC和手机上有广泛的客户端支持，弥补了后者在平台上的短板，也方便传输大文件；后者运行起来轻便快捷，相当于精简版的NextCloud。我试着上传下载了一个3G多的文件，整个过程中VPS的负荷不高，令人满意。<div class="c-meta"><span class="c-author">aliotsky</span>2018-05-03 22:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37290#respond' onclick='return addComment.moveForm( "div-comment-37290", "37290", "respond", "2680" )' aria-label='回复给aliotsky'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-37131"><div class="c-avatar"><div class="c-main" id="div-comment-37131">我现在的vps装着宝塔一键部署的环境，用的apache，还装着一键脚本的aria2，然后按照这个教程一路走下来就是打不开webdav的页面，什么报错也没有，端口也没被占用；然后我新开了个vps，按教程走什么问题都没有，所以我估计是跟vps上面装的东西怼了。请问怎么办啊。。。<div class="c-meta"><span class="c-author">shmily</span>2018-04-29 20:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37131#respond' onclick='return addComment.moveForm( "div-comment-37131", "37131", "respond", "2680" )' aria-label='回复给shmily'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37139"><div class="c-avatar"><div class="c-main" id="div-comment-37139">打开 webdav 网页显示什么？caddy 运行正常吗？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-30 13:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37139#respond' onclick='return addComment.moveForm( "div-comment-37139", "37139", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36863"><div class="c-avatar"><div class="c-main" id="div-comment-36863">windows有密码一直连不上，去掉密码。显示不支持该请求。用nplayer都能连接上，但播放不了，surge里看是http 401没有授权。<div class="c-meta"><span class="c-author">Suns95</span>2018-04-23 09:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36863#respond' onclick='return addComment.moveForm( "div-comment-36863", "36863", "respond", "2680" )' aria-label='回复给Suns95'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36662"><div class="c-avatar"><div class="c-main" id="div-comment-36662">Error during parsing: Unexpected EOF
+这个是什么错误?
+怎么排除呢?<div class="c-meta"><span class="c-author"><a href='http://www.xmanwq.top/' rel='external nofollow' class='url'>xman</a></span>2018-04-19 11:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36662#respond' onclick='return addComment.moveForm( "div-comment-36662", "36662", "respond", "2680" )' aria-label='回复给xman'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36681"><div class="c-avatar"><div class="c-main" id="div-comment-36681">这是哪里提示的错误？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-19 16:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36681#respond' onclick='return addComment.moveForm( "div-comment-36681", "36681", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36638"><div class="c-avatar"><div class="c-main" id="div-comment-36638">可以 做HTTP 下载站吗 这个 还是有更好的教程 谢谢哈<div class="c-meta"><span class="c-author">古本</span>2018-04-18 17:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36638#respond' onclick='return addComment.moveForm( "div-comment-36638", "36638", "respond", "2680" )' aria-label='回复给古本'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36577"><div class="c-avatar"><div class="c-main" id="div-comment-36577">能不能机能用WebDAV 将服务器全部或某个文件夹挂载到电脑上，又能用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器https://doub.io/jzzy-3/#%E5%AE%89%E8%A3%85%20Caddy<div class="c-meta"><span class="c-author">abchihi</span>2018-04-17 20:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36577#respond' onclick='return addComment.moveForm( "div-comment-36577", "36577", "respond", "2680" )' aria-label='回复给abchihi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36615"><div class="c-avatar"><div class="c-main" id="div-comment-36615">在同一个虚拟主机配置(就是域名{xxx}括号内的范围)中理论上是可行的，不过我没试过。。<br />
+当然如果是分开做两个虚拟主机配置，那么是肯定可行的，这个我做过。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-18 13:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36615#respond' onclick='return addComment.moveForm( "div-comment-36615", "36615", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36717"><div class="c-avatar"><div class="c-main" id="div-comment-36717">分开做两个虚拟主机配置, 能否说的详细点？<div class="c-meta"><span class="c-author">abchihi</span>2018-04-20 09:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36717#respond' onclick='return addComment.moveForm( "div-comment-36717", "36717", "respond", "2680" )' aria-label='回复给abchihi'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-36744"><div class="c-avatar"><div class="c-main" id="div-comment-36744">你的评论往下面翻一点，就看到一个类似的要求了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-20 18:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36744#respond' onclick='return addComment.moveForm( "div-comment-36744", "36744", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36557"><div class="c-avatar"><div class="c-main" id="div-comment-36557">已经配置好Aria2了，按照教程一步一步操作，发现WebDev和WebUIAria2两者不能同时使用(采用http域名访问的形式)，作为一名纯小白，想请教一下作者应该怎么修改才能实现访问域名可以进入WebUIAria2同时也能映射网络驱动器呢？<div class="c-meta"><span class="c-author">Ethan</span>2018-04-17 17:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36557#respond' onclick='return addComment.moveForm( "div-comment-36557", "36557", "respond", "2680" )' aria-label='回复给Ethan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36574"><div class="c-avatar"><div class="c-main" id="div-comment-36574">先把你的配置文件内容贴出来我看看是否是哪里有问题（适当打码）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-17 20:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36574#respond' onclick='return addComment.moveForm( "div-comment-36574", "36574", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36657"><div class="c-avatar"><div class="c-main" id="div-comment-36657">http://xxxxx {
+ root /usr/local/caddy/www/
+ timeouts none
+ gzip
+ basicauth / admin password
+ webdav {
+  scope /usr/local/caddy/www
+ }
+}
+CaddyFile如何设置才能在打开域名之后能够打开Aria2 WebUI同时也能映射网络驱动器呢？<div class="c-meta"><span class="c-author">Ethan</span>2018-04-19 10:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36657#respond' onclick='return addComment.moveForm( "div-comment-36657", "36657", "respond", "2680" )' aria-label='回复给Ethan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-36683"><div class="c-avatar"><div class="c-main" id="div-comment-36683">不知道为什么，WebDAV 插件没办法这样设置（这样设置意味着访问 http://ip 就是网页，访问 http://ip/webdav 就是WebDAV页面），我会向作者反馈的。
+<pre class="prettyprint linenums" >:80 {
+	webdav /webdav {
+		scope /xxx
+	}
+}
+</pre>
+但是你可以这样配置，实现一样的效果：
+<pre class="prettyprint linenums" >http://xxx.xx/webdav {
+	timeouts none
+	basicauth / admin password
+	webdav {
+		scope /usr/local/caddy/www
+	}
+}
+http://xxx.xx {
+	root /usr/local/caddy/www/
+	timeouts none
+	gzip
+}
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-19 16:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36683#respond' onclick='return addComment.moveForm( "div-comment-36683", "36683", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36470"><div class="c-avatar"><div class="c-main" id="div-comment-36470">修改Caddyfile后就不能打开Caddy了，日志里一直显示"error presenting token: presenting with standard HTTP provider server: Could not start HTTP server for challenge -&gt; listen tcp :80: bind: address already in use",端口我已经改了，还是这样，希望博主帮忙看看<div class="c-meta"><span class="c-author">Siup</span>2018-04-16 10:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36470#respond' onclick='return addComment.moveForm( "div-comment-36470", "36470", "respond", "2680" )' aria-label='回复给Siup'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36486"><div class="c-avatar"><div class="c-main" id="div-comment-36486">如果你要让 Caddy 自动申请配置SSL正式，那么必须空出 80端口用于SSL证书申请验证服务器验证。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-16 15:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36486#respond' onclick='return addComment.moveForm( "div-comment-36486", "36486", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36627"><div class="c-avatar"><div class="c-main" id="div-comment-36627">感谢博主，解决了，nginx占了80端口<div class="c-meta"><span class="c-author">Siup</span>2018-04-18 14:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36627#respond' onclick='return addComment.moveForm( "div-comment-36627", "36627", "respond", "2680" )' aria-label='回复给Siup'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36458"><div class="c-avatar"><div class="c-main" id="div-comment-36458">这个太棒了，我750g的大盘鸡，终于不用吃灰了，映射为网络驱动器真方便<div class="c-meta"><span class="c-author">棒棒哒</span>2018-04-15 20:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36458#respond' onclick='return addComment.moveForm( "div-comment-36458", "36458", "respond", "2680" )' aria-label='回复给棒棒哒'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36408"><div class="c-avatar"><div class="c-main" id="div-comment-36408">博主你好，请问下你这个文章中的，点击展开查看更多是如何实现的，能简单说下嘛，谢谢<div class="c-meta"><span class="c-author">南思</span>2018-04-14 20:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36408#respond' onclick='return addComment.moveForm( "div-comment-36408", "36408", "respond", "2680" )' aria-label='回复给南思'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36409"><div class="c-avatar"><div class="c-main" id="div-comment-36409">插件名：Toggle box<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-14 20:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36409#respond' onclick='return addComment.moveForm( "div-comment-36409", "36409", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36415"><div class="c-avatar"><div class="c-main" id="div-comment-36415">感谢.<div class="c-meta"><span class="c-author">南思</span>2018-04-14 22:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36415#respond' onclick='return addComment.moveForm( "div-comment-36415", "36415", "respond", "2680" )' aria-label='回复给南思'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36385"><div class="c-avatar"><div class="c-main" id="div-comment-36385">使用的IP HTTP配置，服务器端caddy已启动，网页可访问，注册表已修改，webclient服务已启动，但是在映射网络驱动器时输入账户密码无法成功连接，错误提示是无法找到网络名，大佬可有什么建议？另外，大佬的ip貌似还是暴露了，再“重新连接是的用户名密码说明”那张图上！<div class="c-meta"><span class="c-author">lgsen</span>2018-04-14 10:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36385#respond' onclick='return addComment.moveForm( "div-comment-36385", "36385", "respond", "2680" )' aria-label='回复给lgsen'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36391"><div class="c-avatar"><div class="c-main" id="div-comment-36391">那你尝试一下 Caddy 不配置用户名和密码（删掉 <code>basicauth / admin password</code>），看看能否正常连接。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-14 13:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36391#respond' onclick='return addComment.moveForm( "div-comment-36391", "36391", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-36856"><div class="c-avatar"><div class="c-main" id="div-comment-36856">用nplayer能连上，播放不了视频，http 401<div class="c-meta"><span class="c-author">Suns</span>2018-04-23 01:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36856#respond' onclick='return addComment.moveForm( "div-comment-36856", "36856", "respond", "2680" )' aria-label='回复给Suns'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-4" id="comment-37358"><div class="c-avatar"><div class="c-main" id="div-comment-37358">我也想连接nplayer，请问你连接上了吗<div class="c-meta"><span class="c-author">marara</span>2018-05-06 22:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=37358#respond' onclick='return addComment.moveForm( "div-comment-37358", "37358", "respond", "2680" )' aria-label='回复给marara'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36302"><div class="c-avatar"><div class="c-main" id="div-comment-36302">这个好玩，待会儿玩一波试试 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='http://sin.moe/' rel='external nofollow' class='url'>Rein</a></span>2018-04-12 11:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36302#respond' onclick='return addComment.moveForm( "div-comment-36302", "36302", "respond", "2680" )' aria-label='回复给Rein'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36297"><div class="c-avatar"><div class="c-main" id="div-comment-36297">有木有windows教程啦 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_wink.gif" alt=":wink:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_wink.gif" alt=":wink:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">爪哇直立人</span>2018-04-12 10:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36297#respond' onclick='return addComment.moveForm( "div-comment-36297", "36297", "respond", "2680" )' aria-label='回复给爪哇直立人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36307"><div class="c-avatar"><div class="c-main" id="div-comment-36307">这不就是 windows 教程吗？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-12 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36307#respond' onclick='return addComment.moveForm( "div-comment-36307", "36307", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36274"><div class="c-avatar"><div class="c-main" id="div-comment-36274">那么...像城通网盘这样开放webdav的服务,有什么可以利用的嘛  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">chanca</span>2018-04-11 22:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36274#respond' onclick='return addComment.moveForm( "div-comment-36274", "36274", "respond", "2680" )' aria-label='回复给chanca'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36265"><div class="c-avatar"><div class="c-main" id="div-comment-36265">这个好玩，记得IIS上也有个WebDAV协议<div class="c-meta"><span class="c-author"><a href='https://y2z.top/' rel='external nofollow' class='url'>岩兔站</a></span>2018-04-11 20:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36265#respond' onclick='return addComment.moveForm( "div-comment-36265", "36265", "respond", "2680" )' aria-label='回复给岩兔站'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36260"><div class="c-avatar"><div class="c-main" id="div-comment-36260">建议写一个基于nginx的webdav的教程，caddy实在是小众。<div class="c-meta"><span class="c-author">氪金好友</span>2018-04-11 19:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36260#respond' onclick='return addComment.moveForm( "div-comment-36260", "36260", "respond", "2680" )' aria-label='回复给氪金好友'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36262"><div class="c-avatar"><div class="c-main" id="div-comment-36262">小众就不能用了？我之所以写 Caddy 就是因为安装使用简单，很适合新手小白使用，对于没有建站需求，只是喜欢折腾着玩的人来说，Caddy 很好用。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-11 19:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36262#respond' onclick='return addComment.moveForm( "div-comment-36262", "36262", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36280"><div class="c-avatar"><div class="c-main" id="div-comment-36280">还有更简单的？像我这样总是带着移动硬盘办公的，也是累啊，有这样的就OK了，如果有更简单的，告诉我一下，哪天有机会试试<div class="c-meta"><span class="c-author">RAY</span>2018-04-12 00:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36280#respond' onclick='return addComment.moveForm( "div-comment-36280", "36280", "respond", "2680" )' aria-label='回复给RAY'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-36281"><div class="c-avatar"><div class="c-main" id="div-comment-36281">额，我这个教程里用的就是 Caddy 的 WebDAV 扩展。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-12 00:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36281#respond' onclick='return addComment.moveForm( "div-comment-36281", "36281", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-38303"><div class="c-avatar"><div class="c-main" id="div-comment-38303">嗯，可能我觉得原生的更干净，性能更高<div class="c-meta"><span class="c-author"><a href='https://www.17huiwei.com/' rel='external nofollow' class='url'>loren</a></span>2018-05-24 11:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=38303#respond' onclick='return addComment.moveForm( "div-comment-38303", "38303", "respond", "2680" )' aria-label='回复给loren'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36251"><div class="c-avatar"><div class="c-main" id="div-comment-36251">已经装过了caddy，怎么单独安装这个插件呢？<div class="c-meta"><span class="c-author">Nanyuan</span>2018-04-11 18:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36251#respond' onclick='return addComment.moveForm( "div-comment-36251", "36251", "respond", "2680" )' aria-label='回复给Nanyuan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36254"><div class="c-avatar"><div class="c-main" id="div-comment-36254">无法单独安装，但是你可以更新Caddy ，依然是用我的脚本安装，不过命令后面要加上插件名字(文章中的安装caddy步骤)，会自动覆盖安装。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-11 18:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36254#respond' onclick='return addComment.moveForm( "div-comment-36254", "36254", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-36731"><div class="c-avatar"><div class="c-main" id="div-comment-36731">踩过坑的来告知 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_wink.gif" alt=":wink:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  用toyo的脚本装过filebrowser插件的话，添加webdav插件的命令是bash caddy_install.sh install http.webdav,http.filemanager ,只install http.webdav的话filemanager就没了<div class="c-meta"><span class="c-author">小肥</span>2018-04-20 15:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36731#respond' onclick='return addComment.moveForm( "div-comment-36731", "36731", "respond", "2680" )' aria-label='回复给小肥'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-36785"><div class="c-avatar"><div class="c-main" id="div-comment-36785">这真的是个大坑，多谢提醒<div class="c-meta"><span class="c-author">abchihi</span>2018-04-21 14:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36785#respond' onclick='return addComment.moveForm( "div-comment-36785", "36785", "respond", "2680" )' aria-label='回复给abchihi'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-43387"><div class="c-avatar"><div class="c-main" id="div-comment-43387">兄弟，按你说的代码还是不对啊，是不是http.webdav,http.filemanager 这两个之间不是用逗号隔开的啊？<div class="c-meta"><span class="c-author">Liuben</span>2018-09-19 23:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43387#respond' onclick='return addComment.moveForm( "div-comment-43387", "43387", "respond", "2680" )' aria-label='回复给Liuben'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36249"><div class="c-avatar"><div class="c-main" id="div-comment-36249">webDav配合keepass+keeweb来使用，自己搭建密码保存服务器。<div class="c-meta"><span class="c-author">Lenno</span>2018-04-11 17:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36249#respond' onclick='return addComment.moveForm( "div-comment-36249", "36249", "respond", "2680" )' aria-label='回复给Lenno'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36255"><div class="c-avatar"><div class="c-main" id="div-comment-36255">WebDAV的玩法有很多，我也只是简单查了下，发现可以做网络驱动器（网盘），就觉得有点意思写个教程。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-11 19:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36255#respond' onclick='return addComment.moveForm( "div-comment-36255", "36255", "respond", "2680" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-43388"><div class="c-avatar"><div class="c-main" id="div-comment-43388">逗比大佬能否考虑一下出一个WebDAV+filemanager配套使用的教程呢，非常感谢。<div class="c-meta"><span class="c-author">Liuben</span>2018-09-19 23:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=43388#respond' onclick='return addComment.moveForm( "div-comment-43388", "43388", "respond", "2680" )' aria-label='回复给Liuben'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-36243"><div class="c-avatar"><div class="c-main" id="div-comment-36243">第一第一<div class="c-meta"><span class="c-author"><a href='http://www.znboke.com/' rel='external nofollow' class='url'>zn'blog</a></span>2018-04-11 16:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/jzzy-4/?replytocom=36243#respond' onclick='return addComment.moveForm( "div-comment-36243", "36243", "respond", "2680" )' aria-label='回复给zn&#039;blog'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="wk9c6a8-container wk9c6a8-1 wk9c6a8-hide">
+    <div class="wk9c6a8-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="wk9c6a8"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

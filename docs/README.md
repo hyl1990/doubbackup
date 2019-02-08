@@ -1,0 +1,739 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>逗比根据地 - 世界那么逗，我想出去看看</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 0, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1923] -->
+<meta name="description"  content="逗比们的根据地，主要写一些科学上网教程、分享有趣的工具、VPS优惠/评测和分享免费的Shadowsocks账号，关注逗比，享受科学上网！" />
+
+<meta name="keywords"  content="逗比,逗比根据地,VPS,VPS评测,VPS优惠,一键脚本,服务器,主机,科学上网,Shadowsocks,ShadowsocksR,Shadowsocks免费账号,ss免费账号,ss账号,ss,ssr" />
+<link rel='next' href='s9276a05.html' />
+
+<link rel="canonical" href="index.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<style>
+.dkee0ca{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.dkee0ca-hide{
+    display: none;
+}
+.dkee0ca-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.dkee0ca-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.dkee0ca-2 .dkee0ca-body,.dkee0ca-3 .dkee0ca-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.dkee0ca-2 .close-btn,.dkee0ca-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.dkee0ca-3 .dkee0ca-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.dkee0ca').html(kill_adBlock_message);
+            jQuery('.dkee0ca-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.dkee0ca-container').fadeOut('dkee0ca-hide');
+        });
+    });
+
+</script>
+    <meta name="keywords" content="逗比,逗比根据地,VPS,VPS评测,VPS优惠,一键脚本,服务器,主机,科学上网,Shadowsocks,ShadowsocksR,Shadowsocks免费账号,ss免费账号,ss账号,ss,ssr">
+<meta name="description" content="逗比们的根据地，主要写一些科学上网教程、分享有趣的工具、VPS优惠/评测和分享免费的代理账号，关注逗比，享受科学上网！">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="home blog">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li class="current-menu-item"><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+	<div class="content">
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+<li><a target="_blank" href="mc1t27yh.html" title="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理"><img src="a5weujbt.png" title="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" alt="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" /></a></li><li><a target="_blank" href="dvvp201-.html" title="『持续更新』Linux 常用命令简单介绍 —— 基础篇"><img src="-x0-7nkl.png" title="『持续更新』Linux 常用命令简单介绍 —— 基础篇" alt="『持续更新』Linux 常用命令简单介绍 —— 基础篇" /></a></li><li><a target="_blank" href="ouiwm7ss.html" title="利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器"><img src="xvvnutnd.png" title="利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器" alt="利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器" /></a></li><li><a target="_blank" href="6r9z6_wi-2.html" title="关于Shadowsocks的小白常见问题 总结篇"><img src="qvd2s83a.png" title="关于Shadowsocks的小白常见问题 总结篇" alt="关于Shadowsocks的小白常见问题 总结篇" /></a></li><li><a target="_blank" href="6r9z6_wi.html" title="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！"><img src="85ia6s4c.png" title="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！" alt="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！" /></a></li><li><a target="_blank" href="pnqap_t4.html" title="电脑科学上网工具介绍"><img src="k55h52je.png" title="电脑科学上网工具介绍" alt="电脑科学上网工具介绍" /></a></li><li><a target="_blank" href="xk611kx-.html" title="安卓科学上网工具介绍"><img src="rwvqh754.png" title="安卓科学上网工具介绍" alt="安卓科学上网工具介绍" /></a></li>	</ul>
+</div>
+
+<div class="ws_thumbs">
+<div>
+<a target="_blank" href="#" title="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理"><img src="6vitm2kv.png?src=https://img.doub.pw/thumbs/goflyway-05.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="『持续更新』Linux 常用命令简单介绍 —— 基础篇"><img src="5nydz6tn.png?src=https://img.doub.pw/thumbs/linux-01.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="利用 Caddy FileBrowser扩展 非常简单的部署 私人网盘/在线文件管理器"><img src="sxh2al9f.png?src=https://img.doub.pw/thumbs/FileBrowser-03.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="关于Shadowsocks的小白常见问题 总结篇"><img src="kla6kpmc.png?src=https://img.doub.pw/thumbs/shadowsocks-3.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="Shadowsocks指导篇（总结归类）——从无到有，境无止尽！"><img src="2v5qn_oe.png?src=https://img.doub.pw/thumbs/Shadowsocks-Zhidaopian.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="电脑科学上网工具介绍"><img src="ev2lxv4f.png?src=https://img.doub.pw/thumbs/pc-kxsw.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a><a target="_blank" href="#" title="安卓科学上网工具介绍"><img src="lmh5-od6.png?src=https://img.doub.pw/thumbs/Android1.png&amp;h=62&amp;w=120&amp;q=90&amp;zc=1&amp;ct=1" /></a></div></div><div class="ws_shadow"></div>
+	</div><script type="text/javascript" src="qrt8qsrr.js"></script>		<div><style>.new_zixun{background-color:#fff;position:relative;height:35px;margin-bottom: 10px;clear: both;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}.new_zixun p{line-height:36px;text-align:left}.new_zixun span{background-color:#1abc9c;color:#fff;font-size:15px;padding:8px 20px;margin-right:10px}.new_zixun img{display:inline}.new_zixun a{background-color:#ff6464;color:#fff;padding:0 15px;float:right}.new_zixun a:hover{background-color:#ec6565}@media (max-width: 767px) {.new_zixun {display: none;}}@media (min-width: 767px) {.new_zixun {display: block;}}
+</style>
+<div class="new_zixun">
+<p style="font-size: 13px;"><span>♦ 最新资讯 ♦</span>Vultr 限时优惠，<strong>注册送100刀！</strong>3.5美元/月，IP被墙免费换，支持微信、支付宝。<img src="aabmo546.gif"><a target="_blank" href="https://doub.io/go/vultr-100/">立刻注册</a></p>
+</div></div>		<div><div class="left-ad" style="clear: both;background-color: #fff; width: 30%;float: left;margin-right:2%;"></div><div class="hot-posts">
+			<h2 class="title">♦ 热门排行 ♦</h2>
+			<ul><li><p><span class="post-comments"><i class="fa fa-comments-o"></i>评论 (1578)</span><span class="muted"><a href="javascript:;" data-action="ding" data-id="1346" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">904</span>赞</a></span></p><span class="label label-1">1</span><a target="_blank" href="wkcjzpyd.html" title="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</a></li><li><p><span class="post-comments"><i class="fa fa-comments-o"></i>评论 (97)</span><span class="muted"><a href="javascript:;" data-action="ding" data-id="2945" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">275</span>赞</a></span></p><span class="label label-2">2</span><a target="_blank" href="qbc20cn3.html" title="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程</a></li><li><p><span class="post-comments"><i class="fa fa-comments-o"></i>评论 (65)</span><span class="muted"><a href="javascript:;" data-action="ding" data-id="2929" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">176</span>赞</a></span></p><span class="label label-3">3</span><a target="_blank" href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><p><span class="post-comments"><i class="fa fa-comments-o"></i>评论 (40)</span><span class="muted"><a href="javascript:;" data-action="ding" data-id="2931" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">91</span>赞</a></span></p><span class="label label-4">4</span><a target="_blank" href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><p><span class="post-comments"><i class="fa fa-comments-o"></i>评论 (37)</span><span class="muted"><a href="javascript:;" data-action="ding" data-id="2938" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">452</span>赞</a></span></p><span class="label label-5">5</span><a target="_blank" href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li></ul>
+		</div></div>
+		<article class="excerpt">
+	<header><a class="label label-important" href="3we1qxzj.html">VPN资源<i class="label-arrow"></i></a><h2><a target="_blank" href="0k260c3z.html" title="WireGuard —— 多用户配置教程">WireGuard —— 多用户配置教程  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="0k260c3z.html"><img class="thumb" src="udx3p9sw.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— 多用户配置教程" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月12日 08:58 可能会因为没有更新而失效。如已失效或需要修正，请留言！前几天写过 WireGuard 手动服务端教程后，一部分人想知道如何配置多用户，即多个客户端账号。
+同一个账号可以多个设备链接，但是如果你要分享给朋友使用，为了方便管理，建议...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 1周前 (11-12)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="0k260c3z.html#comments">2评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2956" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">99</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="3we1qxzj.html">VPN资源<i class="label-arrow"></i></a><h2><a target="_blank" href="x2_8j160.html" title="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程">WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="x2_8j160.html"><img class="thumb" src="udx3p9sw.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月11日 23:21 可能会因为没有更新而失效。如已失效或需要修正，请留言！前两天写了 WireGuard 的教程后，因为其高速、安全、复活被墙IP的特性很受大家欢迎，为此很多人都在问我 Windows 客户端如何分流，毕竟Android客户端都有分...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 1周前 (11-11)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="x2_8j160.html#comments">16评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2954" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">127</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="3we1qxzj.html">VPN资源<i class="label-arrow"></i></a><h2><a target="_blank" href="t86-fo_1.html" title="WireGuard —— Windows/Android 客户端简单使用教程">WireGuard —— Windows/Android 客户端简单使用教程  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="t86-fo_1.html"><img class="thumb" src="udx3p9sw.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— Windows/Android 客户端简单使用教程" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月11日 16:59 可能会因为没有更新而失效。如已失效或需要修正，请留言！目前 WireGuard 还只有个 Android 版的官方客户端，而 Windows 和 Android(另一个) 以及 IOS 客户端都是由第三方(TunSafe)制作(...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 1周前 (11-09)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="t86-fo_1.html#comments">7评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2946" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">106</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="3we1qxzj.html">VPN资源<i class="label-arrow"></i></a><h2><a target="_blank" href="qbc20cn3.html" title="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="qbc20cn3.html"><img class="thumb" src="udx3p9sw.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月12日 09:02 可能会因为没有更新而失效。如已失效或需要修正，请留言！从几个月前就有人跟我说过 WireGuard 这个下一代VPN协议，不过当时网上也没什么中文教程，官方又全是英文，零零散散的看不懂就给无视了。
+最近一段时间，貌似 WireG...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 1周前 (11-09)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="qbc20cn3.html#comments">97评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2945" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">275</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="qha-5xcm.html">Shadowsocks<i class="label-arrow"></i></a><h2><a target="_blank" href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="kd691l4o.html"><img class="thumb" src="4ivvx3rz.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月7日 23:06 可能会因为没有更新而失效。如已失效或需要修正，请留言！昨天有个逗比想让我写个 Shadowsocks 一键管理脚本，我去查了下发现这么多年了，竟然还没有一个 一键管理脚本(可能有但没查到)，目前网上流传的还是秋水逗比的一键安装脚本...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 2周前 (11-07)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="kd691l4o.html#comments">30评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2941" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">211</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="qha-5xcm.html">Shadowsocks<i class="label-arrow"></i></a><h2><a target="_blank" href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="hi10k-7p-3.html"><img class="thumb" src="u74f58-j.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月6日 18:39 可能会因为没有更新而失效。如已失效或需要修正，请留言！本来 SS SSR 用的用的高高兴兴，结果从今年初开始，很多人反应 SS SSR 代理账号被封了，更换IP后又是很快GG，导致很多人纷纷逃离 SS SSR，转向 V2ray B...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 2周前 (11-06)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="hi10k-7p-3.html#comments">37评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2938" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">452</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="c8ljt6o8.html">网络资源<i class="label-arrow"></i></a><h2><a target="_blank" href="k71l4klb.html" title="网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="k71l4klb.html"><img class="thumb" src="woh6pmel.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月7日 00:43 可能会因为没有更新而失效。如已失效或需要修正，请留言！前段时间有个逗比给我推荐了个程序：Brook Web，我看了下也刚刚诞生没几天，虽说功能不够完善，但是看起来还不错，所以就写个教程分享给大家。
+
+其他 Brook 教程请看：h...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 2周前 (11-05)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="k71l4klb.html#comments">26评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2935" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">75</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="1jg9z3mv.html">Shell脚本<i class="label-arrow"></i></a><h2><a target="_blank" href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="es5fj9se.html"><img class="thumb" src="6qdm4lb6.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月10日 16:01 可能会因为没有更新而失效。如已失效或需要修正，请留言！前段时间，我写了个 MTProxy 的一键脚本，那个脚本用的是 MTProto Proxy 官方项目的，而前几天我又发现一个用 Go 语言实现的 MTProto Proxy，...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 3周前 (10-29)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="es5fj9se.html#comments">40评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2931" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">91</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="1jg9z3mv.html">Shell脚本<i class="label-arrow"></i></a><h2><a target="_blank" href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="aybh4ww5.html"><img class="thumb" src="6qdm4lb6.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" /></a></div>
+			<span class="note"> 本文最后更新于 2018年11月2日 13:06 可能会因为没有更新而失效。如已失效或需要修正，请留言！很早的时候，我就发现了一个 Telegram 推送消息机器人，不过我平时也只是拿来写脚本监控一些东西通知我，昨天晚上突发奇想，觉得我完全可以做一个实时监测服务器IP是否被墙并推...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 4周前 (10-25)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="aybh4ww5.html#comments">65评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2929" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">176</span> 赞</a></span></p>
+</article>
+<article class="excerpt">
+	<header><a class="label label-important" href="w9qs7z5o.html">逗比软件<i class="label-arrow"></i></a><h2><a target="_blank" href="ouiwm7ss-2.html" title="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools">『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools  </a></h2>
+	</header>
+	<div class="focus"><a target="_blank" href="ouiwm7ss-2.html"><img class="thumb" src="hngxbhzk.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=123&amp;w=200&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools" /></a></div>
+			<span class="note"> 本文最后更新于 2018年10月21日 17:41 可能会因为没有更新而失效。如已失效或需要修正，请留言！噜啦啦噜啦啦~
+DAZE Linux 一键脚本：『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本
+DAZE Linux 手动教程：一个由Go语言编写的轻量化...</span>
+<p class="auth-span">
+		<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+		<span class="muted"><i class="fa fa-clock-o"></i> 4周前 (10-21)</span>		<span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="ouiwm7ss-2.html#comments">9评论</a></span><span class="muted">
+<a href="javascript:;" data-action="ding" data-id="2918" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i><span class="count">451</span> 赞</a></span></p>
+</article>
+<div class="pagination"><ul><li class="prev-page"></li><li class="active"><span>1</span></li><li><a href='s9276a05.html'>2</a></li><li><a href='v3u5kmx3.html'>3</a></li><li><a href='zly21nh2.html'>4</a></li><li><a href='2gqzf0e1.html'>5</a></li><li><span> ... </span></li><li class="next-page"><a href="s9276a05.html" >下一页</a></li></ul></div>	</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div><div class="widget widget_links"><div class="title"><h2>友情の链接</h2></div>
+	<ul class='xoxo blogroll'>
+<li><a href="https://www.zhujiboke.com/" title="一起来搞机吧！" target="_blank">主机博客</a></li>
+<li><a href="http://www.zhujiceping.com/" title="国外主机优惠码、域名优惠码、国外VPS测评、国外服务器" target="_blank">国外主机测评</a></li>
+<li><a href="http://51.ruyo.net/" title="分享也是一种快乐！" target="_blank">如有乐享</a></li>
+<li><a href="http://www.66re.cn/" title="一个神奇的影音娱乐网，电影、电视直播，视频VIP破解~" target="_blank">小康音乐电台</a></li>
+<li><a href="https://zhuji.lu/" title="分享各类教程与主机测评推荐" target="_blank">撸主机</a></li>
+<li><a href="https://www.mengclaw.com/" title="一只雪狗狗的杂货铺" target="_blank">萌爪实验室</a></li>
+<li><a href="http://ilxdh.com/" title="做个有用的导航！" target="_blank">龙轩导航</a></li>
+
+	</ul>
+</div>
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center">
+<embed type="application/x-shockwave-flash" src="4wwjceo2.swf" width="320" height="260" id="flashID" name="flashID" bgcolor="#FFFFFF" quality="high" flashvars="up_backgroundColor=FFFFFF" wmode="opaque" allowscriptaccess="always"/>
+</div></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="dkee0ca-container dkee0ca-1 dkee0ca-hide">
+    <div class="dkee0ca-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="dkee0ca"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+</body>
+</html>

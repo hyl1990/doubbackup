@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』KCPTun 客户端教程 + 自写KcpTun Tools辅助工具 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1955] -->
+<meta name="description"  content="本来是不想写 KCPTun 的教程的，几个月前就发现这个软件了，也有人想让我写，但是我很讨厌Finalspeed和Netspeed，所以连带着KCPTun后也不喜欢。 但是最近发现很多软件都开始支持这玩意了，比如Shadowsocks安卓版、V2ray、一些路由器固件，再加上最近让我写这个软件的人也挺多，那我就干" />
+
+<meta name="keywords"  content="kcptun,kcptun tools,shadowsocks,原创软件,教程" />
+
+<link rel="canonical" href="a6551xds-5.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）' href='9-b8lkgt-4.html' />
+<link rel='next' title='KCPTun  安卓 Shadowsocks客户端 使用教程' href='e0926y-q-4.html' />
+<link rel='shortlink' href='https://doub.io/?p=1409' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc37%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fss-jc37%2F&amp;format=xml" />
+<style>
+.qkbfc1a{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.qkbfc1a-hide{
+    display: none;
+}
+.qkbfc1a-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.qkbfc1a-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.qkbfc1a-2 .qkbfc1a-body,.qkbfc1a-3 .qkbfc1a-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.qkbfc1a-2 .close-btn,.qkbfc1a-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.qkbfc1a-3 .qkbfc1a-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.qkbfc1a').html(kill_adBlock_message);
+            jQuery('.qkbfc1a-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.qkbfc1a-container').fadeOut('qkbfc1a-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="kcptun, kcptun tools, Shadowsocks, 原创软件, 教程, Shadowsocks, 网络资源, 逗比软件">
+<meta name="description" content="本来是不想写 KCPTun 的教程的，几个月前就发现这个软件了，也有人想让我写，但是我很讨厌Finalspeed和Netspeed，所以连带着KCPTun后也不喜欢。  但是最近发现很多软件都开始支持这玩意了，比如Shadowsocks安卓版、V2ray、一些路由器固件，再加上最近让我写这个软件的人也挺多，那我就干脆写了吧，反正最近没东西写挺无聊的。 注意：本软件已经放弃更新，所以请勿继续使用。    KCPTun在Windows的客户">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-1409 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li class="current-post-ancestor"><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="a6551xds-5.html">『原创』KCPTun 客户端教程 + 自写KcpTun Tools辅助工具</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2016-08-07)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 29022℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="a6551xds-5.html#comments">73评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="a6551xds-5.html#主要特性" title="主要特性"><span>主要特性</span></a></li><li class="content-index-level-1"><a href="a6551xds-5.html#截图展示" title="截图展示"><span>截图展示</span></a></li><li class="content-index-level-1"><a href="a6551xds-5.html#使用方法" title="使用方法"><span>使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="a6551xds-5.html#KcpTun客户端设置" title="KcpTun客户端设置"><span>KcpTun客户端设置</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#简单步骤：" title="简单步骤："><span>简单步骤：</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#详细步骤：" title="详细步骤："><span>详细步骤：</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#Shadowsocks客户端设置" title="Shadowsocks客户端设置"><span>Shadowsocks客户端设置</span></a></li></ul></li><li class="content-index-level-1"><a href="a6551xds-5.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="a6551xds-5.html#版本1.0.4 日期2016年11月22日" title="版本1.0.4 日期2016年11月22日"><span>版本1.0.4 日期2016年11月22日</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#版本1.0.3 日期2016年08月18日" title="版本1.0.3 日期2016年08月18日"><span>版本1.0.3 日期2016年08月18日</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#版本1.0.2 日期2016年08月18日" title="版本1.0.2 日期2016年08月18日"><span>版本1.0.2 日期2016年08月18日</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#版本1.0.1 日期2016年08月17日" title="版本1.0.1 日期2016年08月17日"><span>版本1.0.1 日期2016年08月17日</span></a></li><li class="content-index-level-2"><a href="a6551xds-5.html#版本2.3.6 日期2016年07月22日" title="版本1.0.0 日期2016年08月07日"><span>版本1.0.0 日期2016年08月07日</span></a></li></ul></li><li class="content-index-level-1"><a href="a6551xds-5.html#下载地址" title="下载地址"><span>下载地址</span></a></li><li class="content-index-level-1"><a href="a6551xds-5.html#加速效果" title="加速效果"><span>加速效果</span></a><ul class="children"><li class="content-index-level-2"><a href="a6551xds-5.html#故障排除" title="故障排除"><span>故障排除</span></a></li></ul></li><li class="content-index-level-1"><a href="a6551xds-5.html#注意事项" title="注意事项"><span>注意事项</span></a><ul class="children"><li class="content-index-level-2"><a href="a6551xds-5.html#作者的解释：" title="作者的解释："><span>作者的解释：</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年8月17日 22:43</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>本来是不想写 KCPTun 的教程的，几个月前就发现这个软件了，也有人想让我写，但是我很讨厌Finalspeed和Netspeed，所以连带着KCPTun后也不喜欢。</p>
+<p>但是最近发现很多软件都开始支持这玩意了，比如Shadowsocks安卓版、V2ray、一些路由器固件，再加上最近让我写这个软件的人也挺多，那我就干脆写了吧，反正最近没东西写挺无聊的。</p>
+<blockquote><p><em>注意：</em>本软件已经<strong>放弃更新</strong>，所以<strong>请勿继续使用</strong>。</p></blockquote>
+<hr />
+<p>KCPTun在Windows的客户端和服务器一样，都是只有两个文件，一个是客户端，一个是服务端。</p>
+<p>同样也是没有任何的启动工具、脚本，需要手动写脚本或者用CMD运行，挺麻烦的，而且对于多服务器来说，就要创建多个脚本。</p>
+<p>看了看实现这些功能也不难，于是我就写了个KcpTun Tools辅助工具，来辅助KcpTun运行，会方便挺多的。</p>
+<ul>
+<li>如果你要搭建服务端，请看这个教程：<a title="Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）" href="9-b8lkgt-4.html" target="_blank" rel="noopener">Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）</a>，其他KCPTun教程 请看：<a href="6r9z6_wi.html#KcpTun" target="_blank" rel="noopener">这里</a></li>
+</ul>
+<p><span style="color: #ff6464;"><strong>目前最新版本：V1.0.4</strong></span></p>
+<h2 id="主要特性">主要特性</h2>
+<ul>
+<li>支持多服务器</li>
+<li>可视化操作</li>
+<li>可后台运行</li>
+<li>随机启动</li>
+<li>新手识别度高</li>
+</ul>
+<h2 id="截图展示">截图展示</h2>
+<p><img class=" aligncenter" src="h5rldhyt-6.png" alt="" width="536" height="505" /></p>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="KcpTun客户端设置">KcpTun客户端设置</h3>
+<h3 id="简单步骤：">简单步骤：</h3>
+<ol>
+<li>打开软件，并点击 <strong>新建</strong> 按钮</li>
+<li>依次填写 <strong>KcpTun 信息</strong></li>
+<li>选择 <strong>KcpTun文件目录</strong> 和填写 <strong>上传下载宽带</strong></li>
+<li>点击 <strong>保存配置</strong> 按钮</li>
+<li>点击 <strong>启动加速</strong> 按钮</li>
+<li><strong>完成</strong>，如果没有填错，那就可以使用了。</li>
+</ol>
+<h3 id="详细步骤：">详细步骤：</h3>
+<pre><strong>注意：加速端口 / 加密方式 / 验证密匙 / 压缩 必须和服务器配置一致！</strong></pre>
+<ul>
+<li>首先你要<strong>先安装好 KcpTun 的服务端或者有 KcpTun 的加速信息</strong>，然后打开本软件。</li>
+<li>点击最下角的 <span style="color: #ff6464;"><strong>新建</strong></span> 按钮，然后在右边依次输入 <strong>KcpTun参数</strong>。</li>
+</ul>
+<pre>注意：<span style="color: #ff6464;"><strong>在基础配置中</strong></span>，<strong>本地端口是<span style="color: #ff6464;">可以任意的</span>（但是<span style="color: #ff6464;">不要使用1080</span>，这样会和Shadowsocks客户端的本地端口冲突）</strong>，DSCP不懂得不要设置，<strong>验证密匙需要和服务端配置一样（可以不设置留空）</strong>，因为参数过多，软件只是把常用的参数列出来 其他配置大家可以手动添加。<span style="color: #ff6464;"><strong>剩余的参数必须和服务器一模一样</strong></span></pre>
+<p><strong>（注意：验证密匙是 KcpTun服务端的验证密匙，和Shadowsocks账号的密码毫无关系，不要弄混了）</strong></p>
+<hr />
+<ul>
+<li>宽带配置，就去测试一下你的宽带<span style="color: #ff6464;"><strong>实际</strong></span>上行和下行是多少，然后填上去，下面就会根据作者推荐的比例自动计算 <strong>Sndwnd/Rcvwnd</strong> 参数的值了。MTU不懂不要改。</li>
+</ul>
+<pre>注意！这里的宽带数值<span style="color: #ff6464;"><strong>只能填少，不能填多</strong></span>，如果<strong>宽带数值高于本地实际宽带过多</strong>，将会<strong>导致服务器浪费大量宽带和流量</strong>，甚至你的 <strong>服务器实际使用流量 会比 你使用的流量 <span style="color: #ff6464;">多十几倍</span></strong>，等于说完全<span style="color: #ff6464;"><strong>浪费了十几倍的流量</strong></span>，也没有给你用到，服务器还消耗了这些流量。</pre>
+<hr />
+<ul>
+<li>然后点击 <span style="color: #ff6464;"><strong>浏览</strong></span> 按钮选择你的 TcpKun 客户端文件，例如：<strong> 32x 的是 client_windows_386.exe ，64x的是 client_windows_amd64.exe</strong> 。</li>
+</ul>
+<pre><strong>TcpKun下载地址：</strong><a href="https://github.com/xtaci/kcptun/releases" target="_blank" rel="noopener">https://github.com/xtaci/kcptun/releases</a> <strong>（32位下载kcptun-windows-386-*.tar.gz，64位下载kcptun-windows-amd64-*.tar.gz）</strong></pre>
+<p>当然，你也可以直接 把 <strong>TcpKun 客户端文件拖拉到软件窗口</strong>，将会自动获取目录。</p>
+<p>最后，确定各个选项参数都正确，就可以点击 <span style="color: #ff6464;"><strong>启动加速</strong></span> 按钮启动软件了！这时候你可以点 <span style="color: #ff6464;"><strong>右上角的x</strong></span> 关闭软件了，软件会自动托盘后台运行的，在右下角你会看到软件图标的！</p>
+<h3 id="Shadowsocks客户端设置">Shadowsocks客户端设置</h3>
+<p>打开Shadowsocks客户端，添加服务器，服务器IP为<code>127.0.0.1</code>，服务器端口为 <strong>KcpTun Tools</strong> 上面的的<span style="color: #ff6464;"><strong>本地端口</strong></span>，这里是<code>2000</code>，然后你的ss密码、加密方式等等都按照原来的账号设置，也就是说只改了IP和服务器端口选项，其他的都和原Shadowsocks账户保持一致。<br />
+<img class="lazy aligncenter" src="61_kzgam.html" alt="" width="322" height="254" data-original="rkq-qed7.html" /></p>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="版本1.0.4 日期2016年11月22日"><span style="color: #ff6464;">版本1.0.4 日期2016年11月22日</span></h3>
+<ol>
+<li>添加加密方式和是否压缩选项。</li>
+<li>修复检测更新功能。<br />
+Tip：因为更换域名，所以检测更新失效了。</li>
+</ol>
+<h3 id="版本1.0.3 日期2016年08月18日">版本1.0.3 日期2016年08月18日</h3>
+<ol>
+<li>修复 无法开机启动的BUG。</li>
+<li>添加 关闭后保留当前节点和启动状态记录。<br />
+<strong>解释：</strong>如果上次是启动加速中退出程序，下次启动自动选择上次最后使用的节点并启动加速。</li>
+</ol>
+<h3 id="版本1.0.2 日期2016年08月18日">版本1.0.2 日期2016年08月18日</h3>
+<ol>
+<li>修复 KcpTun目录包含空格无法启动的BUG。</li>
+<li>优化 了一些参数。</li>
+</ol>
+<h3 id="版本1.0.1 日期2016年08月17日">版本1.0.1 日期2016年08月17日</h3>
+<ol>
+<li>增加 检测更新功能。</li>
+<li>增加 软件启动后检查KcpTun文件是否存在。</li>
+<li>优化 KcpTun进程检测。</li>
+<li>修复 无法使用 加速方式[default] 的BUG。</li>
+<li>修复 宽带计算公式，sndwnd值错误。</li>
+</ol>
+<h3 id="版本2.3.6 日期2016年07月22日">版本1.0.0 日期2016年08月07日</h3>
+<ol>
+<li>推出正式版 Ver 1.0！</li>
+</ol>
+<h2 id="下载地址">下载地址</h2>
+<p><a class="dl" title="" href="https://softsmirror.cf/?dir=%e7%a7%91%e5%ad%a6%e4%b8%8a%e7%bd%91/other" target="_blank" rel="nofollow noopener" data-original-title=""><i class="fa fa-cloud-download"></i>逗比 · 云</a></p>
+<p>因为就花了一会时间做好了，所以本人简单的测试可能会有一些BUG没有发现，如果大家发现了请在下面留言！</p>
+<h2 id="加速效果">加速效果</h2>
+<p><strong>美国服务器，加速前 Youtube 速度：</strong></p>
+<p><img class=" aligncenter" src="e-zoz72u-5.png" alt="" width="401" height="204" /></p>
+<p><strong>加速后 Youtube 速度：</strong></p>
+<p><img class=" aligncenter" src="beufiu5v-3.png" alt="" width="416" height="211" /></p>
+<h3 id="故障排除">故障排除</h3>
+<blockquote>
+<ul>
+<li>客户端和服务器端<strong><em>皆无</em></strong> <code>stream opened</code>信息。</li>
+</ul>
+<p>连接客户端程序的端口设置错误。</p>
+<ul>
+<li>客户端有 <code>stream opened</code>信息，服务器端没有。</li>
+</ul>
+<p>连接服务器的端口设置错误，或者被防火墙拦截。</p>
+<ul>
+<li>客户端服务器<strong><em>皆有</em></strong> <code>stream opened</code>信息，但无法通信。</li>
+</ul>
+<p>上层软件的设定错误。</p>
+<pre>注意：日志信息在你的客户端或者服务端同目录下的 <strong>kcptun.log</strong> 中。</pre>
+</blockquote>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li>软件仅支持Windows系统，对于Linux和Mac用户说声抱歉。</li>
+<li>win7以上系统如无法运行请尝试使用 管理员模式 启动。</li>
+<li>软件由易语言编写，所以一些杀毒软件可能报毒，我再次保证，我原创的软件绝对没有病毒！</li>
+</ul>
+<p>KcpTun有个缺点，<span style="color: #ff6464;"><strong>就是实际流量消耗 最少是 你使用量的两倍！</strong></span>如果参数调整有问题，可能会浪费十几倍的流量，而加速幅度也并不会上升多少。</p>
+<h3 id="作者的解释：">作者的解释：</h3>
+<ul>
+<li>出现这个情况有几种可能：</li>
+<li>ISP 对UDP丢包极高，例如50%</li>
+<li>服务器，客户端本身的带宽较低，可以适当调低sndwnd /rcvwnd</li>
+<li>可以尝试 -dscp 46参数降低丢包率。</li>
+</ul>
+<p>希望你们注意一下这个问题，可能搞不好就被 IDC 以滥用网络的名义给封VPS了。</p>
+<ul>
+<li>如果你要搭建服务端，请看这个教程：<a title="Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）" href="9-b8lkgt-4.html" target="_blank" rel="noopener">Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）</a>，其他KCPTun教程 请看：<a href="6r9z6_wi.html#KcpTun" target="_blank" rel="noopener">这里</a></li>
+</ul>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="a6551xds-5.html">『原创』KCPTun 客户端教程 + 自写KcpTun Tools辅助工具</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="1409" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">22</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="z8qthxid-2.html" rel="tag">kcptun</a><a href="2g2thvl5.html" rel="tag">kcptun tools</a><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="xyx3p-8d.html" rel="tag">原创软件</a><a href="4y92q0ka.html" rel="tag">教程</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="9-b8lkgt-4.html" rel="prev">Shadowsocks另一种双边加速软件 —— KCPTun（服务端教程）</a></span>
+			<span class="article-nav-next"><a href="e0926y-q-4.html" rel="next">KCPTun  安卓 Shadowsocks客户端 使用教程</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="ouiwm7ss-2.html" title="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools" />	<br><span class="r_title">『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="wkcjzpyd.html" title="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" target="_blank">
+<img src="xpz5exhd.jpg?src=https://doub.io/wp-content/uploads/3.jpg&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！" />	<br><span class="r_title">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="ouiwm7ss-2.html">『原创』更方便的Windows系统 DAZE 客户端 —— DAZE Tools</a></li><li><i class="fa fa-minus"></i><a href="wkcjzpyd.html">没教程写我要死了（滑稽），有想要让我写的教程请在这里告诉我！</a></li><li><i class="fa fa-minus"></i><a href="_8lmsikm.html">『原创』更方便的Windows系统 Lightsocks 客户端 —— Lightsocks Tools</a></li><li><i class="fa fa-minus"></i><a href="7btobhno.html">『原创』更方便的Windows系统 Goflyway 客户端 —— GoFlyway Tools</a></li><li><i class="fa fa-minus"></i><a href="kyg7f0u5.html">『原创』更方便的Windows系统 Cloud Torrent 客户端 —— Cloud Torrent Tools</a></li><li><i class="fa fa-minus"></i><a href="g4b_0oy6.html">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='1409' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (73)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-31239"><div class="c-avatar"><div class="c-main" id="div-comment-31239">请问KCPTUN TOOLS界面全部是乱码是怎么回事啊？以前都好好的 重装电脑后就不行了<div class="c-meta"><span class="c-author">少数派</span>2018-02-08 21:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=31239#respond' onclick='return addComment.moveForm( "div-comment-31239", "31239", "respond", "1409" )' aria-label='回复给少数派'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-23306"><div class="c-avatar"><div class="c-main" id="div-comment-23306">所有步骤都对，但是从来没成功过，不知道是不是被防火墙拦截了<div class="c-meta"><span class="c-author">euue</span>2017-11-25 08:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=23306#respond' onclick='return addComment.moveForm( "div-comment-23306", "23306", "respond", "1409" )' aria-label='回复给euue'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12611"><div class="c-avatar"><div class="c-main" id="div-comment-12611">请教下：
+我用的vps是搬瓦工。
+1、服务端target是填127.0.0.1，但端口填自己ss的端口？
+2、KcpTun Tools里的加速ip是不是就是我选择的机房的ip?而不是127.0.0.1？<div class="c-meta"><span class="c-author">ceshioo</span>2017-04-09 19:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=12611#respond' onclick='return addComment.moveForm( "div-comment-12611", "12611", "respond", "1409" )' aria-label='回复给ceshioo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-12613"><div class="c-avatar"><div class="c-main" id="div-comment-12613">我说的端口填自己的ss端口是指比如是443。而不是8388？<div class="c-meta"><span class="c-author">ceshioo</span>2017-04-09 20:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=12613#respond' onclick='return addComment.moveForm( "div-comment-12613", "12613", "respond", "1409" )' aria-label='回复给ceshioo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-12083"><div class="c-avatar"><div class="c-main" id="div-comment-12083">我弄得上youtube，周围的都显示的出，就是视频加载不出，怎么破<div class="c-meta"><span class="c-author">suan</span>2017-03-26 18:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=12083#respond' onclick='return addComment.moveForm( "div-comment-12083", "12083", "respond", "1409" )' aria-label='回复给suan'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-11155"><div class="c-avatar"><div class="c-main" id="div-comment-11155">敢问博主为何不喜欢Finalspeed和Netspeed呢<div class="c-meta"><span class="c-author">achu</span>2017-03-03 13:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=11155#respond' onclick='return addComment.moveForm( "div-comment-11155", "11155", "respond", "1409" )' aria-label='回复给achu'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-11159"><div class="c-avatar"><div class="c-main" id="div-comment-11159">简单来说就是因为FS这类损人利己 暴力流氓<div class="c-meta"><span class="c-author">K</span>2017-03-03 14:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=11159#respond' onclick='return addComment.moveForm( "div-comment-11159", "11159", "respond", "1409" )' aria-label='回复给K'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-11168"><div class="c-avatar"><div class="c-main" id="div-comment-11168">害人利己。<br />
+说实话 KCP相关的教程我也不想写了，我写的客户端和这几个教程，早几个月前就不再更新了。<br />
+我就是一个矛盾的人，当初本来不想写的，后来实在没什么东西写了，就还是写了，写了之后又有一点后悔，就不再更新了，但是也不想删除。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-03-03 19:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=11168#respond' onclick='return addComment.moveForm( "div-comment-11168", "11168", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-12078"><div class="c-avatar"><div class="c-main" id="div-comment-12078">Finalspeed和Netspeed和kcptun，多倍发包这种对游戏小数据，降低延时会有帮助吗，游戏小数据多倍发包也耗不了多少流量吧<div class="c-meta"><span class="c-author">suan</span>2017-03-26 16:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=12078#respond' onclick='return addComment.moveForm( "div-comment-12078", "12078", "respond", "1409" )' aria-label='回复给suan'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10140"><div class="c-avatar"><div class="c-main" id="div-comment-10140">windows 10 无法自动启动，点了自动启动后，开机手动打开时显示启动了，但任务栏上显示未启动<div class="c-meta"><span class="c-author">虞山飘渺峰</span>2017-01-25 09:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=10140#respond' onclick='return addComment.moveForm( "div-comment-10140", "10140", "respond", "1409" )' aria-label='回复给虞山飘渺峰'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-10164"><div class="c-avatar"><div class="c-main" id="div-comment-10164">用管理员身份打开一次，选上开机启动，以后就可以了。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_idea.gif" alt=":idea:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Thisisafish</span>2017-01-28 09:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=10164#respond' onclick='return addComment.moveForm( "div-comment-10164", "10164", "respond", "1409" )' aria-label='回复给Thisisafish'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-10123"><div class="c-avatar"><div class="c-main" id="div-comment-10123">能不能搞个实时查看的日志？<div class="c-meta"><span class="c-author">Thisisafish</span>2017-01-24 10:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=10123#respond' onclick='return addComment.moveForm( "div-comment-10123", "10123", "respond", "1409" )' aria-label='回复给Thisisafish'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-9034"><div class="c-avatar"><div class="c-main" id="div-comment-9034">请问IPv6地址的支持可以在下个版本中添加上吗？现在只能输入地址的一部分。谢谢！<div class="c-meta"><span class="c-author"><a href='http://bioinforma.tk/' rel='external nofollow' class='url'>SCP-028</a></span>2016-12-08 21:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=9034#respond' onclick='return addComment.moveForm( "div-comment-9034", "9034", "respond", "1409" )' aria-label='回复给SCP-028'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-9024"><div class="c-avatar"><div class="c-main" id="div-comment-9024">服务端开启start.sh后出现
+json: cannot unmarshal string into Go struct field Config.mtu of type int
+请问哪里出问题了？<div class="c-meta"><span class="c-author">mike</span>2016-12-07 20:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=9024#respond' onclick='return addComment.moveForm( "div-comment-9024", "9024", "respond", "1409" )' aria-label='回复给mike'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8234"><div class="c-avatar"><div class="c-main" id="div-comment-8234">请问客户端有 stream opened信息，服务器端没有怎么处理啊<div class="c-meta"><span class="c-author">tsm</span>2016-09-25 21:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8234#respond' onclick='return addComment.moveForm( "div-comment-8234", "8234", "respond", "1409" )' aria-label='回复给tsm'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-8237"><div class="c-avatar"><div class="c-main" id="div-comment-8237">连接服务器的端口设置错误，或者被防火墙拦截。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-09-26 13:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8237#respond' onclick='return addComment.moveForm( "div-comment-8237", "8237", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-8221"><div class="c-avatar"><div class="c-main" id="div-comment-8221">XP下不能后台自启动吗？启动后会弹出窗口在前台，不能只显示右下角图标开机自启动吗？<div class="c-meta"><span class="c-author">狐狸</span>2016-09-24 07:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8221#respond' onclick='return addComment.moveForm( "div-comment-8221", "8221", "respond", "1409" )' aria-label='回复给狐狸'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8121"><div class="c-avatar"><div class="c-main" id="div-comment-8121">有个bug，就是双击打开时，软件界面显示已经启动，但在右下角图标上显示未连接，停止再启动后可以正常显示<div class="c-meta"><span class="c-author">owen</span>2016-09-13 08:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8121#respond' onclick='return addComment.moveForm( "div-comment-8121", "8121", "respond", "1409" )' aria-label='回复给owen'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-8132"><div class="c-avatar"><div class="c-main" id="div-comment-8132">那KCPTUN客户端是否正常启动？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-09-13 12:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8132#respond' onclick='return addComment.moveForm( "div-comment-8132", "8132", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-8066"><div class="c-avatar"><div class="c-main" id="div-comment-8066">唉，WIN10都不知道什么问题，几个工具都是启动不了，linux和路由上面都没问题。<div class="c-meta"><span class="c-author">屋仔</span>2016-09-09 07:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8066#respond' onclick='return addComment.moveForm( "div-comment-8066", "8066", "respond", "1409" )' aria-label='回复给屋仔'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-8002"><div class="c-avatar"><div class="c-main" id="div-comment-8002">博主相当厉害！！！有一个建议，如果能直接引用kcpclient的相对地址启动就更好了！<div class="c-meta"><span class="c-author">JimLee</span>2016-09-01 21:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=8002#respond' onclick='return addComment.moveForm( "div-comment-8002", "8002", "respond", "1409" )' aria-label='回复给JimLee'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7995"><div class="c-avatar"><div class="c-main" id="div-comment-7995">我填对了选项，但是点击加速时显示kcptun启动失败<div class="c-meta"><span class="c-author">uoo2</span>2016-09-01 12:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7995#respond' onclick='return addComment.moveForm( "div-comment-7995", "7995", "respond", "1409" )' aria-label='回复给uoo2'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-7997"><div class="c-avatar"><div class="c-main" id="div-comment-7997">发现我搞错了，我把linux客户端给加进去了<div class="c-meta"><span class="c-author">uoo2</span>2016-09-01 12:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7997#respond' onclick='return addComment.moveForm( "div-comment-7997", "7997", "respond", "1409" )' aria-label='回复给uoo2'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7992"><div class="c-avatar"><div class="c-main" id="div-comment-7992">为什么显示加速失败？<div class="c-meta"><span class="c-author">uoo2</span>2016-09-01 00:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7992#respond' onclick='return addComment.moveForm( "div-comment-7992", "7992", "respond", "1409" )' aria-label='回复给uoo2'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7848"><div class="c-avatar"><div class="c-main" id="div-comment-7848">1.03依旧不能自启 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">紫色银子</span>2016-08-24 13:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7848#respond' onclick='return addComment.moveForm( "div-comment-7848", "7848", "respond", "1409" )' aria-label='回复给紫色银子'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7849"><div class="c-avatar"><div class="c-main" id="div-comment-7849">还是win10吗？心累，除了win10都没问题了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-24 13:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7849#respond' onclick='return addComment.moveForm( "div-comment-7849", "7849", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7772"><div class="c-avatar"><div class="c-main" id="div-comment-7772">你好，请问KCPTUN  tools和SS软件都设置好了，开启后SS的LOG也没有异常但是就是连不上网是怎么回事<div class="c-meta"><span class="c-author">KID</span>2016-08-18 22:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7772#respond' onclick='return addComment.moveForm( "div-comment-7772", "7772", "respond", "1409" )' aria-label='回复给KID'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7773"><div class="c-avatar"><div class="c-main" id="div-comment-7773">原因很多，你给的信息太模糊，看不出来<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-19 00:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7773#respond' onclick='return addComment.moveForm( "div-comment-7773", "7773", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-7782"><div class="c-avatar"><div class="c-main" id="div-comment-7782">Kcptun Tools 的LOG里stream opened和stream closed来回切换
+最后是stream closed<div class="c-meta"><span class="c-author">KID</span>2016-08-19 15:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7782#respond' onclick='return addComment.moveForm( "div-comment-7782", "7782", "respond", "1409" )' aria-label='回复给KID'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-7783"><div class="c-avatar"><div class="c-main" id="div-comment-7783"><pre class="prettyprint linenums" >Q：客户端和服务器端皆无 stream opened信息。
+连接客户端程序的端口设置错误。
+Q：客户端有 stream opened信息，服务器端没有。
+连接服务器的端口设置错误，或者被防火墙拦截。
+Q：客户端服务器皆有 stream opened信息，但无法通信。
+软件的参数设定错误。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-19 16:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7783#respond' onclick='return addComment.moveForm( "div-comment-7783", "7783", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7760"><div class="c-avatar"><div class="c-main" id="div-comment-7760">文件路径中有空格的话无法无法启动，例如放在D:\Program Files\中就不行<div class="c-meta"><span class="c-author">Jerry</span>2016-08-18 09:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7760#respond' onclick='return addComment.moveForm( "div-comment-7760", "7760", "respond", "1409" )' aria-label='回复给Jerry'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7764"><div class="c-avatar"><div class="c-main" id="div-comment-7764">新版本已修复<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-18 15:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7764#respond' onclick='return addComment.moveForm( "div-comment-7764", "7764", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7731"><div class="c-avatar"><div class="c-main" id="div-comment-7731">加速IP那里不能填写域名吗？<div class="c-meta"><span class="c-author">niclau</span>2016-08-16 15:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7731#respond' onclick='return addComment.moveForm( "div-comment-7731", "7731", "respond", "1409" )' aria-label='回复给niclau'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7732"><div class="c-avatar"><div class="c-main" id="div-comment-7732">没试过，估计不行<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-16 15:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7732#respond' onclick='return addComment.moveForm( "div-comment-7732", "7732", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7719"><div class="c-avatar"><div class="c-main" id="div-comment-7719">你好，我在手机端成功了，可是windows端失败，小飞机直接填ss的ip,端口和密码可以正常使用，如果填127.0.0.1和2000就断网了，日志提示
+Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:2000
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 Shadowsocks.Controller.Handler.ConnectCallback(IAsyncResult ar)<div class="c-meta"><span class="c-author">路人戊</span>2016-08-15 22:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7719#respond' onclick='return addComment.moveForm( "div-comment-7719", "7719", "respond", "1409" )' aria-label='回复给路人戊'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7727"><div class="c-avatar"><div class="c-main" id="div-comment-7727">你贴Shadowsocks日志有毛用，加群联系我详细说明<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-16 09:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7727#respond' onclick='return addComment.moveForm( "div-comment-7727", "7727", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-7745"><div class="c-avatar"><div class="c-main" id="div-comment-7745">把sndwnd和rcvwnd稍微改大点就好了...感谢教程！ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">路任务</span>2016-08-17 11:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7745#respond' onclick='return addComment.moveForm( "div-comment-7745", "7745", "respond", "1409" )' aria-label='回复给路任务'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7684"><div class="c-avatar"><div class="c-main" id="div-comment-7684">./server_linux_amd64 -l :2333 -t 127.0.0.1:8388 -key test -mtu 1400 -sndwnd 2048 -rcvwnd 2048 -mode fast2 &gt; kcptun.log 2&gt;&amp;1 &amp;    -t后面的IP是自己VPS的IP跟端口吧。转帖教程中直接写什么-t 表示要加速的地址，由于 Kcptun 和 Shadowsocks 在同一服务器，地址填写 127.0.0.1，而 8388 为 Shadowsocks 服务端监听端口。看得我一头雾水。我想应该是自己的VPS的IP跟端口才对。可是现在手机可以用。电脑不可以用。不知道哪里搞错了。<div class="c-meta"><span class="c-author">起床失败</span>2016-08-13 05:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7684#respond' onclick='return addComment.moveForm( "div-comment-7684", "7684", "respond", "1409" )' aria-label='回复给起床失败'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7687"><div class="c-avatar"><div class="c-main" id="div-comment-7687">127.0.0.1代表的就是本机，8388就是Shadowsocks监听的端口，-l是kcptun监听的端口<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-13 10:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7687#respond' onclick='return addComment.moveForm( "div-comment-7687", "7687", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7700"><div class="c-avatar"><div class="c-main" id="div-comment-7700">127.0.0.1 代表本机IP，不需要改动，8388 就是 Shadowsocks服务端的监听端口。你肯定忽略了<code> -key test </code><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-14 09:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7700#respond' onclick='return addComment.moveForm( "div-comment-7700", "7700", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7680"><div class="c-avatar"><div class="c-main" id="div-comment-7680"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_surprised.gif" alt=":eek:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> win10 64位 确实不能自启<div class="c-meta"><span class="c-author">囧可非常囧</span>2016-08-12 19:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7680#respond' onclick='return addComment.moveForm( "div-comment-7680", "7680", "respond", "1409" )' aria-label='回复给囧可非常囧'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7675"><div class="c-avatar"><div class="c-main" id="div-comment-7675">请问doubi，使用这个启动工具设置后，ssr客户端设置127.0.0.1，端口12948，ssr看服务器好像没有联通。KcpTun Tools本地端口是12948。服务器端应该没问题，手机版ss可以正常使用加速。
+不知道哪里的问题。<div class="c-meta"><span class="c-author">greatly</span>2016-08-12 13:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7675#respond' onclick='return addComment.moveForm( "div-comment-7675", "7675", "respond", "1409" )' aria-label='回复给greatly'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7676"><div class="c-avatar"><div class="c-main" id="div-comment-7676">客户端日志<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-12 14:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7676#respond' onclick='return addComment.moveForm( "div-comment-7676", "7676", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7643"><div class="c-avatar"><div class="c-main" id="div-comment-7643">这个流量消耗翻倍是只消耗服务器的流量，还是客户端的流量也翻倍？？如果我用手机数据，手机数据流量会翻倍吗？<div class="c-meta"><span class="c-author">next</span>2016-08-11 12:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7643#respond' onclick='return addComment.moveForm( "div-comment-7643", "7643", "respond", "1409" )' aria-label='回复给next'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7648"><div class="c-avatar"><div class="c-main" id="div-comment-7648">不，是服务器发送的数据 是你 收到的几倍，消耗的是服务器的流量。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-11 13:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7648#respond' onclick='return addComment.moveForm( "div-comment-7648", "7648", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7640"><div class="c-avatar"><div class="c-main" id="div-comment-7640">最重要的功能没有，建议增加可以几个端口加速一起开，比如我现在3个vps，以前都是运行3个client.你这个不能，我同时运行2个，其实也只有最后那个端口加速，也就是说，你点运行一次他，你的软件是restart,会先杀掉前面所有的client进程。<div class="c-meta"><span class="c-author">jack</span>2016-08-11 08:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7640#respond' onclick='return addComment.moveForm( "div-comment-7640", "7640", "respond", "1409" )' aria-label='回复给jack'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7642"><div class="c-avatar"><div class="c-main" id="div-comment-7642">启动按钮，我并没有写杀掉前面所有客户端进程，只写了启动代码。多开功能似乎需要的人不多，如果需要的人多我再加上<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-11 09:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7642#respond' onclick='return addComment.moveForm( "div-comment-7642", "7642", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7639"><div class="c-avatar"><div class="c-main" id="div-comment-7639">请问一下，win10 64位的系统点停止提示“KCPTun进程似乎不存在”，响应的就不能上网了；还有就是加速端口是SS服务器那里设置的端口对吧？我这里貌似不能使用<div class="c-meta"><span class="c-author">Black</span>2016-08-10 23:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7639#respond' onclick='return addComment.moveForm( "div-comment-7639", "7639", "respond", "1409" )' aria-label='回复给Black'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7641"><div class="c-avatar"><div class="c-main" id="div-comment-7641">win10问题真多..<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-11 09:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7641#respond' onclick='return addComment.moveForm( "div-comment-7641", "7641", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7618"><div class="c-avatar"><div class="c-main" id="div-comment-7618">启动按钮灰色，点击停止无效循环弹出窗口“KCPTun进程似乎不存在！”，只能强退。<div class="c-meta"><span class="c-author">LeeJon</span>2016-08-10 00:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7618#respond' onclick='return addComment.moveForm( "div-comment-7618", "7618", "respond", "1409" )' aria-label='回复给LeeJon'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7621"><div class="c-avatar"><div class="c-main" id="div-comment-7621">因为你已经启动过了，启动按钮就禁用了，停止按钮会检测 kcptun进程，如果找不到就会提示不存在<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-10 09:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7621#respond' onclick='return addComment.moveForm( "div-comment-7621", "7621", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7612"><div class="c-avatar"><div class="c-main" id="div-comment-7612">本地端口希望加入其他ip，我ss-server搭在本地樹莓派上的<div class="c-meta"><span class="c-author"><a href='http://11.cn/' rel='external nofollow' class='url'>11</a></span>2016-08-09 14:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7612#respond' onclick='return addComment.moveForm( "div-comment-7612", "7612", "respond", "1409" )' aria-label='回复给11'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7601"><div class="c-avatar"><div class="c-main" id="div-comment-7601">win10开机启动貌似不起作用<div class="c-meta"><span class="c-author">grey</span>2016-08-09 08:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7601#respond' onclick='return addComment.moveForm( "div-comment-7601", "7601", "respond", "1409" )' aria-label='回复给grey'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7604"><div class="c-avatar"><div class="c-main" id="div-comment-7604">可能win10的开机启动注册表位置改了，因为没有win10，我也没办法测试<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-09 09:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7604#respond' onclick='return addComment.moveForm( "div-comment-7604", "7604", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-7616"><div class="c-avatar"><div class="c-main" id="div-comment-7616">windows 默认的 HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run<div class="c-meta"><span class="c-author">LeeJon</span>2016-08-09 22:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7616#respond' onclick='return addComment.moveForm( "div-comment-7616", "7616", "respond", "1409" )' aria-label='回复给LeeJon'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-7617"><div class="c-avatar"><div class="c-main" id="div-comment-7617">一样啊，我设置的就是这个注册表<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-09 23:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7617#respond' onclick='return addComment.moveForm( "div-comment-7617", "7617", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7593"><div class="c-avatar"><div class="c-main" id="div-comment-7593">今天github刚刚更新，下载了最新的客户端。但是打不开，停止时 提示没有进程 ， 不能运行。是不是要升级了？<div class="c-meta"><span class="c-author">风残</span>2016-08-08 19:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7593#respond' onclick='return addComment.moveForm( "div-comment-7593", "7593", "respond", "1409" )' aria-label='回复给风残'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7596"><div class="c-avatar"><div class="c-main" id="div-comment-7596">试了下，软件正常使用，不过你倒是提醒我了，软件启动的时候还要检查一下保存的 kcptun文件位置 是否存在。
+只要kcptun不更新重要参数名称或者调用方式，那就依然能用！<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-08 20:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7596#respond' onclick='return addComment.moveForm( "div-comment-7596", "7596", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7588"><div class="c-avatar"><div class="c-main" id="div-comment-7588"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 这个加速，流量消耗不只是几倍呀。<div class="c-meta"><span class="c-author"><a href='http://51.ruyo.net/' rel='external nofollow' class='url'>我是小马甲~</a></span>2016-08-08 11:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7588#respond' onclick='return addComment.moveForm( "div-comment-7588", "7588", "respond", "1409" )' aria-label='回复给我是小马甲~'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7589"><div class="c-avatar"><div class="c-main" id="div-comment-7589">是啊，最少2倍，如果配置调整有问题的话，会更高， 最好用 tc 在服务器上面限速，这样 会减轻很多<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-08 13:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7589#respond' onclick='return addComment.moveForm( "div-comment-7589", "7589", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-7594"><div class="c-avatar"><div class="c-main" id="div-comment-7594">流量消耗太高，按这种消耗，一个月500G都不够用，太可怕了。<div class="c-meta"><span class="c-author">next</span>2016-08-08 19:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7594#respond' onclick='return addComment.moveForm( "div-comment-7594", "7594", "respond", "1409" )' aria-label='回复给next'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7582"><div class="c-avatar"><div class="c-main" id="div-comment-7582">不成功，有没有办法查找到底是哪出错了呢？<div class="c-meta"><span class="c-author">grey</span>2016-08-08 10:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7582#respond' onclick='return addComment.moveForm( "div-comment-7582", "7582", "respond", "1409" )' aria-label='回复给grey'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7584"><div class="c-avatar"><div class="c-main" id="div-comment-7584">看日志啊<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-08 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7584#respond' onclick='return addComment.moveForm( "div-comment-7584", "7584", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-7587"><div class="c-avatar"><div class="c-main" id="div-comment-7587">日志显示这样，怎么解决呢
+2016/08/08 10:39:17 socks handshake: socks version not supported
+2016/08/08 10:39:17 closed addr 
+2016/08/08 10:40:09 [ERR] yamux: keepalive failed: i/o deadline reached
+2016/08/08 10:40:09 [ERR] yamux: Failed to read header: broken pipe
+2016/08/08 10:44:56 session shutdown<div class="c-meta"><span class="c-author">grey</span>2016-08-08 10:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7587#respond' onclick='return addComment.moveForm( "div-comment-7587", "7587", "respond", "1409" )' aria-label='回复给grey'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-7579"><div class="c-avatar"><div class="c-main" id="div-comment-7579">doubi,有没有xsokcs的相关说明啊<div class="c-meta"><span class="c-author">145d</span>2016-08-08 08:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7579#respond' onclick='return addComment.moveForm( "div-comment-7579", "7579", "respond", "1409" )' aria-label='回复给145d'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7581"><div class="c-avatar"><div class="c-main" id="div-comment-7581">Xsocks我是不可能写的，一是和Finalspeed是一样的，本来就是换了个名字，安装等等都是一样的，而且我也很讨厌Finalspeed和Xsocks，更何况Xsocks还是付费的<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-08 10:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7581#respond' onclick='return addComment.moveForm( "div-comment-7581", "7581", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-7576"><div class="c-avatar"><div class="c-main" id="div-comment-7576">这个教程很详细，根据博主的教程成功搭建好了Kcp.速度有明显的提升。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_razz.gif" alt=":razz:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='http://inlife.taobao.com/' rel='external nofollow' class='url'>inlife</a></span>2016-08-07 22:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7576#respond' onclick='return addComment.moveForm( "div-comment-7576", "7576", "respond", "1409" )' aria-label='回复给inlife'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-7577"><div class="c-avatar"><div class="c-main" id="div-comment-7577">搭建好不代表就完事了，你要观察服务器的流量情况，在2-3倍之间是正常的，如果你下载一个100MB的文件，服务器消耗了3倍以上的流量，那就说明宽带利用率很低，浪费了大量宽带，这些宽带你也没用到，服务器也消耗了。这是个KCPTun的大缺陷。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-07 22:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7577#respond' onclick='return addComment.moveForm( "div-comment-7577", "7577", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-7580"><div class="c-avatar"><div class="c-main" id="div-comment-7580">参数不好弄，我根据自己的宽带调整了，然而还是消耗大概6倍左右，太耗流量了，而且速度只提高了不到几百kbps<div class="c-meta"><span class="c-author">next</span>2016-08-08 09:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7580#respond' onclick='return addComment.moveForm( "div-comment-7580", "7580", "respond", "1409" )' aria-label='回复给next'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7572"><div class="c-avatar"><div class="c-main" id="div-comment-7572">为什么我的加速效果很一般？加速前1500kbps，加速后2200kbps<div class="c-meta"><span class="c-author">next</span>2016-08-07 21:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7572#respond' onclick='return addComment.moveForm( "div-comment-7572", "7572", "respond", "1409" )' aria-label='回复给next'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7575"><div class="c-avatar"><div class="c-main" id="div-comment-7575">KCPTUN是吧TCP数据通过自写的KCP协议用UDP的方式发送出去，如果你的ISP也就是运营商，对于UDP封锁严格，丢包严重，那不仅加速幅度低，你的服务器还需要浪费十几倍的流量。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-07 22:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7575#respond' onclick='return addComment.moveForm( "div-comment-7575", "7575", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-7571"><div class="c-avatar"><div class="c-main" id="div-comment-7571">作者你好, 请问这个软件可以转载么?<div class="c-meta"><span class="c-author">Index</span>2016-08-07 20:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7571#respond' onclick='return addComment.moveForm( "div-comment-7571", "7571", "respond", "1409" )' aria-label='回复给Index'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-7574"><div class="c-avatar"><div class="c-main" id="div-comment-7574">注明源链接<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2016-08-07 22:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/ss-jc37/?replytocom=7574#respond' onclick='return addComment.moveForm( "div-comment-7574", "7574", "respond", "1409" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="qkbfc1a-container qkbfc1a-1 qkbfc1a-hide">
+    <div class="qkbfc1a-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="qkbfc1a"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

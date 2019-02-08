@@ -1,0 +1,1246 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1957] -->
+<meta name="description"  content="最近有几个人给我推荐了一个可以监控多个服务器状态的软件 —— ServerStatus ，虽然搭建方法并不难，但是能懒就懒，所以脚本就出炉了。 Github： Github：" />
+
+<meta name="keywords"  content="caddy,linux,serverstatus,shell,脚本" />
+
+<link rel="canonical" href="wae9j8oa.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本' href='0j0k_rj3.html' />
+<link rel='next' title='ShadowsocksR 推出 新协议“无加密”新玩法 [ auth_chain_a + none ]' href='9-b8lkgt-5.html' />
+<link rel='shortlink' href='https://doub.io/?p=2168' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fshell-jc3%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fshell-jc3%2F&amp;format=xml" />
+<style>
+.ekf9d77{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ekf9d77-hide{
+    display: none;
+}
+.ekf9d77-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ekf9d77-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ekf9d77-2 .ekf9d77-body,.ekf9d77-3 .ekf9d77-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ekf9d77-2 .close-btn,.ekf9d77-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ekf9d77-3 .ekf9d77-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ekf9d77').html(kill_adBlock_message);
+            jQuery('.ekf9d77-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ekf9d77-container').fadeOut('ekf9d77-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Caddy, Linux, serverstatus, shell, 脚本, Shell脚本">
+<meta name="description" content="最近有几个人给我推荐了一个可以监控多个服务器状态的软件 —— ServerStatus ，虽然搭建方法并不难，但是能懒就懒，所以脚本就出炉了。  Github：https://github.com/ToyoDAdoubiBackup/ServerStatus-Toyo  Github：https://github.com/tenyue/ServerStatus  示例网站：https://tz.toyoo.pw/ 系统要求 CentOS 7 / D">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2168 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="wae9j8oa.html">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="1jg9z3mv.html"> Shell脚本</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-04-27)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 38765℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="wae9j8oa.html#comments">359评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="wae9j8oa.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="wae9j8oa.html#脚本版本" title="脚本版本"><span>脚本版本</span></a></li></ul></li><li class="content-index-level-1"><a href="wae9j8oa.html#安装步骤" title="安装步骤"><span>安装步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="wae9j8oa.html#简单步骤" title="简单步骤"><span>简单步骤</span></a></li></ul></li><li class="content-index-level-1"><a href="wae9j8oa.html#使用说明" title="使用说明"><span>使用说明</span></a><ul class="children"><li class="content-index-level-2"><a href="wae9j8oa.html#其他操作" title="其他操作"><span>其他操作</span></a></li></ul></li><li class="content-index-level-1"><a href="wae9j8oa.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="wae9j8oa.html#修改网页标题或公告" title="修改网页标题或公告"><span>修改网页标题或公告</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#CentOS7系统 负载显示异常的问题" title="CentOS7系统 负载显示异常的问题"><span>CentOS7系统 负载显示异常的问题</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#服务端网页显示异常，频繁开启/关闭" title="服务端网页显示异常，频繁开启/关闭"><span>服务端网页显示异常，频繁开启/关闭</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#提示wget: unknown host “raw.githubusercontent.com” 之类的错误" title="提示wget: unknown host “raw.githubusercontent.com” 之类的错误"><span>提示wget: unknown host “raw.githubusercontent.com” 之类的错误</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#Caddy启动失败，打开 http://ip 显示的是 It works !" title="Caddy启动失败，打开 http://ip 显示的是 It works !"><span>Caddy启动失败，打开 http://ip 显示的是 It works !</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#升级脚本" title="升级脚本"><span>升级脚本</span></a></li></ul></li><li class="content-index-level-1"><a href="wae9j8oa.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="wae9j8oa.html#2018年09月24日，版本 v1.0.15" title="2018年09月24日，版本 v1.0.15"><span>2018年09月24日，版本 v1.0.15</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2018年09月21日，版本 v1.0.14" title="2018年09月21日，版本 v1.0.14"><span>2018年09月21日，版本 v1.0.14</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2018年09月06日，版本 v1.0.13" title="2018年09月06日，版本 v1.0.13"><span>2018年09月06日，版本 v1.0.13</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2018年09月06日，版本 v1.0.12" title="2018年09月06日，版本 v1.0.12"><span>2018年09月06日，版本 v1.0.12</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2018年07月10日，版本 v1.0.11" title="2018年07月10日，版本 v1.0.11"><span>2018年07月10日，版本 v1.0.11</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年10月31日，版本 v1.0.10" title="2017年10月31日，版本 v1.0.10"><span>2017年10月31日，版本 v1.0.10</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年08月04日，版本 v1.0.9" title="2017年08月04日，版本 v1.0.9"><span>2017年08月04日，版本 v1.0.9</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月29日，版本 v1.0.8" title="2017年04月29日，版本 v1.0.8"><span>2017年04月29日，版本 v1.0.8</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.7" title="2017年04月28日，版本 v1.0.7"><span>2017年04月28日，版本 v1.0.7</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.6" title="2017年04月28日，版本 v1.0.6"><span>2017年04月28日，版本 v1.0.6</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.5" title="2017年04月28日，版本 v1.0.5"><span>2017年04月28日，版本 v1.0.5</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.4" title="2017年04月28日，版本 v1.0.4"><span>2017年04月28日，版本 v1.0.4</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.3" title="2017年04月28日，版本 v1.0.3"><span>2017年04月28日，版本 v1.0.3</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.2" title="2017年04月28日，版本 v1.0.2"><span>2017年04月28日，版本 v1.0.2</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月28日，版本 v1.0.1" title="2017年04月28日，版本 v1.0.1"><span>2017年04月28日，版本 v1.0.1</span></a></li><li class="content-index-level-2"><a href="wae9j8oa.html#2017年04月27日，版本 v1.0.0" title="2017年04月27日，版本 v1.0.0"><span>2017年04月27日，版本 v1.0.0</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月24日 14:10</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>最近有几个人给我推荐了一个可以监控多个服务器状态的软件 —— ServerStatus ，虽然搭建方法并不难，但是能懒就懒，所以脚本就出炉了。</p>
+<p><strong>Github：<a href="https://github.com/ToyoDAdoubiBackup/ServerStatus-Toyo" target="_blank" rel="noopener">https://github.com/ToyoDAdoubiBackup/ServerStatus-Toyo</a></strong></p>
+<p><strong>Github：<a href="https://github.com/tenyue/ServerStatus" target="_blank" rel="noopener">https://github.com/tenyue/ServerStatus</a></strong></p>
+<p><strong>示例网站：<a href="https://tz.toyoo.pw/" target="_blank" rel="noopener">https://tz.toyoo.pw/</a></strong></p>
+<h2 id="系统要求">系统要求</h2>
+<p>CentOS 7 / Debian 7+ / Ubuntu 14.04 +</p>
+<p>推荐 Debian 8 x64，这个是我一直使用的系统，我的脚本在这个系统上面出错率最低。</p>
+<blockquote><p>注意，既然是个 多服务器云监控程序，那么你肯定需要两个以上的服务器（其实一个也可以，客户端和服务端可以同时安装），一个服务器做服务端，脚本会自动安装Caddy并配置好HTTP服务的，然后接收各个客户端实时发来的信息并通过网站显示出来。</p>
+<p>因为客户端每秒都会发送最新的信息给服务端，所以要保证客户端与服务端直接网络通常，否则网页显示会很抽风。</p>
+<p><strong>虽然客户端每秒都会发送信息到服务端，但是对流量消耗是很小的，毕竟每次发送的数据都只有几百或上千个字符。</strong></p></blockquote>
+<p><strong>ServerStatus 客户端需要 Python 2.7版本以上才可以正常运行，如果不是那么请升级（查看版本：<code> python -V </code>）。</strong></p>
+<pre>注意：CentOS6 系统默认的Python版本是2.6，版本太低，使用客户端会出问题，请升级Python或者更换系统。</pre>
+<h3 id="脚本版本">脚本版本</h3>
+<p>Ver: 1.0.15</p>
+<h2 id="安装步骤">安装步骤</h2>
+<p>执行下面的代码下载并运行脚本。</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/status.sh &amp;&amp; chmod +x status.sh
+</pre>
+<p>下载脚本后，根据需要安装客户端或者服务端：</p>
+<pre class="prettyprint linenums"># 显示客户端管理菜单
+bash status.sh c
+
+# 显示服务端管理菜单
+bash status.sh s
+</pre>
+<p>运行脚本后会出现脚本操作菜单，选择并输入<code> 1 </code>就会开始安装。</p>
+<p>一开始会提示你输入服务端监听的端口，不懂请默认，如果你的要安装客户端的服务器中有NAT服务器，那么请考虑到NAT的端口范围。</p>
+<h3 id="简单步骤">简单步骤</h3>
+<p>首先安装服务端，安装过程中会提示：</p>
+<pre class="prettyprint linenums">是否由脚本自动配置HTTP服务(服务端的在线监控网站)[Y/n]
+# 一开始会提示你输入网站服务器的域名和端口，如果没有域名可以直接回车代表使用 <strong>本机IP:8888</strong>。
+# 如果你不懂，那就直接回车，如果你想用其他的HTTP服务自己配置，那么请输入 <strong>n</strong> 并回车。
+# 注意，当你曾经安装过 服务端，同时没有卸载Caddy(HTTP服务)，那么重新安装服务端的时候，请输入 <strong>n</strong> 并回车。
+</pre>
+<p>然后 <strong>添加或修改 初始示例的节点配置</strong>，<strong>注意用户名每个节点配置都不能重复</strong>，其他的参数都无所谓了。</p>
+<p>然后安装客户端，根据提示填写 <strong>服务端的IP</strong> 和前面添加/修改 对应的 <strong>节点用户名和密码</strong>（用于和服务端验证），然后启动就好了，<strong>有问题请贴出 详细步骤+日志(如果有)联系我。</strong></p>
+<h2 id="使用说明">使用说明</h2>
+<p>进入下载脚本的目录并运行脚本：</p>
+<pre class="prettyprint linenums"># 客户端管理菜单
+./status.sh c
+# 服务端管理菜单
+./status.sh s
+</pre>
+<p>然后选择你要执行的选项即可。</p>
+<pre class="prettyprint linenums">ServerStatus 一键安装管理脚本 [vx.x.x]
+-- Toyo | doub.io/shell-jc3 --
+
+ 0. 升级脚本
+————————————
+ 1. 安装 服务端
+ 2. 更新 服务端
+ 3. 卸载 服务端
+————————————
+ 4. 启动 服务端
+ 5. 停止 服务端
+ 6. 重启 服务端
+————————————
+ 7. 设置 服务端配置
+ 8. 查看 服务端信息
+ 9. 查看 服务端日志
+————————————
+10. 切换为 客户端菜单
+
+当前状态: 服务端 已安装 并 已启动
+
+请输入数字 [0-10]:
+</pre>
+<h3 id="其他操作">其他操作</h3>
+<p><strong>客户端：</strong></p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>启动：</strong>/etc/init.d/status-client start</p>
+<p><strong>停止：</strong>/etc/init.d/status-client stop</p>
+<p><strong>重启：</strong>/etc/init.d/status-client restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/status-client status</p>
+<p></p></div>
+<p><strong>服务端：</strong></p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>启动：</strong>/etc/init.d/status-server start</p>
+<p><strong>停止：</strong>/etc/init.d/status-server stop</p>
+<p><strong>重启：</strong>/etc/init.d/status-server restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/status-server status</p>
+<p></p></div>
+<p><strong>Caddy（HTTP服务）：</strong></p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p><strong>启动：</strong>/etc/init.d/caddy start</p>
+<p><strong>停止：</strong>/etc/init.d/caddy stop</p>
+<p><strong>重启：</strong>/etc/init.d/caddy restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/caddy status</p>
+<p><strong>Caddy配置文件：</strong>/usr/local/caddy/Caddyfile</p>
+<p><strong>默认脚本只能一开始安装的时候设置配置文件，更多的Caddy使用方法，可以参考这些教程：<a href="ig3iud_q.html" target="_blank" rel="noopener">https://www.google.com/search?q=caddy</a></strong></p>
+<p></p></div>
+<hr />
+<p><strong>安装目录：</strong>/usr/local/ServerStatus</p>
+<p><strong>网页文件：</strong>/usr/local/ServerStatus/web</p>
+<p><strong>配置文件：</strong>/usr/local/ServerStatus/server/config.json</p>
+<p><strong>客户端查看日志：</strong>tail -f tmp/serverstatus_client.log</p>
+<p><strong>服务端查看日志：</strong>tail -f /tmp/serverstatus_server.log</p>
+<h2 id="其他说明">其他说明</h2>
+<p>我的修改版对单位进行了统一，这样避免用户识别混乱。</p>
+<p><strong>网络实时流量单位为：</strong>G=GB/s，M=MB/s，K=KB/s</p>
+<p><strong>服务器总流量单位为：</strong>T=TB，G=GB，M=MB，K=KB</p>
+<h3 id="修改网页标题或公告">修改网页标题或公告</h3>
+<p>如果要修改网页标题或者网页顶部公告内容，打开<code> /usr/local/ServerStatus/web/index.html </code>文件修改即可，很显眼。</p>
+<h3 id="CentOS7系统 负载显示异常的问题">CentOS7系统 负载显示异常的问题</h3>
+<p>CentOS7系统 默认可能没有安装 netstat 依赖，所以会造成IP检测(负载)出错，手动安装即可：<code>  yum install net-tools -y </code></p>
+<h3 id="服务端网页显示异常，频繁开启/关闭">服务端网页显示异常，频繁开启/关闭</h3>
+<p>这种问题说明系统中的 Python版本低于 2.7（查看版本：<code> python -V </code>），一般常见这种问题的都是 CentOS6 ，因为这个系统默认都是 Python2.6 版本，版本太低，使用客户端会出问题，请升级Python或者更换系统。</p>
+<h3 id="提示wget: unknown host “raw.githubusercontent.com” 之类的错误">提示wget: unknown host “raw.githubusercontent.com” 之类的错误</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS(以下两行一起复制 一起执行)。</p>
+<pre class="prettyprint linenums">echo -e "nameserver 8.8.8.8
+nameserver 8.8.4.4" &gt; /etc/resolv.conf
+</pre>
+<p></p></div>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<pre class="prettyprint linenums"># CentOS系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<p></p></div>
+<h3 id="Caddy启动失败，打开 http://ip 显示的是 It works !">Caddy启动失败，打开 http://ip 显示的是 It works !</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>一些系统会自带 apache2 ，而 apache2 会占用80端口，导致Caddy无法绑定端口，所以只要关掉就好了。</p>
+<pre class="prettyprint linenums">netstat -lntp
+# 我们可以通过这个命令查看是不是被其他软件占用了 80 端口。
+</pre>
+<p>不过 apache2 会默认开机自启动，如果不需要可以关闭自启动或者卸载 apache2 。</p>
+<p><strong>停止 Apache2</strong></p>
+<pre class="prettyprint linenums">service apache2 stop</pre>
+<pre class="prettyprint linenums"># 尝试使用上面这个关闭，如果没效果或者提示什么错误无法关闭，那就用下面这个强行关闭进程。
+kill -9 $(ps -ef|grep "apache2"|grep -v "grep"|awk '{print $2}')
+</pre>
+<p><strong>取消开机自启动</strong></p>
+<pre class="prettyprint linenums"># CentOS 系统 #
+chkconfig --del httpd
+# Debian/Ubuntu 系统 #
+update-rc.d -f apache2 remove
+</pre>
+<p><strong>卸载 Apache2(卸载包括了取消开机启动，无需重复)</strong></p>
+<pre class="prettyprint linenums"># CentOS 系统 #
+yum remove httpd
+# Debian/Ubuntu 系统 #
+apt-get remove --purge apache2
+</pre>
+<p>关闭 Apache2后，就可以尝试启动 Caddy ，并试试能不能打开网页。</p>
+<pre class="prettyprint linenums">service caddy start
+</pre>
+<p></p></div>
+<h3 id="升级脚本">升级脚本</h3>
+<p>升级脚本只需要运行脚本，然后选择并输入<code> 0 </code>回车即可，会自动检测最新版本并下载，当然重新下载脚本文件也可以，会自动覆盖原文件。</p>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="2018年09月24日，版本 v1.0.15">2018年09月24日，版本 v1.0.15</h3>
+<p><strong>1. 新增</strong> 安装客户端时判断系统是否为：CentOS6，会提示你是否继续（CentOS6 默认是 Python 2.6，需要你手动升级为 Python 2.7 或更换系统）。</p>
+<p><strong>2. 优化</strong> 服务端安装（用于自动部署HTTP的域名和端口只会在你决定要自动部署后才会提示你输入）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<h3 id="2018年09月21日，版本 v1.0.14">2018年09月21日，版本 v1.0.14</h3>
+<p><strong>1. 修复</strong> 当节点信息中含有逗号时，无法修改的问题。</p>
+<h3 id="2018年09月06日，版本 v1.0.13">2018年09月06日，版本 v1.0.13</h3>
+<p><strong>1. 新增</strong> 兼容旧客户端与服务端相关配置（新脚本客户端位置改了，服务端增加了个配置文件用于记录自定义监听端口配置）。</p>
+<p><strong>2. 新增</strong> 更新客户端或服务端时，将顺带更新服务脚本（避免出现脚本太旧或者手动更新脚本导致服务脚本没有更新）。</p>
+<h3 id="2018年09月06日，版本 v1.0.12">2018年09月06日，版本 v1.0.12</h3>
+<p><strong>1. 新增</strong> 自定义服务端监听端口功能（服务端接收客户端消息的端口，NAT服务器可以用了）。</p>
+<p><strong>2. 新增</strong> 客户端与服务端更新版本功能（更新软件自身）。</p>
+<p><strong>3. 优化</strong> 客户端防火墙开放端口规则代码（以前是开放的进站端口，现在改为开发出站端口）。</p>
+<h3 id="2018年07月10日，版本 v1.0.11">2018年07月10日，版本 v1.0.11</h3>
+<p><strong>1. 新增</strong> 升级脚本时，将一起升级服务脚本（Service）。</p>
+<h3 id="2017年10月31日，版本 v1.0.10">2017年10月31日，版本 v1.0.10</h3>
+<p><strong>1.更新</strong> 脚本内 客户端下载链接（特么的我发现客户端的链接是错误的，怪不得还是Load负载为小数）。</p>
+<h3 id="2017年08月04日，版本 v1.0.9">2017年08月04日，版本 v1.0.9</h3>
+<p><strong>1.更新</strong> 脚本内 逗比云地址（旧域名被墙，更换新域名）。</p>
+<h3 id="2017年04月29日，版本 v1.0.8">2017年04月29日，版本 v1.0.8</h3>
+<p><strong>1. 更换</strong> Web网页文件</p>
+<p>—— 我fork了一份，改了改式样，去掉了黑白风格切换（黑的好丑），去掉了主机名设定，添加了顶部公告栏，修改了实时网速的单位等。</p>
+<p><strong>如果想要升级最新的 Web网页文件，那么请备份你的配置文件，然后重装服务端：</strong></p>
+<pre class="prettyprint linenums">mv /usr/local/ServerStatus/server/config.json /usr/local/config.json
+</pre>
+<p><strong>然后卸载服务端，安装服务端，安装完先停止服务端，然后恢复备份的配置文件：</strong></p>
+<pre class="prettyprint linenums">mv /usr/local/config.json /usr/local/ServerStatus/server/config.json
+</pre>
+<p><strong>2. 修复</strong> 卸载服务端失败的问题。</p>
+<p><strong>3. 移除</strong> 主机名设定。</p>
+<h3 id="2017年04月28日，版本 v1.0.7">2017年04月28日，版本 v1.0.7</h3>
+<p><strong>1.新增</strong> 添加节点配置和修改节点配置 - 用户名时，会检测用户名<strong>是否已存在</strong>。</p>
+<p><strong>2.修复</strong> 当安装客户端后，再去安装服务端会失败的问题。</p>
+<p><strong>3.修复</strong> 卸载服务端会把客户端一起删除的问题。</p>
+<h3 id="2017年04月28日，版本 v1.0.6">2017年04月28日，版本 v1.0.6</h3>
+<p><strong>1.修复</strong> 一些BUGBUGBUGBUG。</p>
+<h3 id="2017年04月28日，版本 v1.0.5">2017年04月28日，版本 v1.0.5</h3>
+<p><strong>1.修复</strong> 删除节点配置保存的问题。</p>
+<h3 id="2017年04月28日，版本 v1.0.4">2017年04月28日，版本 v1.0.4</h3>
+<p><strong>1.修复</strong> 部分系统 服务端删除节点配置报错的问题(提示类似于 x+x 的错误)。</p>
+<h3 id="2017年04月28日，版本 v1.0.3">2017年04月28日，版本 v1.0.3</h3>
+<p><strong>1.新增</strong> 安装服务端时，可跳过部署HTTP服务步骤（在线监控网站服务）。</p>
+<p><strong>2.修复</strong> 升级脚本的BUG。</p>
+<h3 id="2017年04月28日，版本 v1.0.2">2017年04月28日，版本 v1.0.2</h3>
+<p><strong>1.修复</strong> 部分系统 服务端修改节点配置报错的问题(提示类似于 x+x 的错误)。</p>
+<h3 id="2017年04月28日，版本 v1.0.1">2017年04月28日，版本 v1.0.1</h3>
+<p><strong>1.修复</strong> 部分系统缺少编译组件从而安装失败的问题（加上了编译全家桶）。</p>
+<h3 id="2017年04月27日，版本 v1.0.0">2017年04月27日，版本 v1.0.0</h3>
+<p><strong>1. 推出</strong> 正式版。</p>
+<p></p></div>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="wae9j8oa.html">『原创』多服务器 云探针、云监控 —— ServerStatus 一键管理脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2168" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">107</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="kjvzw235.html" rel="tag">Caddy</a><a href="-hbe9vty.html" rel="tag">Linux</a><a href="9-mpmgol.html" rel="tag">serverstatus</a><a href="8jt8-s05.html" rel="tag">shell</a><a href="meyy1poe.html" rel="tag">脚本</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="0j0k_rj3.html" rel="prev">『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本</a></span>
+			<span class="article-nav-next"><a href="9-b8lkgt-5.html" rel="next">ShadowsocksR 推出 新协议“无加密”新玩法 [ auth_chain_a + none ]</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" />	<br><span class="r_title">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" />	<br><span class="r_title">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xcwybsz2.html" title="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本" />	<br><span class="r_title">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="6z5d56n3.html">Linux 更适合新手的文本编辑器 <strong>nano</strong> 真 · 简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="939koj07-2.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="qjfhz_ch.html">『原创』Go语言轻量化 网络混淆代理工具 —— Lightsocks 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="350fptqs.html">Linux 无需服务器配置 使用 SFTP(FileZilla) 方便的上传/下载文件小白教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2168' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (359)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-38437"><div class="c-avatar"><div class="c-main" id="div-comment-38437">请问一下  如果不使用caddy 用 APACHE可以吗?<div class="c-meta"><span class="c-author">willy</span>2018-05-27 01:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38437#respond' onclick='return addComment.moveForm( "div-comment-38437", "38437", "respond", "2168" )' aria-label='回复给willy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38452"><div class="c-avatar"><div class="c-main" id="div-comment-38452">可以，任何HTTP服务程序都可以，但是我没用过 apache ，无法给与指导。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-27 12:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38452#respond' onclick='return addComment.moveForm( "div-comment-38452", "38452", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38420"><div class="c-avatar"><div class="c-main" id="div-comment-38420">节点名的排序，能不能设置不按添加的先后顺序，而是按节点名字排序？<div class="c-meta"><span class="c-author">yang</span>2018-05-26 17:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38420#respond' onclick='return addComment.moveForm( "div-comment-38420", "38420", "respond", "2168" )' aria-label='回复给yang'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38456"><div class="c-avatar"><div class="c-main" id="div-comment-38456">脚本只会把新添加的节点配置信息追加到配置文件最后，如果要自定义顺序，可以自己打开配置文件修改，只需要注意一点：JSON格式最后一个段没有逗号，具体看好格式再改，记得修改前备份。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-27 12:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38456#respond' onclick='return addComment.moveForm( "div-comment-38456", "38456", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-38484"><div class="c-avatar"><div class="c-main" id="div-comment-38484">好像没有培训规则设置，只能手动更改配置文件里面的先后顺序~~~~·<div class="c-meta"><span class="c-author">yang</span>2018-05-27 23:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38484#respond' onclick='return addComment.moveForm( "div-comment-38484", "38484", "respond", "2168" )' aria-label='回复给yang'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-38128"><div class="c-avatar"><div class="c-main" id="div-comment-38128">大佬 /usr/local/ServerStatus/server/config.json 修改位置无效！！！怎么跑 我是网站根目录下创建的这个网页的快捷和这有关系吗？<div class="c-meta"><span class="c-author">sdad</span>2018-05-20 17:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38128#respond' onclick='return addComment.moveForm( "div-comment-38128", "38128", "respond", "2168" )' aria-label='回复给sdad'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-38163"><div class="c-avatar"><div class="c-main" id="div-comment-38163">修改位置无效，重启服务端了么？网页的快捷？什么鬼？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-21 13:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38163#respond' onclick='return addComment.moveForm( "div-comment-38163", "38163", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-38295"><div class="c-avatar"><div class="c-main" id="div-comment-38295">就是我在我宝塔原网页下面ln -s到你这个目录页面的，和这个应该没关系吧。。我没重启服务端。。我试试<div class="c-meta"><span class="c-author">睡咯</span>2018-05-24 01:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38295#respond' onclick='return addComment.moveForm( "div-comment-38295", "38295", "respond", "2168" )' aria-label='回复给睡咯'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38100"><div class="c-avatar"><div class="c-main" id="div-comment-38100">大佬，输入 bash status.sh c 显示
+': not a valid identifier: `PATH
+status.sh: line 4: $'\r': command not found
+status.sh: line 12: $'\r': command not found
+status.sh: line 23: $'\r': command not found
+status.sh: line 28: $'\r': command not found
+status.sh: line 30: syntax error near unexpected token `$'{\r''
+'tatus.sh: line 30: `check_sys(){
+求救<div class="c-meta"><span class="c-author">HAO</span>2018-05-20 10:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38100#respond' onclick='return addComment.moveForm( "div-comment-38100", "38100", "respond", "2168" )' aria-label='回复给HAO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38111"><div class="c-avatar"><div class="c-main" id="div-comment-38111">你服务器是什么系统？你本地用的是什么SSH工具？不要用网页上的SSH操作脚本。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-20 13:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38111#respond' onclick='return addComment.moveForm( "div-comment-38111", "38111", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-38123"><div class="c-avatar"><div class="c-main" id="div-comment-38123">服务器是 Debian 7 本地使用的是 Xshell 6<div class="c-meta"><span class="c-author">HAO</span>2018-05-20 16:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38123#respond' onclick='return addComment.moveForm( "div-comment-38123", "38123", "respond", "2168" )' aria-label='回复给HAO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-38162"><div class="c-avatar"><div class="c-main" id="div-comment-38162">Debian7 应该是没问题的，不过我用的是 Xshell5 ，没用过6，不清楚是不是6的问题，你可以用 Putty 这个单文件SSH客户端试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-21 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38162#respond' onclick='return addComment.moveForm( "div-comment-38162", "38162", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-3" id="comment-38124"><div class="c-avatar"><div class="c-main" id="div-comment-38124">补充下，是 Debian 7.11 x86<div class="c-meta"><span class="c-author">HAO</span>2018-05-20 16:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38124#respond' onclick='return addComment.moveForm( "div-comment-38124", "38124", "respond", "2168" )' aria-label='回复给HAO'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-37860"><div class="c-avatar"><div class="c-main" id="div-comment-37860">Google 的VPS不能正确连接到服务端显示,客户端要配置哪个端口?<div class="c-meta"><span class="c-author">恋网物语</span>2018-05-16 22:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37860#respond' onclick='return addComment.moveForm( "div-comment-37860", "37860", "respond", "2168" )' aria-label='回复给恋网物语'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-37916"><div class="c-avatar"><div class="c-main" id="div-comment-37916">谷歌云外部防火墙开放 35601 端口。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-17 14:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37916#respond' onclick='return addComment.moveForm( "div-comment-37916", "37916", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-37939"><div class="c-avatar"><div class="c-main" id="div-comment-37939">大佬这个端口在哪可以改嘛？35601端口占用了<div class="c-meta"><span class="c-author">Dawn</span>2018-05-17 19:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37939#respond' onclick='return addComment.moveForm( "div-comment-37939", "37939", "respond", "2168" )' aria-label='回复给Dawn'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-37988"><div class="c-avatar"><div class="c-main" id="div-comment-37988">这个需要修改客户端内头部的端口参数，和服务端增加端口启动参数。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-18 16:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37988#respond' onclick='return addComment.moveForm( "div-comment-37988", "37988", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-38093"><div class="c-avatar"><div class="c-main" id="div-comment-38093">大佬可以指点下在哪个文件或目录下嘛，我试着改改<div class="c-meta"><span class="c-author">Dawn</span>2018-05-20 00:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38093#respond' onclick='return addComment.moveForm( "div-comment-38093", "38093", "respond", "2168" )' aria-label='回复给Dawn'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-38114"><div class="c-avatar"><div class="c-main" id="div-comment-38114"><pre class="prettyprint linenums" ># 客户端，打开客户端文件
+/usr/local/ServerStatus/status-client.py
+# 修改第8行的（35601就是默认端口）：
+PORT = 35601
+
+# 服务端，打开服务脚本
+/etc/init.d/status-server
+# 并把 35行（或37行）的：
+nohup "./$NAME_BIN" --config="$CONF" --web-dir="$WEB_BIN" > /tmp/serverstatus_server.log 2>&1 &
+# 改成
+nohup "./$NAME_BIN" --config="$CONF" --web-dir="$WEB_BIN" --port=2333 > /tmp/serverstatus_server.log 2>&1 &
+# 2333是示例端口，记得自己改。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-20 14:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38114#respond' onclick='return addComment.moveForm( "div-comment-38114", "38114", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-7" id="comment-38173"><div class="c-avatar"><div class="c-main" id="div-comment-38173">Toyo大佬我爱您=3=<div class="c-meta"><span class="c-author">Dawn</span>2018-05-21 17:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=38173#respond' onclick='return addComment.moveForm( "div-comment-38173", "38173", "respond", "2168" )' aria-label='回复给Dawn'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37769"><div class="c-avatar"><div class="c-main" id="div-comment-37769">请问一下，为什么python已经是2.7了还是不能够正常显示，反复开启与关闭，就是不显示数据（CentOS7系统，独服<div class="c-meta"><span class="c-author"><a href='https://tan90.pl/' rel='external nofollow' class='url'>chx818</a></span>2018-05-13 14:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37769#respond' onclick='return addComment.moveForm( "div-comment-37769", "37769", "respond", "2168" )' aria-label='回复给chx818'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37770"><div class="c-avatar"><div class="c-main" id="div-comment-37770">反复开启和关闭，就是客户端不兼容，你的服务器上面是否还安装的有python2.6版本？客户端日志输出什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-13 17:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37770#respond' onclick='return addComment.moveForm( "div-comment-37770", "37770", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36906"><div class="c-avatar"><div class="c-main" id="div-comment-36906">大佬。超出32个就不显示了？后面添加了之后前面的节点怎么显示呢？<div class="c-meta"><span class="c-author">alic</span>2018-04-24 00:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=36906#respond' onclick='return addComment.moveForm( "div-comment-36906", "36906", "respond", "2168" )' aria-label='回复给alic'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-37306"><div class="c-avatar"><div class="c-main" id="div-comment-37306">怎么添加多个节点？<div class="c-meta"><span class="c-author">allen</span>2018-05-04 13:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=37306#respond' onclick='return addComment.moveForm( "div-comment-37306", "37306", "respond", "2168" )' aria-label='回复给allen'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36895"><div class="c-avatar"><div class="c-main" id="div-comment-36895">你好，我想问一下，我服务端是内网的debian9，用frpc映射8888端口，还需要映射什么端口。<div class="c-meta"><span class="c-author">delay-wcy</span>2018-04-23 21:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=36895#respond' onclick='return addComment.moveForm( "div-comment-36895", "36895", "respond", "2168" )' aria-label='回复给delay-wcy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36917"><div class="c-avatar"><div class="c-main" id="div-comment-36917">端口 35601 。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-24 09:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=36917#respond' onclick='return addComment.moveForm( "div-comment-36917", "36917", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-36516"><div class="c-avatar"><div class="c-main" id="div-comment-36516">为什么全是关闭状态，只有本机的是开启，所有机器全部关闭了防火墙了 这个是什么原因<div class="c-meta"><span class="c-author"><a href='http://www.f162.cn/' rel='external nofollow' class='url'>会飞的鱼</a></span>2018-04-16 20:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=36516#respond' onclick='return addComment.moveForm( "div-comment-36516", "36516", "respond", "2168" )' aria-label='回复给会飞的鱼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36534"><div class="c-avatar"><div class="c-main" id="div-comment-36534">当服务端收到客户端发来的信息后才会显示开启，显示关闭说明客户端没有链接到服务端。原因可能有三，自行排除：
+<pre class="prettyprint linenums" >1. 客户端配置信息有误。
+2. 客户端所在服务器的 Python 版本低于2.7 。
+3. 客户端与服务端之间的链接存在障碍。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-17 12:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=36534#respond' onclick='return addComment.moveForm( "div-comment-36534", "36534", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-35618"><div class="c-avatar"><div class="c-main" id="div-comment-35618">如果嫌麻烦可以使用nodequery.com，免费监控10个服务器，安装极其简单（只需要一行命令），不需要自己的HTTP服务器，出现异常会自动给你发邮件。本人已经使用两年（除了异常触发系统比较敏感，邮件有点多外）一直很稳定。有兴趣的可以试试<div class="c-meta"><span class="c-author">lewisxy</span>2018-04-03 22:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35618#respond' onclick='return addComment.moveForm( "div-comment-35618", "35618", "respond", "2168" )' aria-label='回复给lewisxy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-35064"><div class="c-avatar"><div class="c-main" id="div-comment-35064">负载项全是0为什么啊，逗比大佬！<div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-27 23:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35064#respond' onclick='return addComment.moveForm( "div-comment-35064", "35064", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-35065"><div class="c-avatar"><div class="c-main" id="div-comment-35065">我的版本，负载列指的是外部链接到本服务器的IP数（例如你到链接本服务器的代理软件）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-27 23:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35065#respond' onclick='return addComment.moveForm( "div-comment-35065", "35065", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-35099"><div class="c-avatar"><div class="c-main" id="div-comment-35099">对啊，可是他全都显示0 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-28 10:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35099#respond' onclick='return addComment.moveForm( "div-comment-35099", "35099", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-35112"><div class="c-avatar"><div class="c-main" id="div-comment-35112">什么系统？可能是系统里没有安装 netstat ，一般 Debian9 CentOS7 会出现这种情况，
+<pre class="prettyprint linenums" >CentOS 系统：
+yum install -y net-tools
+Debian/Ubuntu 系统：
+apt-get install -y net-tools
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-28 12:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35112#respond' onclick='return addComment.moveForm( "div-comment-35112", "35112", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-35147"><div class="c-avatar"><div class="c-main" id="div-comment-35147">Debian8/9都有都安装了啊。。。。<div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-28 16:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35147#respond' onclick='return addComment.moveForm( "div-comment-35147", "35147", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-35197"><div class="c-avatar"><div class="c-main" id="div-comment-35197"><pre class="prettyprint linenums" >netstat -lntp
+# 这个命令是查看本地监听端口的，你运行看看提示什么。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-29 12:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35197#respond' onclick='return addComment.moveForm( "div-comment-35197", "35197", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-7" id="comment-35215"><div class="c-avatar"><div class="c-main" id="div-comment-35215">字体补丁，
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:55555           0.0.0.0:*               LISTEN      457/sshd        
+tcp        0      0 0.0.0.0:3306            0.0.0.0:*               LISTEN      1118/mysqld     
+tcp        0      0 127.0.0.1:587           0.0.0.0:*               LISTEN      1186/sendmail: MTA:
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      797/nginx.conf  
+tcp        0      0 0.0.0.0:35601           0.0.0.0:*               LISTEN      23778/sergate   
+tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN      14696/python    
+tcp        0      0 0.0.0.0:888             0.0.0.0:*               LISTEN      797/nginx.conf  
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1186/sendmail: MTA:
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      797/nginx.conf  
+tcp6       0      0 :::55555                :::*                    LISTEN      457/sshd        
+tcp6       0      0 :::35601                :::*                    LISTEN      23778/sergate   
+tcp6       0      0 :::1234                 :::*                    LISTEN      441/caddy<div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-29 15:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35215#respond' onclick='return addComment.moveForm( "div-comment-35215", "35215", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-7" id="comment-35216"><div class="c-avatar"><div class="c-main" id="div-comment-35216">刚才发的是服务端的，运行在客户端的SS端口 程序名 也都显示出来了<div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-29 15:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35216#respond' onclick='return addComment.moveForm( "div-comment-35216", "35216", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-7" id="comment-35233"><div class="c-avatar"><div class="c-main" id="div-comment-35233">运行结果都是正常的啊QAQ<div class="c-meta"><span class="c-author">大屌萌妹</span>2018-03-29 21:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35233#respond' onclick='return addComment.moveForm( "div-comment-35233", "35233", "respond", "2168" )' aria-label='回复给大屌萌妹'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-8" id="comment-35270"><div class="c-avatar"><div class="c-main" id="div-comment-35270">请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-30 15:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=35270#respond' onclick='return addComment.moveForm( "div-comment-35270", "35270", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-34837"><div class="c-avatar"><div class="c-main" id="div-comment-34837">安装时能否提供选项将负载显示为正常的系统负载而不是网络连接数？我部署在WEB服务器是，这时候传统的负载明显比网络连接信息更有意义。<div class="c-meta"><span class="c-author"><a href='https://www.warmeve.com/' rel='external nofollow' class='url'>EmptinessLove</a></span>2018-03-25 18:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=34837#respond' onclick='return addComment.moveForm( "div-comment-34837", "34837", "respond", "2168" )' aria-label='回复给EmptinessLove'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-34861"><div class="c-avatar"><div class="c-main" id="div-comment-34861">因为这个功能，客户端与服务端（准确说是网页端JS）都需要调整，所以暂时无法这样做。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-26 14:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=34861#respond' onclick='return addComment.moveForm( "div-comment-34861", "34861", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-34353"><div class="c-avatar"><div class="c-main" id="div-comment-34353">大佬帮忙加一个那个超过32还是23台的那个限制。<br />
+还有就是能否加入一个ipv6是否开的那个功能，还有就是能不能加一个主题切换~就是黑色的那个主题。感恩了。<br />
+车队好多人需要，大佬有空帮忙弄弄感恩拉~嘻嘻嘻嘻另外可以提供酸酸乳线路~<div class="c-meta"><span class="c-author"><a href='http://sscc.lisuanlaoji.com/' rel='external nofollow' class='url'>老几</a></span>2018-03-22 01:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=34353#respond' onclick='return addComment.moveForm( "div-comment-34353", "34353", "respond", "2168" )' aria-label='回复给老几'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-33401"><div class="c-avatar"><div class="c-main" id="div-comment-33401">站长好，刚刚试了您的脚本很好用，请教下能否一个客户端对接两个服务端？<div class="c-meta"><span class="c-author"><a href="https://baidu.com/" rel='external nofollow' class='url'>Trav</a></span>2018-03-17 12:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=33401#respond' onclick='return addComment.moveForm( "div-comment-33401", "33401", "respond", "2168" )' aria-label='回复给Trav'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-33405"><div class="c-avatar"><div class="c-main" id="div-comment-33405">无法实现。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-17 12:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=33405#respond' onclick='return addComment.moveForm( "div-comment-33405", "33405", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-33250"><div class="c-avatar"><div class="c-main" id="div-comment-33250">不错！配和宝塔成功运行，希望今后可以加入一些功能？<div class="c-meta"><span class="c-author">SunZz</span>2018-03-16 16:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=33250#respond' onclick='return addComment.moveForm( "div-comment-33250", "33250", "respond", "2168" )' aria-label='回复给SunZz'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-33159"><div class="c-avatar"><div class="c-main" id="div-comment-33159">头油~有更新了额~ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 
+20180314, 调整前端，置默认密码为: USER_DEFAULT_PASSWORD，设置ip和user即可上线　　
+20180312, 加入失联(被照顾)检测，同时校准虚拟化(container)引起的流量统计异常<div class="c-meta"><span class="c-author">Adam</span>2018-03-14 21:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=33159#respond' onclick='return addComment.moveForm( "div-comment-33159", "33159", "respond", "2168" )' aria-label='回复给Adam'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-33115"><div class="c-avatar"><div class="c-main" id="div-comment-33115">大佬 源项目有更新 
+20180314, 调整前端，置默认密码为: USER_DEFAULT_PASSWORD，设置ip和user即可上线　　　　　　
+20180312, 加入失联(被照顾)检测，同时校准虚拟化(container)引起的流量统计异常　<div class="c-meta"><span class="c-author">ll</span>2018-03-14 13:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=33115#respond' onclick='return addComment.moveForm( "div-comment-33115", "33115", "respond", "2168" )' aria-label='回复给ll'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32492"><div class="c-avatar"><div class="c-main" id="div-comment-32492">能不能出个跟宝塔配合的教程，装着宝塔就没法用这个了<div class="c-meta"><span class="c-author"><a href='http://liu2020.com/' rel='external nofollow' class='url'>追风</a></span>2018-03-03 03:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=32492#respond' onclick='return addComment.moveForm( "div-comment-32492", "32492", "respond", "2168" )' aria-label='回复给追风'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32541"><div class="c-avatar"><div class="c-main" id="div-comment-32541">可以配合，任何面板/一键包都行。
+<pre class="prettyprint linenums" ># 安装服务端的时候出现下面提示后，选择N。
+是否由脚本自动配置HTTP服务(服务端的在线监控网站)[Y/n]
+# 然后宝塔面板 [添加站点] 虚拟主机位置写：/usr/local/ServerStatus/web
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-03 15:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=32541#respond' onclick='return addComment.moveForm( "div-comment-32541", "32541", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30789"><div class="c-avatar"><div class="c-main" id="div-comment-30789">老大，服务端、客户端都启动正常，账号密码都对，但是打开后还是报这个错误。如果出现此消息，请确保您已启用JavaScript ! 
+否则云监控主服务(服务端) 未启动或已关闭.求解！<div class="c-meta"><span class="c-author">yuxianghan</span>2018-02-01 05:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=30789#respond' onclick='return addComment.moveForm( "div-comment-30789", "30789", "respond", "2168" )' aria-label='回复给yuxianghan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30814"><div class="c-avatar"><div class="c-main" id="div-comment-30814">浏览器打开 http://域名/json/stats.json 看看是否有服务器信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-01 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=30814#respond' onclick='return addComment.moveForm( "div-comment-30814", "30814", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30412"><div class="c-avatar"><div class="c-main" id="div-comment-30412">发现个BUG，修改客户端信息账号总是改不过来，修改后还是原来的账号<div class="c-meta"><span class="c-author">小二的猫</span>2018-01-27 19:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=30412#respond' onclick='return addComment.moveForm( "div-comment-30412", "30412", "respond", "2168" )' aria-label='回复给小二的猫'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30495"><div class="c-avatar"><div class="c-main" id="div-comment-30495">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-28 16:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=30495#respond' onclick='return addComment.moveForm( "div-comment-30495", "30495", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29912"><div class="c-avatar"><div class="c-main" id="div-comment-29912">日志：tail: warning: following standard input indefinitely is ineffective
+我添加了一个节点，结果这个节点网页显示是关闭的<div class="c-meta"><span class="c-author">GGGG</span>2018-01-22 01:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29912#respond' onclick='return addComment.moveForm( "div-comment-29912", "29912", "respond", "2168" )' aria-label='回复给GGGG'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29933"><div class="c-avatar"><div class="c-main" id="div-comment-29933">日志的输出内容指的是当前没有日志内容。<br />
+你这种情况有三种原因，一是客户端无法链接到服务端，二是客户端填写的账号与服务端不符（账号错误），三是客户端所在服务器的 Python 版本低于2.7（CentOS6 系统就是 2.6版本）。<br />
+具体自行排除。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-22 15:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29933#respond' onclick='return addComment.moveForm( "div-comment-29933", "29933", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29581"><div class="c-avatar"><div class="c-main" id="div-comment-29581">同一台服务器只能添加一个节点么，添加第二个前面的节点就会显示红色关闭<div class="c-meta"><span class="c-author">kyo</span>2018-01-15 12:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29581#respond' onclick='return addComment.moveForm( "div-comment-29581", "29581", "respond", "2168" )' aria-label='回复给kyo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29589"><div class="c-avatar"><div class="c-main" id="div-comment-29589">什么意思？服务端添加的是节点账号，然后其他的服务器安装客户端，然后客户端填写节点账号链接到服务端，服务端收到客户端信息后才会网页显示信息/开启。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-15 15:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29589#respond' onclick='return addComment.moveForm( "div-comment-29589", "29589", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-29618"><div class="c-avatar"><div class="c-main" id="div-comment-29618">是的，安装客户端的服务器，我只能添加一个节点，添加下一个的时候，上一个就会显示红色关闭，但是看了下服务端节点状态都是启用的，这是为什么<div class="c-meta"><span class="c-author">kyo</span>2018-01-15 22:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29618#respond' onclick='return addComment.moveForm( "div-comment-29618", "29618", "respond", "2168" )' aria-label='回复给kyo'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-29622"><div class="c-avatar"><div class="c-main" id="div-comment-29622">说实话，看你说话我完全没看懂“安装客户端的服务器，我只能添加一个节点，添加下一个的时候”，安装客户端的服务器，你还添加几个节点？客户端安装的时候填写对应的节点账号就行了啊，然后其他服务器继续安装客户端并填写另外对应的节点账号啊。这无法理解？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-15 22:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29622#respond' onclick='return addComment.moveForm( "div-comment-29622", "29622", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29536"><div class="c-avatar"><div class="c-main" id="div-comment-29536">强迫症问一波,能不能自定义监控小鸡的排列...<div class="c-meta"><span class="c-author">AL</span>2018-01-13 22:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29536#respond' onclick='return addComment.moveForm( "div-comment-29536", "29536", "respond", "2168" )' aria-label='回复给AL'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29550"><div class="c-avatar"><div class="c-main" id="div-comment-29550">打开服务端配置文件：<code> /usr/local/ServerStatus/server/config.json </code>，自己改上下顺序，注意JSON格式，格式错误会导致报错。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-14 13:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29550#respond' onclick='return addComment.moveForm( "div-comment-29550", "29550", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29394"><div class="c-avatar"><div class="c-main" id="div-comment-29394">博主，我想问下手动搭建的应该怎么才能自启动服务<div class="c-meta"><span class="c-author">00</span>2018-01-10 22:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29394#respond' onclick='return addComment.moveForm( "div-comment-29394", "29394", "respond", "2168" )' aria-label='回复给00'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29268"><div class="c-avatar"><div class="c-main" id="div-comment-29268">请问大佬，流量可以按月清零吗？看py脚本，似乎直接取的网卡总流量？这个是开机以来的总数？<div class="c-meta"><span class="c-author">s0ne</span>2018-01-05 17:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29268#respond' onclick='return addComment.moveForm( "div-comment-29268", "29268", "respond", "2168" )' aria-label='回复给s0ne'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29293"><div class="c-avatar"><div class="c-main" id="div-comment-29293">是的，开机后网卡会清零以前的数据，并重新计算。如果要按月清零，要么定时重启服务器，要么调用其它程序的网络总流量计算信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-06 14:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29293#respond' onclick='return addComment.moveForm( "div-comment-29293", "29293", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29233"><div class="c-avatar"><div class="c-main" id="div-comment-29233">请问这个能不能用Nginx？<div class="c-meta"><span class="c-author">saya</span>2018-01-04 16:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29233#respond' onclick='return addComment.moveForm( "div-comment-29233", "29233", "respond", "2168" )' aria-label='回复给saya'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29236"><div class="c-avatar"><div class="c-main" id="div-comment-29236">能，但是你需要自己配置，安装服务端的时候就会询问是否自动配置网站，如果选择 Y 就是自动配置Caddy，如果选择 N ，就需要你手动配置。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-04 17:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29236#respond' onclick='return addComment.moveForm( "div-comment-29236", "29236", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29167"><div class="c-avatar"><div class="c-main" id="div-comment-29167">Toyo大大，我的NAT小鸡限制端口，服务端可以自定义端口，但是貌似客户端都是默认35601端口？所以客户端能否也支持自定义端口？谢谢大大<div class="c-meta"><span class="c-author">lc1024</span>2018-01-03 12:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29167#respond' onclick='return addComment.moveForm( "div-comment-29167", "29167", "respond", "2168" )' aria-label='回复给lc1024'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29168"><div class="c-avatar"><div class="c-main" id="div-comment-29168">错，你说的服务端应该是网页，而不是服务端程序自身，客户端通过35601端口链接到服务端，而服务端程序本身无法修改这个端口，如果你只修改客户端的35601端口，会导致客户端无法链接服务端。<br />
+该程序的服务端是C语言写的，我不懂，我只是在原作者的基础上做了网页、客户端修改。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-03 12:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29168#respond' onclick='return addComment.moveForm( "div-comment-29168", "29168", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-28979"><div class="c-avatar"><div class="c-main" id="div-comment-28979">抱歉請問一下，能否改變 "手機板" 網頁顯示之內容 (預設只有IP4 節點名 網絡 CPU 內存) 我想手動刪減 需要如何更改?<div class="c-meta"><span class="c-author">willy</span>2017-12-28 16:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=28979#respond' onclick='return addComment.moveForm( "div-comment-28979", "28979", "respond", "2168" )' aria-label='回复给willy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29032"><div class="c-avatar"><div class="c-main" id="div-comment-29032">需要修改网页目录下的 css/light.css CSS式样文件。因为自己修改需要一些CSS基础，所以你只能自己去学习。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-30 17:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=29032#respond' onclick='return addComment.moveForm( "div-comment-29032", "29032", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-24132"><div class="c-avatar"><div class="c-main" id="div-comment-24132">感谢一键包。有nginx的话就不用开启caddy服务。<br />
+在域名根目录的话，直接将 root 指向 /usr/local/ServerStatus/web <br />
+在域名子目录比如 http://abc.com/status 的话，像这样设置。
+<pre class="prettyprint linenums" >location ~/status(.*)$ {
+    alias /usr/local/ServerStatus/web$1;
+}
+</pre><div class="c-meta"><span class="c-author"><a href='https://www.fly2x.com/' rel='external nofollow' class='url'>小明</a></span>2017-12-11 15:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=24132#respond' onclick='return addComment.moveForm( "div-comment-24132", "24132", "respond", "2168" )' aria-label='回复给小明'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-24061"><div class="c-avatar"><div class="c-main" id="div-comment-24061">来大神这里问个问题，我安装后，发现监控出来的数据跟iftop的数据大概查了10倍，请问这个的流量监控的数据是居于什么统计，盼回复，感谢<div class="c-meta"><span class="c-author"><a href="https://www.baidu.com/" rel='external nofollow' class='url'>无情</a></span>2017-12-09 20:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=24061#respond' onclick='return addComment.moveForm( "div-comment-24061", "24061", "respond", "2168" )' aria-label='回复给无情'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-24073"><div class="c-avatar"><div class="c-main" id="div-comment-24073">自己看客户端的文件 .py 是明文的，这个软件不是我写的，我只是改改一些代码并且写了个一键脚本。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-10 10:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=24073#respond' onclick='return addComment.moveForm( "div-comment-24073", "24073", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23980"><div class="c-avatar"><div class="c-main" id="div-comment-23980">dalao,用了Caddy的自动SSL证书，Https下访问监控页面显示
+“如果出现此消息，请确保您已启用JavaScript ! 否则云监控主服务(服务端) 未启动或已关闭.”
+如何解决？只能http？<div class="c-meta"><span class="c-author">..</span>2017-12-07 13:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=23980#respond' onclick='return addComment.moveForm( "div-comment-23980", "23980", "respond", "2168" )' aria-label='回复给..'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23526"><div class="c-avatar"><div class="c-main" id="div-comment-23526">节点需要定时重启，重启后不自动连接。
+如何加入开机启动？<div class="c-meta"><span class="c-author">熊三</span>2017-11-28 16:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=23526#respond' onclick='return addComment.moveForm( "div-comment-23526", "23526", "respond", "2168" )' aria-label='回复给熊三'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23672"><div class="c-avatar"><div class="c-main" id="div-comment-23672">客户端和服务端的服务脚本都是默认设置开机启动的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-01 15:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=23672#respond' onclick='return addComment.moveForm( "div-comment-23672", "23672", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22558"><div class="c-avatar"><div class="c-main" id="div-comment-22558">话说这个怎么开启HTTPS访问啊？？？<div class="c-meta"><span class="c-author">CNSZTL</span>2017-11-12 18:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=22558#respond' onclick='return addComment.moveForm( "div-comment-22558", "22558", "respond", "2168" )' aria-label='回复给CNSZTL'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22562"><div class="c-avatar"><div class="c-main" id="div-comment-22562">需要你有SSL证书，或者通过Caddy自动申请证书，修改Caddy的配置文件来修改为HTTPS链接。设置方法参考我网站<a href="l-en8vwt-2.html" target="_blank">其他Caddy教程</a>。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-12 18:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=22562#respond' onclick='return addComment.moveForm( "div-comment-22562", "22562", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21944"><div class="c-avatar"><div class="c-main" id="div-comment-21944">大佬，centos6.5 一会儿显示开启一会儿显示关闭，显示开启的时候cpu什么的都是0，<div class="c-meta"><span class="c-author"><a href='http://amoz.me/' rel='external nofollow' class='url'>Mozer</a></span>2017-11-05 09:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21944#respond' onclick='return addComment.moveForm( "div-comment-21944", "21944", "respond", "2168" )' aria-label='回复给Mozer'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21946"><div class="c-avatar"><div class="c-main" id="div-comment-21946">文章头部已经注明：<br />
+注意：CentOS6 系统默认的Python版本是2.6，版本太低，使用客户端会出问题，请升级Python或者更换系统。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-05 09:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21946#respond' onclick='return addComment.moveForm( "div-comment-21946", "21946", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21974"><div class="c-avatar"><div class="c-main" id="div-comment-21974">好的，谢谢大佬回复！<div class="c-meta"><span class="c-author"><a href='http://amoz.me/' rel='external nofollow' class='url'>Mozer</a></span>2017-11-05 14:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21974#respond' onclick='return addComment.moveForm( "div-comment-21974", "21974", "respond", "2168" )' aria-label='回复给Mozer'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21902"><div class="c-avatar"><div class="c-main" id="div-comment-21902">CentOS6.9 安装netstat 依赖了 但是负载还是不准确啊 显示0.2<div class="c-meta"><span class="c-author">TBQin</span>2017-11-04 18:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21902#respond' onclick='return addComment.moveForm( "div-comment-21902", "21902", "respond", "2168" )' aria-label='回复给TBQin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21814"><div class="c-avatar"><div class="c-main" id="div-comment-21814">大佬，所有服务都是正在运行，但是页面显示都是关闭，是什么原因呀？谢谢<div class="c-meta"><span class="c-author">shock</span>2017-11-03 15:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21814#respond' onclick='return addComment.moveForm( "div-comment-21814", "21814", "respond", "2168" )' aria-label='回复给shock'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21816"><div class="c-avatar"><div class="c-main" id="div-comment-21816">网页打开你的： http://域名或IP/json/stats.json ，看json文件的内容是不是都是false，如果是，说明客户端连不上服务端，如果不是，那么问题就出在JS处理上面。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 16:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21816#respond' onclick='return addComment.moveForm( "div-comment-21816", "21816", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21817"><div class="c-avatar"><div class="c-main" id="div-comment-21817">谢谢大佬回复，客户端连接不上服务端是什么原因造成的呢？谢谢。<div class="c-meta"><span class="c-author">shock</span>2017-11-03 16:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21817#respond' onclick='return addComment.moveForm( "div-comment-21817", "21817", "respond", "2168" )' aria-label='回复给shock'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-21820"><div class="c-avatar"><div class="c-main" id="div-comment-21820">可能是防火墙问题，也有可能是 客户端与服务端的之间链接的路由有问题，这种问题比较难找到。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 16:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21820#respond' onclick='return addComment.moveForm( "div-comment-21820", "21820", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-21822"><div class="c-avatar"><div class="c-main" id="div-comment-21822">好的，谢谢<div class="c-meta"><span class="c-author">shock</span>2017-11-03 17:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21822#respond' onclick='return addComment.moveForm( "div-comment-21822", "21822", "respond", "2168" )' aria-label='回复给shock'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21756"><div class="c-avatar"><div class="c-main" id="div-comment-21756">你好服务端的重启命令不管用，亲测，脚本里的可用。<div class="c-meta"><span class="c-author">silencexxx</span>2017-11-03 08:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21756#respond' onclick='return addComment.moveForm( "div-comment-21756", "21756", "respond", "2168" )' aria-label='回复给silencexxx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21762"><div class="c-avatar"><div class="c-main" id="div-comment-21762">嗯，部分系统通过 service xxx xxx 方式操作系统服务会提示出错，改成绝对路径操作就行了，脚本内为了避免出错就是绝对路径，文章里我也改成了 /etc/init.d/status-server xxx<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 10:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21762#respond' onclick='return addComment.moveForm( "div-comment-21762", "21762", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21733"><div class="c-avatar"><div class="c-main" id="div-comment-21733">大佬  先装的探针后装的那个网盘  然后探针就打不开了是不是因为装网盘的时候脚本没有帮我自动配置好caddyfile,
+怎么配置探针的caddyfile   xiexie<div class="c-meta"><span class="c-author">段段</span>2017-11-02 17:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21733#respond' onclick='return addComment.moveForm( "div-comment-21733", "21733", "respond", "2168" )' aria-label='回复给段段'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21737"><div class="c-avatar"><div class="c-main" id="div-comment-21737">本文章的探针脚本会自动配置Caddy的配置文件，而 Caddy网盘插件则需要你自己写配置内容（配置文件：/usr/local/caddy/Caddyfile）。
+<pre class="prettyprint linenums" >http://:端口 {
+ root /usr/local/ServerStatus/web
+ timeouts none
+ gzip
+}
+# 上面的是直接监听本机IP，下面则是监听域名。
+http://xxx.xxx域名:端口 {
+ root /usr/local/ServerStatus/web
+ timeouts none
+ gzip
+}
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-02 18:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21737#respond' onclick='return addComment.moveForm( "div-comment-21737", "21737", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21423"><div class="c-avatar"><div class="c-main" id="div-comment-21423">解决了。。。可能是我装了多次caddy，脚本没有帮我自动配置好caddyfile,导致没有正确指向sstatus网站文件夹 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_surprised.gif" alt=":eek:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">crazi</span>2017-10-29 09:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21423#respond' onclick='return addComment.moveForm( "div-comment-21423", "21423", "respond", "2168" )' aria-label='回复给crazi'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21422"><div class="c-avatar"><div class="c-main" id="div-comment-21422">Toyo大大你好，请问我安装并正常启动ServerStatus，但是访问网站404 not found，这个能如何处理，谢谢！系统是debian8，64位<div class="c-meta"><span class="c-author">crazi</span>2017-10-29 09:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=21422#respond' onclick='return addComment.moveForm( "div-comment-21422", "21422", "respond", "2168" )' aria-label='回复给crazi'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-20485"><div class="c-avatar"><div class="c-main" id="div-comment-20485">大大，我原先运行的好好的。。10月17号早上突然发现，提示 “如果出现此消息，请确保您已启用JavaScript ! 
+否则云监控主服务(服务端) 未启动或已关闭.” 我尝试重启和卸载重新安装caddy以及status-server、client均还是提示这个错误。请问原因？  （GCE debian 7 ）<div class="c-meta"><span class="c-author">odao</span>2017-10-17 09:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=20485#respond' onclick='return addComment.moveForm( "div-comment-20485", "20485", "respond", "2168" )' aria-label='回复给odao'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-20357"><div class="c-avatar"><div class="c-main" id="div-comment-20357">toyo大大，我更新了服务端和客户端，但是负载数还是小数啊~<div class="c-meta"><span class="c-author">john</span>2017-10-15 16:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=20357#respond' onclick='return addComment.moveForm( "div-comment-20357", "20357", "respond", "2168" )' aria-label='回复给john'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-20251"><div class="c-avatar"><div class="c-main" id="div-comment-20251">最新的client-linux.py脚本中引入了platform这个变量，运行python client-linux.py导致出现"NameError name 'Platform' is not defined"的错误输出，经过查询添加了import platform解决了错误输出，并未使用您的一键脚本，请您测试下是否该原因。<div class="c-meta"><span class="c-author">Leegaluis</span>2017-10-13 23:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=20251#respond' onclick='return addComment.moveForm( "div-comment-20251", "20251", "respond", "2168" )' aria-label='回复给Leegaluis'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-20285"><div class="c-avatar"><div class="c-main" id="div-comment-20285">我的锅，当初测试的时候本地我加上了，但是更新Github文件的时候忘了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-10-14 14:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=20285#respond' onclick='return addComment.moveForm( "div-comment-20285", "20285", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18997"><div class="c-avatar"><div class="c-main" id="div-comment-18997">Toyo大佬，我刚刚在阿里云，DO，Cloudflexy上安装探针都遇到了
+[错误] Caddy 解压失败或压缩文件错误 !
+[错误] Caddy安装失败，请手动部署，Web网页文件位置：
+系统试过debian7，centos7，debian8，centos6，都是一样的问题，请问是为啥呢<div class="c-meta"><span class="c-author">polic</span>2017-09-25 18:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18997#respond' onclick='return addComment.moveForm( "div-comment-18997", "18997", "respond", "2168" )' aria-label='回复给polic'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-19006"><div class="c-avatar"><div class="c-main" id="div-comment-19006">你要去确定是 下载Caddy的文件有问题，还是解压有问题。Caddy下载后都是<code> .tar.gz </code>格式的压缩文件，然后再去解压。<br />
+如果是下载的文件有问题自然无法解压，但是如果是解压用的程序有问题<code> tar </code>，那么也会造成解压失败，这个需要你自己去测试是哪个步骤出错。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-25 18:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=19006#respond' onclick='return addComment.moveForm( "div-comment-19006", "19006", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-19009"><div class="c-avatar"><div class="c-main" id="div-comment-19009">--2017-09-25 19:53:44--  https://caddyserver.com/download/linux/amd64
+Resolving caddyserver.com (caddyserver.com)... 138.68.240.78, 2604:a880:2:d0::1145:e001
+Connecting to caddyserver.com (caddyserver.com)|138.68.240.78|:443... failed: Connection refused.
+Connecting to caddyserver.com (caddyserver.com)|2604:a880:2:d0::1145:e001|:443... failed: Network is unreachable.
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+[错误] Caddy 解压失败或压缩文件错误 !
+
+我猜是Caddy的网站挂了？<div class="c-meta"><span class="c-author">polic</span>2017-09-25 19:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=19009#respond' onclick='return addComment.moveForm( "div-comment-19009", "19009", "respond", "2168" )' aria-label='回复给polic'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-19042"><div class="c-avatar"><div class="c-main" id="div-comment-19042">我测试没有问题，可能是你的VPS与Caddy的下载服务器链接有问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-26 15:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=19042#respond' onclick='return addComment.moveForm( "div-comment-19042", "19042", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18995"><div class="c-avatar"><div class="c-main" id="div-comment-18995">Toyo大佬，请问服务器版本需要在服务器的面板上开启什么端口呢？<div class="c-meta"><span class="c-author">polic</span>2017-09-25 17:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18995#respond' onclick='return addComment.moveForm( "div-comment-18995", "18995", "respond", "2168" )' aria-label='回复给polic'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18998"><div class="c-avatar"><div class="c-main" id="div-comment-18998">端口：35601<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-25 18:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18998#respond' onclick='return addComment.moveForm( "div-comment-18998", "18998", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18884"><div class="c-avatar"><div class="c-main" id="div-comment-18884">脚本下载到服务器后，输入“bash status.sh c
+”，结果显示“-bash: bash status.sh: command not found”
+
+不能运行<div class="c-meta"><span class="c-author">混沌微弥</span>2017-09-23 10:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18884#respond' onclick='return addComment.moveForm( "div-comment-18884", "18884", "respond", "2168" )' aria-label='回复给混沌微弥'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18887"><div class="c-avatar"><div class="c-main" id="div-comment-18887">使用 <code>./status.sh c</code> 试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-23 12:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18887#respond' onclick='return addComment.moveForm( "div-comment-18887", "18887", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18173"><div class="c-avatar"><div class="c-main" id="div-comment-18173">ubuntu python版本3.5.2,客户端报Caught Exception: a bytes-like object is required, not 'str'错误。<div class="c-meta"><span class="c-author">kelly</span>2017-09-05 12:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18173#respond' onclick='return addComment.moveForm( "div-comment-18173", "18173", "respond", "2168" )' aria-label='回复给kelly'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18180"><div class="c-avatar"><div class="c-main" id="div-comment-18180">难道是兼容性问题？这个软件在好几年前就断更了，我只是在他的基础上改了改网页等边缘内容。你可以尝试使用 Python 2.7 启动试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-05 12:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=18180#respond' onclick='return addComment.moveForm( "div-comment-18180", "18180", "respond", "2168" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17956"><div class="c-avatar"><div class="c-main" id="div-comment-17956">大佬，最多只能显示30个吗？30后面的没显示，怎么改？<div class="c-meta"><span class="c-author">jaz</span>2017-09-01 20:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=17956#respond' onclick='return addComment.moveForm( "div-comment-17956", "17956", "respond", "2168" )' aria-label='回复给jaz'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-17788"><div class="c-avatar"><div class="c-main" id="div-comment-17788">解决了....<div class="c-meta"><span class="c-author"><a href='https://www.cokemine.com/' rel='external nofollow' class='url'>可乐</a></span>2017-08-29 22:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=17788#respond' onclick='return addComment.moveForm( "div-comment-17788", "17788", "respond", "2168" )' aria-label='回复给可乐'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17787"><div class="c-avatar"><div class="c-main" id="div-comment-17787">大佬 win下client-psutil.py是不是没法用。。。<div class="c-meta"><span class="c-author"><a href='https://www.cokemine.com/' rel='external nofollow' class='url'>可乐</a></span>2017-08-29 22:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/shell-jc3/?replytocom=17787#respond' onclick='return addComment.moveForm( "div-comment-17787", "17787", "respond", "2168" )' aria-label='回复给可乐'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<a class="prev page-numbers" href="_s08-ng3.html#comments">«</a>
+<a class='page-numbers' href='_s08-ng3.html#comments'>1</a>
+<span class='page-numbers current'>2</span>
+<a class='page-numbers' href='e7xc6a-2.html#comments'>3</a>
+<a class="next page-numbers" href="e7xc6a-2.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ekf9d77-container ekf9d77-1 ekf9d77-hide">
+    <div class="ekf9d77-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ekf9d77"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+</body>
+</html>

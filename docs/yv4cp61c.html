@@ -1,0 +1,1158 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1958] -->
+<meta name="description"  content="前天写了个 Brook 的端口转发手动安装使用教程，，最近忙，拖了几天才有空写了个一键管理脚本。 优点是：安装、配置简单，支持TCP、UDP转发； 缺点是：不支持端口段转发，但是可以配置多个端口转发。 Brook 端口转发手动教程：Shadowsocks利用 Brook" />
+
+<meta name="keywords"  content="shadowsocks,shadowsocksr,shell,端口转发,脚本" />
+
+<link rel="canonical" href="yv4cp61c.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『评测』GigsGigsCloud – GIA CN2 香港 KVM 限量首月5折优惠，低至 11美元/月' href='gupy-7or.html' />
+<link rel='next' title='关于 1月6日~1月9日 期间网站无法访问的原因说明' href='mbofzp9h.html' />
+<link rel='shortlink' href='https://doub.io/?p=2551' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-jc37%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-jc37%2F&amp;format=xml" />
+<style>
+.ok96568{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ok96568-hide{
+    display: none;
+}
+.ok96568-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ok96568-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ok96568-2 .ok96568-body,.ok96568-3 .ok96568-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ok96568-2 .close-btn,.ok96568-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ok96568-3 .ok96568-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ok96568').html(kill_adBlock_message);
+            jQuery('.ok96568-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ok96568-container').fadeOut('ok96568-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Shadowsocks, ShadowsocksR, shell, 端口转发, 脚本, Shadowsocks, Shell脚本, 网络资源">
+<meta name="description" content="前天写了个 Brook 的端口转发手动安装使用教程，，最近忙，拖了几天才有空写了个一键管理脚本。  优点是：安装、配置简单，支持TCP、UDP转发；  缺点是：不支持端口段转发，但是可以配置多个端口转发。    Brook 端口转发手动教程：Shadowsocks利用 Brook 实现中继(中转/端口转发)加速  其他 Shadowsocks中继（中转）教程：传送门 系统要求 CentOS 6+ / Debian 6+ / Ubuntu">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2551 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="qha-5xcm.html"> Shadowsocks</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 11个月前 (12-21)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 19048℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="yv4cp61c.html#comments">82评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="yv4cp61c.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="yv4cp61c.html#脚本版本" title="脚本版本"><span>脚本版本</span></a></li></ul></li><li class="content-index-level-1"><a href="yv4cp61c.html#安装步骤" title="安装步骤"><span>安装步骤</span></a></li><li class="content-index-level-1"><a href="yv4cp61c.html#使用方法" title="使用方法"><span>使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="yv4cp61c.html#添加端口转发" title="添加端口转发"><span>添加端口转发</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#显示所有端口转发" title="显示所有端口转发"><span>显示所有端口转发</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#Shadowsocks客户端说明" title="Shadowsocks客户端说明"><span>Shadowsocks客户端说明</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#文件信息" title="文件信息"><span>文件信息</span></a></li></ul></li><li class="content-index-level-1"><a href="yv4cp61c.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="yv4cp61c.html#批量 添加/修改/删除 配置文件" title="批量 添加/修改/删除 配置文件"><span>批量 添加/修改/删除 配置文件</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#提示wget: unknown host “raw.githubusercontent.com” 之类的错误" title="提示wget: unknown host “raw.githubusercontent.com” 之类的错误"><span>提示wget: unknown host “raw.githubusercontent.com” 之类的错误</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li></ul></li><li class="content-index-level-1"><a href="yv4cp61c.html#更新日志" title="更新日志"><span>更新日志</span></a><ul class="children"><li class="content-index-level-2"><a href="yv4cp61c.html#2018年09月17日，版本 v1.0.6" title="2018年09月17日，版本 v1.0.6"><span>2018年09月17日，版本 v1.0.6</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2018年08月31日，版本 v1.0.5" title="2018年08月31日，版本 v1.0.5"><span>2018年08月31日，版本 v1.0.5</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2018年08月15日，版本 v1.0.4" title="2018年08月15日，版本 v1.0.4"><span>2018年08月15日，版本 v1.0.4</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2018年07月10日，版本 v1.0.3" title="2018年07月10日，版本 v1.0.3"><span>2018年07月10日，版本 v1.0.3</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2018年06月21日，版本 v1.0.2" title="2018年06月21日，版本 v1.0.2"><span>2018年06月21日，版本 v1.0.2</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2018年01月22日，版本 v1.0.1" title="2018年01月22日，版本 v1.0.1"><span>2018年01月22日，版本 v1.0.1</span></a></li><li class="content-index-level-2"><a href="yv4cp61c.html#2017年12月21日，版本 v1.0.0" title="2017年12月21日，版本 v1.0.0"><span>2017年12月21日，版本 v1.0.0</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 19:48</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前天写了个 Brook 的端口转发手动安装使用教程，，最近忙，拖了几天才有空写了个一键管理脚本。</p>
+<p><strong>优点是：</strong>安装、配置简单，支持TCP、UDP转发；</p>
+<p><strong>缺点是：</strong>不支持端口段转发，但是可以配置多个端口转发。</p>
+<hr />
+<p><strong>Brook 端口转发手动教程：<a title="Shadowsocks利用 Brook 实现中继(中转/端口转发)加速" href="9-b8lkgt-3.html" target="_blank" rel="noopener">Shadowsocks利用 Brook 实现中继(中转/端口转发)加速</a></strong></p>
+<p><strong>其他 Shadowsocks中继（中转）教程：<a href="6r9z6_wi.html#服务器中继（国内中转）" target="_blank" rel="noopener">传送门</a></strong></p>
+<h2 id="系统要求">系统要求</h2>
+<p>CentOS 6+ / Debian 6+ / Ubuntu 14.04 +</p>
+<h3 id="脚本版本">脚本版本</h3>
+<p><strong>Ver:</strong> 1.0.6</p>
+<h2 id="安装步骤">安装步骤</h2>
+<pre class="prettyprint linenums">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/brook-pf.sh &amp;&amp; chmod +x brook-pf.sh &amp;&amp; bash brook-pf.sh
+</pre>
+<p>下载并运行脚本后，会显示操作菜单，输入 <strong>1</strong> 并回车就会开始安装。</p>
+<h2 id="使用方法">使用方法</h2>
+<pre class="prettyprint linenums">bash brook-pf.sh
+</pre>
+<p>运行脚本后会显示操作菜单：</p>
+<pre class="prettyprint linenums">  Brook 端口转发 一键管理脚本 [vX.X.X]
+  ---- Toyo | doub.io/wlzy-jc37 ----
+  
+  0. 升级脚本
+————————————
+  1. 安装 Brook
+  2. 升级 Brook
+  3. 卸载 Brook
+————————————
+  4. 启动 Brook
+  5. 停止 Brook
+  6. 重启 Brook
+————————————
+  7. 设置 Brook 端口转发
+  8. 查看 Brook 端口转发
+  9. 查看 Brook 日志
+ 10. 监控 Brook 运行状态
+————————————
+
+ 当前状态: 已安装 但 未启动
+
+ 请输入数字 [0-10]:
+
+</pre>
+<h3 id="添加端口转发">添加端口转发</h3>
+<p>输入 <strong>7</strong> 并回车后，会提示你选择要干什么：</p>
+<pre class="prettyprint linenums">你要做什么？
+ 1.  添加 端口转发
+ 2.  删除 端口转发
+ 3.  修改 端口转发
+ 4.  启用/禁用 端口转发
+ 
+ [注意] 本地监听端口不能重复，被转发的IP或端口可重复!
+(默认: 取消)
+</pre>
+<p>输入 <strong>1</strong> 并回车后，会提示你依次输入 本地监听端口、被转发IP、被转发端口：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">请输入 Brook 本地监听端口 [1-65535]（端口不能重复，避免冲突）
+(默认取消):2366
+
+========================
+	本地监听端口 :  2333
+========================
+
+请输入被转发的 IP :
+(默认取消):1.1.1.1
+
+========================
+	被转发IP :  1.1.1.1
+========================
+
+请输入 Brook 被转发的端口 [1-65535]
+(默认取消):2366
+
+========================
+	被转发端口 :  2366
+========================
+
+立即启用该端口转发，还是禁用？ [Y/n]
+(默认: Y 启用):
+[信息] 端口转发 添加成功 [端口: 2333 被转发IP和端口: 1.1.1.1:2366]
+
+是否继续 添加端口转发配置？[Y/n]:
+[信息] 继续 添加端口转发配置...
+...
+...
+========================
+
+</pre>
+<p>最后启动成功后 就会提示：</p>
+<pre class="prettyprint linenums">当前端口转发总数:  1  当前服务器IP:  2.2.2.2
+本地监听端口: 2333	 被转发IP: 1.1.1.1	 被转发端口:2366	 状态: 启用
+
+========================
+</pre>
+<p></p></div>
+<h3 id="显示所有端口转发">显示所有端口转发</h3>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>输入 <strong>8</strong> 并回车后，会显示如下：</p>
+<pre class="prettyprint linenums">当前端口转发总数: 1 当前服务器IP: 2.2.2.2 
+本地监听端口: 2333 被转发IP: 1.1.1.1 被转发端口:2366 状态: 启用 
+本地监听端口: 2377 被转发IP: 1.1.1.1 被转发端口:2388 状态: 启用 
+========================
+</pre>
+<p></p></div>
+<h3 id="Shadowsocks客户端说明">Shadowsocks客户端说明</h3>
+<p>假设你的 <strong>海外服务器(被中转) </strong>中搭建的Shadowsocks服务端的IP是<code> 2.2.2.2  </code>，SS端口是<code> 10000 </code>。</p>
+<p>假设你的 <strong>中转服务器 </strong>的IP是<code> 1.1.1.1 </code>，本地监听端口和SS端口一致，都是<code> 10000 </code>。</p>
+<p>那么，你的Shadowsocks客户端，添加Shadowsocks服务器，IP填写<code> 1.1.1.1 </code>，端口填写<code> 10000 </code>，<strong>其他的 密码/加密方式/协议/混淆等等 全部和原Shadowsocks账号一样！</strong></p>
+<h3 id="文件信息">文件信息</h3>
+<p>为了和我另一个 Brook 管理脚本不冲突，所以安装目录名字改成了 brook-pf 。</p>
+<p><strong>安装目录：</strong>/usr/local/brook-pf</p>
+<p><strong>安装文件：</strong>/usr/local/brook-pf/brook</p>
+<p><strong>配置文件：</strong>/usr/local/brook-pf/brook.conf</p>
+<p><strong>日志文件：</strong>/usr/local/brook-pf/brook.log （只会显示错误日志）</p>
+<h2 id="其他说明">其他说明</h2>
+<p>支持开机启动，支持 TCP UDP端口转发。</p>
+<h3 id="批量 添加/修改/删除 配置文件">批量 添加/修改/删除 配置文件</h3>
+<p>虽然我的脚本里每次 添加/删除 端口转发配置后都会提示是否继续，但是并不适合大量的 添加/删除 操作，所以需要手动 添加/修改/删除，当然并不麻烦，配置文件格式很简单：</p>
+<pre class="prettyprint linenums"># 格式如下：
+本地监听端口 被转发IP 被转发端口 状态
+# 示例如下：
+2333 1.1.1.1 2366 0
+2355 1.1.1.1 2777 1
+# 状态 0 为禁用，1 为启用。
+</pre>
+<h3 id="提示wget: unknown host “raw.githubusercontent.com” 之类的错误">提示wget: unknown host “raw.githubusercontent.com” 之类的错误</h3>
+<p>这是无法解析我的域名，多半是DNS的问题，请更换DNS为谷歌DNS。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" &gt; /etc/resolv.conf
+</pre>
+<p></p></div>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># Centos系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<p></p></div>
+<h2 id="更新日志">更新日志</h2>
+<h3 id="2018年09月17日，版本 v1.0.6">2018年09月17日，版本 v1.0.6</h3>
+<p><strong>1. 修复</strong> 无法从逗比云获取最新版本号的问题（将自动检测逗比云最新域名）。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<h3 id="2018年08月31日，版本 v1.0.5">2018年08月31日，版本 v1.0.5</h3>
+<p><strong>1. 新增</strong> 手动输入版本号。</p>
+<h3 id="2018年08月15日，版本 v1.0.4">2018年08月15日，版本 v1.0.4</h3>
+<p><strong>1. 修复</strong> 获取最新版本失败的问题。</p>
+<h3 id="2018年07月10日，版本 v1.0.3">2018年07月10日，版本 v1.0.3</h3>
+<p><strong>1. 新增</strong> 升级脚本时，将一起升级服务脚本（Service）。</p>
+<h3 id="2018年06月21日，版本 v1.0.2"><strong>2018年06月21日，版本 v1.0.2</strong></h3>
+<p><strong>1. 添加</strong> 监控进程运行状态功能(10. 监控 Brook 运行状态)。</p>
+<h3 id="2018年01月22日，版本 v1.0.1"><strong>2018年01月22日，版本 v1.0.1</strong></h3>
+<p><strong>1. 添加</strong> 逗比云下载源。</p>
+<p>（安装/升级Brook的时候会提示选择 逗比云 还是 Github，因为国内对 Github 限速，导致速度极慢，所以国内服务器可以使用 逗比云 源下载Brook和服务脚本）</p>
+<p><strong>2. 修复</strong> CentOS 系统启动失败的问题。</p>
+<h3 id="2017年12月21日，版本 v1.0.0"><strong>2017年12月21日，版本 v1.0.0</strong></h3>
+<p><strong>1.推出</strong> 正式版本。</p>
+<p></p></div>
+<hr />
+<p><strong>Brook 端口转发手动教程：<a title="Shadowsocks利用 Brook 实现中继(中转/端口转发)加速" href="9-b8lkgt-3.html" target="_blank" rel="noopener">Shadowsocks利用 Brook 实现中继(中转/端口转发)加速</a></strong></p>
+<p><strong>其他 Shadowsocks中继（中转）教程：<a href="6r9z6_wi.html#服务器中继（国内中转）" target="_blank" rel="noopener">传送门</a></strong></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="yv4cp61c.html">『原创』Shadowsocks Brook 中继(中转/端口转发) 便捷管理脚本</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2551" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">104</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="oyjpgxqd.html" rel="tag">Shadowsocks</a><a href="g6hfu0lq.html" rel="tag">ShadowsocksR</a><a href="8jt8-s05.html" rel="tag">shell</a><a href="4_30fwtg.html" rel="tag">端口转发</a><a href="meyy1poe.html" rel="tag">脚本</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="gupy-7or.html" rel="prev">『评测』GigsGigsCloud – GIA CN2 香港 KVM 限量首月5折优惠，低至 11美元/月</a></span>
+			<span class="article-nav-next"><a href="mbofzp9h.html" rel="next">关于 1月6日~1月9日 期间网站无法访问的原因说明</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="kd691l4o.html" title="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" target="_blank">
+<img src="sp6xrfo1.png?src=https://doub.io/wp-content/uploads/shadowsocks3.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本" />	<br><span class="r_title">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hi10k-7p-3.html" title="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" target="_blank">
+<img src="iceink9-.png?src=https://doub.io/wp-content/uploads/shadowsocksR-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)" />	<br><span class="r_title">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="es5fj9se.html" title="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本" />	<br><span class="r_title">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="aybh4ww5.html" title="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" target="_blank">
+<img src="ul1omzk8.png?src=https://doub.io/wp-content/uploads/telegram.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本" />	<br><span class="r_title">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="kd691l4o.html">『原创』Shadowsocks <strong>Go版</strong> 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="hi10k-7p-3.html">给目前正在使用 SSR 代理翻墙的人一点点建议(混淆方面)</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy <strong>Go版</strong> 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="aybh4ww5.html">『原创』实时监测服务器IP是否被墙并推送消息至 Telegram 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xcwybsz2.html">『原创』Go语言轻量化 代理工具 —— DAZE 一键安装管理脚本</a></li><li><i class="fa fa-minus"></i><a href="939koj07-2.html">『原创』Telegram 专用的轻量化代理工具 —— MTProxy 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="qjfhz_ch.html">『原创』Go语言轻量化 网络混淆代理工具 —— Lightsocks 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="a6551xds.html">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2551' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (82)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44534"><div class="c-avatar"><div class="c-main" id="div-comment-44534">设置brook端口转发时没有提供转发TCP还是UDP的选项
+
+选择
+7.查看 Brook 端口转发
+
+当前端口转发总数:  1  当前服务器IP:  150.109*****
+本地监听端口: 2600*      被转发IP: 87.*********         被转发端口: 260*      状态: 启用
+
+没有显示是转发的是TCP还是UDP。
+
+但是broo是支持转发TCP和UDP的吧<div class="c-meta"><span class="c-author">方舟</span>2018-10-17 13:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=44534#respond' onclick='return addComment.moveForm( "div-comment-44534", "44534", "respond", "2551" )' aria-label='回复给方舟'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-44562"><div class="c-avatar"><div class="c-main" id="div-comment-44562">Brook 不提供单独转发TCP或UDP协议，所以默认TCP UDP全部转发。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-17 18:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=44562#respond' onclick='return addComment.moveForm( "div-comment-44562", "44562", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-43179"><div class="c-avatar"><div class="c-main" id="div-comment-43179">被转发IP是英语习惯，换成转发目的IP会更明显，瑕不掩瑜，感谢逗比的努力。<div class="c-meta"><span class="c-author">jake</span>2018-09-14 11:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=43179#respond' onclick='return addComment.moveForm( "div-comment-43179", "43179", "respond", "2551" )' aria-label='回复给jake'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-43127"><div class="c-avatar"><div class="c-main" id="div-comment-43127">请问这个可以和brook代理共存吗？<div class="c-meta"><span class="c-author">nekochyan</span>2018-09-12 22:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=43127#respond' onclick='return addComment.moveForm( "div-comment-43127", "43127", "respond", "2551" )' aria-label='回复给nekochyan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-43147"><div class="c-avatar"><div class="c-main" id="div-comment-43147">可以，安装目录什么的都是分开独立的。写这个脚本的时候就考虑到共存了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-13 11:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=43147#respond' onclick='return addComment.moveForm( "div-comment-43147", "43147", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-40749"><div class="c-avatar"><div class="c-main" id="div-comment-40749">中转后，用一会儿就没网，然后过几分钟又自动有网，一直重复这样是什么情况？<div class="c-meta"><span class="c-author">冰丶封</span>2018-07-29 22:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=40749#respond' onclick='return addComment.moveForm( "div-comment-40749", "40749", "respond", "2551" )' aria-label='回复给冰丶封'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-40003"><div class="c-avatar"><div class="c-main" id="div-comment-40003">我发现了一个问题，在填写被转发ip时只要是填写的sheng开头的域名（sheng.woaini.com）都会使脚本启动失败。虽然随意写的域名和端口不能用，但是脚本会显示启动成功，而且卸载脚本重新安装填写真实的域名或ip和端口也还是启动是败。我试了好几遍都是的。这是怎么回事，大佬你可以试试这个开头的域名在你机子上会不会出现这个问题。<div class="c-meta"><span class="c-author">h</span>2018-07-07 19:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=40003#respond' onclick='return addComment.moveForm( "div-comment-40003", "40003", "respond", "2551" )' aria-label='回复给h'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-39695"><div class="c-avatar"><div class="c-main" id="div-comment-39695">请问能像ssr服务端那样加个流量统计吗<div class="c-meta"><span class="c-author">h</span>2018-06-29 16:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39695#respond' onclick='return addComment.moveForm( "div-comment-39695", "39695", "respond", "2551" )' aria-label='回复给h'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-39727"><div class="c-avatar"><div class="c-main" id="div-comment-39727">Brook 自身不支持流量统计功能，所以我的脚本也无法实现。SSR之所以支持就是因为 SSR自身支持，所以脚本才可以调用数据。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-01 09:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39727#respond' onclick='return addComment.moveForm( "div-comment-39727", "39727", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-39273"><div class="c-avatar"><div class="c-main" id="div-comment-39273">这个脚本使用过程中容易停止运行，可以像ssr脚本一样加个检测是否停止运行，自动启动吗<div class="c-meta"><span class="c-author">h</span>2018-06-20 23:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39273#respond' onclick='return addComment.moveForm( "div-comment-39273", "39273", "respond", "2551" )' aria-label='回复给h'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-39318"><div class="c-avatar"><div class="c-main" id="div-comment-39318"><pre class="prettyprint linenums" >2018年06月21日，版本 v1.0.2
+
+1. 添加 监控进程运行状态功能(10. 监控 Brook 运行状态)。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-21 18:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39318#respond' onclick='return addComment.moveForm( "div-comment-39318", "39318", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-39322"><div class="c-avatar"><div class="c-main" id="div-comment-39322">当前监控模式: 未开启
+
+确定要开启 Brook 服务端运行状态监控 功能吗？(当进程关闭则自动启动SSR服务端)[Y/n]
+
+这个是监控 Brook 服务端的，怎么启动ssr服务端的<div class="c-meta"><span class="c-author">h</span>2018-06-21 19:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39322#respond' onclick='return addComment.moveForm( "div-comment-39322", "39322", "respond", "2551" )' aria-label='回复给h'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-39323"><div class="c-avatar"><div class="c-main" id="div-comment-39323">笔误。。。不用在意，文字错误。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-21 19:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39323#respond' onclick='return addComment.moveForm( "div-comment-39323", "39323", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-39324"><div class="c-avatar"><div class="c-main" id="div-comment-39324">brook管理脚本更喜欢自动关闭，能不能管理脚本也加个监控运行啊。我用管理脚本，一天关两次...<div class="c-meta"><span class="c-author">qwq</span>2018-06-21 19:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39324#respond' onclick='return addComment.moveForm( "div-comment-39324", "39324", "respond", "2551" )' aria-label='回复给qwq'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-39326"><div class="c-avatar"><div class="c-main" id="div-comment-39326">brook.sh 脚本本身就有监控运行状态功能，不过在次级菜单里，7.设置 账号配置 - 5.监控 运行状态<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-21 19:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39326#respond' onclick='return addComment.moveForm( "div-comment-39326", "39326", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-39146"><div class="c-avatar"><div class="c-main" id="div-comment-39146">请问下不进入菜单直接重启的命令是多少<div class="c-meta"><span class="c-author">h</span>2018-06-15 20:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39146#respond' onclick='return addComment.moveForm( "div-comment-39146", "39146", "respond", "2551" )' aria-label='回复给h'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-39162"><div class="c-avatar"><div class="c-main" id="div-comment-39162"><pre class="prettyprint linenums" >service brook-pf restart
+/etc/init.d/brook-pf restart
+# 如果第一个用不了，就用第二个命令，两个命令效果都是一样的
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-16 11:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39162#respond' onclick='return addComment.moveForm( "div-comment-39162", "39162", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-39116"><div class="c-avatar"><div class="c-main" id="div-comment-39116">老大，请问一下，目前 情况 下，能不能做到 被中转服务器 是IPV6，中转服务器是IPV4这种 情况。<div class="c-meta"><span class="c-author">jialichen</span>2018-06-14 15:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39116#respond' onclick='return addComment.moveForm( "div-comment-39116", "39116", "respond", "2551" )' aria-label='回复给jialichen'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-39121"><div class="c-avatar"><div class="c-main" id="div-comment-39121">可能有软件可以实现，但是我不清楚。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-14 18:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=39121#respond' onclick='return addComment.moveForm( "div-comment-39121", "39121", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-44535"><div class="c-avatar"><div class="c-main" id="div-comment-44535">ssr可以用ipv4代理ipv6
+貌似openvpn也支持<div class="c-meta"><span class="c-author">方舟</span>2018-10-17 13:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=44535#respond' onclick='return addComment.moveForm( "div-comment-44535", "44535", "respond", "2551" )' aria-label='回复给方舟'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-38136"><div class="c-avatar"><div class="c-main" id="div-comment-38136">国内服务器国外服务器均无法下载，服务器是阿里云的<div class="c-meta"><span class="c-author">wjqgzs</span>2018-05-20 21:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=38136#respond' onclick='return addComment.moveForm( "div-comment-38136", "38136", "respond", "2551" )' aria-label='回复给wjqgzs'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-38159"><div class="c-avatar"><div class="c-main" id="div-comment-38159">脚本无法下载？提示什么？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-21 13:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=38159#respond' onclick='return addComment.moveForm( "div-comment-38159", "38159", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-37639"><div class="c-avatar"><div class="c-main" id="div-comment-37639">阿里云centos7上安装并启动成功，但是无法通过客户端（比如android上的shadowsocks）链接。是防火墙的原因吗？<div class="c-meta"><span class="c-author">游来游去2002</span>2018-05-11 15:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=37639#respond' onclick='return addComment.moveForm( "div-comment-37639", "37639", "respond", "2551" )' aria-label='回复给游来游去2002'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37761"><div class="c-avatar"><div class="c-main" id="div-comment-37761">阿里云也有外部防火墙，需要开放端口才能链接（默认只开放SSH端口）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-13 13:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=37761#respond' onclick='return addComment.moveForm( "div-comment-37761", "37761", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36599"><div class="c-avatar"><div class="c-main" id="div-comment-36599">centos7系统，  提示启动失败<div class="c-meta"><span class="c-author">qiye</span>2018-04-18 11:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36599#respond' onclick='return addComment.moveForm( "div-comment-36599", "36599", "respond", "2551" )' aria-label='回复给qiye'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36608"><div class="c-avatar"><div class="c-main" id="div-comment-36608">请提供日志内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-18 13:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36608#respond' onclick='return addComment.moveForm( "div-comment-36608", "36608", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-38482"><div class="c-avatar"><div class="c-main" id="div-comment-38482">我也是centos7，提示失败后把ssr先关了再启动brook就启动成功了，然后再启动ssr，具体原因没研究。<div class="c-meta"><span class="c-author">haiqiaoya</span>2018-05-27 23:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=38482#respond' onclick='return addComment.moveForm( "div-comment-38482", "38482", "respond", "2551" )' aria-label='回复给haiqiaoya'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36384"><div class="c-avatar"><div class="c-main" id="div-comment-36384">你好 ,大佬,我在适用中继配置了大概50个转发的端口,使用时间一长就不能链接了,重启下服务又好了,可否帮忙修复下?最近的一条日志为:accept tcp [::]:8016: accept4: too many open files,感谢!<div class="c-meta"><span class="c-author">j.c</span>2018-04-14 09:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36384#respond' onclick='return addComment.moveForm( "div-comment-36384", "36384", "respond", "2551" )' aria-label='2mnz2ayl-2.html'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36392"><div class="c-avatar"><div class="c-main" id="div-comment-36392">这种问题我无法解决，你只能去 Github 联系作者解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-14 13:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36392#respond' onclick='return addComment.moveForm( "div-comment-36392", "36392", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-36642"><div class="c-avatar"><div class="c-main" id="div-comment-36642">好的 感谢了<div class="c-meta"><span class="c-author">j.c</span>2018-04-18 18:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36642#respond' onclick='return addComment.moveForm( "div-comment-36642", "36642", "respond", "2551" )' aria-label='2mnz2ayl-2.html'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-35954"><div class="c-avatar"><div class="c-main" id="div-comment-35954">请问游戏服务器有没有什么转发的方法吗，我这边用香港连日本发现没有降低延迟，想到用中转但游戏服务器ip会变动...<div class="c-meta"><span class="c-author">jsu</span>2018-04-08 00:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=35954#respond' onclick='return addComment.moveForm( "div-comment-35954", "35954", "respond", "2551" )' aria-label='回复给jsu'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-36055"><div class="c-avatar"><div class="c-main" id="div-comment-36055">如果游戏服务器的IP一直变动，那么除非游戏服务器的IP是域名解析的，否则无解。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-08 14:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=36055#respond' onclick='return addComment.moveForm( "div-comment-36055", "36055", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-35417"><div class="c-avatar"><div class="c-main" id="div-comment-35417">可以使用brook给brook做中转么<div class="c-meta"><span class="c-author">flagtsk</span>2018-04-02 09:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=35417#respond' onclick='return addComment.moveForm( "div-comment-35417", "35417", "respond", "2551" )' aria-label='回复给flagtsk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-35455"><div class="c-avatar"><div class="c-main" id="div-comment-35455">可以。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-02 17:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=35455#respond' onclick='return addComment.moveForm( "div-comment-35455", "35455", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31953"><div class="c-avatar"><div class="c-main" id="div-comment-31953">希望可以查看每个端口所用的流量<div class="c-meta"><span class="c-author"><a href='http://luikhh.tk/' rel='external nofollow' class='url'>luikhh</a></span>2018-02-23 15:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31953#respond' onclick='return addComment.moveForm( "div-comment-31953", "31953", "respond", "2551" )' aria-label='回复给luikhh'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-31991"><div class="c-avatar"><div class="c-main" id="div-comment-31991">除非作者添加该功能，否则脚本无法实现。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-24 11:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31991#respond' onclick='return addComment.moveForm( "div-comment-31991", "31991", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-31153"><div class="c-avatar"><div class="c-main" id="div-comment-31153">4. 启动 Brook
+ 5. 停止 Brook
+ 6. 重启 Brook
+————————————
+ 7. 设置 Brook 端口转发
+ 8. 查看 Brook 端口转发
+ 9. 查看 Brook 日志
+————————————
+
+ 当前状态: 已安装 但 未启动
+
+ 请输入数字 [0-9]:4
+[信息] Brook-pf 启动中...
+[错误] Brook-pf 启动失败 !
+
+按步骤都设置好了 但是启动就是启动不了  大哥知道问题所在吗？ centos 7 vultr vps<div class="c-meta"><span class="c-author">neal fan</span>2018-02-07 13:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31153#respond' onclick='return addComment.moveForm( "div-comment-31153", "31153", "respond", "2551" )' aria-label='回复给neal fan'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-31182"><div class="c-avatar"><div class="c-main" id="div-comment-31182">请提供日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-07 23:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31182#respond' onclick='return addComment.moveForm( "div-comment-31182", "31182", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-30332"><div class="c-avatar"><div class="c-main" id="div-comment-30332">我在香橙派上安装，但是启动不成功。日志：
+#cat /usr/local/brook-pf/brook.log
+./brook: 1: ./brook: Syntax error: "(" unexpected
+#uname -m
+armv7l
+请问大佬，该怎么办？<div class="c-meta"><span class="c-author">LoogCP</span>2018-01-27 09:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=30332#respond' onclick='return addComment.moveForm( "div-comment-30332", "30332", "respond", "2551" )' aria-label='回复给LoogCP'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30340"><div class="c-avatar"><div class="c-main" id="div-comment-30340">这个脚本不支持 你这个构架，你可以手动下载来替换脚本安装的Brook文件。
+<pre class="prettyprint linenums" >cd /usr/local/brook-pf/
+rm -rf brook
+wget --no-check-certificate -O "brook" "https://github.com/txthinking/brook/releases/download/v20180112/brook_linux_arm7"
+# 我不清楚你的构建需要安装哪个版本，我只找到一个相近的 brook_linux_arm7 。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-27 13:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=30340#respond' onclick='return addComment.moveForm( "div-comment-30340", "30340", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30315"><div class="c-avatar"><div class="c-main" id="div-comment-30315">这个脚本使用后ssr的绕过国内规则就会失效，有什么方法能够解决这个问题吗<div class="c-meta"><span class="c-author">Tong</span>2018-01-26 21:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=30315#respond' onclick='return addComment.moveForm( "div-comment-30315", "30315", "respond", "2551" )' aria-label='回复给Tong'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30346"><div class="c-avatar"><div class="c-main" id="div-comment-30346">什么意思？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-27 13:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=30346#respond' onclick='return addComment.moveForm( "div-comment-30346", "30346", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29397"><div class="c-avatar"><div class="c-main" id="div-comment-29397">toyo,这个转发的脚本和一键brook脚本能共存么?即我想用这个转发ssr,的同时也想这个brook能正常运作~
+我刚安装并配置完端口转发,但是启动失败!是不是冲突了?<div class="c-meta"><span class="c-author">chanca</span>2018-01-10 23:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29397#respond' onclick='return addComment.moveForm( "div-comment-29397", "29397", "respond", "2551" )' aria-label='回复给chanca'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29409"><div class="c-avatar"><div class="c-main" id="div-comment-29409">不冲突，安装位置和文件名等都是区分开的，启动失败需要看日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-11 12:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29409#respond' onclick='return addComment.moveForm( "div-comment-29409", "29409", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-29521"><div class="c-avatar"><div class="c-main" id="div-comment-29521">谢谢回复已搞定,但是刚刚在一个ovz启用失败??/看日志没看出什么啊,麻烦帮我看一下
+
+ relays         Run as multiple relays mode
+     qr             Print brook server QR code
+     socks5tohttp   Convert socks5 to http proxy
+     help, h        Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d               Enable debug
+   --listen value, -l value  Listen address for debug (default: ":6060")
+   --help, -h                show help
+   --version, -v             print the version<div class="c-meta"><span class="c-author">chanca</span>2018-01-13 19:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29521#respond' onclick='return addComment.moveForm( "div-comment-29521", "29521", "respond", "2551" )' aria-label='回复给chanca'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-29529"><div class="c-avatar"><div class="c-main" id="div-comment-29529">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-13 20:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29529#respond' onclick='return addComment.moveForm( "div-comment-29529", "29529", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29277"><div class="c-avatar"><div class="c-main" id="div-comment-29277">除了转发 ss还能转发别的吗<div class="c-meta"><span class="c-author">小白</span>2018-01-05 22:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29277#respond' onclick='return addComment.moveForm( "div-comment-29277", "29277", "respond", "2551" )' aria-label='回复给小白'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29287"><div class="c-avatar"><div class="c-main" id="div-comment-29287">任何流量都可以转发。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-06 14:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29287#respond' onclick='return addComment.moveForm( "div-comment-29287", "29287", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-32589"><div class="c-avatar"><div class="c-main" id="div-comment-32589">大佬咨询一个问题。
+如果我有个VPS被墙， 有什么其他办法能让他，至少让人能正常访问呢?慢一点也行.
+可以通过类似中转站的方式让我那个被墙的VPS活起来吗？感恩。<div class="c-meta"><span class="c-author"><a href='http://lisuanlaoji.com/jiseedbox/' rel='external nofollow' class='url'>李老几</a></span>2018-03-04 06:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=32589#respond' onclick='return addComment.moveForm( "div-comment-32589", "32589", "respond", "2551" )' aria-label='回复给李老几'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-32609"><div class="c-avatar"><div class="c-main" id="div-comment-32609">你指的是让这个被墙IP的服务器继续做代理还是做网站？<br />
+做代理请看这个：<a href="mc1t27yh.html" target="_blank">https://doub.io/goflyway-jc3/</a><br />
+做网站的话，也是让你的域名套上CDN(比如免费的 CF CDN)，即可继续做网站。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-04 13:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=32609#respond' onclick='return addComment.moveForm( "div-comment-32609", "32609", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29270"><div class="c-avatar"><div class="c-main" id="div-comment-29270">在CentOS7中，brook和tinymapper脚本都存在端口复用无法正常启动的情况
+解决方法：本地端口和转发端口选择不一样的端口并配置安全组放行，防火墙最好也设置下
+端口复用问题，门外汉实在看不懂，
+int on；
+
+on = 1;
+ret = setsockopt( sock, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on) );
+在配置中启动套接字SO_REUSEADDR，怎么启用这个套接字？<div class="c-meta"><span class="c-author">jacob</span>2018-01-05 18:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29270#respond' onclick='return addComment.moveForm( "div-comment-29270", "29270", "respond", "2551" )' aria-label='回复给jacob'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29292"><div class="c-avatar"><div class="c-main" id="div-comment-29292">不用CentOS 7系统，不清楚。Debian 没有这些问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-06 14:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29292#respond' onclick='return addComment.moveForm( "div-comment-29292", "29292", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29158"><div class="c-avatar"><div class="c-main" id="div-comment-29158">大佬  是在企鹅云上安装然后中转到酸酸乳上么<div class="c-meta"><span class="c-author">umsm</span>2018-01-02 20:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29158#respond' onclick='return addComment.moveForm( "div-comment-29158", "29158", "respond", "2551" )' aria-label='回复给umsm'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29169"><div class="c-avatar"><div class="c-main" id="div-comment-29169">是的，腾讯云上面安装这个程序中转（注意腾讯云的外部防火墙开放端口），然后海外服务器安装SSR服务端，然后你把原本海外SSR服务端的SSR账号里的IP改成腾讯云的IP就行了（中转端口和目标端口一样）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-03 12:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29169#respond' onclick='return addComment.moveForm( "div-comment-29169", "29169", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-29194"><div class="c-avatar"><div class="c-main" id="div-comment-29194">企鹅云只有几K 然后就不动了 怎么搞 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_razz.gif" alt=":razz:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">umsm</span>2018-01-03 18:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29194#respond' onclick='return addComment.moveForm( "div-comment-29194", "29194", "respond", "2551" )' aria-label='回复给umsm'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-29222"><div class="c-avatar"><div class="c-main" id="div-comment-29222">很正常，国内服务器对 Github 严重限速丢包，但是就是不封死，这样子你就算像客服投诉，他们也只会说 Github 的国内链接有问题，请联系 Github 巴拉巴拉，当然和IDC关系不大，而是上面同意下命令，国内的大中型IDC都要遵守。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-04 14:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29222#respond' onclick='return addComment.moveForm( "div-comment-29222", "29222", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29147"><div class="c-avatar"><div class="c-main" id="div-comment-29147">搭建成功，启用成功，无法使用，直接ss可以上去，换成转发ip就上不去了，我去看了ss日志，由于目标计算机积极拒绝，无法链接，不知道怎么解决!这个教程并没有写明被转发机器的问题。望大佬解答，系统是Debian9，机器是搬瓦工！<div class="c-meta"><span class="c-author">时光</span>2018-01-02 15:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29147#respond' onclick='return addComment.moveForm( "div-comment-29147", "29147", "respond", "2551" )' aria-label='回复给时光'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29179"><div class="c-avatar"><div class="c-main" id="div-comment-29179">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-03 13:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29179#respond' onclick='return addComment.moveForm( "div-comment-29179", "29179", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29068"><div class="c-avatar"><div class="c-main" id="div-comment-29068">接前边的问题 启动失败了，我查看的日志是这样的 
+ 当前状态: 已安装 但 未启动
+
+ 请输入数字 [0-9]:9
+
+[注意] 按 Ctrl+C 终止查看日志(正常情况是没有使用日志记录的)
+
+     relays         Run as multiple relays mode
+     qr             Print brook server QR code
+     socks5tohttp   Convert socks5 to http proxy
+     help, h        Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d               Enable debug
+   --listen value, -l value  Listen address for debug (default: ":6060")
+   --help, -h                show help
+   --version, -v             print the version
+请教该怎么弄 谢谢<div class="c-meta"><span class="c-author">zhmtao</span>2017-12-31 10:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29068#respond' onclick='return addComment.moveForm( "div-comment-29068", "29068", "respond", "2551" )' aria-label='回复给zhmtao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29104"><div class="c-avatar"><div class="c-main" id="div-comment-29104">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-01 09:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29104#respond' onclick='return addComment.moveForm( "div-comment-29104", "29104", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29014"><div class="c-avatar"><div class="c-main" id="div-comment-29014">作者您好， 我再国内的腾讯云主机 CentOS7.3 64bit 上，安装后，配置好端口，提示启动失败，有点么有头绪，求指教什么情况！<div class="c-meta"><span class="c-author">Chann</span>2017-12-30 12:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29014#respond' onclick='return addComment.moveForm( "div-comment-29014", "29014", "respond", "2551" )' aria-label='回复给Chann'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29019"><div class="c-avatar"><div class="c-main" id="div-comment-29019">请提供日志内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-30 17:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29019#respond' onclick='return addComment.moveForm( "div-comment-29019", "29019", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-29186"><div class="c-avatar"><div class="c-main" id="div-comment-29186">大佬，TG 群里那个是你， 人太多，是发公告的那个嘛？ 我给这个号留言了！<div class="c-meta"><span class="c-author">Chann</span>2018-01-03 16:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29186#respond' onclick='return addComment.moveForm( "div-comment-29186", "29186", "respond", "2551" )' aria-label='回复给Chann'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29011"><div class="c-avatar"><div class="c-main" id="div-comment-29011">[信息] Brook-pf 启动中...
+[错误] Brook-pf 启动失败 !
+[<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="394b56564d795063540c5c094352410c495a5258010b4b4e545e5d4e63">[email&#160;protected]</a> ~]# /usr/local/brook-pf/brook.log
+-bash: /usr/local/brook-pf/brook.log: Permission denied
+[<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="1664797962567f4c7b2373266c7d6e2366757d772e2464617b7172614c">[email&#160;protected]</a> ~]# ^C
+[<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="6c1e0303182c05360159095c160714591c0f070d545e1e1b010b081b36">[email&#160;protected]</a> ~]# cat /usr/local/brook-pf/brook.log
+/etc/init.d/brook-pf: line 89: 25960 Segmentation fault      nohup ./brook -l ":7777 191.101.xxx.xxx:7777"<div class="c-meta"><span class="c-author">zhmtao</span>2017-12-30 01:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29011#respond' onclick='return addComment.moveForm( "div-comment-29011", "29011", "respond", "2551" )' aria-label='回复给zhmtao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29045"><div class="c-avatar"><div class="c-main" id="div-comment-29045">我罩着你给的IP(已打码)和端口测试，添加端口转发后启动正常没毛病。你是什么系统？<br />
+评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-30 18:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29045#respond' onclick='return addComment.moveForm( "div-comment-29045", "29045", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-29076"><div class="c-avatar"><div class="c-main" id="div-comment-29076">在telegram上私聊你了 你不在线呢 我是centos7<div class="c-meta"><span class="c-author">zhmtao</span>2017-12-31 12:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=29076#respond' onclick='return addComment.moveForm( "div-comment-29076", "29076", "respond", "2551" )' aria-label='回复给zhmtao'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-28890"><div class="c-avatar"><div class="c-main" id="div-comment-28890">这个和 tinyPortMapper 有什么区别？<div class="c-meta"><span class="c-author"><a href='https://sixu.life/' rel='external nofollow' class='url'>思绪的空中生活</a></span>2017-12-26 01:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28890#respond' onclick='return addComment.moveForm( "div-comment-28890", "28890", "respond", "2551" )' aria-label='回复给思绪的空中生活'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-28898"><div class="c-avatar"><div class="c-main" id="div-comment-28898">就功能上的优缺点而言，差别不大，不过tinyPortMapper要监听多个端口需要多开，而Brook可以写在一起，好处是更省资源，缺点是如果进程出问题崩了，所有转发都关了。总归我介绍很多，具体哪个好自己挑选，好歹有选择余地。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-26 12:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28898#respond' onclick='return addComment.moveForm( "div-comment-28898", "28898", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-28882"><div class="c-avatar"><div class="c-main" id="div-comment-28882">启动失败，查看日志内容是：
+
+     relays         Run as multiple relays mode
+     qr             Print brook server QR code
+     socks5tohttp   Convert socks5 to http proxy
+     help, h        Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d               Enable debug
+   --listen value, -l value  Listen address for debug (default: ":6060")
+   --help, -h                show help
+   --version, -v             print the version
+请问是什么原因，系统是centos7.3<div class="c-meta"><span class="c-author">zmx</span>2017-12-25 19:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28882#respond' onclick='return addComment.moveForm( "div-comment-28882", "28882", "respond", "2551" )' aria-label='回复给zmx'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-28909"><div class="c-avatar"><div class="c-main" id="div-comment-28909">你这种情况评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-26 12:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28909#respond' onclick='return addComment.moveForm( "div-comment-28909", "28909", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-28778"><div class="c-avatar"><div class="c-main" id="div-comment-28778">腾讯云安装。。速度是KB级别的<div class="c-meta"><span class="c-author"><a href='http://aybway.com/' rel='external nofollow' class='url'>鸡蛋君</a></span>2017-12-22 22:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28778#respond' onclick='return addComment.moveForm( "div-comment-28778", "28778", "respond", "2551" )' aria-label='回复给鸡蛋君'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-28793"><div class="c-avatar"><div class="c-main" id="div-comment-28793">国内的云服务器下载 Github 的文件要么链接超时 要么速度KB/S，这是他们统一故意限制的。比国内普通用户链接质量更惨。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-23 13:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28793#respond' onclick='return addComment.moveForm( "div-comment-28793", "28793", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-28810"><div class="c-avatar"><div class="c-main" id="div-comment-28810">启动不了Brook 怎么回事
+[信息] Brook-pf 启动中...
+[错误] Brook-pf 启动失败 !<div class="c-meta"><span class="c-author">guoke</span>2017-12-23 23:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28810#respond' onclick='return addComment.moveForm( "div-comment-28810", "28810", "respond", "2551" )' aria-label='回复给guoke'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-28840"><div class="c-avatar"><div class="c-main" id="div-comment-28840">请提供 Brook 日志内容。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-24 18:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28840#respond' onclick='return addComment.moveForm( "div-comment-28840", "28840", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-31148"><div class="c-avatar"><div class="c-main" id="div-comment-31148">同样启动失败，brook日志就一句话：listen udp :5256: bind: address already in use
+原因不明，之前用你的BBR脚本貌似也出现过一些问题。CentOS 7 x64，Vultr日本<div class="c-meta"><span class="c-author">如风</span>2018-02-07 11:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31148#respond' onclick='return addComment.moveForm( "div-comment-31148", "31148", "respond", "2551" )' aria-label='回复给如风'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-31150"><div class="c-avatar"><div class="c-main" id="div-comment-31150">这个提示是监听UDP端口失败，端口被占用。
+<pre class="prettyprint linenums" >netstat -lnp
+# 查看本地端口监听情况
+# 不过CentOS7 默认没装 netstat ，需要手动安装：
+yum install net-tools -y
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-07 12:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31150#respond' onclick='return addComment.moveForm( "div-comment-31150", "31150", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-7" id="comment-31167"><div class="c-avatar"><div class="c-main" id="div-comment-31167">不好意思，我也发现这个问题了。中转服务器用来中转的端口和服务器内的ss端口不能共用一个。<div class="c-meta"><span class="c-author">如风</span>2018-02-07 15:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=31167#respond' onclick='return addComment.moveForm( "div-comment-31167", "31167", "respond", "2551" )' aria-label='回复给如风'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-28775"><div class="c-avatar"><div class="c-main" id="div-comment-28775">运行不了 配置文件为空什么情况<div class="c-meta"><span class="c-author">猴哥</span>2017-12-22 20:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28775#respond' onclick='return addComment.moveForm( "div-comment-28775", "28775", "respond", "2551" )' aria-label='回复给猴哥'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-28794"><div class="c-avatar"><div class="c-main" id="div-comment-28794">默认安装后，配置文件是空的，需要你 添加端口转发配置 才行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-23 13:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28794#respond' onclick='return addComment.moveForm( "div-comment-28794", "28794", "respond", "2551" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28738"><div class="c-avatar"><div class="c-main" id="div-comment-28738">很棒的脚本。感谢大佬。<div class="c-meta"><span class="c-author">Rein</span>2017-12-21 20:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28738#respond' onclick='return addComment.moveForm( "div-comment-28738", "28738", "respond", "2551" )' aria-label='回复给Rein'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-28723"><div class="c-avatar"><div class="c-main" id="div-comment-28723">沙发，一键脚本用着就是方便，666<div class="c-meta"><span class="c-author">咕噜噜</span>2017-12-21 12:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28723#respond' onclick='return addComment.moveForm( "div-comment-28723", "28723", "respond", "2551" )' aria-label='回复给咕噜噜'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28722"><div class="c-avatar"><div class="c-main" id="div-comment-28722"><img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_eek.gif" alt=":shock:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 该来的还是会来的~<div class="c-meta"><span class="c-author">LINRONG</span>2017-12-21 12:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-jc37/?replytocom=28722#respond' onclick='return addComment.moveForm( "div-comment-28722", "28722", "respond", "2551" )' aria-label='回复给LINRONG'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ok96568-container ok96568-1 ok96568-hide">
+    <div class="ok96568-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ok96568"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

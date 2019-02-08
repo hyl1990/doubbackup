@@ -1,0 +1,1171 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1955] -->
+<meta name="description"  content="很早就有人想要我写这个 Cisco AnyConnect VPN 服务端的搭建教程了，不过我一直嫌麻烦没写，这段时间没什么东西写，那么就写个看看吧。 Cisco AnyConnect VPN客户端教程：Cisco AnyConnect VPN Windows/Android" />
+
+<meta name="keywords"  content="anyconnect,ocserv,vpn" />
+
+<link rel="canonical" href="k9994-k3.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='Cisco AnyConnect VPN Windows/Android 平台客户端使用教程' href='hc5a0yn5.html' />
+<link rel='next' title='『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本' href='nr2hjmg2.html' />
+<link rel='shortlink' href='https://doub.io/?p=2224' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fvpnzy-6%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fvpnzy-6%2F&amp;format=xml" />
+<style>
+.ikcfa44{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ikcfa44-hide{
+    display: none;
+}
+.ikcfa44-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ikcfa44-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ikcfa44-2 .ikcfa44-body,.ikcfa44-3 .ikcfa44-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ikcfa44-2 .close-btn,.ikcfa44-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ikcfa44-3 .ikcfa44-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ikcfa44').html(kill_adBlock_message);
+            jQuery('.ikcfa44-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ikcfa44-container').fadeOut('ikcfa44-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="AnyConnect, Ocserv, VPN, VPN资源">
+<meta name="description" content="很早就有人想要我写这个 Cisco AnyConnect VPN 服务端的搭建教程了，不过我一直嫌麻烦没写，这段时间没什么东西写，那么就写个看看吧。  Cisco AnyConnect VPN客户端教程：Cisco AnyConnect VPN Windows/Android 平台客户端使用教程  一键安装脚本：『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本 介绍一下 首先介绍一下Ocserv也就是">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2224 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="k9994-k3.html">使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="3we1qxzj.html"> VPN资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-05-27)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 11769℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="k9994-k3.html#comments">52评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="k9994-k3.html#介绍一下" title="介绍一下"><span>介绍一下</span></a></li><li class="content-index-level-1"><a href="k9994-k3.html#教程说明" title="教程说明"><span>教程说明</span></a></li><li class="content-index-level-1"><a href="k9994-k3.html#安装步骤" title="安装步骤"><span>安装步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#检查PPP/TUN环境" title="检查PPP/TUN环境"><span>检查PPP/TUN环境</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#安装依赖" title="安装依赖"><span>安装依赖</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#编译安装" title="编译安装"><span>编译安装</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#配置参数解释" title="配置参数解释"><span>配置参数解释</span></a></li></ul></li><li class="content-index-level-1"><a href="k9994-k3.html#添加 VPN用户" title="添加 VPN用户"><span>添加 VPN用户</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#删除 VPN用户" title="删除 VPN用户"><span>删除 VPN用户</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#锁定 VPN用户" title="锁定 VPN用户"><span>锁定 VPN用户</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#解锁 VPN用户" title="解锁 VPN用户"><span>解锁 VPN用户</span></a></li></ul></li><li class="content-index-level-1"><a href="k9994-k3.html#自签SSL证书" title="自签SSL证书"><span>自签SSL证书</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#生成 CA证书" title="生成 CA证书"><span>生成 CA证书</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#生成 服务器证书" title="生成 服务器证书"><span>生成 服务器证书</span></a></li></ul></li><li class="content-index-level-1"><a href="k9994-k3.html#安装服务" title="安装服务"><span>安装服务</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#设置开机启动(可选)" title="设置开机启动(可选)"><span>设置开机启动(可选)</span></a></li></ul></li><li class="content-index-level-1"><a href="k9994-k3.html#防火墙配置" title="防火墙配置"><span>防火墙配置</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#配置防火墙开启启动读取规则" title="配置防火墙开启启动读取规则"><span>配置防火墙开启启动读取规则</span></a></li></ul></li><li class="content-index-level-1"><a href="k9994-k3.html#最后测试" title="最后测试"><span>最后测试</span></a></li><li class="content-index-level-1"><a href="k9994-k3.html#使用说明" title="使用说明"><span>使用说明</span></a></li><li class="content-index-level-1"><a href="k9994-k3.html#卸载方法" title="卸载方法"><span>卸载方法</span></a></li><li class="content-index-level-1"><a href="k9994-k3.html#其他说明" title="其他说明"><span>其他说明</span></a><ul class="children"><li class="content-index-level-2"><a href="k9994-k3.html#运行优化说明" title="运行优化说明"><span>运行优化说明</span></a></li><li class="content-index-level-2"><a href="k9994-k3.html#提示 wget: command not found 的错误" title="提示 wget: command not found 的错误"><span>提示 wget: command not found 的错误</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 20:04</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>很早就有人想要我写这个 Cisco AnyConnect VPN 服务端的搭建教程了，不过我一直嫌麻烦没写，这段时间没什么东西写，那么就写个看看吧。</p>
+<p><strong>Cisco AnyConnect VPN客户端教程：<a href="hc5a0yn5.html" target="_blank" rel="noopener">Cisco AnyConnect VPN Windows/Android 平台客户端使用教程</a></strong></p>
+<p><strong>一键安装脚本：<a title="『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本" href="nr2hjmg2.html" target="_blank" rel="noopener">『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本</a></strong></p>
+<h2 id="介绍一下">介绍一下</h2>
+<p><strong>首先介绍一下Ocserv也就是OpenConnect，即Cisco AnyConnect的兼容服务端。</strong></p>
+<p>众所周知，Cisco在网络设备领域处于霸主地位，其开发的AnyConnect作为一种VPN协议，不是想封就能封的。封锁AnyConnect将对大量跨国公司的子公司与母公司的通讯造成灾难性后果。因此，虽然AnyConnect的握手特征很明显，但是依然可以正常使用。</p>
+<p>而AnyConnect作为Cisco专有技术，其服务端只能运行在Cisco设备上，即如果没有购买Cisco相关设备，将无法使用AnyConnect服务端。而OpenConnect的出现解决了这一个问题，OpenConnect是一个开源项目，其目标是在相对廉价的linux设备上运行与AnyConnect协议兼容的服务端，以此来使用该协议而不需要购买Cisco专有设备。</p>
+<p><strong>AnyConnect目前支持 Windows 7+ / Android / IOS / Mac ，其他设备没有客户端所以无法使用，例如 XP系统。</strong></p>
+<h2 id="教程说明">教程说明</h2>
+<p><strong>本教程仅在 Debian 7 中测试，理论上 Debian 8 与 Ubuntu 步骤一样。</strong></p>
+<p>我也是刚刚了解这个VPN，AnyConnect的优势就是相比其他的VPN协议（OpenVPN、PPTP、L2TP、IKEv2等），AnyConnect并不会被墙封，当然也不代表完全没有干扰，所以<strong>如果只是玩游戏的话，用其他的VPN协议容易被墙干掉，这时候就可以使用AnyConnect，如果只是看网页看视频，那还是建议使用ShadowsocksR。</strong></p>
+<p>AnyConnect的配置参数很多，大部分我都不明白什么意思，教程里的示例配置文件只是在默认的配置文件中简单改了改，大家可以自己了解后去修改。</p>
+<p><strong>本教程仅写出了通过用户名和密码的方式来登陆链接AnyConnect VPN，通过自签SSL证书用于客户端与服务端直接的SSL安全加密。</strong></p>
+<blockquote><p><strong>注意：</strong>如果服务器同时安装了 <strong>锐速(ServerSpeed/LotServer)</strong>，那么可能会导致 AnyConnect 连接上后<strong>无网络或者速度异常(慢)</strong>，这时候请关闭锐速，<strong>BBR加速无影响</strong>。</p></blockquote>
+<h2 id="安装步骤">安装步骤</h2>
+<h3 id="检查PPP/TUN环境">检查PPP/TUN环境</h3>
+<p>首先要检查VPS的TUN是否开启(OpenVZ虚拟化的服务器很可能默认关闭)。</p>
+<pre class="prettyprint linenums">cat /dev/net/tun
+# 返回的必须是：
+cat: /dev/net/tun: File descriptor in bad state
+</pre>
+<p>如果返回内容不是指定的结果，请与VPS提供商联系开启TUN权限（一般控制面板有开关）。</p>
+<h3 id="安装依赖">安装依赖</h3>
+<p>首先为了确保依赖安装正常、完整，我们需要更换系统 软件包源为最新的稳定源<code> jessie </code>（本步骤必做，否则很容易出错）。</p>
+<p>默认下面的代码是 美国的镜像源，可以更换下面代码<code> us.sources.list 中的 us </code>，具体可以<a href="https://github.com/ToyoDAdoubiBackup/doubi/tree/master/sources">看这里</a>。</p>
+<pre class="prettyprint linenums">rm -rf /etc/apt/sources.list &amp;&amp; wget -N --no-check-certificate -O "/etc/apt/sources.list" "https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/sources/us.sources.list"
+</pre>
+<p>然后我们更新软件包列表，并开始安装依赖：</p>
+<pre class="prettyprint linenums">apt-get install pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y
+</pre>
+<blockquote><p><strong>注意：</strong>这个更换 镜像源的步骤，<strong>Debian 8、Debian 9 不需要执行</strong>，可以直接跳过，<strong>Debian 7 必须执行！</strong></p></blockquote>
+<h3 id="编译安装">编译安装</h3>
+<p>然后我们新建一个文件夹，并下载和编译安装 ocserv，此处用的 ocserv 可能不是最新的，最新的请看：<a href="ftp://ftp.infradead.org/pub/ocserv" target="_blank" rel="noopener">ocserv</a></p>
+<pre class="prettyprint linenums">mkdir ocserv &amp;&amp; cd ocserv
+wget ftp://ftp.infradead.org/pub/ocserv/ocserv-0.11.8.tar.xz
+tar -xJf ocserv-0.11.8.tar.xz &amp;&amp; cd ocserv-0.11.8
+./configure
+</pre>
+<p><code> ./configure </code>命令执行后，过一会就会出现如下信息，正常情况下应该跟我的差不多。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># === 服务器输出示例 === #
+configure:
+
+Summary of build options:
+version: 0.11.8
+Host type: x86_64-unknown-linux-gnu
+Install prefix: /usr/local
+Compiler: gcc
+CFlags: -g -O2 -Wall -Wno-strict-aliasing
+CWrap testing: no
+CWrap PAM testing: no
+
+PAM auth backend: no
+Radius auth backend: no
+GSSAPI auth backend: no
+Anyconnect compat: yes
+TCP wrappers: yes
+systemd: no
+(socket activation)
+seccomp: yes
+Compression: yes
+LZ4 compression: yes
+readline: yes
+libnl3: yes
+liboath: no
+libgeoip: no
+glibc (sha2crypt): yes
+local talloc: yes
+local protobuf-c: yes
+local PCL library: yes
+local libopts: yes
+local http-parser: yes
+# === 服务器输出示例 === #
+</pre>
+<p></p></div>
+<p>然后我们继续安装：</p>
+<pre class="prettyprint linenums">make
+make install
+# 安装后的文件可以不删除，卸载的时候还需要用到。</pre>
+<p>最后我们新建一个配置文件的文件夹：</p>
+<pre class="prettyprint linenums">mkdir /etc/ocserv
+wget -N --no-check-certificate -P "/etc/ocserv" https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/other/ocserv.conf
+</pre>
+<p>上面下载的是我根据 ocserv 默认配置文件稍微改了改以适应教程的配置文件。</p>
+<p>如果你想要自己改配置文件可以去看源码默认自带的配置文件：<code> ocserv-0.11.8/doc/sample.config </code></p>
+<h3 id="配置参数解释">配置参数解释</h3>
+<p>因为这些参数很多我也不明白，所以只挑我清楚的解释一下，有错误欢迎指出或补充。</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums">auth = "plain[passwd=/etc/ocserv/ocpasswd]"
+# 这个是登陆方式，plain[passwd=/etc/ocserv/ocpasswd] 代表使用密码登陆并且从 /etc/ocserv/ocpasswd 文件中读取用户名和密码 
+
+# listen-host = [IP|HOSTNAME]
+# 这个代表监听的IP或主机名，注释掉即可。
+
+tcp-port = 443
+udp-port = 443
+# 这个代表 TCP和UDP监听的端口 默认443，如果端口被干扰或被占用，可以更换其他端口，端口号可分开
+
+server-cert = /etc/ocserv/ssl/server-cert.pem
+server-key = /etc/ocserv/ssl/server-key.pem
+ca-cert = /etc/ocserv/ssl/ca-cert.pem
+# 服务器证书和CA证书的位置
+
+banner = "Welcome DOUB.IO"
+# 欢迎文本，链接上VPN后，客户端会提示这个消息。
+
+max-clients = 16
+# 整个VPN最大链接客户端数量，默认为 0 无限。
+max-same-clients = 2
+# 同账号链接VPN最大客户端数量，默认为 0 无限。
+
+rekey-method = ssl
+# 加密方式 SSL
+
+pid-file = /var/run/ocserv.pid
+# PID(记录进程PID)文件位置
+
+device = vpns
+# 设备名（随意）
+
+ipv4-network = 192.168.1.0
+ipv4-netmask = 255.255.255.0
+
+#ipv4-network = 192.168.1.0/24
+#ipv6-network = fda9:4efe:7e3b:03ea::/48
+
+#tunnel-all-dns = true
+# 是否接管DNS解析请求到VPN服务器，true代表客户端的DNS请求全部由服务器处理。
+# 考虑到一些情况下DNS请求全部由海外服务器解析的话，会出现很多问题，所以默认注释，需要的请删除 # 号。
+dns = 8.8.8.8
+dns = 8.8.4.4
+# 服务端的DNS
+
+# route = x.x.x.x
+# no-route = x.x.x.x
+# 路由表相关的，用来分流国内外流量。
+# 本教程提供的配置文件中已经默认配置好了国内外分流路由表（国内不走VPN）。
+
+# 使ocserv兼容AnyConnect
+cisco-client-compat = true
+</pre>
+<p></p></div>
+<h2 id="添加 VPN用户">添加 VPN用户</h2>
+<p>假设你要添加的账号用户名为<code> doubi </code>，那么命令如下：</p>
+<pre class="prettyprint linenums">ocpasswd -c /etc/ocserv/ocpasswd doubi
+</pre>
+<p>输入后，服务器会提示你输入两次密码（不会显示，盲输），如下：</p>
+<pre class="prettyprint linenums"># === 服务器输出示例 === #
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="196b76766d597d7c7b707877">[email&#160;protected]</a>:~/ocserv/ocserv-0.11.8# ocpasswd -c /etc/ocserv/ocpasswd doubi
+Enter password:
+Re-enter password:
+# === 服务器输出示例 === #
+</pre>
+<h3 id="删除 VPN用户">删除 VPN用户</h3>
+<pre>注意：删除/锁定/解锁 VPN用户都没有任何提示！</pre>
+<pre class="prettyprint linenums">ocpasswd -c /etc/ocserv/ocpasswd -d doubi
+</pre>
+<h3 id="锁定 VPN用户">锁定 VPN用户</h3>
+<pre class="prettyprint linenums">ocpasswd -c /etc/ocserv/ocpasswd -l doubi
+</pre>
+<h3 id="解锁 VPN用户">解锁 VPN用户</h3>
+<pre class="prettyprint linenums">ocpasswd -c /etc/ocserv/ocpasswd -u doubi
+</pre>
+<h2 id="自签SSL证书">自签SSL证书</h2>
+<p>首先在当前目录新建一个文件夹（要养成不把文件乱扔的习惯）。</p>
+<pre class="prettyprint linenums">mkdir ssl &amp;&amp; cd ssl
+</pre>
+<h3 id="生成 CA证书">生成 CA证书</h3>
+<p>然后用下面的命令代码（8行一起复制一起粘贴一起执行），其中的两个<code> doubi </code>可以随意改为其他内容，不影响。</p>
+<pre class="prettyprint linenums">echo -e 'cn = "doubi"
+organization = "doubi"
+serial = 1
+expiration_days = 365
+ca
+signing_key
+cert_signing_key
+crl_signing_key' &gt; ca.tmpl
+</pre>
+<p>然后我们生成证书和密匙：</p>
+<pre class="prettyprint linenums">certtool --generate-privkey --outfile ca-key.pem
+certtool --generate-self-signed --load-privkey ca-key.pem --template ca.tmpl --outfile ca-cert.pem</pre>
+<h3 id="生成 服务器证书">生成 服务器证书</h3>
+<p>继续用下面的命令代码（6行一起复制一起粘贴一起执行），其中的<code> 1.1.1.1 </code>请改为你的服务器IP，而<code> doubi </code>可以随意改为其他内容，不影响。</p>
+<pre class="prettyprint linenums">echo -e 'cn = "1.1.1.1"
+organization = "doubi"
+expiration_days = 365
+signing_key
+encryption_key
+tls_www_server' &gt; server.tmpl</pre>
+<p>然后我们生成证书和密匙：</p>
+<pre class="prettyprint linenums">certtool --generate-privkey --outfile server-key.pem
+certtool --generate-certificate --load-privkey server-key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --template server.tmpl --outfile server-cert.pem</pre>
+<hr />
+<p>最后我们在ocserv的目录中新建一个ssl文件夹用于存放证书。</p>
+<pre class="prettyprint linenums">mkdir /etc/ocserv/ssl</pre>
+<p>把刚才生成的证书和密匙都移过去：</p>
+<pre class="prettyprint linenums">mv ca-cert.pem /etc/ocserv/ssl/ca-cert.pem
+mv ca-key.pem /etc/ocserv/ssl/ca-key.pem
+mv server-cert.pem /etc/ocserv/ssl/server-cert.pem
+mv server-key.pem /etc/ocserv/ssl/server-key.pem</pre>
+<p>现在刚才在当前文件夹新建的 ssl 文件夹就没用了，你可以删除它：<code> cd .. &amp;&amp; rm -rf ssl/ </code></p>
+<h2 id="安装服务">安装服务</h2>
+<p>下载我写好的服务脚本并赋予执行权限：</p>
+<pre class="prettyprint linenums">wget -N --no-check-certificate -O "/etc/init.d/ocserv" https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/other/ocserv_debian
+chmod +x /etc/init.d/ocserv</pre>
+<h3 id="设置开机启动(可选)">设置开机启动(可选)</h3>
+<pre class="prettyprint linenums">update-rc.d -f ocserv defaults</pre>
+<h2 id="防火墙配置">防火墙配置</h2>
+<p>首先我们打开 <strong>防火墙的NAT：</strong></p>
+<p>我们需要先查看我们的主网卡是什么：</p>
+<pre class="prettyprint linenums">ifconfig
+</pre>
+<p>输出结果可能如下，那么我们的主网卡默认是 <strong>eth0</strong> ，如果你是 OpenVZ，那么主网卡默认是 <strong>venet0</strong> 。</p>
+<p>如果是 Debian9 系统，则默认网卡名为 <strong>ens3</strong>，CentOS Ubuntu 最新版本的系统可能为 <strong>enpXsX(X代表数字或字母)</strong>。</p>
+<pre class="prettyprint linenums"># === 服务器输出示例 === #
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="eb9984849fab8f8e89828a85">[email&#160;protected]</a>:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr xx:xx:00:00:a8:a0  
+          inet addr:xxx.xxx.xxx.xxx  Bcast:xxx.xxx.225.255  Mask:255.255.255.0
+          inet6 addr: xxx::xxx:ff:fe00:xxx/64 Scope:Link
+          ......
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          ......
+# === 服务器输出示例 === #
+</pre>
+<pre class="prettyprint linenums">iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+# 如果是 OpenVZ就执行下面这个：
+iptables -t nat -A POSTROUTING -o venet0 -j MASQUERADE
+</pre>
+<p>然后我们需要打开 <strong>ipv4防火墙转发：</strong></p>
+<pre class="prettyprint linenums">echo -e "net.ipv4.ip_forward=1" &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+</pre>
+<p>最后，我们就需要<strong>开放防火墙端口</strong>了，教程中示例文件的<strong>默认TCP/UDP端口都是 443</strong>，如果你改了 那么改为其他端口即可。</p>
+<pre class="prettyprint linenums">iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -p udp --dport 443 -j ACCEPT
+# 如果你以后要删除规则，那么把 -I 改成 -D 即可。
+iptables -D INPUT -p tcp --dport 443 -j ACCEPT
+iptables -D INPUT -p udp --dport 443 -j ACCEPT</pre>
+<h3 id="配置防火墙开启启动读取规则">配置防火墙开启启动读取规则</h3>
+<p>一般默认 iptbales 关机后并不会保存规则，这样开机后 防火墙规则也全都清空了，所以需要设置一下。</p>
+<p><strong>Debian/Ubuntu 系统：</strong></p>
+<pre class="prettyprint linenums">iptables-save &gt; /etc/iptables.up.rules
+echo -e '#!/bin/bash\n/sbin/iptables-restore &lt; /etc/iptables.up.rules' &gt; /etc/network/if-pre-up.d/iptables
+chmod +x /etc/network/if-pre-up.d/iptables
+</pre>
+<p>以后需要保存防火墙规则只需要执行：</p>
+<pre class="prettyprint linenums">iptables-save &gt; /etc/iptables.up.rules
+</pre>
+<h2 id="最后测试">最后测试</h2>
+<p>最后我们需要运行下面这个命令来测试 ocserv 是否没有问题了。</p>
+<pre class="prettyprint linenums">ocserv -f -d 1
+# 如果没有问题，那么我们就按 Ctrl + C 键退出。
+</pre>
+<p>VPS输出 正常情况如下：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"># === 服务器输出示例 === #
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="ec9e838398ac88898e858d82">[email&#160;protected]</a>:~# ocserv -f -d 1
+note: setting 'plain' as primary authentication method
+note: setting 'file' as supplemental config option
+listening (TCP) on 0.0.0.0:443...
+listening (TCP) on [::]:443...
+listening (UDP) on 0.0.0.0:443...
+listening (UDP) on [::]:443...
+ocserv[5394]: main: initialized ocserv 0.11.8
+ocserv[5395]: sec-mod: reading supplemental config from files
+ocserv[5395]: sec-mod: sec-mod initialized (socket: /var/run/ocserv-socket.5394)
+# === 服务器输出示例 === #
+</pre>
+<p></p></div>
+<h2 id="使用说明">使用说明</h2>
+<pre class="prettyprint linenums">/etc/init.d/ocserv start
+# 启动 ocserv 
+/etc/init.d/ocserv stop
+# 停止 ocserv 
+/etc/init.d/ocserv restart
+# 重启 ocserv 
+/etc/init.d/ocserv status
+# 查看 ocserv 运行状态 
+/etc/init.d/ocserv log
+# 查看 ocserv 运行日志
+/etc/init.d/ocserv test
+# 测试 ocserv 配置文件是否正确
+</pre>
+<p><strong>配置文件：</strong>/etc/ocserv/ocserv.conf</p>
+<h2 id="卸载方法">卸载方法</h2>
+<p>假设你一开始源码编译安装的目录是：/root/ocserv/ocserv-0.11.8 ，那么这么做：</p>
+<pre class="prettyprint linenums">cd /root/ocserv/ocserv-0.11.8
+# 进入源码编辑安装目录
+
+make uninstall
+# 执行卸载命令
+
+cd .. &amp;&amp; cd ..
+rm -rf ocserv/
+# 回到 /root 文件夹，删除 ocserv 源码自身
+
+rm -rf /etc/ocserv/
+# 删除配置文件目录</pre>
+<p>如果你还下载了系统服务脚本并设置开机启动了，那么需要：</p>
+<pre class="prettyprint linenums">rm -rf /etc/init.d/ocserv
+update-rc.d -f ocserv remove
+</pre>
+<h2 id="其他说明">其他说明</h2>
+<blockquote><p><strong>注意：</strong>如果服务器同时安装了 <strong>锐速(ServerSpeed/LotServer)</strong>，那么可能会导致 AnyConnect 连接上后<strong>无网络或者速度异常(慢)</strong>，这时候请关闭锐速，<strong>BBR加速无影响</strong>。</p></blockquote>
+<h3 id="运行优化说明">运行优化说明</h3>
+<p>建议在运行 ocserv前，执行一下这个命令，作用是提高系统的文件符同时打开数量，对于TCP连接过多的时候系统默认的 1024 就会成为速度瓶颈。</p>
+<pre class="prettyprint linenums">ulimit -n 51200
+</pre>
+<p>这个命令只有临时有效，重启后失效，如果想要永久有效，请执行：</p>
+<pre class="prettyprint linenums">echo "* soft nofile 51200
+* hard nofile 51200" &gt;&gt; /etc/security/limits.conf
+</pre>
+<p>然后最后再执行一下<code> ulimit -n 51200 </code>即可。</p>
+<h3 id="提示 wget: command not found 的错误">提示 wget: command not found 的错误</h3>
+<p>这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。</p>
+<pre class="prettyprint linenums"># CentOS系统:
+yum install -y wget
+
+# Debian/Ubuntu系统:
+apt-get install -y wget
+</pre>
+<hr />
+<p><strong>参考资料：</strong><a href="https://blog.uuz.moe/2016/04/02/cisco-anyconnect-deployment/" target="_blank" rel="noopener">https://blog.uuz.moe/2016/04/02/cisco-anyconnect-deployment/</a><br />
+<a href="https://mark1998.com/anyconnect-on-debian-and-ubuntu/" target="_blank" rel="noopener">https://mark1998.com/anyconnect-on-debian-and-ubuntu/</a></p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="k9994-k3.html">使用Ocserv 手动搭建 Cisco AnyConnect VPN服务端</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2224" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">57</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="fr1bksm9.html" rel="tag">AnyConnect</a><a href="py2phxt7-2.html" rel="tag">Ocserv</a><a href="cxrndpz0.html" rel="tag">VPN</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="hc5a0yn5.html" rel="prev">Cisco AnyConnect VPN Windows/Android 平台客户端使用教程</a></span>
+			<span class="article-nav-next"><a href="nr2hjmg2.html" rel="next">『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="0k260c3z.html" title="WireGuard —— 多用户配置教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— 多用户配置教程" />	<br><span class="r_title">WireGuard —— 多用户配置教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="x2_8j160.html" title="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程" />	<br><span class="r_title">WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="t86-fo_1.html" title="WireGuard —— Windows/Android 客户端简单使用教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="WireGuard —— Windows/Android 客户端简单使用教程" />	<br><span class="r_title">WireGuard —— Windows/Android 客户端简单使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="qbc20cn3.html" title="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程" target="_blank">
+<img src="iki5kl1m.png?src=https://doub.io/wp-content/uploads/wireguard-02.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程" />	<br><span class="r_title">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="0k260c3z.html">WireGuard —— 多用户配置教程</a></li><li><i class="fa fa-minus"></i><a href="x2_8j160.html">WireGuard  —— Windows 客户端<strong>国内外IP分流</strong>教程</a></li><li><i class="fa fa-minus"></i><a href="t86-fo_1.html">WireGuard —— Windows/Android 客户端简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="qbc20cn3.html">一个高速、安全、可以<strong>复活被墙IP</strong>的VPN —— WireGuard 服务端手动教程</a></li><li><i class="fa fa-minus"></i><a href="ha9cojpd.html">新版本 Brook <strong>VPN 模式</strong>尝鲜 —— Windows 手动使用教程</a></li><li><i class="fa fa-minus"></i><a href="nr2hjmg2.html">『原创』Ocserv 搭建 Cisco AnyConnect VPN服务端 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="hc5a0yn5.html">Cisco AnyConnect VPN Windows/Android 平台客户端使用教程</a></li><li><i class="fa fa-minus"></i><a href="azj55-67.html">CentOS/Debian/Ubuntu一键安装IPSEC/IKEV2 VPN脚本</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2224' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (52)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44639"><div class="c-avatar"><div class="c-main" id="div-comment-44639"><pre class="prettyprint linenums" >在安装服务脚本命令wget -N --no-check-certificate -O "/etc/init.d/ocserv" https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/other/ocserv_debian
+执行后，出现错误：
+WARNING: timestamping does nothing in combination with -O. See the manual
+for details.
+
+--2018-10-19 01:31:25--  https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/other/ocserv_debian
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.120.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.120.133|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2018-10-19 01:31:25 ERROR 404: Not Found.
+是不是源被删了啊？
+</pre><div class="c-meta"><span class="c-author">jameslxj</span>2018-10-19 09:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=44639#respond' onclick='return addComment.moveForm( "div-comment-44639", "44639", "respond", "2224" )' aria-label='回复给jameslxj'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-44643"><div class="c-avatar"><div class="c-main" id="div-comment-44643">请更新最新版脚本。你用的是旧版脚本。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-19 11:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=44643#respond' onclick='return addComment.moveForm( "div-comment-44643", "44643", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-44651"><div class="c-avatar"><div class="c-main" id="div-comment-44651">最新版脚本地址是多少啊？<div class="c-meta"><span class="c-author">jameslxj</span>2018-10-19 11:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=44651#respond' onclick='return addComment.moveForm( "div-comment-44651", "44651", "respond", "2224" )' aria-label='回复给jameslxj'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-44653"><div class="c-avatar"><div class="c-main" id="div-comment-44653">就是以前逗比云脚本地址下面写的 Github 备用连接，自己去相关脚本文章看。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-10-19 11:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=44653#respond' onclick='return addComment.moveForm( "div-comment-44653", "44653", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-43719"><div class="c-avatar"><div class="c-main" id="div-comment-43719">网站多少<div class="c-meta"><span class="c-author">方法</span>2018-09-27 22:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=43719#respond' onclick='return addComment.moveForm( "div-comment-43719", "43719", "respond", "2224" )' aria-label='回复给方法'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-42730"><div class="c-avatar"><div class="c-main" id="div-comment-42730">大佬好！我之前配置了SSR，我想请问大佬两个问题：
+1.这个AnyConnect VPN可以跟SSR同时存在于一台VPS上吗（没装锐速）？
+2.教程中没提到客户端的VPN设置（但偏偏我没用过VPN，比较陌生），那客户端连接这个VPN服务器时需要选择哪种类型呢（PPTP、L2TP之类）？以及客户端VPN名称是随便填吗？<div class="c-meta"><span class="c-author">tanshy</span>2018-09-04 22:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=42730#respond' onclick='return addComment.moveForm( "div-comment-42730", "42730", "respond", "2224" )' aria-label='回复给tanshy'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-42738"><div class="c-avatar"><div class="c-main" id="div-comment-42738">1. 不冲突，只要端口不一样。（思科VPN默认 443端口）<br />
+2. AnyConnect VPN 是自己的协议，不是PPTP L2TP协议，直接用思科VPN客户端链接就行了（IP、端口、证书）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-09-04 23:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=42738#respond' onclick='return addComment.moveForm( "div-comment-42738", "42738", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-41100"><div class="c-avatar"><div class="c-main" id="div-comment-41100">楼主你好，如果想要所有流量都走代理是不是把配置文件中的no-route全部删掉就可以了。<div class="c-meta"><span class="c-author">x-men</span>2018-08-05 17:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=41100#respond' onclick='return addComment.moveForm( "div-comment-41100", "41100", "respond", "2224" )' aria-label='回复给x-men'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-41116"><div class="c-avatar"><div class="c-main" id="div-comment-41116">是的，考虑到大部分人都需要国内外分流，所以特地前段时间加上了路由表，不需要的话删掉就行（记得重启服务端）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-08-06 00:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=41116#respond' onclick='return addComment.moveForm( "div-comment-41116", "41116", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-40346"><div class="c-avatar"><div class="c-main" id="div-comment-40346">大大，anyconnect服务端不支持centos安装吗
+[<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="295b46465d69686f42515e10627e">[email&#160;protected]</a> ~]# rm -rf /etc/apt/sources.list &amp;&amp; wget -N --no-check-certificate -O "/etc/apt/sources.list" "https://softs.host/Bash/sources/us.sources.list"
+WARNING: timestamping does nothing in combination with -O. See the manual
+for details.
+
+/etc/apt/sources.list: No such file or directory
+[<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="26544949526667604d5e511f6d71">[email&#160;protected]</a> ~]# apt-get install pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y
+-bash: apt-get: command not found
+这是安装依赖的时候出现的<div class="c-meta"><span class="c-author">Tesla</span>2018-07-19 21:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=40346#respond' onclick='return addComment.moveForm( "div-comment-40346", "40346", "respond", "2224" )' aria-label='回复给Tesla'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-40356"><div class="c-avatar"><div class="c-main" id="div-comment-40356">开头写了：本教程仅在 Debian 7 中测试，理论上 Debian 8 与 Ubuntu 步骤一样。<br />
+我的 Anyconnect 手动安装教程和一键脚本都只支持 Debian 或 Ubuntu 系统。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-20 11:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=40356#respond' onclick='return addComment.moveForm( "div-comment-40356", "40356", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-40409"><div class="c-avatar"><div class="c-main" id="div-comment-40409">大大，我把centos6重装换成了debian7，然后装了ocserv那个一键脚本，里边的TCP端口和UDP端口可以随便改吗，像1 2 3 4那样的，便于区分。<div class="c-meta"><span class="c-author">Tesla</span>2018-07-21 19:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=40409#respond' onclick='return addComment.moveForm( "div-comment-40409", "40409", "respond", "2224" )' aria-label='回复给Tesla'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-40430"><div class="c-avatar"><div class="c-main" id="div-comment-40430">可以改。否则也不会写到配置文件里了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-07-22 01:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=40430#respond' onclick='return addComment.moveForm( "div-comment-40430", "40430", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-38536"><div class="c-avatar"><div class="c-main" id="div-comment-38536">能不能在多个IP的VPS配置多个连接<div class="c-meta"><span class="c-author">急求助</span>2018-05-29 16:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=38536#respond' onclick='return addComment.moveForm( "div-comment-38536", "38536", "respond", "2224" )' aria-label='回复给急求助'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-34301"><div class="c-avatar"><div class="c-main" id="div-comment-34301">最近好像逗比云的anyconnect mac端最新版4.4不能正常使用了（多了一个roaming security），旧版本4.1可以使用，麻烦逗比看一下。<div class="c-meta"><span class="c-author">jackzhang</span>2018-03-21 17:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=34301#respond' onclick='return addComment.moveForm( "div-comment-34301", "34301", "respond", "2224" )' aria-label='回复给jackzhang'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32884"><div class="c-avatar"><div class="c-main" id="div-comment-32884"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="f4869b9b80b48281988086">[email&#160;protected]</a>:~# ocserv -f -d 1                                                   
+note: setting 'plain' as primary authentication method
+note: setting 'file' as supplemental config option
+listening (TCP) on 0.0.0.0:443...
+bind() failed: Address already in use
+listening (TCP) on [::]:443...
+bind() failed: Address already in use
+Could not listen to any TCP or UNIX ports
+这个是什么原因<div class="c-meta"><span class="c-author">xnian</span>2018-03-09 13:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=32884#respond' onclick='return addComment.moveForm( "div-comment-32884", "32884", "respond", "2224" )' aria-label='回复给xnian'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-32923"><div class="c-avatar"><div class="c-main" id="div-comment-32923">443端口被占用，查看是哪个程序占用了，关掉它：
+<pre class="prettyprint linenums" >netstat -lntp
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-10 15:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=32923#respond' onclick='return addComment.moveForm( "div-comment-32923", "32923", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-32666"><div class="c-avatar"><div class="c-main" id="div-comment-32666">几个月以前就发现了，用ocserv, 南方电信和移动，很多地方会BAN掉，装上也被搞了，怀疑是用机器学习的方式学习特征。再然后用SSR，又被干掉。最近搞了个V2RAY + websocket + nginx , 看看这次能活多久。麻蛋的简直是丧心病狂了。<div class="c-meta"><span class="c-author">哇哇</span>2018-03-05 00:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=32666#respond' onclick='return addComment.moveForm( "div-comment-32666", "32666", "respond", "2224" )' aria-label='回复给哇哇'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-36419"><div class="c-avatar"><div class="c-main" id="div-comment-36419">不是吧！我在南方好吧，你一个人就代表了&amp;……南方?<div class="c-meta"><span class="c-author"><a href='http://www.80tm.com/' rel='external nofollow' class='url'>小男生</a></span>2018-04-15 00:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=36419#respond' onclick='return addComment.moveForm( "div-comment-36419", "36419", "respond", "2224" )' aria-label='回复给小男生'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32255"><div class="c-avatar"><div class="c-main" id="div-comment-32255">大佬，我用这个一键脚本搭建之后，4g能够正常连上，但是用WiFi确秒断，。是怎么回事<div class="c-meta"><span class="c-author">leee</span>2018-02-27 21:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=32255#respond' onclick='return addComment.moveForm( "div-comment-32255", "32255", "respond", "2224" )' aria-label='回复给leee'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-31672"><div class="c-avatar"><div class="c-main" id="div-comment-31672">请问 ipv6 隧道如何设置<div class="c-meta"><span class="c-author">hellowordSteven</span>2018-02-18 19:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=31672#respond' onclick='return addComment.moveForm( "div-comment-31672", "31672", "respond", "2224" )' aria-label='回复给hellowordSteven'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30250"><div class="c-avatar"><div class="c-main" id="div-comment-30250">老大，我用CADDY自动签发了证书，可以不手动生成证书而使用CADDY的吗？<div class="c-meta"><span class="c-author">M</span>2018-01-25 22:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=30250#respond' onclick='return addComment.moveForm( "div-comment-30250", "30250", "respond", "2224" )' aria-label='回复给M'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29649"><div class="c-avatar"><div class="c-main" id="div-comment-29649">你好。我在客户端连接后无法上网，服务器的外网IP和内网IP都是ping通，但DNS（8.8.8.8）不能ping通，请问怎么解决这个问题？<div class="c-meta"><span class="c-author">yong</span>2018-01-16 17:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=29649#respond' onclick='return addComment.moveForm( "div-comment-29649", "29649", "respond", "2224" )' aria-label='回复给yong'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29164"><div class="c-avatar"><div class="c-main" id="div-comment-29164">为什么我到make这一步就报错？google vps<div class="c-meta"><span class="c-author">掘井山人</span>2018-01-03 01:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=29164#respond' onclick='return addComment.moveForm( "div-comment-29164", "29164", "respond", "2224" )' aria-label='回复给掘井山人'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29184"><div class="c-avatar"><div class="c-main" id="div-comment-29184">那你连报错内容也不贴出来就跑来问，仔细对比文章内的 # === 服务器输出示例 === # ，make 报错基本都是依赖缺失的问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-03 13:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=29184#respond' onclick='return addComment.moveForm( "div-comment-29184", "29184", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-31084"><div class="c-avatar"><div class="c-main" id="div-comment-31084">这是我看过大约七个不同文章写openConnect VPN最简单详细清楚的，GCE可以用，vutrl可以用，V上的要换源，GCE上的不用，（提示dibian7,8,9的区别写在安装依赖上就没事了）但是要安装依赖apt-get install pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y 没这个就会make时出错，有了只有警告，不影响使用。感谢作者，目前这个确实非常稳定好使，安装比SSR有难度，复杂。也不能搞飞机场（无法大批量的人用）。应该可以用好久。认真读教程一步步来可以成功的，我已经用这个在几个VPS上用了。debian9没问题。<div class="c-meta"><span class="c-author">算是小白吧</span>2018-02-05 21:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=31084#respond' onclick='return addComment.moveForm( "div-comment-31084", "31084", "respond", "2224" )' aria-label='回复给算是小白吧'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-28847"><div class="c-avatar"><div class="c-main" id="div-comment-28847">大佬，为什么我把证书替换成了trustasia的ssl证书，还是会有证书警告？难道一定要在本地设备安装证书才行吗？<div class="c-meta"><span class="c-author">IFmeet</span>2017-12-25 00:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=28847#respond' onclick='return addComment.moveForm( "div-comment-28847", "28847", "respond", "2224" )' aria-label='回复给IFmeet'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-44595"><div class="c-avatar"><div class="c-main" id="div-comment-44595">没有补全证书链<div class="c-meta"><span class="c-author">chrica</span>2018-10-18 14:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=44595#respond' onclick='return addComment.moveForm( "div-comment-44595", "44595", "respond", "2224" )' aria-label='回复给chrica'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-25806"><div class="c-avatar"><div class="c-main" id="div-comment-25806">OpenVPN、PPTP、anyconnect等VPN软件能加快文件的传输速度吗？例如：我的服务器在国外，延时高，文件传输速度很慢，这类VPN能降低延迟，加快文件传输吗？<div class="c-meta"><span class="c-author">yong</span>2017-12-16 16:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=25806#respond' onclick='return addComment.moveForm( "div-comment-25806", "25806", "respond", "2224" )' aria-label='回复给yong'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-26561"><div class="c-avatar"><div class="c-main" id="div-comment-26561">并不能降低延迟，是否加快文件传输速度，你试试就知道了，你问我 我也无法给你一个准确的答案。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-17 15:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=26561#respond' onclick='return addComment.moveForm( "div-comment-26561", "26561", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23128"><div class="c-avatar"><div class="c-main" id="div-comment-23128">请问老哥，搭建anyconnect需要多大的内存呀？<div class="c-meta"><span class="c-author">小哥十足</span>2017-11-22 09:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=23128#respond' onclick='return addComment.moveForm( "div-comment-23128", "23128", "respond", "2224" )' aria-label='回复给小哥十足'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23138"><div class="c-avatar"><div class="c-main" id="div-comment-23138">256MB 内存应该够了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-22 13:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=23138#respond' onclick='return addComment.moveForm( "div-comment-23138", "23138", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-36405"><div class="c-avatar"><div class="c-main" id="div-comment-36405">测试128M可行！日常占用不会超过100M<div class="c-meta"><span class="c-author"><a href='http://www.80tm.com/' rel='external nofollow' class='url'>小男生</a></span>2018-04-14 16:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=36405#respond' onclick='return addComment.moveForm( "div-comment-36405", "36405", "respond", "2224" )' aria-label='回复给小男生'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18252"><div class="c-avatar"><div class="c-main" id="div-comment-18252">我按你的脚本运行了，然后按8配置设置的时候，出现./ocserv.sh: line 198: vim: command not found，请问我是哪里出了问题？我是小白啊，麻烦了<div class="c-meta"><span class="c-author">秋水</span>2017-09-06 20:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=18252#respond' onclick='return addComment.moveForm( "div-comment-18252", "18252", "respond", "2224" )' aria-label='回复给秋水'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-18253"><div class="c-avatar"><div class="c-main" id="div-comment-18253">你的服务器没有安装 文本编辑器 vim ，教程：<a href="sj2kyyo8.html" target="_blank" rel="nofollow">https://doub.io/linux-jc1/</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-09-06 20:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=18253#respond' onclick='return addComment.moveForm( "div-comment-18253", "18253", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-17112"><div class="c-avatar"><div class="c-main" id="div-comment-17112">速度不快，关闭UDP端口也没有BBR加速的效果，不知道是不是BBR对ocserv不能加速？是我的设置不对吗？希望博主能指导下<div class="c-meta"><span class="c-author">york</span>2017-08-15 10:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=17112#respond' onclick='return addComment.moveForm( "div-comment-17112", "17112", "respond", "2224" )' aria-label='回复给york'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-16297"><div class="c-avatar"><div class="c-main" id="div-comment-16297">请教如何设置才能同时开启 密码验证 和 证书验证 呢？<div class="c-meta"><span class="c-author">Tony</span>2017-08-01 17:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=16297#respond' onclick='return addComment.moveForm( "div-comment-16297", "16297", "respond", "2224" )' aria-label='回复给Tony'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-15205"><div class="c-avatar"><div class="c-main" id="div-comment-15205">你好，请问服务器已安装 SS+bbr，有什么办法可以再加上ocserv？现在安装之后发现无法连接。<div class="c-meta"><span class="c-author">os</span>2017-07-01 12:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=15205#respond' onclick='return addComment.moveForm( "div-comment-15205", "15205", "respond", "2224" )' aria-label='回复给os'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15050"><div class="c-avatar"><div class="c-main" id="div-comment-15050">楼主可以补充下ARM架构的编译
+(能同时改写一键脚本就更好了)
+刚刚在树梅派编译失败后google原因
+configure那里要加参数:
+./configure --disable-seccomp
+否则编译会失败 折腾到上天<div class="c-meta"><span class="c-author">rv</span>2017-06-24 00:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=15050#respond' onclick='return addComment.moveForm( "div-comment-15050", "15050", "respond", "2224" )' aria-label='回复给rv'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15061"><div class="c-avatar"><div class="c-main" id="div-comment-15061">我没有树莓派设备，无法测试，所以也不会去写。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-06-24 23:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=15061#respond' onclick='return addComment.moveForm( "div-comment-15061", "15061", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-38761"><div class="c-avatar"><div class="c-main" id="div-comment-38761">不用加什么乱七八糟的东西，我用树莓派按照教程直接就OK了<div class="c-meta"><span class="c-author">John</span>2018-06-04 14:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=38761#respond' onclick='return addComment.moveForm( "div-comment-38761", "38761", "respond", "2224" )' aria-label='回复给John'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14295"><div class="c-avatar"><div class="c-main" id="div-comment-14295">如何免密码 用证书登录呢? 如果 VPS的网络质量比较差, 很容易断开. 然后就提示需要重新输入帐号密码登录..<div class="c-meta"><span class="c-author">小八</span>2017-05-30 02:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14295#respond' onclick='return addComment.moveForm( "div-comment-14295", "14295", "respond", "2224" )' aria-label='回复给小八'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14272"><div class="c-avatar"><div class="c-main" id="div-comment-14272">终于出教程了，炒鸡感谢大佬<div class="c-meta"><span class="c-author">tom</span>2017-05-29 18:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14272#respond' onclick='return addComment.moveForm( "div-comment-14272", "14272", "respond", "2224" )' aria-label='回复给tom'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-14218"><div class="c-avatar"><div class="c-main" id="div-comment-14218">贴一个很早的一键包，https://www.fanyueciyuan.info/fq/ocserv-debian.html<div class="c-meta"><span class="c-author">baymin</span>2017-05-27 23:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14218#respond' onclick='return addComment.moveForm( "div-comment-14218", "14218", "respond", "2224" )' aria-label='回复给baymin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-14204"><div class="c-avatar"><div class="c-main" id="div-comment-14204">偷油老大，整个一键包吧:) <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_arrow.gif" alt=":arrow:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Bob</span>2017-05-27 17:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14204#respond' onclick='return addComment.moveForm( "div-comment-14204", "14204", "respond", "2224" )' aria-label='回复给Bob'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-minamisindery odd alt thread-even depth-1" id="comment-14202"><div class="c-avatar"><div class="c-main" id="div-comment-14202">已经不想折腾这种没什么用的麻烦东东了<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-05-27 16:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14202#respond' onclick='return addComment.moveForm( "div-comment-14202", "14202", "respond", "2224" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-14207"><div class="c-avatar"><div class="c-main" id="div-comment-14207">目前国内大部分地区根本无法连接 PPTP L2TP IKEV2等VPN协议了，比如我这里，而AnyConnect没事，连干扰都很少，用着不断线，适合于玩游戏的人使用。普通科学上网用ShadowsocksR就行了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-27 18:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14207#respond' onclick='return addComment.moveForm( "div-comment-14207", "14207", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-14211"><div class="c-avatar"><div class="c-main" id="div-comment-14211">路由器能用么？这个比SSR快么？看youtube<div class="c-meta"><span class="c-author">123</span>2017-05-27 20:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14211#respond' onclick='return addComment.moveForm( "div-comment-14211", "14211", "respond", "2224" )' aria-label='回复给123'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-14214"><div class="c-avatar"><div class="c-main" id="div-comment-14214">路由器自己看是否支持。
+<pre class="prettyprint linenums" >我也是刚刚了解这个VPN，AnyConnect的优势就是相比其他的VPN协议（OpenVPN、PPTP、L2TP、IKEv2等），AnyConnect并不会被墙封，当然也不代表完全没有干扰，所以如果只是玩游戏的话，用其他的VPN协议容易被墙干掉，这时候就可以使用AnyConnect，如果只是看网页看视频，那还是建议使用ShadowsocksR。
+</pre><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-27 21:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14214#respond' onclick='return addComment.moveForm( "div-comment-14214", "14214", "respond", "2224" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-14224"><div class="c-avatar"><div class="c-main" id="div-comment-14224">估计没有支持，以后没准有人会开发，不折腾了<div class="c-meta"><span class="c-author">123</span>2017-05-28 07:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14224#respond' onclick='return addComment.moveForm( "div-comment-14224", "14224", "respond", "2224" )' aria-label='回复给123'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-6" id="comment-14231"><div class="c-avatar"><div class="c-main" id="div-comment-14231">openwrt和lede都有客户端<div class="c-meta"><span class="c-author">siam</span>2017-05-28 17:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14231#respond' onclick='return addComment.moveForm( "div-comment-14231", "14231", "respond", "2224" )' aria-label='回复给siam'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14194"><div class="c-avatar"><div class="c-main" id="div-comment-14194">非常不错的教程，很多跨国公司都在用这种VPN。<div class="c-meta"><span class="c-author">Yovan</span>2017-05-27 15:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/vpnzy-6/?replytocom=14194#respond' onclick='return addComment.moveForm( "div-comment-14194", "14194", "respond", "2224" )' aria-label='回复给Yovan'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ikcfa44-container ikcfa44-1 ikcfa44-hide">
+    <div class="ikcfa44-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ikcfa44"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

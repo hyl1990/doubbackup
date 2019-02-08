@@ -1,0 +1,1054 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>Brook代理 Windows/Android版客户端简单使用教程 | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1951] -->
+<meta name="description"  content="Brook是一个由 Go语言编写的跨平台代理软件，支持 Linux/MacOS/Windows/Android/iOS 各个平台。 同时因为 Go语言的特性，在操作使用上非常简单，本篇主要介绍 Brook客户端中 Windows/Android的使用方法（其他系统，没有设备）。 Brook" />
+
+<meta name="keywords"  content="brook,socks5,代理软件" />
+
+<link rel="canonical" href="939koj07-3.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='一个优秀的跨平台 Socks5代理软件 —— Brook 服务端教程' href='6jfbj938.html' />
+<link rel='next' title='『原创』一个优秀的跨平台 Socks5代理软件 —— Brook 一键安装管理脚本' href='aybh4ww5-2.html' />
+<link rel='shortlink' href='https://doub.io/?p=2118' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fbrook-jc2%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fbrook-jc2%2F&amp;format=xml" />
+<style>
+.ckd88fe{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ckd88fe-hide{
+    display: none;
+}
+.ckd88fe-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ckd88fe-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ckd88fe-2 .ckd88fe-body,.ckd88fe-3 .ckd88fe-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ckd88fe-2 .close-btn,.ckd88fe-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ckd88fe-3 .ckd88fe-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ckd88fe').html(kill_adBlock_message);
+            jQuery('.ckd88fe-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ckd88fe-container').fadeOut('ckd88fe-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="Brook, SOCKS5, 代理软件, 网络资源">
+<meta name="description" content="Brook是一个由 Go语言编写的跨平台代理软件，支持 Linux/MacOS/Windows/Android/iOS 各个平台。  同时因为 Go语言的特性，在操作使用上非常简单，本篇主要介绍 Brook客户端中 Windows/Android的使用方法（其他系统，没有设备）。  Brook Github项目：https://github.com/txthinking/brook  Github Wiki教程：https://gith">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2118 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="939koj07-3.html">Brook代理 Windows/Android版客户端简单使用教程</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8.html"> 网络资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-04-08)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 36789℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="939koj07-3.html#comments">228评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="939koj07-3.html#下载客户端" title="下载客户端"><span>下载客户端</span></a></li><li class="content-index-level-1"><a href="939koj07-3.html#Windows客户端 使用方法" title="Windows客户端 使用方法"><span>Windows客户端 使用方法</span></a><ul class="children"><li class="content-index-level-2"><a href="939koj07-3.html#Brook 客户端设置说明" title="Brook 客户端设置说明"><span>Brook 客户端设置说明</span></a></li></ul></li><li class="content-index-level-1"><a href="939koj07-3.html#代理扩展控制(可选)" title="代理扩展控制(可选)"><span>代理扩展控制(可选)</span></a><ul class="children"><li class="content-index-level-2"><a href="939koj07-3.html#全局 情景模式：" title="全局 情景模式："><span>全局 情景模式：</span></a></li><li class="content-index-level-2"><a href="939koj07-3.html#自动切换(PAC)情景模式：" title="自动切换(PAC)情景模式："><span>自动切换(PAC)情景模式：</span></a></li></ul></li><li class="content-index-level-1"><a href="939koj07-3.html#Android客户端 使用方法" title="Android客户端 使用方法"><span>Android客户端 使用方法</span></a></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年11月10日 18:49</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>Brook是一个由 Go语言编写的跨平台代理软件，支持 Linux/MacOS/Windows/Android/iOS 各个平台。</p>
+<p>同时因为 Go语言的特性，在操作使用上非常简单，<strong>本篇主要介绍 Brook客户端中 Windows/Android的使用方法（其他系统，没有设备）。</strong></p>
+<p><strong>Brook Github项目：<a href="https://github.com/txthinking/brook" target="_blank" rel="noopener">https://github.com/txthinking/brook</a></strong></p>
+<p>Github Wiki教程：<a href="https://github.com/txthinking/brook/wiki/使用说明(中文)" target="_blank" rel="noopener">https://github.com/txthinking/brook/wiki/使用说明(中文)</a></p>
+<p><strong>Brook 服务端教程：<a href="6jfbj938.html" target="_blank" rel="noopener">https://doub.io/brook-jc1/</a></strong></p>
+<p><strong>Brook 服务端脚本：<a title="『原创』一个优秀的跨平台 Socks5代理软件 —— Brook 一键安装管理脚本" href="aybh4ww5-2.html" target="_blank" rel="noopener">『原创』一个优秀的跨平台 Socks5代理软件 —— Brook 一键安装管理脚本</a></strong></p>
+<blockquote><p>觉得官方客户端不好用？来试试我写的客户端吧：<a title="『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools" href="g4b_0oy6.html" target="_blank" rel="noopener">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a></p></blockquote>
+<hr />
+<p><strong>其他 Brook 教程请看：<a href="nhe7u58y.html" target="_blank" rel="noopener">https://doub.io/tag/brook/</a></strong></p>
+<h2 id="下载客户端">下载客户端</h2>
+<p><strong>Github下载地址：<a href="https://github.com/txthinking/brook/releases" target="_blank" rel="noopener">https://github.com/txthinking/brook/releases</a></strong></p>
+<p><strong>逗比云 下载地址：<a href="https://softsmirror.cf/?dir=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/Brook" target="_blank" rel="noopener">https://softsmirror.cf/?dir=科学上网/PC/Brook</a></strong></p>
+<ol>
+<li><strong>Linux 64位客户端：</strong>brook（客户端+服务端）</li>
+<li><strong>Linux 32位客户端：</strong>brook_linux_386（客户端+服务端）</li>
+<li><strong>Windows 64位客户端：</strong>Brook.Setup.exe</li>
+<li><strong>MacOS 64位客户端：</strong>Brook.dmg</li>
+<li><strong>Android客户端：</strong> - Brook.apk - <a href="https://softsmirror.cf/?dir=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Android/Brook" target="_blank" rel="noopener">逗比云</a></li>
+<li><strong>IOS客户端：</strong><a href="https://itunes.apple.com/us/app/brook-brook-shadowsocks-vpn-proxy/id1216002642" target="_blank" rel="noopener">APPStore</a></li>
+</ol>
+<pre><strong>注意：</strong>Windows系统要求 <strong>&gt;= 7</strong>，Mac系统要求 <strong>&gt;= 10.12</strong>，Android系统要求 <strong>&gt;= 5.0</strong>，IOS系统要求 <strong>&gt;= 9.0</strong></pre>
+<h2 id="Windows客户端 使用方法">Windows客户端 使用方法</h2>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>下载客户端并运行后，会提示你安装 Brook 按照提示安装即可。</p>
+<p>安装完后，一般情况下会自动启动 Brook 客户端，<strong>启动后会看到如下图：</strong></p>
+<p>然后根据服务端设置的 <strong>模式/端口/密码</strong> 来填写客户端设置（注意服务端的协议模式是 <strong>新版Brook </strong>还是 <strong>旧版Stream Brook</strong>），填写后点击 <strong>SAVE 按钮</strong>保存即可。</p>
+<p><strong>有兴趣可以先用 <a href="95f80__8.html" target="_blank" rel="noopener">我分享的免费 Brook 账号</a>试试。</strong></p>
+<p><img class="size-medium aligncenter" src="l9z-04j5-3.png" width="807" height="589" /></p>
+<p>同时托盘图标右下角托盘图标也会有一个<strong>黑色的钥匙：</strong></p>
+<ol>
+<li><strong>Toggle</strong> 代表启动/停止 Brook 代理。</li>
+<li><strong>Setting</strong> 则会打开设置窗口，也就是上面图片配置账号的窗口。</li>
+</ol>
+<p><img class="size-medium aligncenter" style="border-color: #dddddd; background-color: #fbfbfb;" src="ryvgvfc2-4.png" width="291" height="270" /></p>
+<p>填写完 Brook 账号信息后，直接点击 <strong>Toggle</strong> 选项就会自动设置系统代理了。如果你没有用任何 代理扩展，那么就直接可以直接访问谷歌测试了，不过我更建议使用 代理扩展来控制，更方便一些。</p>
+<blockquote><p><em>注意：</em>如果你要<strong>更换Brook账号</strong>，那么需要去控制页面修改账号信息并点击 <strong>SAVE 按钮保存</strong>，然后右键托盘图标点击 <strong>Toggle</strong> 才行！</p>
+<p><em>注意：</em>Brook客户端的本地监听端口是 1080 ，这意味着和 Shadowsocks/ShadowsocksR客户端默认的本地监听端口是冲突的，所以<strong>请修改Shadowsocks/ShadowsocksR的客户端默认本地端口，</strong>或者<strong>同一时间只运行一种客户端。</strong></p></blockquote>
+<h3 id="Brook 客户端设置说明">Brook 客户端设置说明</h3>
+<p>在 Brook 客户端的设置窗口中，点击左上角的 三个横杠，<strong>就会看到如下图：</strong></p>
+<p><img class="size-medium aligncenter" src="3r_e13f0-2.png" width="296" height="277" /></p>
+<ol>
+<li><strong>Server</strong> 代表的是配置账号。</li>
+<li><strong>Advanced</strong> 代表的是客户端配置。</li>
+</ol>
+<p>我们点击 <strong>Advanced</strong> 按钮，<strong>就会看到如下图：</strong></p>
+<p>各个选项的意思我都翻译写到图片里了，大家自己看，修改后记得点击 <strong>SAVE</strong> 按钮保存（如果是修改了代理相关设置，那么可能还需要点击托盘菜单的 <strong>Toggle</strong> 选项重新启动代理）。</p>
+<p><img class="size-medium aligncenter" style="border-color: #dddddd; background-color: #fbfbfb;" src="o4r9ffg4-3.png" width="808" height="590" /></p>
+<p></p></div>
+<h2 id="代理扩展控制(可选)">代理扩展控制(可选)</h2>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<p>这里建议使用 <strong>SwitchyOmega 扩展（<a href="b2pv8ugx.html" target="_blank" rel="noopener">点击查看新手使用教程</a>）</strong> 来管理代理。</p>
+<p>安装扩展后，打开扩展的选项页面，然后新建情景模式，分别添加一个全局和PAC的情景模式。</p>
+<h3 id="全局 情景模式：">全局 情景模式：</h3>
+<p>新建情景模式，名称随意（<strong>例如 Brook-全局</strong>），类型选择 <strong>代理服务器</strong></p>
+<p>然后设置代理协议为<code> SOCKS5 </code>，代理服务器为<code> 127.0.0.1 </code>，代理端口为<code> 1080</code></p>
+<p>然后点击页面左下角的 <strong>应用选项</strong> 即可。</p>
+<h3 id="自动切换(PAC)情景模式：">自动切换(PAC)情景模式：</h3>
+<p>新建情景模式，名称随意（<strong>例如 Brook-PAC</strong>），类型选择 <strong>自动切换模式</strong></p>
+<p>然后在规则列表设置中 规则列表格式选择 <strong>AutoProxy</strong>，</p>
+<p>规则列表网址为<a title="" href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" data-original-title=""><code> https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></a></p>
+<p>同时切换规则中，按照规则列表匹配请求的情景模式选择上面设置过的 <strong>Brook-全局</strong> 情景模式。</p>
+<p>然后点击 <strong>立即更新情景模式</strong> 按钮，然后点击页面左下角的 <strong>应用选项</strong> 即可。</p>
+<hr />
+<p>这时候在浏览器右上角，点击这个<strong>扩展的按钮(圆圈)</strong>，根据需求选择 <strong>Brook-PAC或 Brook-全局</strong>，然后打开谷歌：<a title="" href="https://www.google.com/" target="_blank" rel="noopener" data-original-title="">www.google.com</a> 测试一下吧！</p>
+<p><img class=" aligncenter" src="_g6_kryy-3.png" alt="" width="865" height="315" /></p>
+<p><img class=" aligncenter" src="b0y704ux-2.png" alt="" width="1062" height="697" /></p>
+<p></p></div>
+<h2 id="Android客户端 使用方法">Android客户端 使用方法</h2>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre>Android和IOS 客户端的使用方法类似，而且我没有IOS设备，只能写 Android客户端使用方法喽。</pre>
+<p>下载客户端并安装运行后，界面很简单。</p>
+<p>然后根据服务端设置的 <strong>混淆协议模式/端口/密码 </strong>来填写客户端设置，填写后点击 <strong>Start 按钮</strong>启动即可。</p>
+<p>Brook安卓客户端和Shadowsocks/ShadowsocksR客户端一样，都是把代理转成 VPN，所以一开始会提示创建VPN <strong>选择信任并确定即可。</strong></p>
+<p>不过<strong>Brook安卓客户端支持PAC分流</strong>。</p>
+<blockquote><p><em>注意：</em>服务器地址栏填写格式为：<strong>IP:端口</strong>，例如下图中的 <strong>1.1.1.1:2333</strong> ，不要忘记写端口号偶！</p></blockquote>
+<p><img class="size-medium aligncenter" src="ev2ffeqv.png" width="300" height="533" /></p>
+<p><img class=" aligncenter" src="hpvcwrn6-3.png" alt="" width="343" height="378" /></p>
+<p></p></div>
+<hr />
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="939koj07-3.html">Brook代理 Windows/Android版客户端简单使用教程</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2118" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">140</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="nhe7u58y.html" rel="tag">Brook</a><a href="phs2wo5j.html" rel="tag">SOCKS5</a><a href="4pnm24t4.html" rel="tag">代理软件</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="6jfbj938.html" rel="prev">一个优秀的跨平台 Socks5代理软件 —— Brook 服务端教程</a></span>
+			<span class="article-nav-next"><a href="aybh4ww5-2.html" rel="next">『原创』一个优秀的跨平台 Socks5代理软件 —— Brook 一键安装管理脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="k71l4klb.html" title="网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程" />	<br><span class="r_title">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="uispwf33.html" title="DAZE 轻量化代理软件 —— Windows 客户端简单使用教程" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="DAZE 轻量化代理软件 —— Windows 客户端简单使用教程" />	<br><span class="r_title">DAZE 轻量化代理软件 —— Windows 客户端简单使用教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="ro0sse7s.html" title="一个由Go语言编写的轻量化代理工具 —— DAZE 服务端手动教程" target="_blank">
+<img src="7irzwvxm.png?src=https://doub.io/wp-content/uploads/daze-01.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="一个由Go语言编写的轻量化代理工具 —— DAZE 服务端手动教程" />	<br><span class="r_title">一个由Go语言编写的轻量化代理工具 —— DAZE 服务端手动教程</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="ha9cojpd.html" title="新版本 Brook <strong>VPN 模式</strong>尝鲜 —— Windows 手动使用教程" target="_blank">
+<img src="kk4ik0cm.png?src=https://doub.io/wp-content/uploads/brook1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="新版本 Brook <strong>VPN 模式</strong>尝鲜 —— Windows 手动使用教程" />	<br><span class="r_title">新版本 Brook <strong>VPN 模式</strong>尝鲜 —— Windows 手动使用教程</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="k71l4klb.html">网页管理 <strong>Brook、SS、Socks5</strong> 代理账号 —— Brook-Web 使用教程</a></li><li><i class="fa fa-minus"></i><a href="uispwf33.html">DAZE 轻量化代理软件 —— Windows 客户端简单使用教程</a></li><li><i class="fa fa-minus"></i><a href="ro0sse7s.html">一个由Go语言编写的轻量化代理工具 —— DAZE 服务端手动教程</a></li><li><i class="fa fa-minus"></i><a href="ha9cojpd.html">新版本 Brook <strong>VPN 模式</strong>尝鲜 —— Windows 手动使用教程</a></li><li><i class="fa fa-minus"></i><a href="m2qf_iyd.html">『视频』Brook 代理 一键脚本及客户端 小白使用教程</a></li><li><i class="fa fa-minus"></i><a href="g4b_0oy6.html">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a></li><li><i class="fa fa-minus"></i><a href="9-b8lkgt-3.html">Shadowsocks利用 Brook 实现中继(中转/端口转发)加速</a></li><li><i class="fa fa-minus"></i><a href="es5fj9se-3.html">在 主流代理软件 被针对的现在，推荐一个小众好用的代理软件 — Brook</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2118' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (228)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-32379"><div class="c-avatar"><div class="c-main" id="div-comment-32379">brook不错 暂时没有重点照顾 我在jp ssr 一天换个ip就被封  换了brook没换 端口倒是坚挺<div class="c-meta"><span class="c-author">jwuorion</span>2018-03-01 14:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32379#respond' onclick='return addComment.moveForm( "div-comment-32379", "32379", "respond", "2118" )' aria-label='回复给jwuorion'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-32185"><div class="c-avatar"><div class="c-main" id="div-comment-32185">Android端更新啦~~~不会白屏了<div class="c-meta"><span class="c-author">非洲白人</span>2018-02-27 09:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32185#respond' onclick='return addComment.moveForm( "div-comment-32185", "32185", "respond", "2118" )' aria-label='回复给非洲白人'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-32307"><div class="c-avatar"><div class="c-main" id="div-comment-32307">我错了，当时用的时候，不会白屏，第二天我再用，就开始白屏了<div class="c-meta"><span class="c-author">非洲白人</span>2018-02-28 18:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32307#respond' onclick='return addComment.moveForm( "div-comment-32307", "32307", "respond", "2118" )' aria-label='回复给非洲白人'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-32184"><div class="c-avatar"><div class="c-main" id="div-comment-32184">为什么安卓客户端打开只有白屏？<div class="c-meta"><span class="c-author">fire</span>2018-02-27 09:13 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32184#respond' onclick='return addComment.moveForm( "div-comment-32184", "32184", "respond", "2118" )' aria-label='回复给fire'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-32153"><div class="c-avatar"><div class="c-main" id="div-comment-32153">出现了win10不能用  安卓没有输入界面  用了你的客户端 自检的时候也是账号不可用<div class="c-meta"><span class="c-author">kyoum</span>2018-02-26 18:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32153#respond' onclick='return addComment.moveForm( "div-comment-32153", "32153", "respond", "2118" )' aria-label='回复给kyoum'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-32155"><div class="c-avatar"><div class="c-main" id="div-comment-32155">用我网站分享的免费Brook账号也是账号自检不可用？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-26 19:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32155#respond' onclick='return addComment.moveForm( "div-comment-32155", "32155", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-34644"><div class="c-avatar"><div class="c-main" id="div-comment-34644">老哥win10能用了吗<div class="c-meta"><span class="c-author">蛋炒饭</span>2018-03-22 19:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=34644#respond' onclick='return addComment.moveForm( "div-comment-34644", "34644", "respond", "2118" )' aria-label='回复给蛋炒饭'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31738"><div class="c-avatar"><div class="c-main" id="div-comment-31738">大佬请问有什么办法可以让安卓 客户端 用全局 PAC 不好用想用全区模式 有什么办法没<div class="c-meta"><span class="c-author">K</span>2018-02-19 15:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31738#respond' onclick='return addComment.moveForm( "div-comment-31738", "31738", "respond", "2118" )' aria-label='回复给K'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31790"><div class="c-avatar"><div class="c-main" id="div-comment-31790">不清楚，目前安卓客户端没有这种选项。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-20 13:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31790#respond' onclick='return addComment.moveForm( "div-comment-31790", "31790", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31620"><div class="c-avatar"><div class="c-main" id="div-comment-31620">莫有美国app store账号，brook在iphone上下载不过来,有无其他地方可提供下载安装的？谢谢<div class="c-meta"><span class="c-author">17</span>2018-02-18 02:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31620#respond' onclick='return addComment.moveForm( "div-comment-31620", "31620", "respond", "2118" )' aria-label='回复给17'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31647"><div class="c-avatar"><div class="c-main" id="div-comment-31647">IOS不清楚，可能需要越狱吧，否则国区下降你毛线办法也没有，退IOS报平安，否则以后国内IOS怕是绝缘翻墙了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-18 13:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31647#respond' onclick='return addComment.moveForm( "div-comment-31647", "31647", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31175"><div class="c-avatar"><div class="c-main" id="div-comment-31175">这款是必须在浏览器装proxy插件才能用的吗？不能像SSR那样直接一个gui客户端搞定吗？<div class="c-meta"><span class="c-author">mike</span>2018-02-07 20:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31175#respond' onclick='return addComment.moveForm( "div-comment-31175", "31175", "respond", "2118" )' aria-label='回复给mike'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31176"><div class="c-avatar"><div class="c-main" id="div-comment-31176">能，但是官方 windows 客户端功能很少，想要实现SSR客户端那样的，去看 <a href="g4b_0oy6.html" target="_blank">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-07 21:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31176#respond' onclick='return addComment.moveForm( "div-comment-31176", "31176", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31002"><div class="c-avatar"><div class="c-main" id="div-comment-31002">能不能支持华硕固件<div class="c-meta"><span class="c-author">Kevin</span>2018-02-04 14:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31002#respond' onclick='return addComment.moveForm( "div-comment-31002", "31002", "respond", "2118" )' aria-label='回复给Kevin'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31059"><div class="c-avatar"><div class="c-main" id="div-comment-31059">路由器固件需要你们自己安装或者联系 固件开发者 添加。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-05 15:45 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31059#respond' onclick='return addComment.moveForm( "div-comment-31059", "31059", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30879"><div class="c-avatar"><div class="c-main" id="div-comment-30879">我的一台美国服务器，开始安装能用，后来就再也无法链接了，重新安装了都不行，后来就安回了ssr<div class="c-meta"><span class="c-author">fei</span>2018-02-02 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30879#respond' onclick='return addComment.moveForm( "div-comment-30879", "30879", "respond", "2118" )' aria-label='回复给fei'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-30804"><div class="c-avatar"><div class="c-main" id="div-comment-30804">同样出现了win10不能用，安卓手机能用的现象，求解。。。。。<div class="c-meta"><span class="c-author">ttbb</span>2018-02-01 11:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30804#respond' onclick='return addComment.moveForm( "div-comment-30804", "30804", "respond", "2118" )' aria-label='回复给ttbb'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30805"><div class="c-avatar"><div class="c-main" id="div-comment-30805">请尝试用我写的辅助客户端试试。<a href="g4b_0oy6.html" target="_blank">『原创』更方便的Windows系统 Brook 客户端 —— Brook Tools</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-01 13:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30805#respond' onclick='return addComment.moveForm( "div-comment-30805", "30805", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-31027"><div class="c-avatar"><div class="c-main" id="div-comment-31027">我的win10 可用<div class="c-meta"><span class="c-author">hi</span>2018-02-05 08:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31027#respond' onclick='return addComment.moveForm( "div-comment-31027", "31027", "respond", "2118" )' aria-label='回复给hi'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30620"><div class="c-avatar"><div class="c-main" id="div-comment-30620">这个可以更改本地代理端口吗？<div class="c-meta"><span class="c-author">指尖</span>2018-01-30 11:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30620#respond' onclick='return addComment.moveForm( "div-comment-30620", "30620", "respond", "2118" )' aria-label='回复给指尖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30621"><div class="c-avatar"><div class="c-main" id="div-comment-30621">你可能需要试试这个 Brook 客户端：<a href="g4b_0oy6.html" target="_blank">https://doub.io/dbrj-7/</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-30 12:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30621#respond' onclick='return addComment.moveForm( "div-comment-30621", "30621", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30407"><div class="c-avatar"><div class="c-main" id="div-comment-30407">http://local.txthinking.com:1980/   这个页面打不开 显示加载失败咋回事<div class="c-meta"><span class="c-author">fei</span>2018-01-27 18:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30407#respond' onclick='return addComment.moveForm( "div-comment-30407", "30407", "respond", "2118" )' aria-label='回复给fei'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30490"><div class="c-avatar"><div class="c-main" id="div-comment-30490">客户端启动有问题。不过该问题我无法解决，你只能 Github 联系作者。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-28 15:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=30490#respond' onclick='return addComment.moveForm( "div-comment-30490", "30490", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-34097"><div class="c-avatar"><div class="c-main" id="div-comment-34097">换IE或者chrome内核的浏览器打开就行了，兼容性问题<div class="c-meta"><span class="c-author">hano</span>2018-03-20 20:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=34097#respond' onclick='return addComment.moveForm( "div-comment-34097", "34097", "respond", "2118" )' aria-label='回复给hano'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-24313"><div class="c-avatar"><div class="c-main" id="div-comment-24313">奇怪了，为什么安卓手机能用，windows 10 系统不能用？手机能用证明服务器配置正常，1080端口也没有占用，客户端是最新的，配置后显示正常running,全局都上不去，太奇怪了！寻求帮助，谢谢！<div class="c-meta"><span class="c-author">dreamforge</span>2017-12-14 17:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=24313#respond' onclick='return addComment.moveForm( "div-comment-24313", "24313", "respond", "2118" )' aria-label='回复给dreamforge'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-25005"><div class="c-avatar"><div class="c-main" id="div-comment-25005">评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-15 14:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=25005#respond' onclick='return addComment.moveForm( "div-comment-25005", "25005", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-28668"><div class="c-avatar"><div class="c-main" id="div-comment-28668">你都没上TG<div class="c-meta"><span class="c-author">Jackie</span>2017-12-20 10:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=28668#respond' onclick='return addComment.moveForm( "div-comment-28668", "28668", "respond", "2118" )' aria-label='回复给Jackie'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-28688"><div class="c-avatar"><div class="c-main" id="div-comment-28688">我有时候TG不在线，每天基本只在线一个小时。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-20 13:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=28688#respond' onclick='return addComment.moveForm( "div-comment-28688", "28688", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-24136"><div class="c-avatar"><div class="c-main" id="div-comment-24136">有直接可以购买的brook账号吗？<div class="c-meta"><span class="c-author">千岚</span>2017-12-11 15:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=24136#respond' onclick='return addComment.moveForm( "div-comment-24136", "24136", "respond", "2118" )' aria-label='回复给千岚'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23777"><div class="c-avatar"><div class="c-main" id="div-comment-23777">windows最新客户端，不能配合SStap使用 SStap创建S5 127.0.0.1/1080 无法连接呀。客户端单独使用正常 但是想玩游戏怎么用呀<div class="c-meta"><span class="c-author">简单fand</span>2017-12-03 12:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23777#respond' onclick='return addComment.moveForm( "div-comment-23777", "23777", "respond", "2118" )' aria-label='回复给简单fand'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23717"><div class="c-avatar"><div class="c-main" id="div-comment-23717">在Proxy SwitchyOmega扩展设置里面 , Brook-PAC 的规则设置好以后开启PAC模式, Google上不去, 开全局正常, 想问一下是不是规则文件的问题?<div class="c-meta"><span class="c-author">muzi2045</span>2017-12-02 10:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23717#respond' onclick='return addComment.moveForm( "div-comment-23717", "23717", "respond", "2118" )' aria-label='回复给muzi2045'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23720"><div class="c-avatar"><div class="c-main" id="div-comment-23720">确定 自动切换(PAC)情景模式 与我图中的一样？我写教程的时候测试是没问题的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-02 12:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23720#respond' onclick='return addComment.moveForm( "div-comment-23720", "23720", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23711"><div class="c-avatar"><div class="c-main" id="div-comment-23711">小编，安卓版的客户端并不是全局代理，而是自带PAC规则。(开发者在Google Play解释了)规则在https://github.com/txthinking/pac<div class="c-meta"><span class="c-author">Dr.Pure</span>2017-12-02 01:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23711#respond' onclick='return addComment.moveForm( "div-comment-23711", "23711", "respond", "2118" )' aria-label='回复给Dr.Pure'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23722"><div class="c-avatar"><div class="c-main" id="div-comment-23722">这我倒是不清楚，因为很多人包括我发现很多国内网站也会走代理。。。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-02 12:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23722#respond' onclick='return addComment.moveForm( "div-comment-23722", "23722", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23434"><div class="c-avatar"><div class="c-main" id="div-comment-23434">ios客户端要10.0以上。。。<div class="c-meta"><span class="c-author">magicku</span>2017-11-27 13:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23434#respond' onclick='return addComment.moveForm( "div-comment-23434", "23434", "respond", "2118" )' aria-label='回复给magicku'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-23420"><div class="c-avatar"><div class="c-main" id="div-comment-23420">手机端可以用，PC端无法连接。上午可以用的， 下午我把Brook文件剪切到别的文件夹再运行就连不了了。<div class="c-meta"><span class="c-author">Anderson</span>2017-11-27 01:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23420#respond' onclick='return addComment.moveForm( "div-comment-23420", "23420", "respond", "2118" )' aria-label='回复给Anderson'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-23166"><div class="c-avatar"><div class="c-main" id="div-comment-23166">Brook Strema 是什么意思<div class="c-meta"><span class="c-author">花科科技</span>2017-11-22 17:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23166#respond' onclick='return addComment.moveForm( "div-comment-23166", "23166", "respond", "2118" )' aria-label='回复给花科科技'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23184"><div class="c-avatar"><div class="c-main" id="div-comment-23184">文章内解释了。Stream Brook是旧版的Brook协议，一般建议用新版协议 Brook。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-23 10:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23184#respond' onclick='return addComment.moveForm( "div-comment-23184", "23184", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-23019"><div class="c-avatar"><div class="c-main" id="div-comment-23019">客户端可以设置开机自启，自动start吗？<div class="c-meta"><span class="c-author">bwsnb</span>2017-11-19 11:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23019#respond' onclick='return addComment.moveForm( "div-comment-23019", "23019", "respond", "2118" )' aria-label='回复给bwsnb'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-23022"><div class="c-avatar"><div class="c-main" id="div-comment-23022">目前不支持。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-19 12:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23022#respond' onclick='return addComment.moveForm( "div-comment-23022", "23022", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22922"><div class="c-avatar"><div class="c-main" id="div-comment-22922">单用户可以使用，一旦增加一个新用户，就启动不了，Centos 7 (Vultr洛杉矶)<div class="c-meta"><span class="c-author">cxd999</span>2017-11-17 10:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22922#respond' onclick='return addComment.moveForm( "div-comment-22922", "22922", "respond", "2118" )' aria-label='回复给cxd999'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22925"><div class="c-avatar"><div class="c-main" id="div-comment-22925">客户端启动不了？服务端启动不了？服务端的话多半是操作问题，我写教程时都测试过没问题了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-17 11:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22925#respond' onclick='return addComment.moveForm( "div-comment-22925", "22925", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22694"><div class="c-avatar"><div class="c-main" id="div-comment-22694">安卓版brook,服务器跟密码在那里找<div class="c-meta"><span class="c-author">Ghf</span>2017-11-13 23:42 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22694#respond' onclick='return addComment.moveForm( "div-comment-22694", "22694", "respond", "2118" )' aria-label='回复给Ghf'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22704"><div class="c-avatar"><div class="c-main" id="div-comment-22704">当然是自己在服务器上面搭建Brook服务端的到呀，目前还没有人公共免费分享Brook账号（因为这软件不能限制连接设备数和限速，容易被滥用）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-14 10:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22704#respond' onclick='return addComment.moveForm( "div-comment-22704", "22704", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-22435"><div class="c-avatar"><div class="c-main" id="div-comment-22435">我换了好几个vps点击SAVE都保存不了咋回事？？？？<div class="c-meta"><span class="c-author">fejl403</span>2017-11-11 13:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22435#respond' onclick='return addComment.moveForm( "div-comment-22435", "22435", "respond", "2118" )' aria-label='回复给fejl403'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22438"><div class="c-avatar"><div class="c-main" id="div-comment-22438">保存不了是什么意思？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-11 13:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22438#respond' onclick='return addComment.moveForm( "div-comment-22438", "22438", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-22880"><div class="c-avatar"><div class="c-main" id="div-comment-22880">点击保存 SAVE 按钮后  这一步经常失败<div class="c-meta"><span class="c-author">fejl403</span>2017-11-16 17:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22880#respond' onclick='return addComment.moveForm( "div-comment-22880", "22880", "respond", "2118" )' aria-label='回复给fejl403'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-22882"><div class="c-avatar"><div class="c-main" id="div-comment-22882">失败什么意思？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-16 17:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22882#respond' onclick='return addComment.moveForm( "div-comment-22882", "22882", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-23037"><div class="c-avatar"><div class="c-main" id="div-comment-23037">点击SAVE  之后显示这个 Server Invalid （保存不上）     右键 Stop按钮也是灰色的<div class="c-meta"><span class="c-author">fejl403</span>2017-11-19 16:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23037#respond' onclick='return addComment.moveForm( "div-comment-23037", "23037", "respond", "2118" )' aria-label='回复给fejl403'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-6" id="comment-23040"><div class="c-avatar"><div class="c-main" id="div-comment-23040">那就去Github联系作者反馈。软件问题我无法解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-19 17:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23040#respond' onclick='return addComment.moveForm( "div-comment-23040", "23040", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-7" id="comment-23264"><div class="c-avatar"><div class="c-main" id="div-comment-23264">好吧大佬<div class="c-meta"><span class="c-author">fejl403</span>2017-11-24 13:47 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23264#respond' onclick='return addComment.moveForm( "div-comment-23264", "23264", "respond", "2118" )' aria-label='回复给fejl403'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-8" id="comment-23272"><div class="c-avatar"><div class="c-main" id="div-comment-23272">是不是用了中文的冒号<div class="c-meta"><span class="c-author">popcorn</span>2017-11-24 15:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23272#respond' onclick='return addComment.moveForm( "div-comment-23272", "23272", "respond", "2118" )' aria-label='回复给popcorn'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even depth-6" id="comment-32760"><div class="c-avatar"><div class="c-main" id="div-comment-32760">是不是没有填端口号<div class="c-meta"><span class="c-author">youyou</span>2018-03-06 20:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=32760#respond' onclick='return addComment.moveForm( "div-comment-32760", "32760", "respond", "2118" )' aria-label='回复给youyou'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22241"><div class="c-avatar"><div class="c-main" id="div-comment-22241">逗比 这个协议不能在普通的socks5代理软件上使用吧<div class="c-meta"><span class="c-author">biaxiao</span>2017-11-09 14:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22241#respond' onclick='return addComment.moveForm( "div-comment-22241", "22241", "respond", "2118" )' aria-label='回复给biaxiao'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22271"><div class="c-avatar"><div class="c-main" id="div-comment-22271">当然不行，普通软件中的SOCKS5代理，必须是原生SOCKS5代理，Brook和SSR这些基于SOCKS5协议的代理账号都需要特定客户端链接。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-09 22:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22271#respond' onclick='return addComment.moveForm( "div-comment-22271", "22271", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22183"><div class="c-avatar"><div class="c-main" id="div-comment-22183">mac端打开有疑问：该文件可能已使用了不同的文本编码来存储，或者可能不是文本文件。这啥情况？<div class="c-meta"><span class="c-author">大屌王</span>2017-11-08 11:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22183#respond' onclick='return addComment.moveForm( "div-comment-22183", "22183", "respond", "2118" )' aria-label='回复给大屌王'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22188"><div class="c-avatar"><div class="c-main" id="div-comment-22188">不清楚，我没有MAC设备，建议去Github联系作者询问。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-08 12:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22188#respond' onclick='return addComment.moveForm( "div-comment-22188", "22188", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22113"><div class="c-avatar"><div class="c-main" id="div-comment-22113">问一下XP是不是不支持？运行32位的闪一下窗口没了。<div class="c-meta"><span class="c-author">小金</span>2017-11-07 09:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22113#respond' onclick='return addComment.moveForm( "div-comment-22113", "22113", "respond", "2118" )' aria-label='回复给小金'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22121"><div class="c-avatar"><div class="c-main" id="div-comment-22121">不是很清楚，我没用XP试过，建议去Github向作者反馈，不过XP的确太老了，不支持也正常。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-07 11:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22121#respond' onclick='return addComment.moveForm( "div-comment-22121", "22121", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-22066"><div class="c-avatar"><div class="c-main" id="div-comment-22066">brook和ssr在服务端可以共存么？需不需要关闭其中一个才能打开另外一个？<div class="c-meta"><span class="c-author">Whiood</span>2017-11-06 17:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22066#respond' onclick='return addComment.moveForm( "div-comment-22066", "22066", "respond", "2118" )' aria-label='回复给Whiood'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-22071"><div class="c-avatar"><div class="c-main" id="div-comment-22071">可以共存，只要端口分开。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-06 19:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22071#respond' onclick='return addComment.moveForm( "div-comment-22071", "22071", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-23713"><div class="c-avatar"><div class="c-main" id="div-comment-23713">端口分开指的是自己账号的端口吗。比如ssr是A账号端口1000，brook是B账号断后2000。是在这个吗？<div class="c-meta"><span class="c-author">usyoung</span>2017-12-02 03:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23713#respond' onclick='return addComment.moveForm( "div-comment-23713", "23713", "respond", "2118" )' aria-label='回复给usyoung'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-23721"><div class="c-avatar"><div class="c-main" id="div-comment-23721">是的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-12-02 12:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23721#respond' onclick='return addComment.moveForm( "div-comment-23721", "23721", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-22053"><div class="c-avatar"><div class="c-main" id="div-comment-22053">谢谢分享，改天可以试试！<div class="c-meta"><span class="c-author">Yovan</span>2017-11-06 13:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22053#respond' onclick='return addComment.moveForm( "div-comment-22053", "22053", "respond", "2118" )' aria-label='回复给Yovan'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21959"><div class="c-avatar"><div class="c-main" id="div-comment-21959">我是安卓5.1.1系统，安卓端安装打开以后，界面一片空白，没有地方可以设置账号密码端口等。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">asay</span>2017-11-05 11:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21959#respond' onclick='return addComment.moveForm( "div-comment-21959", "21959", "respond", "2118" )' aria-label='回复给asay'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21988"><div class="c-avatar"><div class="c-main" id="div-comment-21988">请去Github向作者反馈。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-05 17:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21988#respond' onclick='return addComment.moveForm( "div-comment-21988", "21988", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-29679"><div class="c-avatar"><div class="c-main" id="div-comment-29679">兄弟，我也是这个情况，我的是因为悬浮窗权限没有打开的原因，。你可以试试<div class="c-meta"><span class="c-author"><a href='http://blog.uug5.com/' rel='external nofollow' class='url'>小磊</a></span>2018-01-17 10:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=29679#respond' onclick='return addComment.moveForm( "div-comment-29679", "29679", "respond", "2118" )' aria-label='回复给小磊'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-31573"><div class="c-avatar"><div class="c-main" id="div-comment-31573">我也是这个情况，但我是安卓7.1，我重启就显示了，但是关闭软件又打开，就又是空白的，你解决了么<div class="c-meta"><span class="c-author">粗音</span>2018-02-17 13:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=31573#respond' onclick='return addComment.moveForm( "div-comment-31573", "31573", "respond", "2118" )' aria-label='回复给粗音'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21935"><div class="c-avatar"><div class="c-main" id="div-comment-21935">感觉手机应该不是全局代理的，手机上运行测速软件显示的外网还是自己的，不是vps的ip，还有就是请问在电脑上是不是全局代理啊。<div class="c-meta"><span class="c-author">漫步云端</span>2017-11-05 01:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21935#respond' onclick='return addComment.moveForm( "div-comment-21935", "21935", "respond", "2118" )' aria-label='回复给漫步云端'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21925"><div class="c-avatar"><div class="c-main" id="div-comment-21925">dalao,brook是不是不支持ipv6啊<div class="c-meta"><span class="c-author">john</span>2017-11-04 23:41 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21925#respond' onclick='return addComment.moveForm( "div-comment-21925", "21925", "respond", "2118" )' aria-label='回复给john'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21929"><div class="c-avatar"><div class="c-main" id="div-comment-21929">不清楚，没有IPV6环境测试，不过看Brook默认监听了IPV6地址，应该是支持的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-04 23:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21929#respond' onclick='return addComment.moveForm( "div-comment-21929", "21929", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21916"><div class="c-avatar"><div class="c-main" id="div-comment-21916">一间安装脚本安装成功，其中2333端口那步需要根据情况自行修改，否则可能冲突（SSR）
+电脑是win7 x64版本，运行客户端后选择Type，无论是Brook还是Brook Streanm都试了，SSR也退出了，可就是连不上，用的是CHROME浏览器，配合switchy omega插件，规则仍然选择的是SSR自动(您说了还是1080端口)，不知道还有没有其他需要注意的地方？？ 
+谢谢<div class="c-meta"><span class="c-author">天天想你</span>2017-11-04 21:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21916#respond' onclick='return addComment.moveForm( "div-comment-21916", "21916", "respond", "2118" )' aria-label='回复给天天想你'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21931"><div class="c-avatar"><div class="c-main" id="div-comment-21931">请提供服务端日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-04 23:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21931#respond' onclick='return addComment.moveForm( "div-comment-21931", "21931", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-21955"><div class="c-avatar"><div class="c-main" id="div-comment-21955">解决啦，是我代理插件没有设置后，应该设置为socks5，之前SSR用http可以，但是brook必须选socks5
+我用的ramnode的vps，brook速度和ssr无明显区别，youtube可以720p，带不动1080p<div class="c-meta"><span class="c-author">天天想你</span>2017-11-05 10:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21955#respond' onclick='return addComment.moveForm( "div-comment-21955", "21955", "respond", "2118" )' aria-label='回复给天天想你'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-4" id="comment-23714"><div class="c-avatar"><div class="c-main" id="div-comment-23714">我ssr设置soCK5自动模式好像不行。你的可以吗？<div class="c-meta"><span class="c-author">usyoung</span>2017-12-02 03:52 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=23714#respond' onclick='return addComment.moveForm( "div-comment-23714", "23714", "respond", "2118" )' aria-label='回复给usyoung'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21872"><div class="c-avatar"><div class="c-main" id="div-comment-21872">大师。请问有不有适合openwrt路由器的客户端？<div class="c-meta"><span class="c-author">csvv</span>2017-11-04 13:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21872#respond' onclick='return addComment.moveForm( "div-comment-21872", "21872", "respond", "2118" )' aria-label='回复给csvv'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21880"><div class="c-avatar"><div class="c-main" id="div-comment-21880">这种需要那些 路由器固件开发者 去吧Brook Linux客户端集成到固件内才行。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-04 14:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21880#respond' onclick='return addComment.moveForm( "div-comment-21880", "21880", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21840"><div class="c-avatar"><div class="c-main" id="div-comment-21840">http://local.txthinking.com:1980/
+打不开啊，已经打开小钥匙了<div class="c-meta"><span class="c-author">Zephyrus</span>2017-11-03 21:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21840#respond' onclick='return addComment.moveForm( "div-comment-21840", "21840", "respond", "2118" )' aria-label='回复给Zephyrus'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21844"><div class="c-avatar"><div class="c-main" id="div-comment-21844">右键托盘图标，点击 Setting ，就会出现控制页面。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 22:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21844#respond' onclick='return addComment.moveForm( "div-comment-21844", "21844", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-21850"><div class="c-avatar"><div class="c-main" id="div-comment-21850">brook已经打开了,打不开这网页，一直正在连接<div class="c-meta"><span class="c-author">Zephyrus</span>2017-11-03 22:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21850#respond' onclick='return addComment.moveForm( "div-comment-21850", "21850", "respond", "2118" )' aria-label='回复给Zephyrus'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-4" id="comment-21878"><div class="c-avatar"><div class="c-main" id="div-comment-21878">端口被占用了1080<div class="c-meta"><span class="c-author">1111</span>2017-11-04 14:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21878#respond' onclick='return addComment.moveForm( "div-comment-21878", "21878", "respond", "2118" )' aria-label='回复给1111'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-3" id="comment-21877"><div class="c-avatar"><div class="c-main" id="div-comment-21877">SSTAP里sock5 127.0.0.1 1080无法连接，只有HTTP模式才能连接<div class="c-meta"><span class="c-author">Zephyrus</span>2017-11-04 14:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21877#respond' onclick='return addComment.moveForm( "div-comment-21877", "21877", "respond", "2118" )' aria-label='回复给Zephyrus'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21831"><div class="c-avatar"><div class="c-main" id="div-comment-21831">安卓手机能连上，国内网址可随意打开，但海外那些出不去咋回事？<div class="c-meta"><span class="c-author">阿健</span>2017-11-03 20:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21831#respond' onclick='return addComment.moveForm( "div-comment-21831", "21831", "respond", "2118" )' aria-label='回复给阿健'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-21821"><div class="c-avatar"><div class="c-main" id="div-comment-21821">端口/密码怎么填?Brook账号哪里找呢?<div class="c-meta"><span class="c-author">ALXE</span>2017-11-03 16:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21821#respond' onclick='return addComment.moveForm( "div-comment-21821", "21821", "respond", "2118" )' aria-label='回复给ALXE'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-21833"><div class="c-avatar"><div class="c-main" id="div-comment-21833">教程里不是写了怎么填？就两个输入框还能找不到？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 20:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21833#respond' onclick='return addComment.moveForm( "div-comment-21833", "21833", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21780"><div class="c-avatar"><div class="c-main" id="div-comment-21780">手机只能全局不能绕过局域网比较麻烦<div class="c-meta"><span class="c-author">液体可怕</span>2017-11-03 13:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21780#respond' onclick='return addComment.moveForm( "div-comment-21780", "21780", "respond", "2118" )' aria-label='回复给液体可怕'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-21778"><div class="c-avatar"><div class="c-main" id="div-comment-21778">逗比站长，这个Brook在windows平台可以可以用于游戏么？用于游戏是全局模式？能否做到像ssr用sstap选择不代理中国ip这种效果呢？<div class="c-meta"><span class="c-author">小小超818</span>2017-11-03 13:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21778#respond' onclick='return addComment.moveForm( "div-comment-21778", "21778", "respond", "2118" )' aria-label='回复给小小超818'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-21797"><div class="c-avatar"><div class="c-main" id="div-comment-21797">支持SSTAP，运行并启动Brook后，SSTAP添加SOCKS5代理：127.0.0.1 1080，然后就能通过SSTAP转全局了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-03 14:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21797#respond' onclick='return addComment.moveForm( "div-comment-21797", "21797", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21852"><div class="c-avatar"><div class="c-main" id="div-comment-21852">为啥我不能转发。。。
+[23:56]  TCP测试开始.
+[23:56]  正在测试TCP数据传递...
+[23:56]  连接到SS节点...
+[23:56]  已连接到SS节点.
+[23:56]  连接通过代理服务器时失败.
+[23:56]  连接到SS节点...
+[23:56]  已连接到SS节点.
+[23:56]  连接通过代理服务器时失败.
+[23:57]  连接到SS节点...
+[23:57]  已连接到SS节点.
+[23:57]  连接通过代理服务器时失败.
+[23:57]  连接到SS节点...
+[23:57]  已连接到SS节点.
+[23:57]  连接通过代理服务器时失败.
+[23:57]  测试TCP数据传递...未通过!
+[23:57]  测试完成!
+[23:57]  //////////////////////////////////////////////
+[23:57]  UDP测试开始.
+[23:57]  正在测试UDP转发...
+[23:57]  正在从代理服务器请求UDP转发...
+[23:57]  不能连接到代理.
+[23:57]  测试UDP转发...未通过!
+[23:57]  测试完成!
+[23:57]  //////////////////////////////////////////////<div class="c-meta"><span class="c-author"><a href='http://www.ccer.me/' rel='external nofollow' class='url'>Streamer</a></span>2017-11-03 23:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21852#respond' onclick='return addComment.moveForm( "div-comment-21852", "21852", "respond", "2118" )' aria-label='回复给Streamer'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-4" id="comment-21871"><div class="c-avatar"><div class="c-main" id="div-comment-21871">同SSTAP无法连接<div class="c-meta"><span class="c-author">Zephyrus</span>2017-11-04 13:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21871#respond' onclick='return addComment.moveForm( "div-comment-21871", "21871", "respond", "2118" )' aria-label='回复给Zephyrus'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-21724"><div class="c-avatar"><div class="c-main" id="div-comment-21724">为什么我手机能翻 电脑不行 都是brook 一样的代理设置<div class="c-meta"><span class="c-author">ero</span>2017-11-02 11:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21724#respond' onclick='return addComment.moveForm( "div-comment-21724", "21724", "respond", "2118" )' aria-label='回复给ero'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-22254"><div class="c-avatar"><div class="c-main" id="div-comment-22254">我也是一样的问题，电脑上软件设置了好多次，找到解决办法了没有<div class="c-meta"><span class="c-author">液体可怕</span>2017-11-09 18:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=22254#respond' onclick='return addComment.moveForm( "div-comment-22254", "22254", "respond", "2118" )' aria-label='回复给液体可怕'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-16456"><div class="c-avatar"><div class="c-main" id="div-comment-16456">我就想问问，音乐是什么协议？ 有什么用？ 加密数据吗？ 还是可以做免流？<div class="c-meta"><span class="c-author">菜鸟123</span>2017-08-04 10:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16456#respond' onclick='return addComment.moveForm( "div-comment-16456", "16456", "respond", "2118" )' aria-label='回复给菜鸟123'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-16458"><div class="c-avatar"><div class="c-main" id="div-comment-16458">应该是一直混淆插件吧，官方也没什么说明，无视即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-04 10:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16458#respond' onclick='return addComment.moveForm( "div-comment-16458", "16458", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-21632"><div class="c-avatar"><div class="c-main" id="div-comment-21632">大致看了作者写的关于music部分的golang代码，发现作者是将加密的流量当成是音乐数据(杂乱无序)，然后混入访问中国移动/联通/电信的正常网页内容，以此来躲避墙的检测，但是这样做了之后反而被容易识破，毕竟内容是写成了固定的了。不过这个想法很好，如果能动态抓取某些没有被墙的网站的内容，把真实流量混杂在其中，就可以大大的降低被识别的风险。<div class="c-meta"><span class="c-author">123597</span>2017-10-31 17:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21632#respond' onclick='return addComment.moveForm( "div-comment-21632", "21632", "respond", "2118" )' aria-label='回复给123597'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16455"><div class="c-avatar"><div class="c-main" id="div-comment-16455">brook客户端下载地址页面下的有问题brook_windows_amd64.exe 是服务端吧
+应该下载tag是 v20170516的 brook.exe才是吧<div class="c-meta"><span class="c-author">菜鸟123</span>2017-08-04 09:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16455#respond' onclick='return addComment.moveForm( "div-comment-16455", "16455", "respond", "2118" )' aria-label='回复给菜鸟123'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16760"><div class="c-avatar"><div class="c-main" id="div-comment-16760">已经联系作者并且最新的Brook版本releases统一了各客户端版本号。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-10 07:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16760#respond' onclick='return addComment.moveForm( "div-comment-16760", "16760", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-16065"><div class="c-avatar"><div class="c-main" id="div-comment-16065">这个，，会不会更容易被抓呢，，，<div class="c-meta"><span class="c-author">在烀</span>2017-07-29 01:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16065#respond' onclick='return addComment.moveForm( "div-comment-16065", "16065", "respond", "2118" )' aria-label='回复给在烀'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-16066"><div class="c-avatar"><div class="c-main" id="div-comment-16066">不要整天想着被抓喝茶啥的，我做两年网站了都没事你们怕个毛。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-29 01:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=16066#respond' onclick='return addComment.moveForm( "div-comment-16066", "16066", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-21895"><div class="c-avatar"><div class="c-main" id="div-comment-21895">博主还是小心一点吧，http://yuweining.cn/ 这位就被喝茶了。<div class="c-meta"><span class="c-author">excited</span>2017-11-04 17:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=21895#respond' onclick='return addComment.moveForm( "div-comment-21895", "21895", "respond", "2118" )' aria-label='回复给excited'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13164"><div class="c-avatar"><div class="c-main" id="div-comment-13164">这个自带加速吗？<div class="c-meta"><span class="c-author"><a href='http://1/' rel='external nofollow' class='url'>1</a></span>2017-04-26 22:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=13164#respond' onclick='return addComment.moveForm( "div-comment-13164", "13164", "respond", "2118" )' aria-label='回复给1'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13165"><div class="c-avatar"><div class="c-main" id="div-comment-13165">什么自带加速？没有。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-26 22:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=13165#respond' onclick='return addComment.moveForm( "div-comment-13165", "13165", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-12992"><div class="c-avatar"><div class="c-main" id="div-comment-12992">电脑上已配置，感觉很方便，速度很快，而v2ray总是隔几秒会卡，不知道是不因为是我用的电信。而且手机在wifi状态下居然收不到数据。。（安卓）<div class="c-meta"><span class="c-author">beech_ru</span>2017-04-20 18:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12992#respond' onclick='return addComment.moveForm( "div-comment-12992", "12992", "respond", "2118" )' aria-label='回复给beech_ru'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12915"><div class="c-avatar"><div class="c-main" id="div-comment-12915">这个对比Shadowsocks有什么优势？<div class="c-meta"><span class="c-author">zykk</span>2017-04-17 23:06 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12915#respond' onclick='return addComment.moveForm( "div-comment-12915", "12915", "respond", "2118" )' aria-label='回复给zykk'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12917"><div class="c-avatar"><div class="c-main" id="div-comment-12917">优势：安装简单（Go语言单文件），官方直接支持全平台（开发周期不到一个月，所有平台的客户端和服务端齐全）等。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-17 23:32 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12917#respond' onclick='return addComment.moveForm( "div-comment-12917", "12917", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12831"><div class="c-avatar"><div class="c-main" id="div-comment-12831">brook账号和ss一样是ss账号吗<div class="c-meta"><span class="c-author">潜龙勿用</span>2017-04-15 15:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12831#respond' onclick='return addComment.moveForm( "div-comment-12831", "12831", "respond", "2118" )' aria-label='回复给潜龙勿用'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12835"><div class="c-avatar"><div class="c-main" id="div-comment-12835">当然不是，Brook是Brook，需要Brook的服务端和客户端，Shadowsocks是Shadowsocks，需要Shadowsocks的服务端和客户端。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-15 16:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12835#respond' onclick='return addComment.moveForm( "div-comment-12835", "12835", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12808"><div class="c-avatar"><div class="c-main" id="div-comment-12808">大大，我这有个问题，就是必须打开IE才能启动Brook，否则无法启动。系统是 Windows 10 RS1，默认浏览器是Chrome。<div class="c-meta"><span class="c-author">mzxwt</span>2017-04-14 21:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12808#respond' onclick='return addComment.moveForm( "div-comment-12808", "12808", "respond", "2118" )' aria-label='回复给mzxwt'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12814"><div class="c-avatar"><div class="c-main" id="div-comment-12814">请前往 <a href="https://github.com/txthinking/brook/issues" target="_blank" rel="nofollow">Github的issues</a> 反馈给作者详细信息。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-15 00:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12814#respond' onclick='return addComment.moveForm( "div-comment-12814", "12814", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-12572"><div class="c-avatar"><div class="c-main" id="div-comment-12572">电脑可以连接，安卓手机端失败！<div class="c-meta"><span class="c-author">DAY</span>2017-04-08 21:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12572#respond' onclick='return addComment.moveForm( "div-comment-12572", "12572", "respond", "2118" )' aria-label='回复给DAY'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-12573"><div class="c-avatar"><div class="c-main" id="div-comment-12573">我测试安卓是可用的，需要注意的是，这个软件需要安卓系统最低版本 5.0。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-08 22:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12573#respond' onclick='return addComment.moveForm( "div-comment-12573", "12573", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-12589"><div class="c-avatar"><div class="c-main" id="div-comment-12589">我是6.0版本，不行的<div class="c-meta"><span class="c-author">DAY</span>2017-04-09 12:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12589#respond' onclick='return addComment.moveForm( "div-comment-12589", "12589", "respond", "2118" )' aria-label='回复给DAY'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-12591"><div class="c-avatar"><div class="c-main" id="div-comment-12591">那你去Github反馈给作者把，我 5.1 是正常的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-09 12:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12591#respond' onclick='return addComment.moveForm( "div-comment-12591", "12591", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-5" id="comment-12592"><div class="c-avatar"><div class="c-main" id="div-comment-12592">手机还需要其他设置吗？不会需要其他代理吧？<div class="c-meta"><span class="c-author">DAY</span>2017-04-09 12:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12592#respond' onclick='return addComment.moveForm( "div-comment-12592", "12592", "respond", "2118" )' aria-label='回复给DAY'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-12606"><div class="c-avatar"><div class="c-main" id="div-comment-12606">下载，安装，填写 Brook账号，点 Start 即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-04-09 19:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/brook-jc2/?replytocom=12606#respond' onclick='return addComment.moveForm( "div-comment-12606", "12606", "respond", "2118" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='oex66apx-3.html#comments'>2</a>
+<a class="next page-numbers" href="oex66apx-3.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ckd88fe-container ckd88fe-1 ckd88fe-hide">
+    <div class="ckd88fe-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ckd88fe"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1951] -->
+<meta name="description"  content="前几天的时候，因为网站丢失数据，最后重建网站了，以前一直用的是各种 LNMP 一键包（命令行管理），看别人推荐宝塔面板（网页面板管理），所以我也装了个试试，然后发现还挺好用的，这次就写个 宝塔面板中自带的一键配置反向代理功能，很好用，我的 镜像域名 doubmr.date" />
+
+<meta name="keywords"  content="cdn,反向代理,宝塔面板,镜像" />
+
+<link rel="canonical" href="hxvodqzg.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程' href='a6551xds.html' />
+<link rel='next' title='『预售』GigsGigsCloud – GIA CN2 美国洛杉矶 KVM 限量预售 3.8美元/月' href='jch7qikp.html' />
+<link rel='shortlink' href='https://doub.io/?p=2565' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-39%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-39%2F&amp;format=xml" />
+<style>
+.ok04ca1{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.ok04ca1-hide{
+    display: none;
+}
+.ok04ca1-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.ok04ca1-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.ok04ca1-2 .ok04ca1-body,.ok04ca1-3 .ok04ca1-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.ok04ca1-2 .close-btn,.ok04ca1-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.ok04ca1-3 .ok04ca1-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.ok04ca1').html(kill_adBlock_message);
+            jQuery('.ok04ca1-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.ok04ca1-container').fadeOut('ok04ca1-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="CDN, 反向代理, 宝塔面板, 镜像, 建站资源, 网络资源">
+<meta name="description" content="前几天的时候，因为网站丢失数据，最后重建网站了，以前一直用的是各种 LNMP 一键包（命令行管理），看别人推荐宝塔面板（网页面板管理），所以我也装了个试试，然后发现还挺好用的，这次就写个 宝塔面板中自带的一键配置反向代理功能，很好用，我的 镜像域名 doubmr.date 就是用这个一键完成的。  反向代理、镜像、CDN从某种程度上来说都是一回事，不过CDN是由大量服务器做反向代理+缓存实现的。  宝塔面板官网：http://www.b">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2565 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="hxvodqzg.html">使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="f3dg9hl6.html"> 建站资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 10个月前 (01-15)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 25601℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="hxvodqzg.html#comments">121评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="hxvodqzg.html#安装面板" title="安装面板"><span>安装面板</span></a><ul class="children"><li class="content-index-level-2"><a href="hxvodqzg.html#安装前提" title="安装前提"><span>安装前提</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#面板特色功能：" title="面板特色功能："><span>面板特色功能：</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#安装步骤" title="安装步骤"><span>安装步骤</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#安装过程" title="安装过程"><span>安装过程</span></a></li></ul></li><li class="content-index-level-1"><a href="hxvodqzg.html#配置面板" title="配置面板"><span>配置面板</span></a><ul class="children"><li class="content-index-level-2"><a href="hxvodqzg.html#关于版本：" title="关于版本："><span>关于版本：</span></a></li></ul></li><li class="content-index-level-1"><a href="hxvodqzg.html#配置反向代理" title="配置反向代理"><span>配置反向代理</span></a><ul class="children"><li class="content-index-level-2"><a href="hxvodqzg.html#添加站点" title="添加站点"><span>添加站点</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#如何配置SSL证书（可选）" title="如何配置SSL证书（可选）"><span>如何配置SSL证书（可选）</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#配置反向代理" title="配置反向代理"><span>配置反向代理</span></a><ul class="children"><li class="content-index-level-3"><a href="hxvodqzg.html#反向代理示例 效果如下：" title="反向代理示例 效果如下："><span>反向代理示例 效果如下：</span></a></li></ul></li></ul></li><li class="content-index-level-1"><a href="hxvodqzg.html#其他问题" title="其他问题"><span>其他问题</span></a><ul class="children"><li class="content-index-level-2"><a href="hxvodqzg.html#打开 phpMyAdmin 提示 502 Bad Gateway 错误" title="打开 phpMyAdmin 提示 502 Bad Gateway 错误"><span>打开 phpMyAdmin 提示 502 Bad Gateway 错误</span></a></li><li class="content-index-level-2"><a href="hxvodqzg.html#打开 反向代理网站 提示 502 Bad Gateway 错误" title="打开 反向代理网站 提示 502 Bad Gateway 错误"><span>打开 反向代理网站 提示 502 Bad Gateway 错误</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年1月20日 16:09</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>前几天的时候，因为网站丢失数据，最后重建网站了，以前一直用的是各种 LNMP 一键包（命令行管理），看别人推荐宝塔面板（网页面板管理），所以我也装了个试试，然后发现还挺好用的，这次就写个 宝塔面板中自带的一键配置反向代理功能，很好用，我的 镜像域名 doubmr.date 就是用这个一键完成的。</p>
+<p>反向代理、镜像、CDN从某种程度上来说都是一回事，不过CDN是由大量服务器做反向代理+缓存实现的。</p>
+<p><strong>宝塔面板官网：<a href="http://www.bt.cn/" target="_blank" rel="noopener">http://www.bt.cn/</a></strong></p>
+<h2 id="安装面板">安装面板</h2>
+<h3 id="安装前提">安装前提</h3>
+<p><strong>宝塔面板支持：</strong>CentOS、Ubuntu、Debian、Fedora 系统。</p>
+<p><strong>Python版本：</strong> 2.6/2.7（安装宝塔时会自动安装）</p>
+<p><strong>内存：</strong>128M以上，<strong>推荐512M以上</strong>（纯面板约占系统10M内存）</p>
+<p><strong>硬盘：</strong>100M以上可用硬盘空间（纯面板约占20M磁盘空间）</p>
+<p><strong>系统：</strong>安装宝塔面板前，<span style="color: #ff6464;"><strong>请务必使用纯净的系统（也就是去重装一下服务器）</strong></span>，没有安装过其它环境带的Apache/Nginx/php/MySQL！</p>
+<h3 id="面板特色功能：">面板特色功能：</h3>
+<ol>
+<li>一键配置服务器环境（LAMP/LNMP）</li>
+<li>一键安全重启</li>
+<li>一键创建管理网站、ftp、数据库</li>
+<li>一键配置（定期备份、数据导入、伪静态、301、SSL、子目录、反向代理、切换PHP版本）</li>
+<li>一键安装常用PHP扩展(fileinfo、intl、opcache、imap、memcache、apc、redis、ioncube、imagick)</li>
+<li>数据库一键导入导出</li>
+<li>系统监控（CPU、内存、磁盘IO、网络IO）</li>
+<li>防火墙端口放行</li>
+<li>SSH开启与关闭及SSH端口更改</li>
+<li>禁PING开启或关闭</li>
+<li>方便高效的文件管理器（上传、下载、压缩、解压、查看、编辑等等）</li>
+<li>计划任务（定期备份、日志切割、shell脚本）</li>
+<li>软件管理（一键安装、卸载、版本切换）</li>
+</ol>
+<h3 id="安装步骤">安装步骤</h3>
+<p>请根据你的系统选择并执行以下命令：</p>
+<pre class="prettyprint linenums"><strong># Centos 安装命令：</strong>
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+
+<strong># Ubuntu/Deepin 安装命令：</strong>
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+
+<strong># Debian 安装命令：</strong>
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh
+
+<strong># Fedora 安装命令:</strong>
+wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; bash install.sh
+</pre>
+<h3 id="安装过程">安装过程</h3>
+<p>以下为执行上面的安装命令后输出的内容：</p>
+<p class="toggle" style="margin: 0;"><a href="#">点击展开 查看更多</a></p><div class="toggle-box" style="display: none;"><p></p>
+<pre class="prettyprint linenums"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="1c6e7373685c5853495e55">[email&#160;protected]</a>:~# wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh
+--2018-01-14 13:14:01--  http://download.bt.cn/install/install-ubuntu.sh
+Resolving download.bt.cn (download.bt.cn)... 103.224.251.67
+Connecting to download.bt.cn (download.bt.cn)|103.224.251.67|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 13572 (13K) [application/octet-stream]
+Saving to: ‘install.sh’
+
+install.sh                              100%[==============================================================================&gt;]  13.25K  --.-KB/s   in 0s     
+
+2018-01-14 13:14:01 (46.4 MB/s) - ‘install.sh’ saved [13572/13572]
+
+
++----------------------------------------------------------------------
+| Bt-WebPanel 5.x FOR Ubuntu/Debian
++----------------------------------------------------------------------
+| Copyright © 2015-2017 BT-SOFT(http://www.bt.cn) All rights reserved.
++----------------------------------------------------------------------
+| The WebPanel URL will be http://SERVER_IP:8888 when installed.
++----------------------------------------------------------------------
+
+<strong>Do you want to install Bt-Panel to the /www directory now?(y/n): y</strong>
+<strong># 这里是询问 宝塔面板安装目录的选项，默认输入 y 回车即可。</strong>
+
+...
+...
+...
+# 以上省略23333个字
+
+Creating config file /etc/ufw/before.rules with new version
+
+Creating config file /etc/ufw/before6.rules with new version
+
+Creating config file /etc/ufw/after.rules with new version
+
+Creating config file /etc/ufw/after6.rules with new version
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Processing triggers for libc-bin (2.19-18) ...
+Processing triggers for systemd (215-17) ...
+Rules updated
+Rules updated (v6)
+Rules updated
+Rules updated (v6)
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? Firewall is active and enabled on system startup
+Default incoming policy changed to 'deny'
+(be sure to update your rules accordingly)
+Firewall reloaded
+Double requirement given: psutil (already in psutil, name='psutil')
+Storing debug log for failure in /root/.pip/pip.log
+<strong>==================================================================
+Congratulations! Install succeeded!
+==================================================================
+Bt-Panel: http://xxx.xxx.xxx.xxx:8888
+# 这里是你的面板地址（可修改）
+username: admin
+# 这里是默认的面板账号（可修改）
+password: xxxxxxx
+# 这里是默认的面板密码（可修改）
+Warning:
+If you cannot access the panel, 
+release the following port (8888|888|80|443|20|21) in the security group
+==================================================================
+Time consumed: 4 Minute!
+# 安装全程用了 4 分钟</strong>
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="74061b1b0034303b21363d">[email&#160;protected]</a>:~# 
+
+<strong># 当执行结果到这里的时候，就说明安装完毕了。</strong></pre>
+<p></p></div>
+<h2 id="配置面板">配置面板</h2>
+<p>如果不出意外的情况下，安装面板后，就直接通过最后输出的 <strong>面板地址、面板账号、面板密码</strong>去登陆。</p>
+<p><img class="size-medium aligncenter" src="l4jl4r4a.png" width="673" height="577" /></p>
+<p>登陆面板后，会提示你安装网站环境套件，也就是LNMP LAMP 之类的。</p>
+<blockquote><p><strong>注意这里！</strong></p>
+<p>当你只打算用宝塔面板做反向代理，不打算做网站的时候，<strong>只需要勾选LNMP中的 Nginx 选项，其他的 Mysql、PHP之类的全不需要勾选</strong>（当然那个安装方式：极速安装 要勾选），然后直接点击 <strong>一键安装</strong> 按钮就行了。</p>
+<p>如果你想要做反向代理的时候同时做一些其它网站，或者不确定你以后会不会搭建其他网站，<strong>那么还是LNMP里面全选好了</strong>，然后点击 <strong>一键安装</strong> 按钮就行了。</p></blockquote>
+<h3 id="关于版本：">关于版本：</h3>
+<p><strong>Nginx</strong> 选择默认的 1.12 就行（目前是这个，一会的以宝塔面板默认版本为准）。</p>
+<p><strong>Mysql</strong> 数据库的话，如非必要就选择默认的 5.5 就行，<strong>如果要选择5.6及以上版本，则需要最少 1GB内存的服务器。</strong></p>
+<p><strong>FTP</strong> 的话，默认就行。</p>
+<p><strong>PHP</strong> 这个需要注意，如果你要建网站的话，你要先确定你的网站是否支持 PHP 7.0/7.1/7.2（之一），如果不确定那么就选择 PHP 5.6 ，不过 PHP 7 系列版本相比 5.6 版本要更快更省资源。</p>
+<p><strong>phpMyAdmin</strong> 这个是数据库的可视化操作面板（和宝塔面板是两回事），如果你安装了 Mysql数据库，那么也建议你安装这个，至于版本默认就行。</p>
+<p><img class="size-medium aligncenter" src="pybij40-.png" width="1035" height="541" /></p>
+<p>当你点击 <span style="color: #3366ff;"><strong>一键安装</strong></span> 按钮后，就会显示如下消息盒子，里面会看到各组件安装进度，下图是因为我安装这个面板除了写教程以外，一会也可以做点其他的事情，所以我是LNMP组件全都选了。</p>
+<p>如果你只选择 Nginx 的话，那么安装就快多了。像我这种全选的，根据服务器网速和性能，我差不多要二三十分钟才能安装完。这还是选的 <strong>急速安装</strong>，如果是 <strong>编译安装</strong>，可能要四十多分钟才行。</p>
+<blockquote><p>对了，LNMP组件安装过程中，无法修改 宝塔面板的端口等信息，但是可以修改登录宝塔面板的用户名和密码，只要去宝塔面板侧栏的<span style="color: #3366ff;"><strong>面板设置</strong></span>里就能看到。</p></blockquote>
+<p><img class="size-medium aligncenter" src="stffz5x_.png" width="634" height="593" /></p>
+<h2 id="配置反向代理">配置反向代理</h2>
+<p>当你的 Nginx 或者 LNMP 安装完后，我们就可以开始配置反向代理了。</p>
+<h3 id="添加站点">添加站点</h3>
+<p>点击宝塔面板侧栏 <span style="color: #3366ff;"><strong>网站 - 添加站点</strong></span>。</p>
+<p>然后会如下图所示，只需要填写 <strong>域名</strong>（支持绑定多个域名，一行一个）即可，备注自己看着设置（可选），至于其他的都不用管，直接点击 <span style="color: #3366ff;"><strong>提交</strong></span> 按钮。</p>
+<p><img class="size-medium aligncenter" src="vb9p4ft8.png" width="1097" height="600" /></p>
+<p>添加站点后，我们就会看到如下图所示，点击站点右边的 <span style="color: #3366ff;"><strong>设置</strong></span> 选项。</p>
+<p><img class="size-medium aligncenter" src="y7cmjsqh.png" width="768" height="251" /></p>
+<h3 id="如何配置SSL证书（可选）">如何配置SSL证书（可选）</h3>
+<p>如果你要反向代理 https 的网站，那么你也必须配置 SSL证书，而宝塔面板由三种方式配置：<strong>宝塔自己的SSL、Let's Encrypt 免费SSL、其他证书（手动填写）。</strong></p>
+<p><strong>宝塔SSL：</strong>需要注册宝塔的账号，然后去免费领取好像？我没用过不清楚。</p>
+<p><strong>Let's Encrypt 免费SSL：</strong>在各个免费SSL证书中，最出名的可能就是 Let's Encrypt 了吧，这个每次是签3个月证书，可以无限续签（面板自动），免费域名也能申请。</p>
+<p><strong>其他证书：</strong>这个就是你自己去其他渠道不管是购买还是找免费的，获取到证书后填写到这里。</p>
+<hr />
+<p>如果你要申请 Let's Encrypt 免费SSL ，那么<strong>首先你不能使用 CDN</strong>，然后需要去域名解析的地方解析域名，IP为当前服务器的IP，然后等一段时间使其解析全球生效，然后就如下图所示，填写一个可以用的邮箱，然后勾选你要申请SSL证书的域名，并点击 <span style="color: #3366ff;"><strong>申请</strong></span> 按钮，如果不出意外，面板就会自动申请配置成功！</p>
+<p>如果你需要强制使用 HTTPS，那么可以 开启 右上角的 <span style="color: #3366ff;"><strong>强制HTTPS</strong></span> 功能。</p>
+<p><img class="size-medium aligncenter" src="5kyh4gjf.png" width="635" height="397" /></p>
+<p><img class="size-medium aligncenter" src="8f2qis5d.png" width="633" height="439" /></p>
+<h3 id="配置反向代理">配置反向代理</h3>
+<p>然后就会看到 站点设置窗口，找到侧栏的 反向代理 选项点击后，就如下图所示：</p>
+<p><strong>目标URL：</strong>你要反向代理的目标网站地址/域名</p>
+<p><strong>发送域名：</strong>填写你要反向代理的目标网站域名</p>
+<p><strong>内容替换：</strong>左边填写要替换的内容（目标域名），右边填写要替换为的内容（你的域名）</p>
+<p>然后填写情况如下图所示：</p>
+<p>按照下图的填写后，就是我访问 <strong>http://jc.toyoo.pw</strong> 看到的网站内容就是站长工具 超级Ping（<strong>http://ping.chinaz.com</strong>）的网页内容。</p>
+<pre><strong>注意：</strong>如果你要反向代理 https 的网站，那么你这个域名也必须配置SSL才行，请配置反向代理前先配置好SSL，http 的则无所谓。</pre>
+<p>另外，建议开启<strong>缓存功能</strong>（图中忘记勾选了），开启缓存功能后，你访问反向代理的域名，会自动生成缓存，下次在访问就是直接发送缓存给你，就不需要反向代理服务器再去链接源网站获取信息了，可以显著加快速度。另外，默认情况下是缓存文件1个小时后自动到期，所以也不用担心缓存影响内容更新。</p>
+<p><img class="size-medium aligncenter" src="226jz5mg.png" width="630" height="556" /></p>
+<h4 id="反向代理示例 效果如下：">反向代理示例 效果如下：</h4>
+<p><img class="size-medium aligncenter" style="border-color: #dddddd; background-color: #fbfbfb;" src="--unz52c.png" width="895" height="633" /></p>
+<p>好吧，到这里教程就结束了，宝塔面板我感觉还是挺好用的，大家可以多研究研究，反正都是中文的。</p>
+<h2 id="其他问题">其他问题</h2>
+<h3 id="打开 phpMyAdmin 提示 502 Bad Gateway 错误">打开 phpMyAdmin 提示 502 Bad Gateway 错误</h3>
+<p>这个错误我也遇到过一次，最后网上找了找，找到了解决方法：</p>
+<p>首先进入宝塔面板后台，打开 <strong>phpMyAdmin 的设置窗口</strong>，选择左边侧栏的<strong> php版本 </strong>后，直接再点击一次 <span style="color: #3366ff;"><strong>保存</strong></span> 按钮即可。</p>
+<h3 id="打开 反向代理网站 提示 502 Bad Gateway 错误">打开 反向代理网站 提示 502 Bad Gateway 错误</h3>
+<p>反向代理出现这个错误，基本上就是你要反向代理的网站有反镜像措施，或者是挂了CDN。</p>
+<p>如果是CDN，那么你要反向代理它就<strong>必须知道真实IP</strong>，然后在反向代理服务器设置<code> /etc/hosts </code>文件，添加相应规则，例如：<code> 1.1.1.1 abc.com </code> 。</p>
+<hr />
+<p>有什么不懂得地方请在下面留言！</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="hxvodqzg.html">使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2565" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">171</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="pnqap_t4-2.html" rel="tag">CDN</a><a href="7-nhh6os.html" rel="tag">反向代理</a><a href="mqsvek9_.html" rel="tag">宝塔面板</a><a href="mc4k9j9b.html" rel="tag">镜像</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="a6551xds.html" rel="prev">『视频』ShadowsocksR 服务端一键脚本安装 新手小白视频教程</a></span>
+			<span class="article-nav-next"><a href="jch7qikp.html" rel="next">『预售』GigsGigsCloud – GIA CN2 美国洛杉矶 KVM 限量预售 3.8美元/月</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="tp_-ic2f-2.html" title="『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用" target="_blank">
+<img src="_a2jiq2t.png?src=https://doub.io/wp-content/uploads/logo-2.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用" />	<br><span class="r_title">『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="mc1t27yh.html" title="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" target="_blank">
+<img src="pp7hdx2n.png?src=https://img.doub.pw/thumbs/goflyway-05.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理" />	<br><span class="r_title">GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="tp_-ic2f.html" title="只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！" target="_blank">
+<img src="c7g8eufu.png?src=https://doub.io/wp-content/uploads/you2php.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！" />	<br><span class="r_title">只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="3--didfb-4.html" title="Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）" target="_blank">
+<img src="r6z3aser.png?src=https://doub.io/wp-content/uploads/qita-04-03.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）" />	<br><span class="r_title">Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="tp_-ic2f-2.html">『取消』做了一个可以获取 逗比根据地 最新镜像域名的网站，需要的人请收藏备用</a></li><li><i class="fa fa-minus"></i><a href="mc1t27yh.html">GoFlyway 进阶教程：免费域名+免费CDN+HTTP伪装=被墙的IP继续做代理</a></li><li><i class="fa fa-minus"></i><a href="tp_-ic2f.html">只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！</a></li><li><i class="fa fa-minus"></i><a href="3--didfb-4.html">Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）</a></li><li><i class="fa fa-minus"></i><a href="l-en8vwt-2.html">利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-4.html">一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程</a></li><li><i class="fa fa-minus"></i><a href="jgjhicaj-3.html">Google/Youtube/Wiki/Instagram等 一键镜像部署脚本 —— Zmirror</a></li><li><i class="fa fa-minus"></i><a href="l-en8vwt-3.html">另一种利用Nginx反向代理来简单镜像 HTTP(S)网站 的方法</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2565' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (121)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-37355"><div class="c-avatar"><div class="c-main" id="div-comment-37355">有一个问题，我的网页有个按钮，按钮的作用是唤醒电脑上的软件，这样的按钮链接能被识别，并且能在访问网站上生效吗<div class="c-meta"><span class="c-author">殇还有一季</span>2018-05-06 20:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=37355#respond' onclick='return addComment.moveForm( "div-comment-37355", "37355", "respond", "2565" )' aria-label='回复给殇还有一季'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-37398"><div class="c-avatar"><div class="c-main" id="div-comment-37398">你可以参考一些软件，例如迅雷下载连接那样的，因为这些软件会在本地注册相关配置，当浏览器访问指定连接后就会自动启动，所以你要实现这个效果必须有本地软件相关支持，而网页只需要做个新窗口打开链接的功能即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-05-07 14:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=37398#respond' onclick='return addComment.moveForm( "div-comment-37398", "37398", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-37077"><div class="c-avatar"><div class="c-main" id="div-comment-37077">页面不存在怎么办<div class="c-meta"><span class="c-author">九</span>2018-04-27 22:29 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=37077#respond' onclick='return addComment.moveForm( "div-comment-37077", "37077", "respond", "2565" )' aria-label='回复给九'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-36173"><div class="c-avatar"><div class="c-main" id="div-comment-36173">晕死了，之前按教程安装没有问题。现在新弄了个vps 同样debian8安装报错。。。。
+2018-04-10 06:51:10 (145 MB/s) - ‘install.sh’ saved [9507]
+
+install.sh: line 1: syntax error near unexpected token `newline'
+install.sh: line 1: `'<div class="c-meta"><span class="c-author">unclebob</span>2018-04-10 11:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=36173#respond' onclick='return addComment.moveForm( "div-comment-36173", "36173", "respond", "2565" )' aria-label='回复给unclebob'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-36179"><div class="c-avatar"><div class="c-main" id="div-comment-36179">看这个报错，可能是 官方安装脚本自身的问题。去论坛反馈吧。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-10 12:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=36179#respond' onclick='return addComment.moveForm( "div-comment-36179", "36179", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-35436"><div class="c-avatar"><div class="c-main" id="div-comment-35436">下载链接能更新下吗，我是Debian 7 x64  安装后的登录密码总是会错误，我在官网去拿下载链接安装就不会，不知道是为什么<div class="c-meta"><span class="c-author">贤狼</span>2018-04-02 15:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=35436#respond' onclick='return addComment.moveForm( "div-comment-35436", "35436", "respond", "2565" )' aria-label='回复给贤狼'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-35446"><div class="c-avatar"><div class="c-main" id="div-comment-35446">我去官网看了下，官网没有更改安装代码（下载链接）啊，仔细对比了一下，的确都一样。<br />
+<a href="https://www.bt.cn/bbs/thread-1186-1-1.html" target="_blank" rel="nofollow">https://www.bt.cn/bbs/thread-1186-1-1.html</a><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-04-02 16:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=35446#respond' onclick='return addComment.moveForm( "div-comment-35446", "35446", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-34722"><div class="c-avatar"><div class="c-main" id="div-comment-34722">大佬，使用宝塔面板反代下载超过1G的文件会下载出错，这个有遇到过吗？<div class="c-meta"><span class="c-author">sigar</span>2018-03-23 21:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=34722#respond' onclick='return addComment.moveForm( "div-comment-34722", "34722", "respond", "2565" )' aria-label='回复给sigar'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-34751"><div class="c-avatar"><div class="c-main" id="div-comment-34751">木有遇到，这类问题你可能需要去 宝塔面板的论坛反馈。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-24 12:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=34751#respond' onclick='return addComment.moveForm( "div-comment-34751", "34751", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-38612"><div class="c-avatar"><div class="c-main" id="div-comment-38612">宝塔面板只能反向代理一个网站吗<div class="c-meta"><span class="c-author">咯哦哦</span>2018-05-31 23:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=38612#respond' onclick='return addComment.moveForm( "div-comment-38612", "38612", "respond", "2565" )' aria-label='回复给咯哦哦'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-38616"><div class="c-avatar"><div class="c-main" id="div-comment-38616">再新建一个站点呗，每个站点(域名)可以反向代理一个网站。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-06-01 08:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=38616#respond' onclick='return addComment.moveForm( "div-comment-38616", "38616", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-34600"><div class="c-avatar"><div class="c-main" id="div-comment-34600">站长可以教怎么开影视在线观看网站吗？零基础的<div class="c-meta"><span class="c-author">YRT5</span>2018-03-22 18:14 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=34600#respond' onclick='return addComment.moveForm( "div-comment-34600", "34600", "respond", "2565" )' aria-label='回复给YRT5'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-33631"><div class="c-avatar"><div class="c-main" id="div-comment-33631">逗比能否出一期有了源码、vps（Centos系统的）、免费域名的很小白的网站搭建。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" />  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /> 求求你了<div class="c-meta"><span class="c-author">花壳科技</span>2018-03-18 15:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=33631#respond' onclick='return addComment.moveForm( "div-comment-33631", "33631", "respond", "2565" )' aria-label='回复给花壳科技'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-33639"><div class="c-avatar"><div class="c-main" id="div-comment-33639">还要怎么小白。。。<br />
+基础还是要自己学的（都是磕磕绊绊学过来的，我也是），不要指望靠一个教程一步登天。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-18 17:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=33639#respond' onclick='return addComment.moveForm( "div-comment-33639", "33639", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-33192"><div class="c-avatar"><div class="c-main" id="div-comment-33192">为什么宝塔面板添加主域名总是显示格式不正确啊？谢谢！<div class="c-meta"><span class="c-author">gdvpn</span>2018-03-15 17:18 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=33192#respond' onclick='return addComment.moveForm( "div-comment-33192", "33192", "respond", "2565" )' aria-label='回复给gdvpn'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-33230"><div class="c-avatar"><div class="c-main" id="div-comment-33230">那就说明格式不正确呗，你是怎么写的？发出来，我看过后会给你打码。<br />
+或者 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-03-16 13:28 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=33230#respond' onclick='return addComment.moveForm( "div-comment-33230", "33230", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-32376"><div class="c-avatar"><div class="c-main" id="div-comment-32376">不知道为什么代理谷歌无法成功。SSL都开启了 强制HTTPS开关全都试过了。只有google首页可以打开。但无法搜索，检查后发现每次点搜索的时候好像还是本机直接尝试访问google.com 并没有通过反向代理服务器<div class="c-meta"><span class="c-author">fanfan</span>2018-03-01 14:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=32376#respond' onclick='return addComment.moveForm( "div-comment-32376", "32376", "respond", "2565" )' aria-label='回复给fanfan'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-32463"><div class="c-avatar"><div class="c-main" id="div-comment-32463">知道问题了。是谷歌机器人验证的问题。 反代没法访问那个地址 因为不是www.google.com.hk开头的。 github上那个反代谷歌的和宝塔这个直接反代还是有区别的 里面加了很多东西 比如多重替换 还有防机器人验证啥的。 直接反代google还是不行的。但装了宝塔就不想折腾那个了。感觉好复杂的样子<div class="c-meta"><span class="c-author">fanfan</span>2018-03-02 14:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=32463#respond' onclick='return addComment.moveForm( "div-comment-32463", "32463", "respond", "2565" )' aria-label='回复给fanfan'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-31917"><div class="c-avatar"><div class="c-main" id="div-comment-31917">坐等大佬出宝塔+WordPress<div class="c-meta"><span class="c-author">promentory</span>2018-02-22 19:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31917#respond' onclick='return addComment.moveForm( "div-comment-31917", "31917", "respond", "2565" )' aria-label='回复给promentory'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31568"><div class="c-avatar"><div class="c-main" id="div-comment-31568">老哥，bt部署两个网站，为啥两个域名都跳转到第一个网站啊<div class="c-meta"><span class="c-author"><a href='https://qianmya.top/' rel='external nofollow' class='url'>千面妖</a></span>2018-02-17 11:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31568#respond' onclick='return addComment.moveForm( "div-comment-31568", "31568", "respond", "2565" )' aria-label='回复给千面妖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31589"><div class="c-avatar"><div class="c-main" id="div-comment-31589">明显配置有误。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-17 16:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31589#respond' onclick='return addComment.moveForm( "div-comment-31589", "31589", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-31333"><div class="c-avatar"><div class="c-main" id="div-comment-31333">pinterest.com这个不能做成功，对JAVA的支持有问题，老大怎么解决呢<div class="c-meta"><span class="c-author">Jason</span>2018-02-11 16:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31333#respond' onclick='return addComment.moveForm( "div-comment-31333", "31333", "respond", "2565" )' aria-label='回复给Jason'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-2" id="comment-33193"><div class="c-avatar"><div class="c-main" id="div-comment-33193">javfor.me也是，不要问我怎么知道的 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">爱因斯港</span>2018-03-15 17:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=33193#respond' onclick='return addComment.moveForm( "div-comment-33193", "33193", "respond", "2565" )' aria-label='回复给爱因斯港'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-31085"><div class="c-avatar"><div class="c-main" id="div-comment-31085">是不是用了cf cdn就不能用ssl加密了？<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-05 22:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31085#respond' onclick='return addComment.moveForm( "div-comment-31085", "31085", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-31086"><div class="c-avatar"><div class="c-main" id="div-comment-31086">用CF CDN之前申请免费SSL，如果挂了CDN，那么就无法申请了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-05 22:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31086#respond' onclick='return addComment.moveForm( "div-comment-31086", "31086", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-31089"><div class="c-avatar"><div class="c-main" id="div-comment-31089">可问题是我ssl加密之后再挂cdn网站就进不去 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-05 23:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31089#respond' onclick='return addComment.moveForm( "div-comment-31089", "31089", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-31091"><div class="c-avatar"><div class="c-main" id="div-comment-31091">取消 强制HTTPS 功能。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-06 00:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=31091#respond' onclick='return addComment.moveForm( "div-comment-31091", "31091", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-2" id="comment-42422"><div class="c-avatar"><div class="c-main" id="div-comment-42422">你可以用Cloudflare免费提供的ssl证书<div class="c-meta"><span class="c-author"><a href='http://ranfu.net/' rel='external nofollow' class='url'>Rayzggz</a></span>2018-08-30 00:26 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=42422#respond' onclick='return addComment.moveForm( "div-comment-42422", "42422", "respond", "2565" )' aria-label='回复给Rayzggz'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-30987"><div class="c-avatar"><div class="c-main" id="div-comment-30987">我的php7.1的总是安装不上怎么办<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-04 08:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30987#respond' onclick='return addComment.moveForm( "div-comment-30987", "30987", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30990"><div class="c-avatar"><div class="c-main" id="div-comment-30990">这你只能去宝塔面板论坛咨询了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-04 10:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30990#respond' onclick='return addComment.moveForm( "div-comment-30990", "30990", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30983"><div class="c-avatar"><div class="c-main" id="div-comment-30983">vultr的debian8/7 x64 怎么都装不上php和mysql 装完面板仍然显示未按照，大佬如何搞<div class="c-meta"><span class="c-author">maddaxman</span>2018-02-04 02:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30983#respond' onclick='return addComment.moveForm( "div-comment-30983", "30983", "respond", "2565" )' aria-label='回复给maddaxman'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30991"><div class="c-avatar"><div class="c-main" id="div-comment-30991">这你只能去宝塔面板论坛咨询了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-04 11:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30991#respond' onclick='return addComment.moveForm( "div-comment-30991", "30991", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-32182"><div class="c-avatar"><div class="c-main" id="div-comment-32182">每行一步
+<pre class="prettyprint linenums" >wget https://pypi.python.org/packages/a5/e9/51b544da85a36a68debe7a7091f068d802fc515a3a202652828c73453cad/MySQL-python-1.2.5.zip#md5=654f75b302db6ed8dc5a898c625e030c
+unzip MySQL-python-1.2.5.zip
+cd MySQL-python-1.2.5
+python setup.py install
+</pre><div class="c-meta"><span class="c-author">一位不愿意透露身份的热心网友</span>2018-02-27 00:50 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=32182#respond' onclick='return addComment.moveForm( "div-comment-32182", "32182", "respond", "2565" )' aria-label='回复给一位不愿意透露身份的热心网友'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30951"><div class="c-avatar"><div class="c-main" id="div-comment-30951">可不可以反代理我的宝塔面板？vps被墙了，每次都要挂着梯子上宝塔挺麻烦的<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-03 03:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30951#respond' onclick='return addComment.moveForm( "div-comment-30951", "30951", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30962"><div class="c-avatar"><div class="c-main" id="div-comment-30962">应该可以，你可以试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-03 10:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30962#respond' onclick='return addComment.moveForm( "div-comment-30962", "30962", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30935"><div class="c-avatar"><div class="c-main" id="div-comment-30935">Toyo大有没有时间写一个墙IP了的vps怎么续命的教程<div class="c-meta"><span class="c-author">GFW</span>2018-02-02 20:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30935#respond' onclick='return addComment.moveForm( "div-comment-30935", "30935", "respond", "2565" )' aria-label='回复给GFW'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30938"><div class="c-avatar"><div class="c-main" id="div-comment-30938">IP被墙，除非等墙解封，否则无法直连。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-02 21:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30938#respond' onclick='return addComment.moveForm( "div-comment-30938", "30938", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30902"><div class="c-avatar"><div class="c-main" id="div-comment-30902">我用的Let's Encrypt    免费SSL，没用CDN，搭建好了油管镜像，国内无法访问是不是因为这个原因？<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-02 14:25 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30902#respond' onclick='return addComment.moveForm( "div-comment-30902", "30902", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30911"><div class="c-avatar"><div class="c-main" id="div-comment-30911">因为你的 IP被墙。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-02 15:07 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30911#respond' onclick='return addComment.moveForm( "div-comment-30911", "30911", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-30914"><div class="c-avatar"><div class="c-main" id="div-comment-30914">有没有更换CF CDN的教程，我换一下  <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-02 15:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30914#respond' onclick='return addComment.moveForm( "div-comment-30914", "30914", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30887"><div class="c-avatar"><div class="c-main" id="div-comment-30887">ssl解析失败怎么办？<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-02 12:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30887#respond' onclick='return addComment.moveForm( "div-comment-30887", "30887", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30891"><div class="c-avatar"><div class="c-main" id="div-comment-30891">说明 免费SSL 的验证服务器访问你服务器验证域名解析失败了，建议等待半天一天后再去尝试，全球DNS解析根据你的域名托管DNS，可能会很快也可能会很慢。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-02 13:38 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30891#respond' onclick='return addComment.moveForm( "div-comment-30891", "30891", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-30899"><div class="c-avatar"><div class="c-main" id="div-comment-30899">我刚刚搭建成功了油管镜像，可是国内无法访问啊，还是要翻墙啊<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-02 14:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30899#respond' onclick='return addComment.moveForm( "div-comment-30899", "30899", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30822"><div class="c-avatar"><div class="c-main" id="div-comment-30822">为什么装完宝塔不登录半个小时左右就死活登不上去了了？ <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_sad.gif" alt=":sad:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-01 14:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30822#respond' onclick='return addComment.moveForm( "div-comment-30822", "30822", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30835"><div class="c-avatar"><div class="c-main" id="div-comment-30835">提示密码错误？如果是密码或者账号错误无法登陆，可以在服务器上面运行：
+<pre class="prettyprint linenums" >cd /www/server/panel && python tools.pyc panel 你要修改的密码
+</pre>
+然后就会修改密码，并且还会输出你的账号用户名。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-02-01 16:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30835#respond' onclick='return addComment.moveForm( "div-comment-30835", "30835", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-30883"><div class="c-avatar"><div class="c-main" id="div-comment-30883">不不不，是页面无法访问，现在我改了端口好了<div class="c-meta"><span class="c-author">就爱吃糖</span>2018-02-02 11:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30883#respond' onclick='return addComment.moveForm( "div-comment-30883", "30883", "respond", "2565" )' aria-label='回复给就爱吃糖'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30701"><div class="c-avatar"><div class="c-main" id="div-comment-30701">这个宝塔是国内的吧，国内的不是不行吗<div class="c-meta"><span class="c-author">neracn</span>2018-01-31 00:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30701#respond' onclick='return addComment.moveForm( "div-comment-30701", "30701", "respond", "2565" )' aria-label='回复给neracn'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30650"><div class="c-avatar"><div class="c-main" id="div-comment-30650">代理别人的网站怎么隐藏自己的域名和ip
+还有他的网站显示的地址和ip是啥，最好可以显示访客的ip，只做中转<div class="c-meta"><span class="c-author">yzg9540</span>2018-01-30 15:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30650#respond' onclick='return addComment.moveForm( "div-comment-30650", "30650", "respond", "2565" )' aria-label='回复给yzg9540'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30608"><div class="c-avatar"><div class="c-main" id="div-comment-30608">这个反代和Nginx google反代插件那个技术上有差距吗？我现在lnmp+反代插件，想换宝塔面板又有些没信心。<div class="c-meta"><span class="c-author"><a href='http://liuhan.me/' rel='external nofollow' class='url'>冷霜</a></span>2018-01-29 20:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30608#respond' onclick='return addComment.moveForm( "div-comment-30608", "30608", "respond", "2565" )' aria-label='回复给冷霜'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30631"><div class="c-avatar"><div class="c-main" id="div-comment-30631">没区别，只是一个是手动配置，这个是自动配置。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-30 14:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30631#respond' onclick='return addComment.moveForm( "div-comment-30631", "30631", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-30541"><div class="c-avatar"><div class="c-main" id="div-comment-30541">怎么获得镜像站的统计数据？<div class="c-meta"><span class="c-author"><a href='https://cicci.cc/' rel='external nofollow' class='url'>羅儿</a></span>2018-01-28 23:22 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30541#respond' onclick='return addComment.moveForm( "div-comment-30541", "30541", "respond", "2565" )' aria-label='回复给羅儿'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30539"><div class="c-avatar"><div class="c-main" id="div-comment-30539">看逗比大神的网站已经是每天的必做了，按照教程做了镜像网站，可懵逼的是，怎么得到镜像站的统计数据，统计代码没法安装，等待解决！<div class="c-meta"><span class="c-author"><a href='https://cicci.cc/' rel='external nofollow' class='url'>羅儿</a></span>2018-01-28 23:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30539#respond' onclick='return addComment.moveForm( "div-comment-30539", "30539", "respond", "2565" )' aria-label='回复给羅儿'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-30433"><div class="c-avatar"><div class="c-main" id="div-comment-30433">逗比是自己搭建的静态页面吗？还是用了模板？<div class="c-meta"><span class="c-author">helloYestaday</span>2018-01-27 22:02 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30433#respond' onclick='return addComment.moveForm( "div-comment-30433", "30433", "respond", "2565" )' aria-label='回复给helloYestaday'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30482"><div class="c-avatar"><div class="c-main" id="div-comment-30482">什么鬼？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-28 15:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30482#respond' onclick='return addComment.moveForm( "div-comment-30482", "30482", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-30572"><div class="c-avatar"><div class="c-main" id="div-comment-30572">貌似是欲思主题  也可能是git主题<div class="c-meta"><span class="c-author"><a href='http://www.banyuner.com/' rel='external nofollow' class='url'>BanYuner</a></span>2018-01-29 14:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30572#respond' onclick='return addComment.moveForm( "div-comment-30572", "30572", "respond", "2565" )' aria-label='回复给BanYuner'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-3" id="comment-30578"><div class="c-avatar"><div class="c-main" id="div-comment-30578">网站底部写了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-29 14:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30578#respond' onclick='return addComment.moveForm( "div-comment-30578", "30578", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-30367"><div class="c-avatar"><div class="c-main" id="div-comment-30367">证书获取失败，返回如下错误信息：
+
+Bootstrapping dependencies for RedHat-based OSes that will use Python3... (you can skip this with --no-bootstrap)
+yum is /usr/bin/yum
+To use Certbot, packages from the EPEL repository need to be installed.
+Enabling the EPEL repository in 3 seconds...[0K Enabling the EPEL repository in 2 seconds...[0K Enabling the EPEL repository in 1 second...
+Loaded plugins: fastestmirror
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+* base: mirrors.usc.edu
+* elrepo-kernel: repos.lax-noc.com
+* extras: mirror.scalabledns.com
+* updates: mirror.sigmanet.com
+Package epel-release-6-8.noarch already installed and latest version
+Nothing to do
+No supported Python package available to install. Aborting bootstrap!
+
+怎么回事 ？？？<div class="c-meta"><span class="c-author"><a href='http://www,ixakers.top/' rel='external nofollow' class='url'>akers</a></span>2018-01-27 14:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30367#respond' onclick='return addComment.moveForm( "div-comment-30367", "30367", "respond", "2565" )' aria-label='回复给akers'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-30373"><div class="c-avatar"><div class="c-main" id="div-comment-30373">申请 Let's Encrypt 免费SSL 需要服务器上面安装一些东西，你这是提示安装失败，可能是源有问题，自行更换软件包源。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-27 15:04 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30373#respond' onclick='return addComment.moveForm( "div-comment-30373", "30373", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-30439"><div class="c-avatar"><div class="c-main" id="div-comment-30439">谢谢你   已经噢了！<div class="c-meta"><span class="c-author"><a href='http://www,ixakers.top/' rel='external nofollow' class='url'>akers</a></span>2018-01-27 22:57 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30439#respond' onclick='return addComment.moveForm( "div-comment-30439", "30439", "respond", "2565" )' aria-label='回复给akers'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-30177"><div class="c-avatar"><div class="c-main" id="div-comment-30177">最后安装结束之后分配给我一个IPV6的HTTP网址，这个问题怎么解决啊？<div class="c-meta"><span class="c-author">SunZz</span>2018-01-25 13:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30177#respond' onclick='return addComment.moveForm( "div-comment-30177", "30177", "respond", "2565" )' aria-label='回复给SunZz'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30182"><div class="c-avatar"><div class="c-main" id="div-comment-30182">这可能是因为检测网卡IP的问题，不过这只影响显示的IP，你用 IPv4 地址(ipv4:8888)依然能访问的，可以进入宝塔面板中修改。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-25 14:01 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30182#respond' onclick='return addComment.moveForm( "div-comment-30182", "30182", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-30014"><div class="c-avatar"><div class="c-main" id="div-comment-30014">这个宝塔能反代youtube么? 怎么知道youtube的真实ip啊 谢谢<div class="c-meta"><span class="c-author">chanca</span>2018-01-23 21:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30014#respond' onclick='return addComment.moveForm( "div-comment-30014", "30014", "respond", "2565" )' aria-label='回复给chanca'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-30018"><div class="c-avatar"><div class="c-main" id="div-comment-30018">能反向代理 youtube 网页，但是 youtube 的视频是CDN分发的，只反向代理 youtube 网页是无法观看视频的。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-23 22:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30018#respond' onclick='return addComment.moveForm( "div-comment-30018", "30018", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-3" id="comment-30037"><div class="c-avatar"><div class="c-main" id="div-comment-30037">谢谢指点<div class="c-meta"><span class="c-author">chanca</span>2018-01-23 23:54 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30037#respond' onclick='return addComment.moveForm( "div-comment-30037", "30037", "respond", "2565" )' aria-label='回复给chanca'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29942"><div class="c-avatar"><div class="c-main" id="div-comment-29942">腾讯云安装完后，访问 http://IP:8888，提示“无法访问此网站” <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_smile.gif" alt=":smile:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Thee</span>2018-01-22 18:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29942#respond' onclick='return addComment.moveForm( "div-comment-29942", "29942", "respond", "2565" )' aria-label='回复给Thee'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29948"><div class="c-avatar"><div class="c-main" id="div-comment-29948">腾讯云、阿里云等服务器，均有外部防火墙，需要你开放外部防火墙 8888 端口才行。（自己去后台找 安全组 规则组 之类的地方）<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-22 19:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29948#respond' onclick='return addComment.moveForm( "div-comment-29948", "29948", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29892"><div class="c-avatar"><div class="c-main" id="div-comment-29892">发现反代理好像不能https代理http的网站？<div class="c-meta"><span class="c-author">ssl</span>2018-01-21 15:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29892#respond' onclick='return addComment.moveForm( "div-comment-29892", "29892", "respond", "2565" )' aria-label='回复给ssl'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29893"><div class="c-avatar"><div class="c-main" id="div-comment-29893">这个我没有尝试过，我只尝试过 http 反向代理 http ， https 反向代理 https 。<br />
+可能需要替换文本这样写： http://a.com 替换为 https://b.com 。不过如果目标网站内有很多 http 链接，那么会无法建立安全SSL通道。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-21 15:30 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29893#respond' onclick='return addComment.moveForm( "div-comment-29893", "29893", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-30089"><div class="c-avatar"><div class="c-main" id="div-comment-30089">谢谢<div class="c-meta"><span class="c-author">ssl</span>2018-01-24 14:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=30089#respond' onclick='return addComment.moveForm( "div-comment-30089", "30089", "respond", "2565" )' aria-label='回复给ssl'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29794"><div class="c-avatar"><div class="c-main" id="div-comment-29794">今天在linode新开了一个节点装了宝塔面板，装完LNMP以后装了SSR，之后想开BBR发现内核不支持，然后换了个官方内核，再然后MYSQL就打不开了，只能修改MYSQL配置或者重装MYSQL（我是重装的）
+所以如果用的是linode且同时要用SSR且要开启BBR的话，正确的顺序应该是先修改内核再安装宝塔面板 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kirafishy</span>2018-01-19 15:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29794#respond' onclick='return addComment.moveForm( "div-comment-29794", "29794", "respond", "2565" )' aria-label='回复给kirafishy'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29732"><div class="c-avatar"><div class="c-main" id="div-comment-29732">请教个安全问题：使用BT这类面板,BT公司会收集这台服务器的信息和知道上面部署了那些网站吧！<div class="c-meta"><span class="c-author">cool</span>2018-01-18 16:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29732#respond' onclick='return addComment.moveForm( "div-comment-29732", "29732", "respond", "2565" )' aria-label='回复给cool'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29742"><div class="c-avatar"><div class="c-main" id="div-comment-29742">不清楚，你可以自行查看面板源码，好像是 Python语言写的（解释性语言，等于开源）。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-18 20:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29742#respond' onclick='return addComment.moveForm( "div-comment-29742", "29742", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29692"><div class="c-avatar"><div class="c-main" id="div-comment-29692">最近网站域名被墙了，刚好试了下宝塔，感觉比LNMP好用不少<div class="c-meta"><span class="c-author">Rein</span>2018-01-17 18:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29692#respond' onclick='return addComment.moveForm( "div-comment-29692", "29692", "respond", "2565" )' aria-label='回复给Rein'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29686"><div class="c-avatar"><div class="c-main" id="div-comment-29686">免费域名也是可以申请到Let's Encrypt 证书的，之前.tk已经用过了<div class="c-meta"><span class="c-author">dvxc</span>2018-01-17 16:19 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29686#respond' onclick='return addComment.moveForm( "div-comment-29686", "29686", "respond", "2565" )' aria-label='回复给dvxc'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29687"><div class="c-avatar"><div class="c-main" id="div-comment-29687">嗯，昨天我测试发现也能申请，就给我的 两个探针页面 也配置了 SSL。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-17 16:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29687#respond' onclick='return addComment.moveForm( "div-comment-29687", "29687", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29685"><div class="c-avatar"><div class="c-main" id="div-comment-29685">重新安装的centos 7.x，立马用命令安装宝塔，完事后无法通过ip:8888的方式访问。于是安装了一次lnmp，居然能打开宝塔了。但是通过宝塔一键安装默认套件后，又打不开页面了。我就xxxx了<div class="c-meta"><span class="c-author">QQ</span>2018-01-17 15:43 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29685#respond' onclick='return addComment.moveForm( "div-comment-29685", "29685", "respond", "2565" )' aria-label='回复给QQ'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-2" id="comment-29688"><div class="c-avatar"><div class="c-main" id="div-comment-29688">建议你用 Debian 7 或 8 x64 系统试试，我用这个系统前后来回安装了六七次都没问题。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-17 16:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29688#respond' onclick='return addComment.moveForm( "div-comment-29688", "29688", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-29658"><div class="c-avatar"><div class="c-main" id="div-comment-29658">从一开始建站就被军哥的lnmp折腾得不行，我反正找不到正确打开方式。然后看到有人用宝塔，我也用了，真的太好用<div class="c-meta"><span class="c-author"><a href='http://a.a/' rel='external nofollow' class='url'>Sanji</a></span>2018-01-16 18:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29658#respond' onclick='return addComment.moveForm( "div-comment-29658", "29658", "respond", "2565" )' aria-label='回复给Sanji'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29655"><div class="c-avatar"><div class="c-main" id="div-comment-29655">为什么逗比的网站反向代理以后就不会被墙封锁了呢<div class="c-meta"><span class="c-author">逗比</span>2018-01-16 17:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29655#respond' onclick='return addComment.moveForm( "div-comment-29655", "29655", "respond", "2565" )' aria-label='回复给逗比'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29656"><div class="c-avatar"><div class="c-main" id="div-comment-29656">谁说的，我以前可是被墙过六七个域名呢，其中有几个是反向代理的域名，不过不知道为什么，2017年2月 doub.io 主域名被墙而启用的 doub.bid 反向代理域名，竟然活了快一年了。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-16 17:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29656#respond' onclick='return addComment.moveForm( "div-comment-29656", "29656", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29642"><div class="c-avatar"><div class="c-main" id="div-comment-29642">宝塔年后才有可能上线负载均衡，目前可以用syncthing代替镜像站<div class="c-meta"><span class="c-author">KB</span>2018-01-16 13:44 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29642#respond' onclick='return addComment.moveForm( "div-comment-29642", "29642", "respond", "2565" )' aria-label='回复给KB'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29638"><div class="c-avatar"><div class="c-main" id="div-comment-29638">你好，能做一下Webmin/Virtualmin的教程吗？小白不懂。<div class="c-meta"><span class="c-author">刘志远</span>2018-01-16 10:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29638#respond' onclick='return addComment.moveForm( "div-comment-29638", "29638", "respond", "2565" )' aria-label='回复给刘志远'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29635"><div class="c-avatar"><div class="c-main" id="div-comment-29635">偷油老大，我装好这个宝塔之后，发现我原来装的酸酸乳无法正常连接访问了。我用的是64位的debian7，也不是端口的设置问题，我在宝塔面板里面已经开放了酸酸乳所需的端口。我的酸酸乳是使用秋大的四合一装的。能帮小白看看吗，谢谢啦！<div class="c-meta"><span class="c-author">小白</span>2018-01-16 10:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29635#respond' onclick='return addComment.moveForm( "div-comment-29635", "29635", "respond", "2565" )' aria-label='回复给小白'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29650"><div class="c-avatar"><div class="c-main" id="div-comment-29650">宝塔面板唯一影响SSR的可能就是，宝塔面板安装后会 配置防火墙，通过 iptables -L -n 命令对比安装面板前后就能发现。<br />
+另外建议你使用我的两个SSR脚本试试，我写这个教程的服务器上面也装了SSR，使用起来没毛病。<br />
+评论里说不清，请 <a href="https://t.me/doubi/" target="_blank" rel="nofollow">Telegram群组</a>(<a href="ma7f_p6p.html" target="_blank">TG使用教程</a>)私聊联系我讨论解决。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-16 17:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29650#respond' onclick='return addComment.moveForm( "div-comment-29650", "29650", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even depth-2" id="comment-29683"><div class="c-avatar"><div class="c-main" id="div-comment-29683">兄弟，宝塔面板安全选项，设置防火墙放行端口，放行你的ssr端口<div class="c-meta"><span class="c-author">致敬大逗比</span>2018-01-17 14:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29683#respond' onclick='return addComment.moveForm( "div-comment-29683", "29683", "respond", "2565" )' aria-label='回复给致敬大逗比'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29633"><div class="c-avatar"><div class="c-main" id="div-comment-29633">以后可以用一下<div class="c-meta"><span class="c-author"><a href="https://zhangsidan.com/" rel='external nofollow' class='url'>peter</a></span>2018-01-16 09:17 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29633#respond' onclick='return addComment.moveForm( "div-comment-29633", "29633", "respond", "2565" )' aria-label='回复给peter'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29631"><div class="c-avatar"><div class="c-main" id="div-comment-29631">能反代谷歌、Youtube之类的么？<div class="c-meta"><span class="c-author"><a href='http://blog.clarke.moe/' rel='external nofollow' class='url'>Clarke</a></span>2018-01-16 01:03 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29631#respond' onclick='return addComment.moveForm( "div-comment-29631", "29631", "respond", "2565" )' aria-label='回复给Clarke'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29652"><div class="c-avatar"><div class="c-main" id="div-comment-29652">能反向代理谷歌搜索（Youtube不行，因为他需要多域名替换，视频和网站等等都是用的不同域名），但是不建议，即使只有你一个人使用，也有较大风险被墙封锁，更何况，如果不做轮询配置处理，谷歌搜索反而会把你的反向代理服务器当成机器人，拉黑你（就是每次搜索都会让你人机验证），两头不占好，有VPS何必做这种高风险的事情。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-16 17:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29652#respond' onclick='return addComment.moveForm( "div-comment-29652", "29652", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-29627"><div class="c-avatar"><div class="c-main" id="div-comment-29627">反向代理可不可以过滤掉某些代码?<div class="c-meta"><span class="c-author">豆迷</span>2018-01-16 00:11 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29627#respond' onclick='return addComment.moveForm( "div-comment-29627", "29627", "respond", "2565" )' aria-label='回复给豆迷'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-29654"><div class="c-avatar"><div class="c-main" id="div-comment-29654">不清楚，我对反向代理也没什么研究。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2018-01-16 17:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29654#respond' onclick='return addComment.moveForm( "div-comment-29654", "29654", "respond", "2565" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29626"><div class="c-avatar"><div class="c-main" id="div-comment-29626">用宝塔面板的时候需要注意myphpadmin，如果安装的时候选择其他php版本，需要手动更改到选择的php版本上，否则无法打开myphpadmin。<div class="c-meta"><span class="c-author">asriel</span>2018-01-15 23:10 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29626#respond' onclick='return addComment.moveForm( "div-comment-29626", "29626", "respond", "2565" )' aria-label='回复给asriel'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29625"><div class="c-avatar"><div class="c-main" id="div-comment-29625">支持，！！但是只有小鸡(´⌒`｡)装不了
+想用frp代理，正在研究，逗比帮帮忙吗。。。<div class="c-meta"><span class="c-author">hoi</span>2018-01-15 23:08 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29625#respond' onclick='return addComment.moveForm( "div-comment-29625", "29625", "respond", "2565" )' aria-label='回复给hoi'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29616"><div class="c-avatar"><div class="c-main" id="div-comment-29616">支持！！！！！！！<div class="c-meta"><span class="c-author">囧途湿令</span>2018-01-15 21:48 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29616#respond' onclick='return addComment.moveForm( "div-comment-29616", "29616", "respond", "2565" )' aria-label='回复给囧途湿令'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29612"><div class="c-avatar"><div class="c-main" id="div-comment-29612">以前也是LNMP，后来一直用宝塔，可以阿里云 七牛 又拍云OSS备份网站，每天自动备份。。买个阿里云OSS一年40G才9块钱。省心。小白不懂命令开端口，或者改SSH端口，直接推荐宝塔，直接手动改就可以了。<div class="c-meta"><span class="c-author">sooele</span>2018-01-15 20:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29612#respond' onclick='return addComment.moveForm( "div-comment-29612", "29612", "respond", "2565" )' aria-label='回复给sooele'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-29611"><div class="c-avatar"><div class="c-main" id="div-comment-29611">沙发<div class="c-meta"><span class="c-author">Hadsital</span>2018-01-15 20:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29611#respond' onclick='return addComment.moveForm( "div-comment-29611", "29611", "respond", "2565" )' aria-label='回复给Hadsital'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-29610"><div class="c-avatar"><div class="c-main" id="div-comment-29610">第一<div class="c-meta"><span class="c-author"><a href='http://www.eksix.xyz/' rel='external nofollow' class='url'>儿可</a></span>2018-01-15 20:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-39/?replytocom=29610#respond' onclick='return addComment.moveForm( "div-comment-29610", "29610", "respond", "2565" )' aria-label='回复给儿可'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+		<span class='page-numbers current'>1</span>
+<a class='page-numbers' href='yx_kjho9.html#comments'>2</a>
+<a class="next page-numbers" href="yx_kjho9.html#comments">»</a>	</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="ok04ca1-container ok04ca1-1 ok04ca1-hide">
+    <div class="ok04ca1-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="ok04ca1"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>

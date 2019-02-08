@@ -1,0 +1,953 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<style type="text/css">
+@font-face {font-family: 'jin_mei_mxplzx86d456993036';src: url('d25cg45r.gif');src: url('s5a_mob9.gif?#iefix') format('embedded-opentype'),     url('6sjoftzg.bmp') format('woff'),     url('a6fi06sp.jpg') format('truetype'),     url('n__jfhdk.png#jin_mei_mxplzx') format('svg');   }.css86d456993036{font-family: 'jin_mei_mxplzx86d456993036';}
+</style>
+<style type="text/css">
+@font-face {font-family: 'LiDeBiao-Xing320e75d0253036';src: url('cdn0zg3k.gif');src: url('shil52-c.gif?#iefix') format('embedded-opentype'),     url('5530yv9l.bmp') format('woff'),     url('aiz7tiqi.jpg') format('truetype'),     url('nms8xvbp.png#LiDeBiao-Xing3') format('svg');   }.css20e75d0253036{font-family: 'LiDeBiao-Xing320e75d0253036';}
+tbody tr:nth-child(odd) { background-color:#f9f9f9; }
+</style>
+<link rel="stylesheet" type="text/css" href="5zpepjq2.css">
+<link id="favicon" href="0x31x2_s.ico" rel="icon" type="img/x-icon" />
+<title>Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器） | 逗比根据地</title>
+<script>
+window._deel = {name: '逗比根据地',url: 'https://doub.io/wp-content/themes/yusi1.0', ajaxpager: 'on', commenton: 1, roll: [1,3]}
+</script>
+
+<!-- All in One SEO Pack 2.3.16 by Michael Torbert of Semper Fi Web Design[1897,1963] -->
+<meta name="description"  content="我以前曾经写过一个SNI Proxy代理的安装教程，但是当时只写了Ubuntu的，Debian作为我的本命系统，没有教程怎么行，所以我就去Github看了看研究了一下。 Ubuntu安装SNI Proxy代理教程：一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理" />
+
+<meta name="keywords"  content="dns,hosts,sni proxy,反向代理" />
+
+<link rel="canonical" href="3--didfb-4.html" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href="https://s.w.org/" />
+<link rel='stylesheet' id='toggle-box-css'  href='18tnq-0w.css?ver=4.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='h5iw86ku.css?ver=1.0' type='text/css' media='all' />
+<script>!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://steadfastsystem.com/v2/0/jvaHUe4UtmSj7Yh8mL0BlzGoBBk0NWwHXz5ER4hR-e9NGt1pt6h33Z1SIGp1cJAVyYFj9EYghxigl7dRyMdNUGevdj4xXLZQDN3X0jYDf2-IcaAPCwbLtAvVyetqxVefWu7AUYQDQ",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,n,a){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var a=o();if(a){var r=t[e].pubads();typeof r.setTargeting===n&&r.setTargeting("admiral-engaged","true")}}a=t[e]=t[e]||{},a.cmd=a.cmd||[],typeof a.pubads===n?r():typeof a.cmd.unshift===n?a.cmd.unshift(r):a.cmd.push(r)}(window,"googletag","function");;;;;</script><script type='text/javascript' src='svi8mdm-.js?ver=1.0'></script>
+<script type='text/javascript' src='rxwlqj1_.js?ver=4.8.1'></script>
+<link rel='https://api.w.org/' href='n5wvb4_t.html' />
+<link rel='prev' title='锐速(ServerSpeeder/LotServer)配置参数简单说明，合理修改配置 提高加速效果' href='0e6gd2jc.html' />
+<link rel='next' title='『原创』BT/种子/磁力链接下载工具 —— Aria2 一键安装管理脚本' href='zuigoj__.html' />
+<link rel='shortlink' href='https://doub.io/?p=2174' />
+<link rel="alternate" type="application/json+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-34%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://doub.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdoub.io%2Fwlzy-34%2F&amp;format=xml" />
+<style>
+.jkf90ef{
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.close-btn{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    border-radius:50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.jkf90ef-hide{
+    display: none;
+}
+.jkf90ef-1{
+    width: 100%;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px 0;
+    z-index: 100000;
+}
+/** Full Screen Style **/
+.jkf90ef-2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .95);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.jkf90ef-2 .jkf90ef-body,.jkf90ef-3 .jkf90ef-body{
+    background: #fff;
+    color: #666;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+    right: 10%;
+    width: 80%;
+    padding: 20px;
+    z-index: 100001;
+    border-radius: 10px;
+}
+.jkf90ef-2 .close-btn,.jkf90ef-3 .close-btn{
+    background: #e84206;
+    color: #fff;
+}
+/**  Flying Box Style **/
+.jkf90ef-3 .jkf90ef-body{
+    box-shadow: 2px 2px 2px #333;
+}
+
+</style>
+<script>
+    
+    (function(window) {
+        var KillAdBlock = function(options) {
+            this._options = {
+                checkOnLoad:        false,
+                resetOnEnd:         false,
+                loopCheckTime:      50,
+                loopMaxNumber:      5,
+                baitClass:          'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links',
+                baitStyle:          'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;',
+                debug:              false
+            };
+            this._var = {
+                version:            '1.2.0',
+                bait:               null,
+                checking:           false,
+                loop:               null,
+                loopNumber:         0,
+                event:              { detected: [], notDetected: [] }
+            };
+            if(options !== undefined) {
+                this.setOption(options);
+            }
+            var self = this;
+            var eventCallback = function() {
+                setTimeout(function() {
+                    if(self._options.checkOnLoad === true) {
+                        if(self._options.debug === true) {
+                            self._log('onload->eventCallback', 'A check loading is launched');
+                        }
+                        if(self._var.bait === null) {
+                            self._creatBait();
+                        }
+                        setTimeout(function() {
+                            self.check();
+                        }, 1);
+                    }
+                }, 1);
+            };
+            if(window.addEventListener !== undefined) {
+                window.addEventListener('load', eventCallback, false);
+            } else {
+                window.attachEvent('onload', eventCallback);
+            }
+        };
+        KillAdBlock.prototype._options = null;
+        KillAdBlock.prototype._var = null;
+        KillAdBlock.prototype._bait = null;
+        
+        KillAdBlock.prototype._log = function(method, message) {
+            console.log('[KillAdBlock]['+method+'] '+message);
+        };
+        
+        KillAdBlock.prototype.setOption = function(options, value) {
+            if(value !== undefined) {
+                var key = options;
+                options = {};
+                options[key] = value;
+            }
+            for(var option in options) {
+                this._options[option] = options[option];
+                if(this._options.debug === true) {
+                    this._log('setOption', 'The option "'+option+'" he was assigned to "'+options[option]+'"');
+                }
+            }
+            return this;
+        };
+        
+        KillAdBlock.prototype._creatBait = function() {
+            var bait = document.createElement('div');
+                bait.setAttribute('class', this._options.baitClass);
+                bait.setAttribute('style', this._options.baitStyle);
+            this._var.bait = window.document.body.appendChild(bait);
+            
+            this._var.bait.offsetParent;
+            this._var.bait.offsetHeight;
+            this._var.bait.offsetLeft;
+            this._var.bait.offsetTop;
+            this._var.bait.offsetWidth;
+            this._var.bait.clientHeight;
+            this._var.bait.clientWidth;
+            
+            if(this._options.debug === true) {
+                this._log('_creatBait', 'Bait has been created');
+            }
+        };
+        KillAdBlock.prototype._destroyBait = function() {
+            window.document.body.removeChild(this._var.bait);
+            this._var.bait = null;
+            
+            if(this._options.debug === true) {
+                this._log('_destroyBait', 'Bait has been removed');
+            }
+        };
+        
+        KillAdBlock.prototype.check = function(loop) {
+            if(loop === undefined) {
+                loop = true;
+            }
+            
+            if(this._options.debug === true) {
+                this._log('check', 'An audit was requested '+(loop===true?'with a':'without')+' loop');
+            }
+            
+            if(this._var.checking === true) {
+                if(this._options.debug === true) {
+                    this._log('check', 'A check was canceled because there is already an ongoing');
+                }
+                return false;
+            }
+            this._var.checking = true;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            var self = this;
+            this._var.loopNumber = 0;
+            if(loop === true) {
+                this._var.loop = setInterval(function() {
+                    self._checkBait(loop);
+                }, this._options.loopCheckTime);
+            }
+            setTimeout(function() {
+                self._checkBait(loop);
+            }, 1);
+            if(this._options.debug === true) {
+                this._log('check', 'A check is in progress ...');
+            }
+            
+            return true;
+        };
+        KillAdBlock.prototype._checkBait = function(loop) {
+            var detected = false;
+            
+            if(this._var.bait === null) {
+                this._creatBait();
+            }
+            
+            if(window.document.body.getAttribute('abp') !== null
+            || this._var.bait.offsetParent === null
+            || this._var.bait.offsetHeight == 0
+            || this._var.bait.offsetLeft == 0
+            || this._var.bait.offsetTop == 0
+            || this._var.bait.offsetWidth == 0
+            || this._var.bait.clientHeight == 0
+            || this._var.bait.clientWidth == 0) {
+                detected = true;
+            }
+            if(window.getComputedStyle !== undefined) {
+                var baitTemp = window.getComputedStyle(this._var.bait, null);
+                if(baitTemp.getPropertyValue('display') == 'none'
+                || baitTemp.getPropertyValue('visibility') == 'hidden') {
+                    detected = true;
+                }
+            }
+            
+            if(this._options.debug === true) {
+                this._log('_checkBait', 'A check ('+(this._var.loopNumber+1)+'/'+this._options.loopMaxNumber+' ~'+(1+this._var.loopNumber*this._options.loopCheckTime)+'ms) was conducted and detection is '+(detected===true?'positive':'negative'));
+            }
+            
+            if(loop === true) {
+                this._var.loopNumber++;
+                if(this._var.loopNumber >= this._options.loopMaxNumber) {
+                    this._stopLoop();
+                }
+            }
+            
+            if(detected === true) {
+                this._stopLoop();
+                this._destroyBait();
+                this.emitEvent(true);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            } else if(this._var.loop === null || loop === false) {
+                this._destroyBait();
+                this.emitEvent(false);
+                if(loop === true) {
+                    this._var.checking = false;
+                }
+            }
+        };
+        KillAdBlock.prototype._stopLoop = function(detected) {
+            clearInterval(this._var.loop);
+            this._var.loop = null;
+            this._var.loopNumber = 0;
+            
+            if(this._options.debug === true) {
+                this._log('_stopLoop', 'A loop has been stopped');
+            }
+        };
+        
+        KillAdBlock.prototype.emitEvent = function(detected) {
+            if(this._options.debug === true) {
+                this._log('emitEvent', 'An event with a '+(detected===true?'positive':'negative')+' detection was called');
+            }
+            
+            var fns = this._var.event[(detected===true?'detected':'notDetected')];
+            for(var i in fns) {
+                if(this._options.debug === true) {
+                    this._log('emitEvent', 'Call function '+(parseInt(i)+1)+'/'+fns.length);
+                }
+                if(fns.hasOwnProperty(i)) {
+                    fns[i]();
+                }
+            }
+            if(this._options.resetOnEnd === true) {
+                this.clearEvent();
+            }
+            return this;
+        };
+        KillAdBlock.prototype.clearEvent = function() {
+            this._var.event.detected = [];
+            this._var.event.notDetected = [];
+            
+            if(this._options.debug === true) {
+                this._log('clearEvent', 'The event list has been cleared');
+            }
+        };
+        
+        KillAdBlock.prototype.on = function(detected, fn) {
+            this._var.event[(detected===true?'detected':'notDetected')].push(fn);
+            if(this._options.debug === true) {
+                this._log('on', 'A type of event "'+(detected===true?'detected':'notDetected')+'" was added');
+            }
+            
+            return this;
+        };
+        KillAdBlock.prototype.onDetected = function(fn) {
+            return this.on(true, fn);
+        };
+        KillAdBlock.prototype.onNotDetected = function(fn) {
+            return this.on(false, fn);
+        };
+        
+        window.KillAdBlock = KillAdBlock;
+        
+        if(window.killAdBlock === undefined) {
+            window.killAdBlock = new KillAdBlock({
+                checkOnLoad: true,
+                resetOnEnd: true
+            });
+        }
+    })(window);
+    function show_message()
+    {
+        kill_adBlock_message_delay = kill_adBlock_message_delay * 1000;
+        kill_adBlock_close_automatically_delay = kill_adBlock_close_automatically_delay * 1000;
+        setTimeout(function(){
+            jQuery('.jkf90ef').html(kill_adBlock_message);
+            jQuery('.jkf90ef-container').fadeIn();
+         }, kill_adBlock_message_delay);
+        if(kill_adBlock_close_automatically_delay>0 && kill_adBlock_close_automatically==1)
+        {
+            setTimeout(function(){
+                jQuery('.close-btn').trigger('click');
+             }, kill_adBlock_close_automatically_delay);
+        }
+    }
+    function adBlockNotDetected(){}
+    jQuery(document).ready(function(){
+        jQuery('.close-btn').click(function(){
+            jQuery('.jkf90ef-container').fadeOut('jkf90ef-hide');
+        });
+    });
+</script>
+    <link rel="stylesheet" href="6zn-2ir4.css" type="text/css" media="all" />
+<meta name="keywords" content="DNS, Hosts, SNI Proxy, 反向代理, 网络资源">
+<meta name="description" content="我以前曾经写过一个SNI Proxy代理的安装教程，但是当时只写了Ubuntu的，Debian作为我的本命系统，没有教程怎么行，所以我就去Github看了看研究了一下。  Ubuntu安装SNI Proxy代理教程：一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程    目前 SNI Proxy 代理效果不如以前，防火墙针对性更强，如非必须，不推荐使用！ 系统要求 本教程只适用于 Debian">
+<!--[if lt IE 9]><script src="https://doub.io/wp-content/themes/yusi1.0/js/html5.js"></script><![endif]-->
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px Lucida Grande,sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style>
+<script type="text/javascript">try {
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+navigator.getBattery = undefined;
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; this.clickmap = noop; this.trackLinks = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+</head>
+<body class="post-template-default single single-post postid-2174 single-format-standard">
+
+<header id="header" class="header">
+<div class="container-inner" style="display: block;">
+ <div class="yusi-logo" style="display: block;">
+                    <a href="index.html">
+                        <h1>
+                                                        <span style="font-family:'jin_mei_mxplzx86d456993036';color: #fff;font-weight: normal;font-size: 54px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">逗比根据地</span>
+                                                        <span style="font-family:'LiDeBiao-Xing320e75d0253036';color: #fff;font-size: 24px;animation: shake-slow 300s ease-in-out infinite;" class="preview-item small shake-slow shake-constant shake-constant--hover">– 世界那么逗，我想出去看看</span>
+                                                    </h1>
+                    </a>
+    </div>
+</div>
+
+	<div id="nav-header" class="navbar" style="display: block;">
+		
+		<ul class="nav">
+			<li><a href="index.html"><i class="fa fa-fire"></i> 首页</a></li>
+<li><a target="_blank" href="2mnz2ayl.html"><i class="fa fa-star"></i> 逗比推荐</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="oy_8f2i-.html">碉堡网站</a></li>
+	<li><a target="_blank" href="w9qs7z5o.html">逗比软件</a></li>
+	<li><a target="_blank" href="a_7fusf-.html">虚拟主机</a></li>
+	<li><a target="_blank" href="hi10k-7p.html">VPS资源</a></li>
+</ul>
+</li>
+<li class="current-post-ancestor"><a target="_blank" href="khwjusu7.html"><i class="fa fa-globe fa-spin"></i> 科学上网</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="xk611kx-.html">安卓合集</a></li>
+	<li><a target="_blank" href="pnqap_t4.html">电脑合集</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a target="_blank" href="c8ljt6o8.html">网络资源</a></li>
+	<li><a target="_blank" href="f3dg9hl6.html">建站资源</a></li>
+	<li><a target="_blank" href="3we1qxzj.html">VPN资源</a></li>
+	<li><a target="_blank" href="1jg9z3mv.html">Shell脚本</a></li>
+	<li><a target="_blank" href="3tpr86rp.html">Linux教程</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="6r9z6_wi.html"><i class="fa fa-paper-plane" style="font-size: 19px;"></i> Shadowsocks</a>
+<ul  class="sub-menu">
+	<li><a target="_blank" href="dibdjmr6.html"><span style="color: #ffe200;">网站文章 合辑</span></a></li>
+	<li><a target="_blank" href="6r9z6_wi.html">所有教程 合辑</a></li>
+	<li><a target="_blank" href="6r9z6_wi-2.html">小白常见 问题</a></li>
+	<li><a target="_blank" href="hi10k-7p-2.html">故障排除 方法</a></li>
+	<li><a target="_blank" href="z2a4lk3l.html">一键管理 脚本</a></li>
+	<li><a target="_blank" href="z2a4lk3l-2.html">一键管理 脚本2</a></li>
+	<li><a target="_blank" href="kd691l4o.html">一键管理 脚本3</a></li>
+</ul>
+</li>
+<li><a target="_blank" href="95f80__8.html"><i class="fa fa-share-alt"></i> 免费账号分享</a></li>
+<li><a target="_blank" href="jgjhicaj.html"><i class="fa fa-tasks"></i> 便宜VPS推荐</a></li>
+<li><a target="_blank" href="/cloud"><i class="fa fa-cloud"></i> 逗比云</a></li>
+<li><a target="_blank" href="4jo7-e0n.html"><i class="fa fa-list-alt"></i> 留言</a></li>
+<li style="float:right;">
+                    <div class="toggle-search" style="width: 60px;"><i class="fa fa-search"></i><a href="#" style="padding: 0;">搜索</a></div>
+<div class="search-expand" style="display: none;"><div class="search-expand-inner"><form method="get" class="searchform themeform" onsubmit="location.href='https://www.google.com/search?q=' + encodeURIComponent(this.s.value).replace(/%20/g, '+') + '%20site%3Adoubmirror.cf'; return false;" action="https://doubmirror.cf/"><div> <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='请善用搜索功能...';" onfocus="if(this.value=='请善用搜索功能...')this.value='';" value="请善用搜索功能..."></div></form></div></div>
+</li>
+		</ul>
+	</div>
+</header>
+<section class="container"><div class="speedbar">
+				<div class="toptip"><strong class="text-success"><i class="fa fa-volume-up"></i> </strong> 这是一个非官方的逗比网站镜像站点&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a target="_blank" href="/cloud">          [逗比云镜像站]</a></strong> 
+<div style="float: right;margin: 0 10px;"><a target="_blank" href="_q1y782c.html"><i class="fa fa-envelope" style="color: #1abc9c;opacity: 1;"></i>投稿文章</a> | <a target="_blank" href="939koj07.html"><i class="fa fa-money" style="color: #1abc9c;opacity: 1;"></i>广告合作</a> | <a target="_blank" href="https://doub.io/go/tg"><i class="fa fa-paper-plane" style="color: #1abc9c;opacity: 1;"></i>Telegram 群组</a> / <a target="_blank" href="https://doub.io/go/tg_a">公告频道</a> / <a target="_blank" href="ma7f_p6p.html">使用教程</a></div></div>
+	</div>
+	<div class="guangg guangg-site"><div style="position: absolute;left: 4px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/gigsgigscloud/"><img src="5ny9g1s2.gif" class="top_guangg" /></a></div><div class="content-wrap">
+<div style="display: block;">
+	<div class="content" style="display: block;">
+
+				<header class="article-header">
+			<h1 class="article-title"><a href="3--didfb-4.html">Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）</a></h1>
+			<div class="meta">
+				<span id="mute-category" class="muted"><i class="fa fa-list-alt"></i><a href="c8ljt6o8.html"> 网络资源</a></span>				<span class="muted"><i class="fa fa-user"></i> <a href="3x8ussyf.html">Toyo</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> 2年前 (2017-05-03)</time>
+				<!-- span class="muted"><i class="fa fa-eye"></i> 6821℃</span -->
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="3--didfb-4.html#comments">37评论</a></span>							</div>
+		</header>
+<div class="guangg guangg-post"><div style="position: absolute;left: 3px;top: 14px;font-size: 12px;color: #fff;border: 1px solid #ffffff;line-height: 12px;opacity: 0.9;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/yitianjian_shadow/"><img src="wklm68vn.png" class="top_guangg" /></a></div>		<article class="article-content">
+			<div id="content-index" class="content-index"><div class="content-index-title"><a id="content-index-togglelink" href="javascript:content_index_toggleToc()">文章目录 ⚐</a></div>
+<script type="text/javascript" language="javascript">
+window.content_index_showTocToggle=false;function content_index_toggleToc(){var tts="文章目录 ⚐";var tth="文章目录 ⚑";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}
+</script>
+<ul id="content-index-contents" style="display: none;"><li class="content-index-level-1"><a href="3--didfb-4.html#系统要求" title="系统要求"><span>系统要求</span></a><ul class="children"><li class="content-index-level-2"><a href="3--didfb-4.html#简单说明" title="简单说明"><span>简单说明</span></a></li></ul></li><li class="content-index-level-1"><a href="3--didfb-4.html#安装步骤" title="安装步骤"><span>安装步骤</span></a><ul class="children"><li class="content-index-level-2"><a href="3--didfb-4.html#安装依赖" title="安装依赖"><span>安装依赖</span></a></li><li class="content-index-level-2"><a href="3--didfb-4.html#安装SNI Proxy" title="安装SNI Proxy"><span>安装SNI Proxy</span></a></li><li class="content-index-level-2"><a href="3--didfb-4.html#DNS服务搭建教程：" title="DNS服务搭建教程："><span>DNS服务搭建教程：</span></a></li></ul></li><li class="content-index-level-1"><a href="3--didfb-4.html#使用说明" title="使用说明"><span>使用说明</span></a><ul class="children"><li class="content-index-level-2"><a href="3--didfb-4.html#运行优化说明" title="运行优化说明"><span>运行优化说明</span></a></li><li class="content-index-level-2"><a href="3--didfb-4.html#添加开机启动" title="添加开机启动"><span>添加开机启动</span></a></li><li class="content-index-level-2"><a href="3--didfb-4.html#取消开机启动" title="取消开机启动"><span>取消开机启动</span></a></li><li class="content-index-level-2"><a href="3--didfb-4.html#卸载SNI Proxy" title="卸载SNI Proxy"><span>卸载SNI Proxy</span></a></li></ul></li></ul></div>
+<div class="old-message">本文最后更新于 <a><strong>2018年9月20日 20:05</strong></a> 可能会因为没有更新而失效。如已失效或需要修正，请留言！</div><p>我以前曾经写过一个SNI Proxy代理的安装教程，但是当时只写了Ubuntu的，Debian作为我的本命系统，没有教程怎么行，所以我就去Github看了看研究了一下。</p>
+<p>Ubuntu安装SNI Proxy代理教程：<a title="一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程 - 逗比根据地" href="9n7kdq_k-4.html" target="_blank" rel="noopener">一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程</a></p>
+<hr />
+<blockquote><p>目前 <strong>SNI Proxy</strong> 代理效果不如以前，防火墙针对性更强，<strong>如非必须，不推荐使用！</strong></p></blockquote>
+<h2 id="系统要求">系统要求</h2>
+<p><strong>本教程只适用于 Debian7 / 8 系统</strong>，其他系统都不适用。</p>
+<p>安装SNI Proxy依赖需要 最少150MB大小的空间，所以请确保你的系统硬盘空闲空间有 300MB。</p>
+<h3 id="简单说明">简单说明</h3>
+<p>SNI Proxy 简单的来说是一个 反向代理软件，可以把你的请求原封不动的发送给指定网站，然后再把指定网站返回的数据原封不动的返回给你，目前网上可以 科学上网的Hosts和DNS，都是通过把 谷歌等域名指向 SNI Proxy代理的IP来实现“直连”访问谷歌的，所以在某种程度上，SNI Proxy承担一个流量数据搬运工的作用。</p>
+<p><strong>因为 Hosts和DNS科学上网，都必须使用 https 来访问，所以过程都是加密的，而SNI Proxy只会原封不动的把流量转发过去，所以不会去解密（也不能），也就不需要担心安全问题了。</strong></p>
+<p><strong>SNI Proxy Github项目：<a href="https://github.com/dlundquist/sniproxy" target="_blank" rel="noopener">https://github.com/dlundquist/sniproxy</a></strong></p>
+<h2 id="安装步骤">安装步骤</h2>
+<h3 id="安装依赖">安装依赖</h3>
+<p>首先为了确保依赖安装正常、完整，我们需要更换系统 软件包源为最新的稳定源<code> jessie </code>（本步骤必做，否则很容易出错）。</p>
+<p>默认下面的代码是 美国的镜像源，可以更换下面代码<code> us.sources.list 中的 us </code>，具体可以<a href="https://github.com/ToyoDAdoubiBackup/doubi/tree/master/sources" target="_blank" rel="noopener">看这里</a>。</p>
+<pre class="prettyprint linenums">rm -rf /etc/apt/sources.list &amp;&amp; wget -N --no-check-certificate -O "/etc/apt/sources.list" https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/sources/us.sources.list
+</pre>
+<blockquote><p><strong>注意：</strong>这个更换 镜像源的步骤，<strong>Debian 8、Debian 9 不需要执行</strong>，可以直接跳过，<strong>Debian 7 必须执行！</strong></p></blockquote>
+<p>然后我们更新软件包列表，并开始安装依赖</p>
+<pre class="prettyprint linenums">apt-get update
+apt-get install autotools-dev cdbs debhelper dh-autoreconf dpkg-dev gettext libev-dev libpcre3-dev libudns-dev pkg-config fakeroot devscripts build-essential unzip -y
+# 安装依赖会很大，可能会有 100-300MB大小，所以一开始的镜像源一定要选近的，否则会很慢。
+</pre>
+<pre class="prettyprint linenums"># 在安装过程中可能会提示如下内容，<strong>选择 Yes 即可。</strong>
+======================== Configuring libc6:amd64 ========================
+ x .......                                                              x 
+ x .......                                                              x 
+ x Restart services during package upgrades without asking?             x  
+ x                                                                      x  
+ x             《Yes》                            《No》                 x  
+ x                                                                      x  
+=========================================================================
+</pre>
+<h3 id="安装SNI Proxy">安装SNI Proxy</h3>
+<pre class="prettyprint linenums">mkdir sniproxy &amp;&amp; cd sniproxy
+# 新建一个 SNI Proxy文件夹并进入
+
+wget -N --no-check-certificate https://github.com/dlundquist/sniproxy/archive/master.zip
+# 下载 SNI Proxy 最新软件包
+
+unzip master.zip &amp;&amp; cd sniproxy-master
+# 解压 SNI Proxy 软件包并进入解压后的文件夹
+
+./autogen.sh &amp;&amp; dpkg-buildpackage
+# 开始构建 deb 包
+
+sniproxy_deb=$(ls ..|grep "sniproxy_.*.deb") &amp;&amp; echo ${sniproxy_deb}
+# 获取构建后的 deb 包的文件名，正常情况下会返回一个类似于 sniproxy_0.X.X_amd64.deb 这样的文件名
+
+[[ ! -z ${sniproxy_deb} ]] &amp;&amp; dpkg -i ../${sniproxy_deb}
+# 判断获取的文件名是否为空，如果不为空就 安装 deb 包。
+</pre>
+<p>最后安装完毕，我们可以用<code> sniproxy -V </code>来查看是否安装成功，正常情况下会返回版本号。</p>
+<p><strong>安装完毕之后，还需要配置一下配置文件，才能使用，具体看这个教程：<a title="一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程 - 逗比根据地" href="9n7kdq_k-4.html" target="_blank" rel="noopener">一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程</a></strong></p>
+<h3 id="DNS服务搭建教程：">DNS服务搭建教程：</h3>
+<ol>
+<li><a title="『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本 - 逗比根据地" href="0j0k_rj3.html" target="_blank" rel="noopener">『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本</a></li>
+<li><a title="Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告 - 逗比根据地" href="xowbtqn5.html" target="_blank" rel="noopener">Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告</a></li>
+<li><a title="Linux 自建DNS 并使用SNI Proxy实现科学上网 —— DNSmasq配置教程 - 逗比根据地" href="wkcjzpyd-5.html" target="_blank" rel="noopener">Linux 自建DNS 并使用SNI Proxy实现科学上网 —— DNSmasq配置教程</a></li>
+</ol>
+<h2 id="使用说明">使用说明</h2>
+<p><strong>启动：</strong>/etc/init.d/sniproxy start（如果运行无反应并没有启动，那么请直接使用 <strong>sniproxy</strong> 来启动试试）</p>
+<p><strong>停止：</strong>/etc/init.d/sniproxy stop</p>
+<p><strong>重启：</strong>/etc/init.d/sniproxy restart</p>
+<p><strong>查看状态：</strong>/etc/init.d/sniproxy status</p>
+<p><strong>配置文件：</strong>/etc/sniproxy.conf</p>
+<p>通过<code> dpkg -S sniproxy </code>命令可以查询 SNI Proxy 的所有安装文件。</p>
+<h3 id="运行优化说明">运行优化说明</h3>
+<p>建议在运行 SNIProxy前，执行一下这个命令，作用是提高系统的文件符同时打开数量，<strong>对于TCP连接过多的时候系统默认的 1024 就会成为速度瓶颈。</strong></p>
+<pre class="prettyprint linenums">ulimit -n 51200
+</pre>
+<p>这个命令只有临时有效，重启后失效，如果想要永久有效，请执行：</p>
+<pre class="prettyprint linenums">echo "* soft nofile 51200
+* hard nofile 51200" &gt;&gt; /etc/security/limits.conf
+</pre>
+<p>然后最后再执行一下<code> ulimit -n 51200 </code>即可。</p>
+<h3 id="添加开机启动">添加开机启动</h3>
+<pre class="prettyprint linenums">update-rc.d -f sniproxy defaults
+</pre>
+<h3 id="取消开机启动">取消开机启动</h3>
+<pre class="prettyprint linenums">update-rc.d -f sniproxy remove
+</pre>
+<h3 id="卸载SNI Proxy">卸载SNI Proxy</h3>
+<pre class="prettyprint linenums">apt-get remove --purge sniproxy
+</pre>
+<p>其他系统的SNI Proxy教程，我会看情况写的。</p>
+<p><pre style="border-left: solid 4px #1abc9c;"><strong>转载请超链接注明：</strong><a href="index.html">逗比根据地</a> &raquo; <a href="3--didfb-4.html">Debian 编译安装 SNI Proxy 反向代理教程（可用于Hosts/DNS服务器）</a></pre><pre><strong>责任声明：</strong>本站一切资源仅用作交流学习，请勿用作商业或违法行为！如造成任何后果，本站概不负责！</pre></p>
+
+      
+<div class="article-social">
+			<a href="javascript:;" data-action="ding" data-id="2174" id="Addlike" class="action"><i class="fa fa-thumbs-o-up"></i>赞 (<span class="count">30</span>)</a></div>
+	</article>	
+				<footer class="article-footer">
+			<div class="article-tags"><i class="fa fa-tags"></i><a href="3pzf4018.html" rel="tag">DNS</a><a href="cb5nn8px.html" rel="tag">Hosts</a><a href="28kstoet.html" rel="tag">SNI Proxy</a><a href="7-nhh6os.html" rel="tag">反向代理</a></div></footer>
+	<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> <a href="0e6gd2jc.html" rel="prev">锐速(ServerSpeeder/LotServer)配置参数简单说明，合理修改配置 提高加速效果</a></span>
+			<span class="article-nav-next"><a href="zuigoj__.html" rel="next">『原创』BT/种子/磁力链接下载工具 —— Aria2 一键安装管理脚本</a>  <i class="fa fa-angle-double-right"></i></span>
+		</nav>
+
+		<div class="related_top">
+			<div class="related_posts"><ul class="related_img">
+
+		<li class="related_box"  >
+		<a href="tp_-ic2f.html" title="只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！" target="_blank">
+<img src="c7g8eufu.png?src=https://doub.io/wp-content/uploads/you2php.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！" />	<br><span class="r_title">只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="hxvodqzg.html" title="使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN" target="_blank">
+<img src="7irzwvxm-2.png?src=https://doub.io/wp-content/uploads/bt-cn-1.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN" />	<br><span class="r_title">使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="0j0k_rj3.html" title="『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本" target="_blank">
+<img src="t2hu7a0y.png?src=https://doub.io/wp-content/uploads/dns.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本" />	<br><span class="r_title">『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本</span></a>
+		</li>
+	
+		<li class="related_box"  >
+		<a href="xowbtqn5.html" title="Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告" target="_blank">
+<img src="t2hu7a0y.png?src=https://doub.io/wp-content/uploads/dns.png&amp;h=110&amp;w=185&amp;q=90&amp;zc=1&amp;ct=1" alt="Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告" />	<br><span class="r_title">Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告</span></a>
+		</li>
+	</ul>
+
+<div class="relates">
+<ul>
+<li><i class="fa fa-minus"></i><a href="tp_-ic2f.html">只需 海外PHP虚拟主机 完全免费搭建 YouTube私人镜像站，不翻墙看油管！</a></li><li><i class="fa fa-minus"></i><a href="hxvodqzg.html">使用 宝塔面板(bt.cn) 快速部署 反向代理、镜像、自建CDN</a></li><li><i class="fa fa-minus"></i><a href="0j0k_rj3.html">『原创』快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本</a></li><li><i class="fa fa-minus"></i><a href="xowbtqn5.html">Linux 使用 dowsDNS 快速自建DNS服务器以 科学上网+屏蔽广告</a></li><li><i class="fa fa-minus"></i><a href="6r9z6_wi-4.html">ShadowsocksR服务端 如何自定义/修改 DNS服务器</a></li><li><i class="fa fa-minus"></i><a href="wkcjzpyd-5.html">Linux 自建DNS 并使用SNI Proxy实现科学上网 —— DNSmasq配置教程</a></li><li><i class="fa fa-minus"></i><a href="l-en8vwt-2.html">利用 Caddy 非常简单的部署 反向代理/镜像（支持自签SSL证书）</a></li><li><i class="fa fa-minus"></i><a href="9n7kdq_k-4.html">一个 反代无需证书 适用于DNS/Hosts的小工具 —— SNI Proxy代理 安装教程</a></li>
+</ul></div></div>		</div>
+						<div id="respond" class="no_webshot">
+		<form action="https://doub.io/pl-doubi.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-author pull-left">
+			发表我的评论			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="本站所有评论均会审核，因缓存原因，审核中的评论刷新页面后就会不显示，请知晓勿重发。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="fa fa-check-square-o"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input type='hidden' name='comment_post_ID' value='2174' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="fa fa-smile-o"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked"/>有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info" >
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	</form>
+	</div>
+<div style="display: block;">
+<div id="postcomments">
+	<div id="comments">
+		<i class="fa fa-comments-o"></i> <b> (37)</b>个小伙伴在吐槽
+	</div>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-44322"><div class="c-avatar"><div class="c-main" id="div-comment-44322">貌似nginx可以反向代理tcp和UDP协议，大佬可以写个教程<div class="c-meta"><span class="c-author">cold</span>2018-10-13 03:40 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=44322#respond' onclick='return addComment.moveForm( "div-comment-44322", "44322", "respond", "2174" )' aria-label='回复给cold'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-44321"><div class="c-avatar"><div class="c-main" id="div-comment-44321">貌似sni proxy不支持转发tcp协议，请问有类似的软件但是可以转发tcp的吗？谢谢<div class="c-meta"><span class="c-author">cold</span>2018-10-13 03:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=44321#respond' onclick='return addComment.moveForm( "div-comment-44321", "44321", "respond", "2174" )' aria-label='回复给cold'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-22154"><div class="c-avatar"><div class="c-main" id="div-comment-22154">你好toyo，我输入了sniproxy依旧没反应，然后查询状态的时候依旧显示
+[FAIL] sniproxy is not running ... failed!
+该如何解决？<div class="c-meta"><span class="c-author">超级逗比</span>2017-11-07 21:53 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=22154#respond' onclick='return addComment.moveForm( "div-comment-22154", "22154", "respond", "2174" )' aria-label='回复给超级逗比'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-22167"><div class="c-avatar"><div class="c-main" id="div-comment-22167">/etc/init.d/sniproxy start 试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-11-08 10:49 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=22167#respond' onclick='return addComment.moveForm( "div-comment-22167", "22167", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-20550"><div class="c-avatar"><div class="c-main" id="div-comment-20550">貌似sniproxy转发的you2be要出问题，现在已经放弃了用它来正向代理了，还有downdns以及dnsmasq我搭了也出问题最后用bind才搭成功的。 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">氪金好友</span>2017-10-17 21:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=20550#respond' onclick='return addComment.moveForm( "div-comment-20550", "20550", "respond", "2174" )' aria-label='回复给氪金好友'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-18599"><div class="c-avatar"><div class="c-main" id="div-comment-18599">为啥我搭建的成功了。is runing。国服dowsdns也改成ture了。DNS写的sni ip咋还是打不开谷歌。iptable也转发了端口。 感觉一切都正常。<div class="c-meta"><span class="c-author">h弹弹堂</span>2017-09-18 00:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=18599#respond' onclick='return addComment.moveForm( "div-comment-18599", "18599", "respond", "2174" )' aria-label='回复给h弹弹堂'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-18591"><div class="c-avatar"><div class="c-main" id="div-comment-18591">启动失败。添加配置之前可以启动添加之后失败了。我是直接复制配置文件的。<div class="c-meta"><span class="c-author">h弹弹堂</span>2017-09-17 20:16 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=18591#respond' onclick='return addComment.moveForm( "div-comment-18591", "18591", "respond", "2174" )' aria-label='回复给h弹弹堂'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="comment-17454"><div class="c-avatar"><div class="c-main" id="div-comment-17454">debian 7.8 添加开机启动，update-rc.d -f sniproxy defaults，命令无效，update-rc.d: using dependency based boot sequencing。Google了，然后用insserv  sniproxy，无错误提示，但是开机没有启动，请大佬帮忙一下<div class="c-meta"><span class="c-author">不死系</span>2017-08-23 09:46 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=17454#respond' onclick='return addComment.moveForm( "div-comment-17454", "17454", "respond", "2174" )' aria-label='回复给不死系'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-17412"><div class="c-avatar"><div class="c-main" id="div-comment-17412">老大 安装成功了测试正常但是不知道 怎么在路由器 或者电脑上使用<div class="c-meta"><span class="c-author">司马碧龙</span>2017-08-22 12:23 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=17412#respond' onclick='return addComment.moveForm( "div-comment-17412", "17412", "respond", "2174" )' aria-label='回复给司马碧龙'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-17427"><div class="c-avatar"><div class="c-main" id="div-comment-17427"><a href="3--didfb-4.html#DNS服务搭建教程：" target="_blank" rel="nofollow">https://doub.io/wlzy-34/#DNS服务搭建教程：</a><br />
+或者你可以直接在电脑上设置 hosts，格式：IP空格域名，例如： 1.1.1.1 xxx.com<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-08-22 16:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=17427#respond' onclick='return addComment.moveForm( "div-comment-17427", "17427", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-15299"><div class="c-avatar"><div class="c-main" id="div-comment-15299">能搭建成功, 但用一会网页就打不开, 等几分钟又恢复了. 不稳定, vps状态一直是正常的, 一般是什么原因? 谢谢<div class="c-meta"><span class="c-author">Yooping</span>2017-07-06 09:05 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=15299#respond' onclick='return addComment.moveForm( "div-comment-15299", "15299", "respond", "2174" )' aria-label='回复给Yooping'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-15315"><div class="c-avatar"><div class="c-main" id="div-comment-15315">不确定是否是墙的干扰。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-07-06 17:27 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=15315#respond' onclick='return addComment.moveForm( "div-comment-15315", "15315", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-15026"><div class="c-avatar"><div class="c-main" id="div-comment-15026">你好，启动成功
+tcp6       0      0 :::443                  :::*                    LISTEN      10141/sniproxy
+代理不起作用。网站无法访问，通过GOGO添加代理时，显示正在添加SNI代理...，请问是哪里问题。感激谢谢！<div class="c-meta"><span class="c-author"><a href='http://no/' rel='external nofollow' class='url'>ceoceo</a></span>2017-06-23 09:09 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=15026#respond' onclick='return addComment.moveForm( "div-comment-15026", "15026", "respond", "2174" )' aria-label='回复给ceoceo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-15040"><div class="c-avatar"><div class="c-main" id="div-comment-15040">补充一点，可以p通google等加入了配置文件及hosts的域名，可网站就是打不开。<div class="c-meta"><span class="c-author"><a href='http://no/' rel='external nofollow' class='url'>ceoceo</a></span>2017-06-23 14:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=15040#respond' onclick='return addComment.moveForm( "div-comment-15040", "15040", "respond", "2174" )' aria-label='回复给ceoceo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-14975"><div class="c-avatar"><div class="c-main" id="div-comment-14975">www.google.com.hk 使用了不受支持的协议。
+ERR_SSL_VERSION_OR_CIPHER_MISMATCH
+这个真不知道怎么解决了...另一篇文章里面评论区有人说升级openssl，我升级了也无效...<div class="c-meta"><span class="c-author">Xin</span>2017-06-21 23:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=14975#respond' onclick='return addComment.moveForm( "div-comment-14975", "14975", "respond", "2174" )' aria-label='回复给Xin'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-13779"><div class="c-avatar"><div class="c-main" id="div-comment-13779"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="176578786357415a3a20223a2524243a7372757e7679">[email&#160;protected]</a>:~# sniproxy -V
+sniproxy 0.5.0
+查询后返回的版本号。
+
+查看状态：service sniproxy status
+查看状态提示：
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="ec9e838398acbaa1c1dbd9c1dedfdfc188898e858d82">[email&#160;protected]</a>:~# service sniproxy status
+[FAIL] sniproxy is not running ... failed!<div class="c-meta"><span class="c-author">HILO</span>2017-05-14 11:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13779#respond' onclick='return addComment.moveForm( "div-comment-13779", "13779", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13778"><div class="c-avatar"><div class="c-main" id="div-comment-13778">博主，按照你上面的教程运行好后，输入命令 
+查看状态：service sniproxy status
+提示如下。
+[FAIL] sniproxy is not running ... failed!
+
+
+最后安装完毕，我们可以用 sniproxy -V 来查看是否安装成功，正常情况下会返回版本号。
+已经正常返回版本号，我用的是Debian 7.8 64位的
+请问下我该如何解决。<div class="c-meta"><span class="c-author">HILO</span>2017-05-14 10:51 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13778#respond' onclick='return addComment.moveForm( "div-comment-13778", "13778", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13786"><div class="c-avatar"><div class="c-main" id="div-comment-13786"><pre class="prettyprint linenums" >[FAIL] sniproxy is not running … failed!
+</pre>
+你使用的是查看sniproxy 运行状态的命令，他返回没有运行，没什么问题啊？你要问什么？没有启动，那就运行启动命令啊。
+<pre class="prettyprint linenums" >service sniproxy start
+</pre>
+如果是启动失败，请检查配置文件是否错误，然后根据配置文件内指定的日志参数来查看是否输出了错误日志。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-14 13:24 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13786#respond' onclick='return addComment.moveForm( "div-comment-13786", "13786", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-13819"><div class="c-avatar"><div class="c-main" id="div-comment-13819">我运行命令启动了，可是什么反应都没有。在 查看状态 提示还是未启动。
+启动：service sniproxy start
+输入启动后，没任何反应。
+
+然后在查询还是提示未启动。
+service sniproxy status [FAIL] sniproxy is not running ... failed!<div class="c-meta"><span class="c-author">HILO</span>2017-05-15 13:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13819#respond' onclick='return addComment.moveForm( "div-comment-13819", "13819", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-13820"><div class="c-avatar"><div class="c-main" id="div-comment-13820">文章已经更新，我特地开了一个 Vultr的Debian7服务器，完整了操作了一个过程，修复了一些文章中步骤瑕疵，同时发现<code> service sniproxy start </code>确实无法使用，直接使用<code> sniproxy </code>启动即可。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-15 13:59 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13820#respond' onclick='return addComment.moveForm( "div-comment-13820", "13820", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-5" id="comment-13822"><div class="c-avatar"><div class="c-main" id="div-comment-13822">好的 感谢回复。<div class="c-meta"><span class="c-author">HILO</span>2017-05-15 14:15 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13822#respond' onclick='return addComment.moveForm( "div-comment-13822", "13822", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment odd alt depth-5" id="comment-13825"><div class="c-avatar"><div class="c-main" id="div-comment-13825">SNI已经搭建成功，但是我发现和（快速自建DNS服务器以 科学上网+屏蔽广告 —— dowsDNS 一键脚本）配合的时候 Google可以正常访问 其余均无法访问。不知博主可否提供个邮箱我把我的SNI IP 和账号密码发给您，您有空的时候能不能帮忙看看？
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="15677a7a615543583824272d382c2d387170777c747b">[email&#160;protected]</a>:~/sniproxy/sniproxy-master# service sniproxy status
+[ ok ] sniproxy is running.
+SNI检测结果是正常的。
+如果直接用dowsDNS 一键脚本是可以正常使用的。<div class="c-meta"><span class="c-author">HILO</span>2017-05-15 15:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13825#respond' onclick='return addComment.moveForm( "div-comment-13825", "13825", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-6" id="comment-13826"><div class="c-avatar"><div class="c-main" id="div-comment-13826">很简单啊，你本地hosts文件里设置，加上SNI的IP为 1.1.1.1，那么
+<pre class="prettyprint linenums" >1.1.1.1 www.youtube.com
+# 注意，上面这个Youtube示例只能用作进入网站，无法看视频
+</pre>
+照着上面那样写几个被墙的域名，然后浏览器 https访问域名看看是否可以进去，如果正常则代表SNI代理是配置正常的，如果不正常那则代表SNI代理配置有问题。<br />
+还有你更换为自建DNS后，Ping一下那些被墙的域名看一看返回的IP是什么，是不是你设置的SNI代理IP？<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-15 16:12 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13826#respond' onclick='return addComment.moveForm( "div-comment-13826", "13826", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-7" id="comment-13830"><div class="c-avatar"><div class="c-main" id="div-comment-13830"><a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="b2c0ddddc6f2e4ff9f83808a9f8b8a9fd6d7d0dbd3dc">[email&#160;protected]</a>:~# dig www.google.com
+
+; &lt;&gt; DiG 9.8.4-rpz2+rl005.12-P1 &lt;&gt; www.google.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 15031
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.google.com.			IN	A
+
+;; ANSWER SECTION:
+www.google.com.		65	IN	A	216.58.200.36
+
+;; Query time: 1 msec
+;; SERVER: 100.78.90.8#53(100.78.90.8)
+;; WHEN: Mon May 15 16:26:57 2017
+;; MSG SIZE  rcvd: 48
+
+<a href="q6b2hdbe.html" class="__cf_email__" data-cfemail="d5a7babaa1958398f8e4e7edf8ecedf8b1b0b7bcb4bb">[email&#160;protected]</a>:~# dig www.youtube.com
+
+; &lt;&gt; DiG 9.8.4-rpz2+rl005.12-P1 &lt;&gt; www.youtube.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 29134
+;; flags: qr rd ra; QUERY: 1, ANSWER: 8, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.youtube.com.		IN	A
+
+;; ANSWER SECTION:
+www.youtube.com.	24065	IN	CNAME	youtube-ui.l.google.com.
+youtube-ui.l.google.com. 900	IN	CNAME	youtube-ui-china.l.google.com.
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.138
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.139
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.100
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.102
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.113
+youtube-ui-china.l.google.com. 180 IN	A	74.125.203.101
+
+;; Query time: 4 msec
+;; SERVER: 100.78.90.8#53(100.78.90.8)
+;; WHEN: Mon May 15 16:29:21 2017
+;; MSG SIZE  rcvd: 194
+这样是不是意味着还没用 说明这个服务器已经被污染了？<div class="c-meta"><span class="c-author">HILO</span>2017-05-15 16:31 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13830#respond' onclick='return addComment.moveForm( "div-comment-13830", "13830", "respond", "2174" )' aria-label='回复给HILO'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor even depth-8" id="comment-13836"><div class="c-avatar"><div class="c-main" id="div-comment-13836">不清楚，你没有提供我要的信息，你给的信息看不出来。建议<a href="https://t.me/doubi" target="_blank" rel="nofollow">Telegram</a>联系我，评论里交流太慢。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-15 18:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13836#respond' onclick='return addComment.moveForm( "div-comment-13836", "13836", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt depth-5" id="comment-18592"><div class="c-avatar"><div class="c-main" id="div-comment-18592">Vultr同样问题已经解决。<div class="c-meta"><span class="c-author">h弹弹堂</span>2017-09-17 20:36 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=18592#respond' onclick='return addComment.moveForm( "div-comment-18592", "18592", "respond", "2174" )' aria-label='回复给h弹弹堂'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13699"><div class="c-avatar"><div class="c-main" id="div-comment-13699">谷歌找不到centos搭建SIN的教程 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_cry.gif" alt=":cry:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">Justin</span>2017-05-12 13:35 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13699#respond' onclick='return addComment.moveForm( "div-comment-13699", "13699", "respond", "2174" )' aria-label='回复给Justin'>回复</a></div></div></div><ul class="children">
+<li class="comment odd alt depth-2" id="comment-15071"><div class="c-avatar"><div class="c-main" id="div-comment-15071">有的，我参考这教程安装成功了。Centos安装SNIProxy——免证书代理HTTP(S)  http://www.senra.me/install-sniproxy-for-centos/  16年的教程依旧可以用，需要改一下部分命令
+另外还可以参考
+Centos 下安装 SNIProxy 实现 hosts 代理 | 技术拉近你我！ http://coderschool.cn/2284.html 今年5.18发布的233<div class="c-meta"><span class="c-author">MiniCongee</span>2017-06-25 10:56 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=15071#respond' onclick='return addComment.moveForm( "div-comment-15071", "15071", "respond", "2174" )' aria-label='回复给MiniCongee'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13679"><div class="c-avatar"><div class="c-main" id="div-comment-13679">问个小白问题，这个能和ssr服务端共存吗。。。<div class="c-meta"><span class="c-author">qwe2968</span>2017-05-11 20:20 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13679#respond' onclick='return addComment.moveForm( "div-comment-13679", "13679", "respond", "2174" )' aria-label='回复给qwe2968'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13681"><div class="c-avatar"><div class="c-main" id="div-comment-13681">可以。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-11 20:21 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13681#respond' onclick='return addComment.moveForm( "div-comment-13681", "13681", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-13682"><div class="c-avatar"><div class="c-main" id="div-comment-13682">我在vultr上的Debian7里安装好以后无法启动，使用service sniproxy start没反应，也没有查到有端口占用，Toyo有没有想到什么解决方法呢 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_biggrin.gif" alt=":grin:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">qwe2968</span>2017-05-11 20:34 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13682#respond' onclick='return addComment.moveForm( "div-comment-13682", "13682", "respond", "2174" )' aria-label='回复给qwe2968'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-4" id="comment-13688"><div class="c-avatar"><div class="c-main" id="div-comment-13688">什么反应都没有的话，那就难办了没线索也无法找到问题出在哪里。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-11 23:55 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13688#respond' onclick='return addComment.moveForm( "div-comment-13688", "13688", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-toyo bypostauthor even depth-4" id="comment-13821"><div class="c-avatar"><div class="c-main" id="div-comment-13821">尝试使用<code> sniproxy </code>来启动SNIProxy试试。<div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-15 14:00 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13821#respond' onclick='return addComment.moveForm( "div-comment-13821", "13821", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-13559"><div class="c-avatar"><div class="c-main" id="div-comment-13559">toyo打算写v2ray的教程么，go语音写的 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kurokitomoko</span>2017-05-08 08:37 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13559#respond' onclick='return addComment.moveForm( "div-comment-13559", "13559", "respond", "2174" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-13416"><div class="c-avatar"><div class="c-main" id="div-comment-13416">有错别字哦 构建<div class="c-meta"><span class="c-author"><a href='https://www.nanqinlang.com/' rel='external nofollow' class='url'>南琴浪</a></span>2017-05-03 20:39 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13416#respond' onclick='return addComment.moveForm( "div-comment-13416", "13416", "respond", "2174" )' aria-label='回复给南琴浪'>回复</a></div></div></div><ul class="children">
+<li class="comment byuser comment-author-toyo bypostauthor odd alt depth-2" id="comment-13419"><div class="c-avatar"><div class="c-main" id="div-comment-13419">输入法已卸载 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_neutral.gif" alt=":neutral:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author"><a href='index.html' rel='external nofollow' class='url'>Toyo</a></span>2017-05-03 21:58 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13419#respond' onclick='return addComment.moveForm( "div-comment-13419", "13419", "respond", "2174" )' aria-label='回复给Toyo'>回复</a></div></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="comment-13410"><div class="c-avatar"><div class="c-main" id="div-comment-13410">终于出debian的了 <img data-original="https://doub.io/wp-content/themes/yusi1.0/img/smilies/icon_lol.gif" alt=":lol:" class="wp-smiley" style="height: 1em; max-height: 1em;" /><div class="c-meta"><span class="c-author">kurokitomoko</span>2017-05-03 18:33 <a rel='nofollow' class='comment-reply-link' href='https://doub.io/wlzy-34/?replytocom=13410#respond' onclick='return addComment.moveForm( "div-comment-13410", "13410", "respond", "2174" )' aria-label='回复给kurokitomoko'>回复</a></div></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="commentnav"	>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</div>
+<aside class="sidebar">	
+<div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="position: absolute;left: 4px;top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://walllink.tw"><img src="2829kfuq.png" /></a></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="text-align:center;padding: 10px 20px 5px;display: block;">
+<a class="wid-xiaobai" style="background-color: #03A9F4;padding-top:15px;padding-bottom:15px;font-size: 16px;font-weight: bold;" target="_blank" href="dibdjmr6.html">逗比根据地 所有文章教程分类合辑</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="mc1t27yh.html">CDN 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCFF;padding-top: 7px;padding-bottom: 7px;font-weight: bold;font-size: 15px;" target="_blank" href="s3y0lufe.html">KCP 复活被墙IP 继续做代理</a>
+<a class="wid-xiaobai" style="background-color: #1ABCF7;" target="_blank" href="aybh4ww5-2.html">小众轻量代理 Brook 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCED;" target="_blank" href="g4b_0oy6.html">Brook Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE9;" target="_blank" href="m2qf_iyd.html">Brook 新手小白 视频使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE7;" target="_blank" href="xcwybsz2.html">小众轻量代理 DAZE 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE5;" target="_blank" href="ouiwm7ss-2.html">DAZE Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCE3;" target="_blank" href="juxwmu1i.html">小众轻量代理 Goflyway 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD9;" target="_blank" href="7btobhno.html">Goflyway Tools 客户端 使用教程</a>
+<a class="wid-xiaobai" style="background-color: #1ABCD4;" target="_blank" href="tp_-ic2f.html">虚拟主机搭建 YouTube 私人镜像</a>
+<a class="wid-xiaobai" style="background-color: #1ABCCF;" target="_blank" href="z2a4lk3l.html">ShadowsocksR 单用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCC5;" target="_blank" href="z2a4lk3l-2.html">ShadowsocksR 多用户 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCBA;" target="_blank" href="3--didfb-2.html">Linux 优化加速技巧&nbsp; BBR 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCB0;" target="_blank" href="gqnmhax9.html">Linux 优化加速技巧&nbsp;  锐速 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1ABCA6;" target="_blank" href="q7gcd25g.html">Linux 优化加速 LotServer 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #1abc9c;" target="_blank" href="0e6gd2jc.html">锐速 / LotServer 配置参数简单说明</a>
+<a class="wid-xiaobai" style="background-color: #E91E77;" target="_blank" href="ouiwm7ss.html">一键搭建最简单网盘 &nbsp;FileManager</a>
+<a class="wid-xiaobai" style="background-color: #E91E63;" target="_blank" href="nr2hjmg2.html">Cisco AnyConnect VPN&nbsp;&nbsp;&nbsp;一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E59;" target="_blank" href="tfma58rb.html">Linux封禁垃圾邮件/BT/PT 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #E91E4F;" target="_blank" href="plucovvc.html">VPS 搭建 WordPress 博客 视频教程</a>
+<a class="wid-xiaobai" style="background-color: #E91E3B;" target="_blank" href="q7gcd25g-2.html">BT/磁力离线下载神器 Cloud Torrent</a>
+<a class="wid-xiaobai" style="background-color: #E91E27;" target="_blank" href="zuigoj__.html">BT/磁力离线下载神器 Aria2 一键脚本</a>
+<a class="wid-xiaobai" style="background-color: #2d2d2d;" target="_blank" href="bqjxhzxr.html">PayPal 更换汇率结算方式降低手续费</a>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div style="background-color: #eee;">
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+<a title="特别声明：此图片为广告投放，与本站无任何关系。" target="_blank" href="https://doub.io/go/kanfanba/"><img style="margin-bottom: 10px;" src="7komc_m0.png"/></a>
+<div style="position: absolute;margin-left: 4px;margin-top: 4px;width: 24px;font-size: 12px;color: #000;border: 1px solid #000;line-height: 12px;opacity: 0.5;">广告</div>
+
+<div id="guangg_image"></div>
+<script data-cfasync="false" src="hnpipwj_.js"></script><script type="text/javascript">
+var image_url=new Array()
+image_url=["https://doub.io/go/vultr-100/","vh8576m0.html","https://doub.io/go/virmach-kvm/"]
+var guangg_url=new Array()
+guangg_url=["2ggwga1a.png","hpvcwrn6.png","ivndglg6.png"]
+guangg_id=Math.floor(Math.random()*3)
+imageurl = image_url[guangg_id]
+guanggurl = guangg_url[guangg_id]
+document.getElementById("guangg_image").innerHTML = "<a target=\"_blank\" title=\"特别声明：此图片为广告投放，与本站无任何关系。\" href="+imageurl+">"+"<img src="+guanggurl+" /></a>";
+</script>
+</div></div></div><div class="widget_text widget widget_custom_html"><div class="title"><h2>原创の更新</h2></div><div class="textwidget custom-html-widget"><div class="hot-posts">
+	<ul>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-1">v1.0.1</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/10</span></p>
+			<span class="label label-2">v1.0.8</span>
+			<a target="_blank" href="939koj07-2.html" title="点击进入该文件的介绍页面。">MTProxy.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/07</span></p>
+			<span class="label label-3">v1.0.0</span>
+			<a target="_blank" href="kd691l4o.html" title="点击进入该文件的介绍页面。">ss-go.sh</a><img style="margin-left: 5px;margin-bottom: 4px;" src="aabmo546.gif"/>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/11/02</span></p>
+			<span class="label label-4">v1.0.4</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="es5fj9se.html" title="点击进入该文件的介绍页面。">MTProxy_go.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/29</span></p>
+			<span class="label label-5">v1.0.3</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.2</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.1</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/25</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="aybh4ww5.html" title="点击进入该文件的介绍页面。">Gfw_push.sh</a>
+		</li>
+		<li>
+			<p><span class="post-comments"><i class="fa fa-clock-o"></i>2018/10/21</span></p>
+			<span class="label label-5">v1.0.0</span>
+			<a target="_blank" href="ouiwm7ss-2.html" title="点击进入该文件的介绍页面。">DAZE Tools</a>
+		</li>
+	</ul>
+</div></div></div><div class="widget d_tag"><div class="title"><h2>逗比の标签</h2></div><div class="d_tags"><a title="60个话题" target="_blank" href="oyjpgxqd.html">Shadowsocks (60)</a><a title="47个话题" target="_blank" href="meyy1poe.html">脚本 (47)</a><a title="45个话题" target="_blank" href="4y92q0ka.html">教程 (45)</a><a title="32个话题" target="_blank" href="g6hfu0lq.html">ShadowsocksR (32)</a><a title="30个话题" target="_blank" href="sgi86h8e.html">科学上网 (30)</a><a title="20个话题" target="_blank" href="8jt8-s05.html">shell (20)</a><a title="19个话题" target="_blank" href="tjolx2iu.html">VPS (19)</a><a title="18个话题" target="_blank" href="-hbe9vty.html">Linux (18)</a><a title="16个话题" target="_blank" href="cxrndpz0.html">VPN (16)</a><a title="11个话题" target="_blank" href="jeptq9ir.html">BT (11)</a><a title="10个话题" target="_blank" href="4tdyvzjl.html">磁力链接 (10)</a><a title="9个话题" target="_blank" href="xyx3p-8d.html">原创软件 (9)</a><a title="9个话题" target="_blank" href="4_30fwtg.html">端口转发 (9)</a><a title="9个话题" target="_blank" href="f5sdy8y0.html">百度云 (9)</a><a title="9个话题" target="_blank" href="nhe7u58y.html">Brook (9)</a><a title="8个话题" target="_blank" href="_2p4tau_.html">国内中转 (8)</a><a title="8个话题" target="_blank" href="7-nhh6os.html">反向代理 (8)</a><a title="8个话题" target="_blank" href="861-ooh8.html">百度网盘 (8)</a><a title="7个话题" target="_blank" href="yx4tsq_0.html">GoFlyway (7)</a><a title="7个话题" target="_blank" href="esul7bla.html">搬瓦工 (7)</a></div></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+         <a href="index.html" title="逗比根据地">逗比根据地</a> 版权所有，保留一切权利 · 基于 <a href="https://cn.wordpress.org/" target="_blank">WordPress</a> · <a href="vjer8vlp.html" target="_blank">欲思主题</a> © 2015-2018        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "bk2yhbv_.js?8067e5ade532c4f3711b320f1e88f213";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72227254-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72227254-1');
+</script>        </div>
+    </div>
+</footer>
+
+<div class="jkf90ef-container jkf90ef-1 jkf90ef-hide">
+    <div class="jkf90ef-body">
+                <span class="close-btn fa fa-times-circle"> </span>
+                        <div class="jkf90ef"></div>
+    </div>
+</div><script type='text/javascript' src='s5igkt3b.js?ver=1.0'></script>
+<script type='text/javascript' src='2hrvdolu.js?ver=4.8.1'></script>
+
+<script type="text/javascript">
+var open = false;
+$(function () {
+    $("button[data-type='Widescreen']").on("click", function () {
+        if (!open) {
+            $(".sidebar").hide(); $(".content").animate({ marginRight: 0 }, 200);
+        } else {
+            $(".sidebar").show(); $(".content").animate({ marginRight: 370 }, 200);
+        }
+        open = !open;
+    })
+})
+if(document.body.scrollWidth < 768){
+    $(".hot-posts").hide();
+}
+</script>
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_6971c5901860620dc711b8ea461af719");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_6971c5901860620dc711b8ea461af719");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_6971c5901860620dc711b8ea461af719");if (z != "") e["url"].value = z;}</script></body></html>
